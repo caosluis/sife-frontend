@@ -1,0 +1,382 @@
+<ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple"
+>
+  <p style="font-size: 20px; color: white">Cargando...</p>
+</ngx-spinner>
+
+<mat-card class="background_user_connection">
+  <mat-card-header>
+    <mat-card-title>Facturas enviadas por Punto de Venta</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="row">
+      <div class="col-md-2">
+        <mat-form-field appearance="standard" class="date-selector">
+          <mat-label>Seleccionar Fecha Emisión</mat-label>
+          <input
+            matInput
+            [matDatepicker]="picker"
+            [(ngModel)]="FechaActual.start_time"
+            (dateChange)="SeleccionarFecha($event)"
+            [ngModelOptions]="{ standalone: true }"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>  
+      <div class="col-md-2">
+        <!--mat-form-field appearance="standard"  class="buscador">
+          <input
+            matInput
+            placeholder="Buscar"
+            autocomplete="off"
+            (keyup)="FiltroBuscar($event.target.value)"
+          />
+        </mat-form-field-->
+      </div>
+          
+    </div>
+
+    <table mat-table [dataSource]="dataSource" matSort width="100%" class="Indicador-envio table-hover" matTableResponsive>
+      <ng-container matColumnDef="Punto de Venta">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          Punto de Venta
+        </th>
+        <td mat-cell *matCellDef="let element" style="text-align: left; font-size: 11px; ">        
+                <span class="text-info">{{ element.codigoPDV }}) </span> {{ PDVnombre(element.codigoPDV) }}        
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Sucursal">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Sucursales</th>
+        <td mat-cell *matCellDef="let element" style="text-align: left; font-size: 11px; ">
+          <span class="text-dark">{{ Sucursal(element.codigoSucursal) }}</span>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Recepcionado por SIFE">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          Recepcionado
+        </th>
+        <td mat-cell *matCellDef="let element">
+          <div
+            *ngIf="
+              EstadoCantidadFacturas('0', element.cuis) != '0';
+              then estados;
+              else sinestados
+            "
+          ></div>
+          <ng-template #estados>
+            <span class="badge bg-success">
+                {{ EstadoCantidadFacturas("0", element.cuis) }}
+              </span>
+          </ng-template>
+          <ng-template #sinestados>
+            <span class="badge bg-light ">
+              {{ EstadoCantidadFacturas("0", element.cuis) }}
+            </span>
+          </ng-template>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Enviado a SIN">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Enviado </th>
+        <td mat-cell *matCellDef="let element">
+          <div
+            *ngIf="
+              EstadoCantidadFacturas('1', element.cuis) != '0';
+              then estados;
+              else sinestados
+            "
+          ></div>
+          <ng-template #estados>
+            <span class="badge bg-success">
+                {{ EstadoCantidadFacturas("1", element.cuis) }}
+              </span>
+          </ng-template>
+          <ng-template #sinestados>
+            <span class="badge bg-light ">
+              {{ EstadoCantidadFacturas("1", element.cuis) }}
+            </span>
+          </ng-template>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Factura Exitosa">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          Autorizados
+        </th>
+        <td mat-cell *matCellDef="let element">
+          <div
+            *ngIf="
+              EstadoCantidadFacturas('2', element.cuis) != '0';
+              then estados;
+              else sinestados
+            "
+          ></div>
+          <ng-template #estados>
+            <span class="badge bg-success">
+                {{ EstadoCantidadFacturas("2", element.cuis) }}
+              </span>
+          </ng-template>
+          <ng-template #sinestados>
+            <span class="badge bg-light ">
+              {{ EstadoCantidadFacturas("2", element.cuis) }}
+            </span>
+          </ng-template>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Factura offline">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          Factura offline
+        </th>
+        <td mat-cell *matCellDef="let element">
+          <div
+            *ngIf="
+              EstadoCantidadFacturas('4', element.cuis) != '0';
+              then estados;
+              else sinestados
+            "
+          ></div>
+          <ng-template #estados>
+            <span class="badge bg-success">
+                {{ EstadoCantidadFacturas("4", element.cuis) }}
+              </span>
+          </ng-template>
+          <ng-template #sinestados>
+            <span class="badge bg-light ">
+              {{ EstadoCantidadFacturas("4", element.cuis) }}
+            </span>
+          </ng-template>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Evento asignado">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          Evento asignado
+        </th>
+        <td mat-cell *matCellDef="let element">
+          <div
+            *ngIf="
+              EstadoCantidadFacturas('5', element.cuis) != '0';
+              then estados;
+              else sinestados
+            "
+          ></div>
+          <ng-template #estados>
+            <span class="badge bg-success">
+                {{ EstadoCantidadFacturas("5", element.cuis) }}
+              </span>
+          </ng-template>
+          <ng-template #sinestados>
+            <span class="badge bg-light ">
+              {{ EstadoCantidadFacturas("5", element.cuis) }}
+            </span>
+          </ng-template>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Anulación Confirmada">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          Anulados
+        </th>
+        <td mat-cell *matCellDef="let element">
+          <div
+            *ngIf="
+              EstadoCantidadFacturas('6', element.cuis) != '0';
+              then estados;
+              else sinestados
+            "
+          ></div>
+          <ng-template #estados>
+            <span class="badge bg-success">
+                {{ EstadoCantidadFacturas("6", element.cuis) }}
+              </span>
+          </ng-template>
+          <ng-template #sinestados>
+            <span class="badge bg-light ">
+              {{ EstadoCantidadFacturas("6", element.cuis) }}
+            </span>
+          </ng-template>          
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Empaquetado">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Empaquetado</th>
+        <td mat-cell *matCellDef="let element">
+          <div
+            *ngIf="
+              EstadoCantidadFacturas('9', element.cuis) != '0';
+              then estados;
+              else sinestados
+            "
+          ></div>
+          <ng-template #estados>
+            <span class="badge bg-success">
+                {{ EstadoCantidadFacturas("9", element.cuis) }}
+              </span>
+          </ng-template>
+          <ng-template #sinestados>
+            <span class="badge bg-light ">
+              {{ EstadoCantidadFacturas("9", element.cuis) }}
+            </span>
+          </ng-template>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Problema interno SIFE">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          Problema interno
+        </th>
+        <td mat-cell *matCellDef="let element">
+          <div
+            *ngIf="
+              EstadoCantidadFacturas('90', element.cuis) != '0';
+              then estados;
+              else sinestados
+            "
+          ></div>
+          <ng-template #estados>
+            <span class="badge bg-success">
+                {{ EstadoCantidadFacturas("90", element.cuis) }}
+              </span>
+          </ng-template>
+          <ng-template #sinestados>
+            <span class="badge bg-light ">
+              {{ EstadoCantidadFacturas("90", element.cuis) }}
+            </span>
+          </ng-template>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Factura rechazada">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          Rechazadas
+        </th>
+        <td mat-cell *matCellDef="let element">
+          <div
+            *ngIf="
+              EstadoCantidadFacturas('91', element.cuis) != '0';
+              then estados;
+              else sinestados
+            "
+          ></div>
+          <ng-template #estados>
+            <span class="badge bg-danger">
+                {{ EstadoCantidadFacturas("91", element.cuis) }}
+              </span>
+          </ng-template>
+          <ng-template #sinestados>
+            <span class="badge bg-light ">
+              {{ EstadoCantidadFacturas("91", element.cuis) }}
+            </span>
+          </ng-template>
+        </td>
+      </ng-container>
+
+      <!--ng-container matColumnDef="Evento rechazado">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          Evento rechazado
+        </th>
+        <td mat-cell *matCellDef="let element">
+          <div
+            *ngIf="
+              EstadoCantidadFacturas('95', element.cuis) != '0';
+              then estados;
+              else sinestados
+            "
+          ></div>
+          <ng-template #estados>
+            <span class="badge bg-success">
+                {{ EstadoCantidadFacturas("95", element.cuis) }}
+              </span>
+          </ng-template>
+          <ng-template #sinestados>
+            <span class="badge bg-light ">
+              {{ EstadoCantidadFacturas("95", element.cuis) }}
+            </span>
+          </ng-template>
+        </td>
+      </ng-container-->
+
+      <ng-container matColumnDef="ErrorConexion con SIN">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          Error conexión SIN
+        </th>
+        <td mat-cell *matCellDef="let element">
+          <div
+            *ngIf="
+              EstadoCantidadFacturas('99', element.cuis) != '0';
+              then estados;
+              else sinestados
+            "
+          ></div>
+          <ng-template #estados>
+            <span class="badge bg-success">
+                {{ EstadoCantidadFacturas("99", element.cuis) }}
+              </span>
+          </ng-template>
+          <ng-template #sinestados>
+            <span class="badge bg-light ">
+              {{ EstadoCantidadFacturas("99", element.cuis) }}
+            </span>
+          </ng-template>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let element; columns: displayedColumns"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[10, 20, 30]"></mat-paginator>
+
+
+        <!-- iframe
+          src="http://docker-qas.hansa.com.bo:41/goto/f8ac47a30621587e5e059a07042c86cc"
+          height="600px"
+          width="100%"
+        ></iframe-->
+        <!-- <iframe
+          src="http://docker-qas.hansa.com.bo:41/app/kibana#/dashboard/33360a50-dd94-11eb-9f81-cd97a988a105?embed=true&_g=(refreshInterval:(pause:!t,value:0),time:(from:now%2Fd,to:now%2Fd))&_a=(description:'',filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),panels:!((embeddableConfig:(),gridData:(h:9,i:c6c44953-8158-4472-b5c3-b6cde290c9e9,w:23,x:0,y:0),id:'831981b0-dd93-11eb-9f81-cd97a988a105',panelIndex:c6c44953-8158-4472-b5c3-b6cde290c9e9,type:visualization,version:'7.5.2'),(embeddableConfig:(),gridData:(h:9,i:'233a2d3d-3518-4a9a-a15a-48f5f412c75f',w:10,x:23,y:0),id:d2fb07d0-dd93-11eb-9f81-cd97a988a105,panelIndex:'233a2d3d-3518-4a9a-a15a-48f5f412c75f',type:visualization,version:'7.5.2'),(embeddableConfig:(),gridData:(h:9,i:d29f7004-bc39-4537-9739-2852955a022b,w:15,x:33,y:0),id:'734397c0-dd94-11eb-9f81-cd97a988a105',panelIndex:d29f7004-bc39-4537-9739-2852955a022b,type:visualization,version:'7.5.2'),(embeddableConfig:(),gridData:(h:8,i:'862b295e-13b7-4ab5-b0a5-61c48d0c9d41',w:23,x:0,y:9),id:'40989000-dda3-11eb-9f81-cd97a988a105',panelIndex:'862b295e-13b7-4ab5-b0a5-61c48d0c9d41',type:visualization,version:'7.5.2'),(embeddableConfig:(),gridData:(h:8,i:d450774d-3449-4f48-89b8-b6f3b6664c36,w:10,x:23,y:9),id:d5258b20-dda2-11eb-9f81-cd97a988a105,panelIndex:d450774d-3449-4f48-89b8-b6f3b6664c36,type:visualization,version:'7.5.2'),(embeddableConfig:(params:(sort:(columnIndex:4,direction:asc)),vis:(params:(sort:(columnIndex:4,direction:desc)))),gridData:(h:9,i:d6a53dd9-2213-41bb-b85d-939559a36915,w:33,x:0,y:17),id:'0b9d7200-dd97-11eb-9f81-cd97a988a105',panelIndex:d6a53dd9-2213-41bb-b85d-939559a36915,type:visualization,version:'7.5.2')),query:(language:kuery,query:''),timeRestore:!f,title:d_facturas,viewMode:view)"
+          height="600"
+          width="100%"
+          frameborder="0"
+          webkitallowfullscreen
+          mozallowfullscreen
+          allowfullscreen
+        ></iframe> -->
+
+        <!-- <iframe
+          [src]="kibanaURL"
+          width="100%"
+          height="600"
+          frameborder="0"
+          webkitallowfullscreen
+          mozallowfullscreen
+          allowfullscreen
+        ></iframe>   -->
+
+        <!-- <iframe
+          [src]="kibanaURL"
+          width="100%"
+          height="600"
+          frameborder="0"
+          webkitallowfullscreen
+          mozallowfullscreen
+          allowfullscreen
+        ></iframe> -->
+
+        <!-- <iframe
+          src="http://docker-qas.hansa.com.bo:5601/s/hbm-integraciones-facturacion/app/kibana#/visualize/create?embed=true&type=table&indexPattern=dc794be0-e97e-11eb-a85d-87b825441440&_g=(refreshInterval:(pause:!t,value:0),time:(from:'2021-08-16T04:00:00.000Z',to:'2021-08-17T04:00:00.000Z'))&_a=(filters:!(),linked:!f,query:(language:kuery,query:'45D0905FEE3F5882572D313F16E1F0337C739E0746080AA75F41ADC74'),uiState:(vis:(params:(sort:(columnIndex:1,direction:desc)))),vis:(aggs:!((enabled:!f,id:'1',params:(),schema:metric,type:count),(enabled:!t,id:'2',params:(field:data.estado.keyword,missingBucket:!f,missingBucketLabel:Missing,order:desc,orderBy:_key,otherBucket:!f,otherBucketLabel:Other,size:100),schema:bucket,type:terms),(enabled:!f,id:'4',params:(field:timestamp,missingBucket:!f,missingBucketLabel:Missing,order:desc,orderBy:_key,otherBucket:!f,otherBucketLabel:Other,size:100),schema:bucket,type:terms),(enabled:!f,id:'3',params:(field:status.keyword,missingBucket:!f,missingBucketLabel:Missing,order:desc,orderBy:_key,otherBucket:!f,otherBucketLabel:Other,size:100),schema:bucket,type:terms),(enabled:!t,id:'5',params:(field:timestamp),schema:metric,type:max),(enabled:!t,id:'6',params:(customBucket:(enabled:!t,id:'6-bucket',params:(drop_partials:!f,extended_bounds:(),field:timestamp,interval:auto,min_doc_count:1,scaleMetricValues:!f,useNormalizedEsInterval:!t),schema:(aggFilter:!(),editor:!f,group:none,max:!n,min:0,name:bucketAgg,params:!(),title:'Bucket+agg'),type:date_histogram),customMetric:(enabled:!t,id:'6-metric',params:(),schema:(aggFilter:!('!!top_hits','!!percentiles','!!percentile_ranks','!!median','!!std_dev','!!sum_bucket','!!avg_bucket','!!min_bucket','!!max_bucket','!!derivative','!!moving_avg','!!serial_diff','!!cumulative_sum','!!geo_bounds','!!geo_centroid'),editor:!f,group:none,max:!n,min:0,name:metricAgg,params:!(),title:'Metric+agg'),type:count)),schema:metric,type:max_bucket)),params:(dimensions:(buckets:!((accessor:0,aggType:terms,format:(id:terms,params:(id:string,missingBucketLabel:Missing,otherBucketLabel:Other)),params:())),metrics:!((accessor:1,aggType:max,format:(id:date),params:()))),perPage:10,percentageCol:'',showMetricsAtAllLevels:!f,showPartialRows:!f,showTotal:!f,sort:(columnIndex:!n,direction:!n),totalFunc:sum),title:'',type:table))"
+          height="600"
+          width="800"
+        ></iframe> -->
+
+  </mat-card-content></mat-card
+>

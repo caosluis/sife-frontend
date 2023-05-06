@@ -1,0 +1,240 @@
+<mat-card-title>Detalle de versionamiento SIFE - SIAT</mat-card-title>
+<mat-card>
+  <div class="row">
+    <div class="col-sm-1">      
+      <h3>Bienvenido</h3>
+    </div>
+    <div class="col-sm-11" >
+      <mat-card-subtitle>Este asistente le guiará en tareas para configurar el sistema y las solicitudes con Impuestos Nacionales.
+        <br>
+      </mat-card-subtitle>
+    </div>
+  </div>
+<form   > 
+  <mat-dialog-content style="background:#fafafa;">    
+    <div class="row">
+      <div class="col-sm-2">        
+        <div class="form-group">
+          <mat-form-field appearance="standard">
+            <mat-label>Version </mat-label>
+              <input
+              matInput                                             
+              value="{{ data.version }}" disabled
+              />                    
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="form-group">
+          <mat-form-field appearance="standard">
+            <mat-label>Codigo Sistema </mat-label>
+              <input
+              matInput                                             
+              value="{{ data.codigoSistema }}" disabled
+              />                    
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="col-sm-7"></div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+          <h3>Sucursales</h3>
+          <div class="row">
+            <div class="col-sm-12">
+              <section class="example-section">
+                <mat-checkbox  [disabled]="true" [checked]="true">
+                  <div class="nombreTitulo">Cerrar operaciones (CUIS) de todas las sucursales de la version anterior con IN.</div>
+                  <div class="nombreSubtitulo">Si esta opcion no es seleccionada, tendra que realizar el cierre de CUIS manual de las sucursales</div>
+                </mat-checkbox>                  
+              </section>
+              <section class="example-section">
+                <mat-checkbox [disabled]="true" [checked]="data.sucursalCopia">
+                  <div class="nombreTitulo">Crear la sucursal basada en la version anterior.</div>
+                  <div class="nombreSubtitulo">Realizara una copia de las sucursales de la version anterior del sistema</div>
+                </mat-checkbox>                  
+              </section>
+              <section class="example-section">
+                <mat-checkbox [disabled]="true" [checked]="data.sucursalCuisSolicita">
+                  <div class="nombreTitulo">Solicitud de CUIS con IN (Inicio de operaciones).</div>
+                  <div class="nombreSubtitulo">Solicita los codigos de inicio de sistema para poder realizar transacciones con SIN.</div>
+                </mat-checkbox>                  
+              </section>
+            </div>
+          </div>                    
+        </div>
+      <div class="col-sm-6">
+          <h3>Puntos de Venta</h3>            
+        <div class="row">
+          <div class="col-sm-12">
+            <section class="example-section">
+              <mat-checkbox [disabled]="true" [checked]="true">
+                <div class="nombreTitulo">Cerrar operaciones (CUIS) de todas las sucursales de la version anterior con IN.</div>
+                <div class="nombreSubtitulo">Si esta opcion no es seleccionada, tendra que realizar el cierre de CUIS manual de las sucursales</div>
+              </mat-checkbox>                  
+            </section>
+            <section class="example-section">
+              <mat-checkbox [disabled]="true" [checked]="true">
+                <div class="nombreTitulo">Cerrar los códigos de Punto de Venta con IN.</div>
+                <div class="nombreSubtitulo">Cierra todos los puntos de venta operturados con SIN.</div>
+              </mat-checkbox>                  
+            </section>
+            <section class="example-section">
+              <mat-checkbox [disabled]="true" [checked]="data.pdvCrear">
+                <div class="nombreTitulo">Solicitar nuevo códigos de PDV a SIN.</div>
+                <div class="nombreSubtitulo">Solicita los códigos de Puntos de Venta a Impuestos nacionales bazados en los anteriores PDV.</div>
+              </mat-checkbox>                  
+            </section>
+            <section class="example-section">
+              <mat-checkbox [disabled]="true" [checked]="data.pdvCuisSolicita">
+                <div class="nombreTitulo">Solicitud de CUIS con IN (Inicio de operaciones).</div>
+                <div class="nombreSubtitulo">Solicita los codigos de inicio de sistema para poder realizar transacciones con SIN.</div>
+              </mat-checkbox>                  
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+      <hr>
+    <div class="row">
+      <div class="col-sm-4">
+        <h3>Catálogos</h3>
+        <p class="nombreSubtitulo">Se solicitará la sincronización de Catálogos con Inpuestos Nacionales.</p>
+        <div class="row">
+          <div class="col-sm-12">
+            <section class="example-section">
+              <mat-checkbox [disabled]="true"[checked]="true">
+                <div class="nombreTitulo">Actividades</div>                  
+              </mat-checkbox>                  
+            </section>
+            <section class="example-section">
+              <mat-checkbox [disabled]="true"[checked]="true">
+                <div class="nombreTitulo">ListaActividadesDocumentoSector</div>                  
+              </mat-checkbox>                  
+            </section>
+            <section class="example-section">
+              <mat-checkbox [disabled]="true"[checked]="true">
+                <div class="nombreTitulo">ListaLeyendasFactura</div>                  
+              </mat-checkbox>                  
+            </section>
+            <section class="example-section">
+              <mat-checkbox [disabled]="true"[checked]="true">
+                <div class="nombreTitulo">ListaMensajesServicios</div>                  
+              </mat-checkbox>                  
+            </section>
+            <section class="example-section">
+              <mat-checkbox [disabled]="true"[checked]="true">
+                <div class="nombreTitulo">ListaProductosServicios</div>                  
+              </mat-checkbox>                  
+            </section>
+            <section class="example-section">
+              <mat-checkbox [disabled]="true"[checked]="true">
+                <div class="nombreTitulo">ParametricaEventosSignificativos</div>                  
+              </mat-checkbox>                  
+            </section>
+            <section class="example-section">
+              <mat-checkbox [disabled]="true"[checked]="true">
+                <div class="nombreTitulo">ParametricaMotivoAnulacion</div>                  
+              </mat-checkbox>                  
+            </section>
+            <section class="example-section">
+              <mat-checkbox [disabled]="true"[checked]="true">
+                <div class="nombreTitulo">ParametricaPaisOrigen</div>                  
+              </mat-checkbox>                  
+            </section>
+            <section class="example-section">
+              <mat-checkbox [disabled]="true"[checked]="true">
+                <div class="nombreTitulo">ParametricaTipoDocumentoIdentidad</div>                  
+              </mat-checkbox>                  
+            </section>
+            <section class="example-section">
+              <mat-checkbox [disabled]="true"[checked]="true">
+                <div class="nombreTitulo">ParametricaTipoDocumentoSector</div>                  
+              </mat-checkbox>                  
+            </section>
+            <section class="example-section">
+              <mat-checkbox [disabled]="true"[checked]="true">
+                <div class="nombreTitulo">ParametricaTipoEmision</div>
+              </mat-checkbox>                  
+            </section>
+            <section class="example-section">
+              <mat-checkbox [disabled]="true"[checked]="true">
+                <div class="nombreTitulo">ParametricaTipoHabitacion</div>
+              </mat-checkbox>                  
+            </section>
+            <section class="example-section">
+              <mat-checkbox [disabled]="true"[checked]="true">
+                <div class="nombreTitulo">ParametricaTipoMetodoPago</div>
+              </mat-checkbox>                  
+            </section>
+            <section class="example-section">
+              <mat-checkbox [disabled]="true"[checked]="true">
+                <div class="nombreTitulo">ParametricaTipoMoneda</div>
+              </mat-checkbox>                  
+            </section>
+            <section class="example-section">
+              <mat-checkbox [disabled]="true"[checked]="true">
+                <div class="nombreTitulo">ParametricaTipoPuntoVenta</div>
+              </mat-checkbox>                  
+            </section>
+            <section class="example-section">
+              <mat-checkbox [disabled]="true"[checked]="true">
+                <div class="nombreTitulo">ParametricaTiposFactura</div>
+              </mat-checkbox>                  
+            </section>
+            <section class="example-section">
+              <mat-checkbox [disabled]="true"[checked]="true">
+                <div class="nombreTitulo">ParametricaUnidadMedida</div>
+              </mat-checkbox>                  
+            </section>
+          </div>
+        </div>                    
+      </div>
+      <div class="col-sm-4">
+        <h3>CUFD Código Único de Facturación Diaria.</h3>
+        <p class="nombreSubtitulo">Conforme a normativa vigente el proceso de obtención del Código Único de Facturación Diaria (CUFD) para el Sistema Informático de Facturación autorizado debe realizarse diariamente. 
+          Este código habilita el sistema del Sujeto Pasivo para la emisión de Facturas Digitales durante un periodo de vigencia de 24 horas.</p>
+        <div class="row">
+          <div class="col-sm-12">
+            <section class="example-section">
+              <mat-checkbox [disabled]="true" [checked]="true">
+                <div class="nombreTitulo">Sucursales.</div>
+                <div class="nombreSubtitulo">Se solicitará CUFDs para todas las sucursales con CUIS</div>
+              </mat-checkbox>                  
+            </section>
+            <section class="example-section">
+              <mat-checkbox [disabled]="true" [checked]="true">
+                <div class="nombreTitulo">Puntos de Venta.</div>
+                <div class="nombreSubtitulo">Se solicitará CUFDs para todos los PDV con CUIS</div>
+              </mat-checkbox>                  
+            </section>
+          </div>
+        </div>                    
+      </div>
+      <div class="col-sm-4">
+        <h3>Fecha y hora SIN.</h3>
+        <p class="nombreSubtitulo">Este proceso tiene como objetivo sincronizar la fecha y hora del Sistema de Facturación del Contribuyente con los datos proporcionadas por el SIN</p>
+        <div class="row">
+          <div class="col-sm-12">
+            <section class="example-section">
+              <mat-checkbox [disabled]="true" [checked]="true">
+                <div class="nombreTitulo">Sincronización de fecha hora con IN.</div>
+                <div class="nombreSubtitulo">Solicitud de fecha y hora a Impuestos Nacionales.</div>
+              </mat-checkbox>                  
+            </section>
+          </div>
+        </div>                    
+      </div>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions align="center">
+    <div class="row">
+      <div class="col-sm-12">
+        <button mat-raised-button type="button" (click)="close()" color="warn">
+        Cancelar
+        </button>
+      </div>
+    </div>
+  </mat-dialog-actions>
+</form>
+</mat-card>

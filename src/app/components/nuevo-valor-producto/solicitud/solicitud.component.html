@@ -1,0 +1,38 @@
+
+<h1 mat-dialog-title>Solicitud Nuevo valor producto</h1>
+<div mat-dialog-content>
+        <form [formGroup]="service.form" class="normal-form" (submit)="onSave()">               
+                <input type="hidden" id="id" formControlName="id">
+                <div class="form-row" style="display: none;">
+                    <div class="form-group col-md-6">
+                            <label for="">Empresa</label>
+                            <select id="cuis" formControlName="cuis" class="form-control" placeholder="Empresa">
+                            <ng-container *ngFor="let empresa of empresas">
+                                    <option value="{{ empresa.cuis }}">{{ empresa.nombre }}</option>
+                            </ng-container>
+                            </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                            <label for="">Sucursal</label>
+                            <select id="codigoSucursal" formControlName="codigoSucursal" class="form-control" placeholder="Sucursal" >
+                                <option value="0">Casa matriz</option>
+                            <ng-container *ngFor="let sucursal of sucursales">
+                                <option value="{{ sucursal.codigoSucursal }}">{{ sucursal.descripcion }}</option>
+                            </ng-container>
+                            </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <label for="">Descripción</label>
+                    <textarea formControlName="descripcion" id="descripcion" class="form-control" cols="30" rows="4"></textarea>
+                </div>
+                <div class="button-row">
+                    <button mat-button type="submit" class="btn btn-success">{{action}}</button>
+                    <button mat-button type="button" (click)="onClose()" mat-flat-button color="warn" class="btn btn-danger">Cancelar</button>
+                </div>
+        </form>
+</div>
+<div mat-dialog-actions>
+  <!-- <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button cdkFocusInitial>Ok</button> -->
+</div>

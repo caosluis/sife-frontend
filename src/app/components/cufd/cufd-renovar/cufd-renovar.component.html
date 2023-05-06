@@ -1,0 +1,42 @@
+<mat-card-title>Renovar todos los cufd de Sucursales y Puntos de Venta</mat-card-title>
+<mat-card-subtitle>Solicitud de nuevos CUFD a SIAT.</mat-card-subtitle>
+<mat-divider></mat-divider>
+<mat-dialog-content>
+  <div class="row">
+    <div class="col-md-3" style="margin: auto;">
+      <div class="icon">
+        <mat-icon>warning</mat-icon>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="alert alert-danger mt-3 mb-0">
+        "¿Está seguro de realizar una nueva solicitud de CUFD a los servicios de Impuestos Nacionales?, ésta acción eliminara los CUFD actuales 
+        y solicitara nuevos cufd por Sucursales y Puntos de Venta"
+      </div>
+      <br>
+    </div>
+    <br>
+  </div>
+
+  <div *ngIf="transaccion == 'true'">
+    <div *ngIf="Respuesta" class="alert alert-success mt-3 mb-0">
+      {{ Respuesta }}
+    </div>
+  </div>
+  <div *ngIf="transaccion == 'false'">
+    <div *ngIf="Respuesta" class="alert alert-danger mt-3 mb-0">
+      {{ Respuesta }}
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-divider></mat-divider>
+<mat-dialog-actions align="center">
+  <button mat-raised-button color="primary" type="button" (click)="CargarCufdSincroniza()" mat-flat-button
+    [disabled]="loading">
+    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+    <span [hidden]="loading"> Renovar</span>
+  </button>
+  <button mat-raised-button color="warn" type="button" (click)="onNoClick()" mat-flat-button>
+    Cerrar
+  </button>
+</mat-dialog-actions>

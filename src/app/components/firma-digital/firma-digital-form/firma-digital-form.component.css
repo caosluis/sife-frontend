@@ -1,0 +1,18 @@
+.form{
+    padding-left: 1%;
+    padding-right: 1%;
+    width: 100%;
+}
+.formPlus{
+    padding-left: 1%;
+    padding-right: 1%;
+    width: 100%;
+}
+.formMin{
+    padding-left: 1%;
+    padding-right: 1%;
+    width: 25%;
+}
+.center-btn{
+    text-align: center;
+}

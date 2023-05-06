@@ -1,0 +1,746 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+html,
+body {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--neutralPrimary);
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+p {
+  text-align: justify;
+}
+.buscador{
+  padding: 0px 20px;
+}
+.mat-green{
+  color: #198754;
+}
+.mat-warning{
+  color: #ff9800;
+}
+.mat-input-element:disabled{
+  color: rgba(0, 0, 0, 0.71);
+}
+div.container {
+  margin: 0px 40px;
+}
+
+.fill-remaining-space {
+  /* This fills the remaining space, by using flexbox. 
+       Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}
+
+form.normal-form {
+  margin: 10px;
+}
+
+.controles-container {
+  width: 100%;
+  padding: 5%;
+}
+
+.controles-container > * {
+  width: 100%;
+}
+
+.add-bottom-padding {
+  padding-bottom: 1px;
+}
+/* radio group */
+mat-radio-group mat-radio-button {
+  margin-left: 5px;
+}
+
+.button-row button {
+  margin: 5px;
+}
+
+/* notification */
+snack-bar-container.success {
+  background-color: #5cb85c;
+  color: #fff;
+}
+
+snack-bar-container.warn {
+  background-color: #fa9441;
+  color: #fff;
+}
+snack-bar-container.dang {
+  background-color: #e43731;
+  color: #000;
+}
+
+snack-bar-container.notification simple-snack-bar {
+  font-size: 18px !important;
+  font-weight: bold;
+}
+
+.hide {
+  display: none;
+}
+
+/* mat-table */
+mat-footer-row mat-footer-cell {
+  justify-content: center;
+  font-style: italic;
+}
+
+/* filter controls */
+.search-div {
+  margin: 3px;
+}
+.search-form-field {
+  width: 60%;
+  margin-left: 10px;
+  padding: 5px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+}
+.search-form-field div.mat-form-field-underline {
+  display: none;
+}
+.search-form-field div.mat-form-field-infix {
+  border-top: 0px;
+}
+.search-form-field div.mat-form-field-wrapper {
+  padding-bottom: 0px;
+}
+.search-form-field div.mat-form-field-suffix button {
+  height: 32px;
+  width: 32px;
+}
+
+/* for dialog pop-up */
+.btn-dialog-close {
+  width: 45px;
+  min-width: 0px !important;
+  height: 40px;
+  padding: 0px !important;
+}
+button {
+  border-radius: 10px;
+  outline: none;
+}
+/* CSS scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.contenido .mat-card {
+  border-radius: 0px !important;
+}
+.mat-card {
+  box-shadow: none !important;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #9e9e9e;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #9e9e9e;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.firmavalida {
+  font-weight: 400;
+  color: #6264a7 !important;
+}
+/*Cuerpo de presnetacion de contenido CARDS*/
+.card_header_user_connection {
+  background-color: #fff !important;
+  padding: 10px 10px 10px 0px;
+  font-size: 12px;
+}
+.mat-card {
+  border-radius: 0px;
+}
+
+.mat-card-header .mat-card-title {
+  font-weight: 500 !important;
+  font-size: 18px !important;
+  margin-top: 10px;
+}
+mat-card-subtitle.mat-card-subtitle {
+  text-align: justify;
+}
+.mat-dialog-container .mat-card-subtitle{
+  margin-top: 5px !important;
+}
+
+.mat-card-header .mat-card-title a {
+  color: #000;
+}
+/*Ventanas modales o dialogos*/
+mat-dialog-container{
+  border-radius: 0px !important;
+}
+.mat-dialog-container h1 {
+  font-weight: 500;
+}
+
+.subtitulo-modal{    
+  display: flex;
+  padding: 5px 2px;
+  margin-bottom: 4px;
+}
+.subtitulo-modal-nombre{
+  color: #000000 !important;
+  font-weight: 500;
+  font-size: 17px;
+  margin-right: 5px;
+}
+.subtitulo-modal-descripcion{
+  font-size: 12px;
+  padding-top: 2px;
+  color: #8e8e8e;
+}
+
+/* Boton Primario*/
+.mat-raised-button.mat-primary {
+  background-color: #6264a7;
+  color: #FFF;
+}
+.menuboton {
+  margin-right: -2%;
+}
+.menuboton button{
+  background-color: #6264a7;
+  color: #FFF;
+  border-radius: 0px !important;
+  border: 1px solid #ccc;
+}
+
+.mat-raised-button {
+  box-shadow: 0 0.2rem 0.4rem -0.075rem rgb(0 0 0 / 25%) !important;
+  border-radius: .2rem !important;
+}
+.mat-chip {
+  font-weight: 400;
+}
+
+.mat-standard-chip {
+  min-height: 22px !important;
+}
+mat-card-header.mat-card-header {
+  border-left: 5px solid #ff4081;
+}
+/*******TABLAS*******/
+
+th.mat-sort-header.mat-header-cell,
+th.mat-header-cell.cdk-header-cell,
+mat-header-cell.mat-sort-header.mat-header-cell {
+  font-size: 12px;
+  color: #323130;
+  font-weight: 500;
+  padding-left: 2px !important;
+}
+mat-table.mat-table.cdk-table.mat-sort,
+table.mat-table.cdk-table.mat-sort,
+table.mat-table.cdk-table {
+  margin-left: 10px;
+}
+td.mat-cell.cdk-cell,
+td.mat-cell.cdk-cell.mat-button.mat-primary {
+  color: rgb(78 78 78);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.1em;
+  box-sizing: border-box;
+  word-break: break-word;
+}
+td.mat-cell.cdk-cell.mat-button-wrapper,
+span.mat-button-wrapper {
+  font-size: 13px !important;
+  font-weight: 400;
+}
+td.mat-cell {
+  padding: 0px 6px !important;
+}
+th.mat-header-cell {
+  text-align: left !important;
+}
+
+.mat-button.mat-primary {
+  font-size: 12;
+}
+
+.mat-chip.mat-standard-chip {
+  font-size: 12px;
+  padding: 0px 1px;
+}
+
+span.badge {
+  font-size: 12px !important;
+  font-weight: 400 !important;
+}
+table span.badge {  
+  width: 100%;
+}
+.mat-chip-list-wrapper input.mat-input-element,
+.mat-chip-list-wrapper .mat-standard-chip {
+  margin: 0px !important;
+}
+/**************/
+
+.mat-tooltip {
+  font-size: 12px;
+}
+
+/******FACTURA ********/
+.vistaF {
+  font-size: 12px;
+}
+.vistaF thead tr th{
+  font-weight: 500;
+}
+.vistaF thead tr,
+.vistaF tbody tr {
+  border-bottom: 0.5px solid #ccc;
+}
+.vistaF tbody tr td {
+  padding: 4px;
+  color: rgb(78 78 78);
+}
+.vistaF tbody tr td span.badge {
+  font-size: 14px !important;
+}
+.euiFlexGroup .euiFlexGroup--directionRow .kbnTopNavMenu {
+  display: none !important ;
+}
+/*FACTURA list*/
+.fatura-listado-numero{
+  display: flex;
+}
+.fatura-listado-numero img{
+  height: 30px;
+  margin-top: 3.5px;
+  margin-right: 5px;
+}
+
+.fatura-listado-estado{
+  display: flex;
+}
+
+
+/*FACTURA MODAL*/
+.factura-cuerpo{
+  background: #fcfcfc;
+}
+.col-cuerpoFactura{
+  background: #fff;
+  height: 500px !important;
+  padding: 0px 10px;
+}
+.col-estadoFactura{
+  /* position: fixed; */
+  background: #fff;
+  height: 60vh !important;
+  margin-left: -10px;
+  margin-right: -30px;
+  padding: 0px 10px;
+  width: 100%;
+}
+.estadoFactura {
+  height: 100%;
+  overflow-y: auto;
+  /* position: fixed; */
+  font-size: 12px;
+  width: 100%;
+  /* overflow-y: scroll; */
+  background: #fff;
+}
+.estadoFactura h3{
+  margin: auto;
+  color: black;
+  padding: 5px 10px; 
+  background: #f0f0f0;
+}
+.estadoFactura .titulos{
+  text-align: left;
+  padding: 5px 5px 5px 10px;
+  background: #fff;
+}
+.estadoFactura .titulos .titulos-2{
+  padding: 1px 0px;
+    border-bottom: 1px solid #eee;
+}
+.estadoFactura .campoTitulo {
+  font-weight: 500;
+  color: black;
+}
+.estadoFactura .campoValor{
+  margin-left: 10px;
+  font-size: 12px;
+  line-height: 0;
+}
+.estadoFactura .mat-expansion-panel-header {
+  padding: 0 10px;
+}
+.estadoFactura .mat-expansion-panel-body {
+  padding: 0 24px 5px;
+}
+.estadoFactura .mat-expansion-panel-spacing {
+  margin: 4px 0;
+}
+.normal-form .mat-card {
+ background: rgba(255, 255, 255, 0); 
+}
+.normal-form .mat-tab-header{
+  background: #FFF;
+}
+
+.estadoFactura mat-panel-title {
+    font-size: 12px !important;
+}
+.estadoFactura mat-panel-description{
+  font-size: 12px !important;
+  position: absolute;
+  right: 0;
+  width: 60px;
+  text-align: right;
+  top: 0;
+  color: #5f5f5f;
+}
+.estadoFactura .numero-estado{
+  background: #f0f0f0;
+  color: #000;
+  height: 24px;
+  width: 25px;  
+  text-align: center;
+  position: relative;
+  font-size: 12px;
+  margin-right: 12px;
+  line-height: 24px;
+}
+.estadoFactura p{
+  font-size: 12px !important;
+}
+.contenidoFactura {
+  border: 1px solid #686868;
+  margin-left: -10px;
+  margin-right: -10px;
+  margin-top: -10px;
+  background: #454545;
+  padding: 10px;
+}
+.contenidoFactura .mat-dialog-content {
+  background: #f5f5f5;
+}
+
+.contenidoFactura .mat-tab-group {
+  background: #fff;
+}
+.contenidoFactura mat-tab-body {
+  padding: 0px 15px;
+}
+.example-headers-align .mat-expansion-panel-header-title,
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.example-headers-align .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+
+
+span.badge.rounded-pill.bg-light {
+  background-color: #e0e0e0 !important;
+}
+
+/* HOME  table*/
+
+.Indicador-envio th{
+  font-size: 11px;
+}
+.Indicador-envio tr{
+      height: 35px !important;
+
+}
+.Indicador-envi tr.mat-row, tr.mat-footer-row {
+      height: 35px !important;
+}
+.Indicador-envio td{
+  font-size: 11px;
+  text-align: center;
+  border: 1px solid #eee;
+}
+.Indicador-envio td .badge{
+  border-radius: 50%;
+  height: 30px;
+  padding: 9px 5px;
+  width: 30px;
+}
+
+.logo{
+  padding: 10px;
+  text-align: center;
+  border-radius: 50%;    
+  background: #f7f8ff !important;
+  font-weight: 500;
+  color: #7072bf !important;
+}
+
+.badge .bg-success{
+  color: #6bb700;
+    /*color: #7072bf*/;
+  font-weight: 500 !important;
+  background: #7072bf !important;
+}
+
+.badge .bg-danger {
+  background: #fff5f8 !important;
+    color: #8c435b !important;
+}
+.check{
+  border: 2px solid #fff;
+  background-color: #6bb700;
+  color: #FFF;
+  border-radius: 50%;
+  font-size: 9px;
+  font-weight: 700;
+  text-align: center;
+  position: absolute;
+  padding: 2px 2px;
+  margin-left: -10px;
+  height: 17px !important;
+  width: 17px !important;
+  margin-top: 12px;
+}
+.mat-dialog-container button.mat-focus-indicator.mat-flat-button.mat-raised-button.mat-button-base.mat-primary,
+.mat-dialog-container .mat-raised-button.mat-primary {
+  border-radius: 0px !important;
+  width: 200px;
+}
+.mat-dialog-container button.mat-focus-indicator.mat-flat-button.mat-raised-button.mat-button-base.mat-warn,
+.mat-dialog-container button.mat-focus-indicator.mat-raised-button.mat-button-base.mat-warn {
+  border-radius: 0px !important;
+  background: #fff;
+  color: #000;
+  width: 200px;
+}
+
+.alerta{
+  padding: 10px 0px 24px 0px;
+  box-shadow: 0 0.16rem 0.36rem 0 rgb(0 0 0 / 13%), 0 0.03rem 0.09rem 0 rgb(0 0 0 / 11%);
+}
+.alerta .mat-line .mat-list-icon{
+  color: hsl(231deg 48% 48%) !important;
+  font-size: 28px !important;
+}
+.alerta .mat-line .mat-list-item-subttitulo {
+  padding-bottom: 5px !important;
+}
+mat-list-item{
+  height: 25px !important;
+}
+.mat-list-icon {
+  color: rgba(25, 8, 119, 0.54);
+}
+.mat-list-item-titulo{
+  font-size: 12px !important;
+  color: rgba(0, 0, 0, 0.54);
+}
+.mat-list-item-subttitulo{
+  font-size: 14px;
+}
+
+b, strong {
+  font-weight: 500 !important;
+  color: #333;
+}
+
+/*PANEL DESPLEGABLE*/
+mat-accordion mat-expansion-panel.mat-expansion-panel.ng-star-inserted.mat-expanded.mat-expansion-panel-spacing {
+  box-shadow: none;
+  border-radius: 0px;
+  border: solid .3px #ddd;
+}
+
+mat-accordion mat-expansion-panel .mat-expansion-panel:not([class*=mat-elevation-z]),
+mat-expansion-panel.mat-expansion-panel.ng-star-inserted{
+  box-shadow: none !important;
+  border-radius: 0px;
+  border: solid .3px #ddd;
+}
+
+/*Notificacion personalizaciones*/
+.success-snackbar{
+  background-color: #6bb700 !important;
+  color: #fff;
+  border-radius: 0px !important;
+}
+.warn-snackbar{
+  background-color: #ffb01d !important;
+  color: #fff;
+  border-radius: 0px !important;
+}
+.error-snackbar {
+  background-color: #f44336 !important;
+  color: #fff;
+  border-radius: 0px !important;
+}
+.notification simple-snack-bar{
+  font-weight: 400 !important;
+}
+/*SIDEBAR FILTRO FORMULARIO*/
+.sidebar-filtro{
+  background: #f8f8f8!important;
+  position: fixed;
+  box-sizing: border-box;
+  outline: 0;
+  top: 0;
+  bottom: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding: 10px 10px;
+  width: 250px;
+}
+.sidebar-filtro .buscador{
+  padding: 0px 0px;
+}
+
+.sidebar-filtro h1,
+.sidebar-filtro h2{
+  float: left;
+}
+.sidebar-filtro mat-form-field{
+  width: 100%;
+}
+.sidebar-filtro button{
+  top: -3px;
+  left: 45%;
+}
+.sidebar-filtro-btn{
+  border-radius: 0px;
+}
+.sidebar-filtro input{
+  background-color: #fff;
+}
+.mat-drawer:not(.mat-drawer-side){
+  box-shadow: none;
+  border-left: solid 1px rgb(225 223 221);
+  position: fixed;
+  margin-top: 90px;
+}
+mat-drawer.mat-drawer-side {
+  position: fixed;
+  margin-top: 90px;
+}
+
+/*MENU DE ACCIONES DEL FORMULARIO*/
+.container-menu{
+  font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  font-weight: 400;
+  display: flex;
+  background-color: rgb(255, 255, 255);
+  padding: 0px 14px 0px 24px;
+  height: 35px;
+  border-bottom: solid 1px #e5e5e5;
+}
+.container-menu-iz{
+  position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-grow: 1;
+    align-items: stretch;
+}
+.container-menu-de{
+  position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+    align-items: stretch;
+}
+.container-menu-item {
+  display: flex;
+  height: 100%;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 2px;
+}
+.container-menu-item mat-list mat-icon{
+  font-size: 20px !important;
+  line-height: 24px;
+  text-align: right;
+}
+.container-menu-item button {
+  display: flex;
+  height: 28px;
+  line-height: 28px;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-radius: 2px;
+  box-shadow: none !important;
+  border-radius: 2px !important;
+  /*background-color: rgb(0, 78, 140);*/
+}
+.container-menu-item button mat-icon{
+  line-height: 22px;
+  font-size: 18px;
+  margin: 0px 4px;
+  height: 16px;
+  line-height: 15px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.container-menu-item button .mat-button-base mat-icon{
+  color: #6264a7;
+}
+
+.mat-drawer-container{
+  background: #fff;
+}
+
+
+/*DIVIDIR CPN HR*/
+hr {
+  height: 0.5px !important;
+}

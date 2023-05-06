@@ -1,0 +1,16 @@
+.docs-navbar-header[_ngcontent-epp-c1] {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 8px 16px;
+}
+app-navbar .docs-navbar, app-navbar .docs-navbar-header {
+    background: #3f51b5;
+}
+nav {
+    display: block;
+}
+app-navbar {
+    position: fixed;
+    color: #fff;
+}

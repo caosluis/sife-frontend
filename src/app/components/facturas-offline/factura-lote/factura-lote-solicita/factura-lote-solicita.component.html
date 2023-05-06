@@ -1,0 +1,181 @@
+  <!-- MENU DE ACCIONES DEL MODULO -->
+  <div class="container-menu">
+    <div class="container-menu-iz">
+      <div class="container-menu-item ">
+        <mat-list>
+          <mat-list-item >
+            <mat-icon mat-list-icon>event</mat-icon>
+            <div mat-line class="mat-list-item-titulo">Fecha de ultima solicitud de Lotes.</div>
+            <div mat-line class="mat-list-item-subttitulo"> {{ fechaSincronizacion | date: "EEEE d MMMM y HH:mm:ss":"UTC"  }} </div>
+          </mat-list-item>
+        <!--mat-divider></mat-divider-->
+        </mat-list>
+      </div>
+    </div>
+    <div class="container-menu-de">
+      <div class="container-menu-item ">
+        <button
+              mat-raised-button
+              [disabled]="loading"
+              color="primary"
+              (click)="getProceso()"
+            >
+              <span
+                *ngIf="loading"
+                class="spinner-border spinner-border-sm mr-1"
+              ></span
+              ><mat-icon>sync</mat-icon> Recargar la vista
+        </button>
+      </div>
+      <div class="container-menu-item ">
+        <button
+              mat-raised-button
+              color="primary"
+              (click)="solicitaProceso()"
+              >
+              <mat-icon>swap_vert</mat-icon> Solicitar Lote y envio
+        </button>
+      </div>
+    </div>
+  </div>
+<mat-card class="background_user_connection">
+      <div class="row">
+        <div class="col-sm-12">
+          <mat-card-header>
+            <mat-card-title>Solicitud de envio de Lotes</mat-card-title>
+            <mat-card-subtitle>Proceso que asigna eventos singificativos, empaqueta facturas, envia a SIN y valida su existencia.</mat-card-subtitle>
+          </mat-card-header>
+        </div>
+      </div>
+
+      <mat-card-content>  
+        <div class="cuerpo">
+          <h2>Proceso automático</h2>
+          <mat-card-subtitle>
+            Detener el proceso automático de empaquetamiento de facturas en fuera de linea?
+            <ng-container *ngIf="estado == '1'; then Activo; else Inactivo"></ng-container>
+            <ng-template #Activo>
+              <button mat-menu-item (click)="detenerProcesoLote(0)">
+                <mat-icon color="primary" style="color: #6bb700; font-size: 30px;">toggle_off</mat-icon
+                ><span>Activo el proceso automático</span>
+              </button>
+            </ng-template>
+            <ng-template #Inactivo>
+              <button mat-menu-item (click)="detenerProcesoLote(1)">
+                <mat-icon color="default" style="font-size: 30px;">toggle_on</mat-icon
+                ><span>Inactivo el proceso automático</span>
+              </button>
+            </ng-template>
+          </mat-card-subtitle>
+        </div> 
+        <div class="cuerpo">
+            <h2>Emisión y envío de Paquetes por Fuera de Linea</h2>
+            <mat-card-subtitle>Cuando el Sistema Informático de Facturación autorizado tenga un 
+              evento de contingencia que obligue a la emisión de facturas fuera de 
+              línea (offline), almacenará las mismas en paquetes de máximo 500 Facturas. 
+              Posterior a la recuperación del evento de contingencia, el Sistema Informático 
+              deberá registrar el mismo a través del Servicio Web habilitado para el efecto y 
+              proceder al envío de los paquetes consumiendo para ello los servicios correspondientes.</mat-card-subtitle>
+              <br>
+              <div *ngIf="isLoading"><mat-progress-bar mode="indeterminate"></mat-progress-bar></div>
+            <div class="row">
+                <div class="col-sm-3">
+                  <ng-container *ngIf="Respuesta.eventoSignificativo == 1; then activoes; else inactivoes"></ng-container>          
+                  <ng-template #activoes>       
+                    <div class="d-flex position-relative" style="background-color: #ddffef;">
+                      <img src="../../../../../assets/png/asignaevento.png" style="height: 120px; padding: 10px;" alt="">
+                      <div>
+                        <h3 class="mt-0">Asignar evento significativo</h3>
+                        <mat-card-subtitle>Registra el ES y asigna el codigo a las facturas, dentro de las fechas establecidas.</mat-card-subtitle>
+                      </div>                        
+                    </div>
+                  </ng-template>
+                  <ng-template #inactivoes>       
+                    <div class="d-flex position-relative">
+                      <img src="../../../../../assets/png/asignaevento.png" style="height: 120px; padding: 10px;" alt="">
+                      <div>
+                        <h3 class="mt-0">Asignar evento significativo</h3>
+                        <mat-card-subtitle>Registra el ES y asigna el codigo a las facturas, dentro de las fechas establecidas.</mat-card-subtitle>
+                      </div>                        
+                    </div>
+                  </ng-template>
+                    
+                </div>
+                <div class="col-sm-3">
+                  <ng-container *ngIf="Respuesta.empaquetado == 1; then activoemp; else inactivoemp"></ng-container>          
+                  <ng-template #activoemp>
+                    <div class="d-flex position-relative" style="background-color: #ddffef;">
+                        <img src="../../../../../assets/png/paquete.png" style="height: 120px; padding: 10px;" alt="">
+                        <div>
+                        <h3 class="mt-0">Empaquetado (Lotes)</h3>
+                        <mat-card-subtitle>Genera paquetes (Lotes) de acuerdo a los ES de hasta 500 facturas.</mat-card-subtitle>
+                        </div>
+                    </div>
+                  </ng-template>
+                  <ng-template #inactivoemp>
+                    <div class="d-flex position-relative">
+                        <img src="../../../../../assets/png/paquete.png" style="height: 120px; padding: 10px;" alt="">
+                        <div>
+                        <h3 class="mt-0">Empaquetado (Lotes)</h3>
+                        <mat-card-subtitle>Genera paquetes (Lotes) de acuerdo a los ES de hasta 500 facturas.</mat-card-subtitle>
+                        </div>
+                    </div>
+                  </ng-template>
+                </div>
+                <div class="col-sm-3">
+                  <ng-container *ngIf="Respuesta.envio == 1; then activoenv; else inactivoenv"></ng-container>          
+                  <ng-template #activoenv>
+                    <div class="d-flex position-relative" style="background-color: #ddffef;">
+                        <img src="../../../../../assets/png/nube.png" style="height: 120px; padding: 10px;" alt="">
+                        <div>
+                        <h3 class="mt-0">Envio a SIN</h3>
+                        <mat-card-subtitle>Envio de paquetes de facturas de hasta 500 facturas.</mat-card-subtitle>
+                        </div>
+                    </div>
+                  </ng-template>
+                  <ng-template #inactivoenv>
+                    <div class="d-flex position-relative">
+                        <img src="../../../../../assets/png/nube.png" style="height: 120px; padding: 10px;" alt="">
+                        <div>
+                        <h3 class="mt-0">Envio a SIN</h3>
+                        <mat-card-subtitle>Envio de paquetes de facturas de hasta 500 facturas.</mat-card-subtitle>
+                        </div>
+                    </div>
+                  </ng-template>
+                </div>
+                <div class="col-sm-3">
+                  <ng-container *ngIf="Respuesta.validacion == 1; then activoval; else inactivoval"></ng-container>          
+                  <ng-template #activoval>
+                    <div class="d-flex position-relative" style="background-color: #ddffef;">
+                        <img src="../../../../../assets/png/validacion.png" style="height: 120px; padding: 10px;" alt="">
+                        <div>
+                        <h3 class="mt-0">Validacion de paquete</h3>
+                        <mat-card-subtitle>Valida todos los paquetes y facturas contra Impuestos Nacionales.</mat-card-subtitle>
+                        </div>
+                    </div>
+                  </ng-template>
+                  <ng-template #inactivoval>
+                    <div class="d-flex position-relative">
+                        <img src="../../../../../assets/png/validacion.png" style="height: 120px; padding: 10px;" alt="">
+                        <div>
+                        <h3 class="mt-0">Validacion de paquete</h3>
+                        <mat-card-subtitle>Valida todos los paquetes y facturas contra Impuestos Nacionales.</mat-card-subtitle>
+                        </div>
+                    </div>
+                  </ng-template>
+              </div>
+            </div>
+        </div> 
+      </mat-card-content>  
+    <div *ngIf="transaccion == 'true'">
+        <div *ngIf="Respuesta" class="alert alert-success mt-3 mb-0">
+          {{ Respuesta.descripcion }} 
+        </div>
+      </div>
+      <div *ngIf="transaccion == 'false'">
+        <div *ngIf="Respuesta" class="alert alert-danger mt-3 mb-0">
+          {{ Respuesta.descripcion }}
+        </div>
+      </div>
+  </mat-card>
+  

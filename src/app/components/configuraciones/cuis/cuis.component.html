@@ -1,0 +1,59 @@
+<!-- AGREGANDO SIDEBAR FILTRO Y CONTENIDO EN UNO SOLO -->
+<mat-drawer-container class="example-container" autosize hasBackdrop="false">
+    <!-- MENU DE ACCIONES DEL MODULO -->
+  <div class="container-menu">
+    <div class="container-menu-iz">
+    </div>
+    <div class="container-menu-de">
+      <div class="container-menu-item ">
+        <button type="button" class="sidebar-filtro-btn" mat-button (click)="drawer.toggle()">
+          <mat-icon>filter_list</mat-icon> Filtro
+        </button>
+      </div>
+    </div>
+  </div>
+    <!-- SIDEBAR DE FILTRO -->
+    <mat-drawer #drawer class="example-sidenav sidebar-filtro" mode="side"  position="end" >
+      <div class="row">
+        <div class="col-sm-6">
+            <h2>Filtros</h2>
+        </div>
+        <div class="col-sm-6">        
+            <button type="button" class="sidebar-filtro-btn" mat-button (click)="drawer.toggle()">
+              <mat-icon>close</mat-icon>
+            </button>
+        </div>
+    </div>
+  
+    </mat-drawer>
+  
+    <!-- CONTENIDO DEL SIDEBAR FILTRO PARA EL MODULO -->
+    <div class="example-sidenav-content" >  
+  
+    <mat-card class="background_user_connection">
+      <div class="row">
+        <div class="col-sm-12">
+          <mat-card-header>
+            <mat-card-title>Código Unico de Inicio de Sistema</mat-card-title>
+            <mat-card-subtitle>
+                Conforme a normativa vigente el proceso de obtención del <b>CUIS</b> para una sucursal o punto de venta debe realizarse mediante el Sistema Informático de Facturación autorizado, a través del Servicio Web disponible. <br>
+              <b>Nota:</b> Los CUIS tienen vigencia de 1 año.
+            </mat-card-subtitle>
+          </mat-card-header>
+        </div>
+      </div>
+      <mat-card-content>
+        <div class="row">
+          <div class="col-md-6">
+  
+          </div>
+          <div class="col-md-2 offset-md-4" style="text-align: right;">
+                        
+          </div> 
+        </div>
+
+      </mat-card-content>
+    </mat-card>
+  
+  </div>
+  </mat-drawer-container>

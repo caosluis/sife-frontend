@@ -1,0 +1,59 @@
+<mat-dialog-content>
+  <mat-card-title>Solicitud de fecha</mat-card-title>
+  <mat-card-subtitle>La sincronización se ejecuta cada 60min, 
+    ¿Desea sincronizar la fecha manualmente?</mat-card-subtitle>
+  <div class="row">
+    <div class="col-md-6">
+      <mat-form-field class="form">
+        <mat-select placeholder="Sucursal" #sucursal (selectionChange)="SeleccionarSucursal($event)" [value]="''">
+          <mat-option [value]="''"> Seleccionar </mat-option>
+          <mat-option *ngFor="let element of sucursalList" [value]="element.codigoSucursal" > <span class="badge rounded-pill bg-light">{{ element.codigoSucursal }}</span> {{ element.descripcion }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-md-6">
+      <mat-form-field class="form">
+        <mat-select
+          placeholder="PDV"
+          (selectionChange)="SeleccionarPDV($event)"
+          #pdv
+          [disabled]="sucursal.value === ''"
+          [value]="''">
+          <mat-option [value]="''"> Seleccionar </mat-option>
+          <mat-option [value]="0"> PDV 0 </mat-option>
+          <mat-option *ngFor="let element of pdvList" [value]="element.codigoPDV"> <span class="badge rounded-pill bg-light">{{ element.codigoPDV }}</span> {{ element.nombrePuntoVenta }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <br>
+  <mat-card-subtitle>Su respuesta se mostrara aqui. </mat-card-subtitle>
+  <div *ngIf="transaccion == 'true'">
+    <div *ngIf="respuesta" class="alert alert-success mt-3 mb-0">
+      {{ respuesta.descripcion }}
+    </div>
+  </div>
+  <div *ngIf="transaccion == 'false'">
+    <div *ngIf="respuesta" class="alert alert-danger mt-3 mb-0">
+      {{ respuesta.descripcion }}
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-divider></mat-divider>
+<mat-dialog-actions align="center">
+  <button
+    [disabled]="loading"
+    mat-raised-button
+    color="primary"
+    (click)="SolicitarFecha()">
+    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>Consultar
+  </button>
+  <button
+    mat-raised-button
+    color="warn"
+    type="button"
+    (click)="onNoClick()"
+    mat-flat-button>
+    Cerrar
+  </button>
+</mat-dialog-actions>

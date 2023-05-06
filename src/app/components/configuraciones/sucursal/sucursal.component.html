@@ -1,0 +1,305 @@
+<!-- AGREGANDO SIDEBAR FILTRO Y CONTENIDO EN UNO SOLO -->
+<mat-drawer-container class="example-container" autosize hasBackdrop="false">
+  <!-- MENU DE ACCIONES DEL MODULO -->
+  <div class="container-menu">
+    <div class="container-menu-iz">
+      <div class="container-menu-item ">
+        <button mat-icon-button #tooltip="matTooltip"
+            matTooltip="Que es una sucursal?"
+            matTooltipPosition="top"
+            type="button" class="sidebar-filtro-btn" mat-button (click)="informacion()">
+          <mat-icon
+            mat-raised-button #tooltip="matTooltip"
+            matTooltip="Información de sobre Sucursal"
+            matTooltipPosition="left"
+          >info</mat-icon>
+        </button>
+      </div>
+      <div class="container-menu-item ">
+        <button mat-icon-button #tooltip="matTooltip"
+            matTooltip="Imagen"
+            matTooltipPosition="top"
+            type="button" class="sidebar-filtro-btn" mat-button (click)="informacionEmpresaSucursalPdv()">
+        </button>
+      </div>
+    </div>
+    <div class="container-menu-de">
+      <div class="container-menu-item ">
+        <button mat-raised-button color="primary" (click)="openDialog('Vacio')">
+          <mat-icon>add</mat-icon>Nuevo
+        </button>
+      </div>
+      <div class="container-menu-item ">
+        <button class="controles" mat-raised-button color="primary" (click)="SolicitarCuisMasivo()">
+          <mat-icon>sync</mat-icon>  Solicitar Cuis Masivo
+        </button>
+      </div>
+      <div class="container-menu-item ">
+        <button type="button" class="sidebar-filtro-btn" mat-button (click)="drawer.toggle()">
+          <mat-icon>filter_list</mat-icon> Filtro
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- SIDEBAR DE FILTRO -->
+  <mat-drawer #drawer class="example-sidenav sidebar-filtro" mode="side"  position="end" opened>
+    <div class="row">
+      <div class="col-sm-6">
+          <h2>Filtros</h2>
+      </div>
+      <div class="col-sm-6">        
+          <button type="button" class="sidebar-filtro-btn" mat-button (click)="drawer.toggle()">
+            <mat-icon>close</mat-icon>
+          </button>
+      </div>
+    </div>
+    <mat-form-field appearance="standard" class="buscador">
+      <mat-label>Buscar</mat-label>
+      <input
+        matInput
+        placeholder="Buscar"
+        autocomplete="off"
+        (keyup)="applyFilter($event.target.value)"
+      />
+    </mat-form-field>
+  </mat-drawer>
+
+  <!-- CONTENIDO DEL SIDEBAR FILTRO PARA EL MODULO -->
+  <div class="example-sidenav-content" >  
+
+    <mat-card class="background_user_connection">
+      <div class="row">
+        <div class="col-sm-12">
+          <mat-card-header>
+            <mat-card-title>Registro de Sucursales</mat-card-title>
+            <mat-card-subtitle
+              >Conforme a normativa vigente el proceso de obtención del CUIS para una
+              sucursal o punto de venta debe realizarse mediante el Sistema Informático
+              de Facturación autorizado. 
+              <br>              
+            </mat-card-subtitle>
+          </mat-card-header>
+        </div>
+      </div>
+      <mat-card-content>               
+        <table
+          mat-table
+          [dataSource]="sucursalService.dataSource"
+          matSort
+          width="100%"
+          matTableResponsive>
+          <!--Column -->
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>id</th>
+            <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+          </ng-container>
+
+          <!--Column -->
+          <ng-container matColumnDef="empresa">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Empresa</th>
+            <td mat-cell *matCellDef="let element">
+              {{ EmpresaSucursal(element.nit) }}
+            </td>
+          </ng-container>
+
+          <!--Column -->
+          <ng-container matColumnDef="codigoSucursal">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              Código Sucursal
+            </th>
+            <td mat-cell *matCellDef="let element" >
+              <!-- <button mat-button matStepperNext color="primary"
+                            (click)="filterPDV(element.codigoSucursal)">{{element.codigoSucursal}}</button> -->          
+              <ng-container *ngIf="element.estado == 'Cuis Activo'; then ActivoE; else InactivoE"></ng-container>
+              
+              <ng-template #ActivoE>       
+                <span class="badge bg-success">{{ element.codigoSucursal }}</span>
+              </ng-template>
+              <ng-template #InactivoE>
+                <span class="badge bg-danger">{{ element.codigoSucursal }}</span>
+              </ng-template>
+            </td>
+          </ng-container>
+
+          <!--Column -->
+          <ng-container matColumnDef="direccion">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Dirección</th>
+            <td mat-cell *matCellDef="let element" >
+              {{ element.direccion }}
+            </td>
+          </ng-container>
+
+          <!--Column -->
+          <ng-container matColumnDef="departamento">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Departamento</th>
+            <td mat-cell *matCellDef="let element" >
+              {{ DepartamentoSucursal(element.departamento) }}
+            </td>
+          </ng-container>
+
+          <!--Column -->
+          <ng-container matColumnDef="muncipio">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Muncipio</th>
+            <td mat-cell *matCellDef="let element" >
+              {{ element.muncipio }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="descripcionTransaccion">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              Descripcion Transacción
+            </th>
+            <td mat-cell *matCellDef="let element" >
+              {{ element.descripcionTransaccion }}
+
+              <!--ng-container *ngIf="(element.vigencia | date:'yyyy-MM-dd') > (FechaVencimiento | date:'yyyy-MM-dd'); then vencido else novencido">
+                        </ng-container>
+
+                        <ng-template #vencido>
+                            <mat-chip-list>
+                                <mat-chip color="primary" selected>
+                                    {{element.vigencia | date:'yyyy-MM-dd'}}
+                                </mat-chip>
+                            </mat-chip-list>
+                            
+                        </ng-template>
+
+                            
+                        <ng-template #novencido>
+                            <mat-chip-list>
+                                <mat-chip color="warn" selected>
+                                    {{element.vigencia | date:'yyyy-MM-dd'}}
+                                </mat-chip>
+                            </mat-chip-list>
+                        </ng-template-->
+            </td>
+          </ng-container>
+
+          <!--Column -->
+          <ng-container matColumnDef="cuis">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>CUIS</th>
+            <td mat-cell *matCellDef="let element" >
+              <!--{{ CuisSucursal(element.codigoSucursal, element.nit) }}-->
+              {{ element.cuis }}
+            </td>
+          </ng-container>
+
+          <!--Column -->
+          <ng-container matColumnDef="vigenciaCuis">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Vigencia CUIS</th>
+            <td mat-cell *matCellDef="let element" >
+              <ng-container
+                *ngIf="
+                  (VigenciaCuisSucursal(element.codigoSucursal, element.nit)
+                    | date: 'yyyy-MM-dd') > (FechaVencimiento | date: 'yyyy-MM-dd');
+                  then vencido;
+                  else novencido
+                "
+              >
+              </ng-container>
+              <ng-template #vencido>
+                <span class="badge bg-success">
+                  {{
+                    VigenciaCuisSucursal(element.codigoSucursal, element.nit)
+                      | date: "EEEE d MMMM y HH:mm:ss ":"UTC"
+                  }}
+                </span>
+              </ng-template>
+              <ng-template #novencido>
+                <span class="badge bg-danger">
+                  {{
+                    VigenciaCuisSucursal(element.codigoSucursal, element.nit)
+                      | date: "EEEE d MMMM y HH:mm:ss ":"UTC"
+                  }}
+                </span>
+              </ng-template>
+            </td>
+          </ng-container>
+
+          <!--Column -->
+          <ng-container matColumnDef="estado">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Estado</th>
+            <td mat-cell *matCellDef="let element" >
+              <ng-container *ngIf="element.estado == 'Cuis Activo'; then Activo; else Inactivo"></ng-container>
+              
+              <ng-template #Activo>       
+                <span class="badge bg-success" style="color: #6bb700; font-weight: 500;">{{ element.estado }}</span>
+              </ng-template>
+              <ng-template #Inactivo>
+                <span class="badge bg-danger">{{ element.estado }}</span>
+              </ng-template>
+            </td>
+          </ng-container>
+
+          <!--Column -->
+          <ng-container matColumnDef="descripcion">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Descripcion</th>
+            <td mat-cell *matCellDef="let element" >
+              {{ element.descripcion }}
+            </td>
+          </ng-container>
+
+          <!--Column -->
+          <ng-container matColumnDef="CUFD">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>CUFD</th>
+            <td mat-cell *matCellDef="let element">
+              <ng-container
+                *ngIf="
+                  CufdSucursal(element.nit, element.codigoSucursal, 0) == 'CUFD';
+                  then sicufd
+                "
+              >
+              </ng-container>
+              <ng-template #sicufd>
+                <mat-icon class="green-icon" matTooltip="Cuenta con CUFD">check</mat-icon>
+              </ng-template>
+            </td>
+          </ng-container>
+
+          <!-- Progress Column -->
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+            <td mat-cell *matCellDef="let element">
+              <button mat-icon-button [matMenuTriggerFor]="Notificaciones">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #Notificaciones="matMenu">
+                <button mat-menu-item (click)="openDialog(element)">
+                  <mat-icon>launch</mat-icon><span>Ver Detalle</span>
+                </button>
+                <button
+                  mat-menu-item
+                  *ngIf="element.estado != 'Cuis Activo'"
+                  (click)="ActivarDesactivarSucursal(element)"
+                >
+                  <span>
+                    {{ element.estado == "Activo" ? "Desactivar" : "Activar" }}
+                  </span>
+                </button>
+                <button
+                  matTooltip="Cierre de CUIS de la sucursal en Impuestos Nacionales"
+                  matTooltipPosition="left"
+                  mat-menu-item
+                  (click)="CerrarOperacionesSucursal(element)"
+                  *ngIf="element.estado != 'Cuis Cerrado'"
+                >
+                <mat-icon>block</mat-icon><span>Cerrar CUIS</span>
+                </button>
+                <button mat-menu-item (click)="solicitudCuis(element)">
+                  <mat-icon>cloud_sync</mat-icon><span>Solicitar CUIS</span>
+                </button>
+                <button mat-menu-item (click)="solicitudCufd(element)">
+                  <mat-icon>cloud_sync</mat-icon><span>Solicitar CUFD</span>
+                </button>
+              </mat-menu>
+            </td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let element; columns: displayedColumns"></tr>
+        </table>
+        <mat-paginator [pageSizeOptions]="[20, 40, 60, 100]"></mat-paginator>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+</mat-drawer-container>

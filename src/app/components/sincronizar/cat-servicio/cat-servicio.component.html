@@ -1,0 +1,175 @@
+<h4 mat-dialog-title>
+  <mat-toolbar role="toolbar" class="task-header">
+    <span> {{ servicio }}</span>
+    <span class="fx-spacer"></span>
+    <button mat-icon-button (click)="onClose()">
+      <mat-icon mat-list-icon>close</mat-icon>
+    </button>
+  </mat-toolbar>
+</h4>
+<mat-dialog-content>
+  <div class="search-div">
+    <mat-form-field class="search-form-field" floatLabel="never">
+      <input
+        matInput
+        placeholder="Buscar"
+        autocomplete="off"
+        (keyup)="applyFilter($event.target.value)"
+      />
+    </mat-form-field>
+  </div>
+
+  <table mat-table [dataSource]="dataSource" matSort>
+    <!-- ID Column -->
+    <ng-container matColumnDef="CodigoClasificador">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        Codigo Clasificador
+      </th>
+      <td mat-cell *matCellDef="let row">{{ row.codigoClasificador }}</td>
+    </ng-container>
+
+    <!-- Progress Column -->
+    <ng-container matColumnDef="Descripcion">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Descripcion</th>
+      <td mat-cell *matCellDef="let row">{{ row.descripcion }}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="Fecha">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Fecha</th>
+      <td mat-cell *matCellDef="let row">
+        {{ row.fecha | date: "dd/MM/yyyy HH:mm:ss" }}
+      </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="codigoActividad">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        Código Actividad Económica
+      </th>
+      <td mat-cell *matCellDef="let row" width="35%">
+        {{ row.codigoActividad }}
+      </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="descripcionActividad">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        Descripción Actividad Económica
+      </th>
+      <td mat-cell *matCellDef="let row" width="35%">
+        {{ ActividadEconomicaCatalogo(row.codigoActividad) }}
+      </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="descripcionLeyenda">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        Descripción Leyenda
+      </th>
+      <td mat-cell *matCellDef="let row" width="35%">
+        {{ row.descripcionLeyenda }}
+      </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="codigoDocumentoSector">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        Código Documento Sector
+      </th>
+      <td mat-cell *matCellDef="let row" width="35%">
+        {{ row.codigoDocumentoSector }}
+      </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="tipoDocumentoSector">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        Tipo Documento Sector
+      </th>
+      <td mat-cell *matCellDef="let row" width="35%">
+        {{ row.tipoDocumentoSector }}
+      </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="codigoProducto">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        Código Catálogo SIN
+      </th>
+      <td mat-cell *matCellDef="let row">{{ row.codigoProducto }}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="nandina">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>nandina</th>
+      <td mat-cell *matCellDef="let row">{{ row.nandina }}</td>
+    </ng-container>
+    <!-- Name Column -->
+    <ng-container matColumnDef="codigoCaeb">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Código Caeb</th>
+      <td mat-cell *matCellDef="let row">{{ row.codigoCaeb }}</td>
+    </ng-container>
+    <!-- Name Column -->
+    <ng-container matColumnDef="descripcionProducto">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        Descripción Producto
+      </th>
+      <td mat-cell *matCellDef="let row" width="35%">
+        {{ row.descripcionProducto }}
+      </td>
+    </ng-container>
+    <!-- Name Column -->
+    <ng-container matColumnDef="habilitado">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>habilitado</th>
+      <td mat-cell *matCellDef="let row">{{ row.habilitado }}</td>
+    </ng-container>
+    <!-- selector para homologacion en SAP -->
+    <ng-container matColumnDef="homologasap">
+      <th mat-header-cell *matHeaderCellDef>
+        <mat-checkbox checked="0" color="primary" (click)="selectTodo()"
+          >Habilitado
+        </mat-checkbox>
+      </th>
+      <td mat-cell *matCellDef="let row">
+        <div
+          *ngIf="
+            row.homologasap != null && row.homologasap != 0;
+            then estados;
+            else nulos
+          "
+        ></div>
+        <ng-template #nulos>
+          <mat-checkbox
+            checked="0"
+            color="primary"
+            (click)="estadoTrue(row.codigoClasificador || row.codigoCaeb)"
+            >{{ row.homologasap == 1 ? "Activo" : "inactivo" }}</mat-checkbox
+          >
+        </ng-template>
+        <ng-template #estados>
+          <mat-checkbox
+            checked="1"
+            color="primary"
+            (click)="estadoTrue(row.codigoClasificador || row.codigoCaeb)"
+            >{{ row.homologasap == 1 ? "Activo" : "inactivo" }}</mat-checkbox
+          >
+        </ng-template>
+      </td>
+    </ng-container>
+    <!-- selector para homologacion en SAP -->
+    <ng-container matColumnDef="selectCodPro">
+      <th mat-header-cell *matHeaderCellDef>Seleccionar</th>
+      <td mat-cell *matCellDef="let row">
+        <button mat-icon-button color="primary" (click)="seleccionarItem(row)">
+          <mat-icon class="btnSuccess selecionar">check_circle</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[10, 25, 100]"></mat-paginator>
+</mat-dialog-content>

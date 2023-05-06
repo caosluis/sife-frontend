@@ -1,0 +1,22 @@
+.example-card {
+    max-width: 400px;
+    left: 10%;
+    padding-top: 10px;
+  }
+  .small-box, .large-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 16px;
+    padding: 16px;
+    border-radius: 8px;
+  }
+  
+  .small-box {
+    height: 50px;
+    width: 200px;
+  }
+  button{
+    border-radius:10px;
+    outline:none;
+    }

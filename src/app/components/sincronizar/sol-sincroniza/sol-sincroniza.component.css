@@ -1,0 +1,11 @@
+.loading {
+  position: absolute;
+}
+.imgLoading {
+  width: 400px;
+  height: 400px;
+}
+
+.form {
+  width: 100%;
+}

@@ -1,0 +1,55 @@
+.form{
+  padding-left: 10%;
+  padding-right: 10%;
+  width: 10%;
+}
+
+mat-form-field{
+  width: 100%;
+  font-size: 14px;
+}
+.empresa{
+  /*background: #ccc;*/
+  font-size: 13px !important;  
+  margin-top: -10px;
+}
+.empresa mat-list-item.mat-list-item.mat-focus-indicator {
+  font-size: 13px;
+}
+.empresa mat-icon{
+  font-size: 13px;
+}
+.link-warning {
+  color: #ebb000;
+}
+
+.alerta{
+  background-color: red;
+  color: #FFF;
+  border-radius: 50%;
+  font-size: 12px !important;
+  font-weight: 700;
+  text-align: center;
+  padding: 2px;
+  margin-left: 8px;
+  height: 17px !important;
+  width: 17px !important;
+  margin-top: 2.5px;
+}
+
+/* Animación con keyframe llamada "latidos" */
+@keyframes latidos {
+  from { transform: none; }
+  50% { transform: scale(1.12); }
+  to { transform: none; }
+}
+/* En la clase corazon vamos a llamar latidos en la animación  */
+.alerta {
+display: inline-block;
+animation: latidos 1.5s infinite;
+transform-origin: center;
+}
+
+.mat-list-base .mat-list-item{
+  height: 38px !important;
+}

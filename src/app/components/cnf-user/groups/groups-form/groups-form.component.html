@@ -1,0 +1,173 @@
+<h1 mat-dialog-title>Groups</h1>
+<div mat-dialog-content>
+
+
+      <div>
+            <mat-horizontal-stepper #stepper [linear]="false">
+                  <mat-step [stepControl]="service.form">
+                        <ng-template matStepLabel>Grupo</ng-template>
+                        <form [formGroup]="service.form" class="normal-form" (submit)="onSaveGroups()">
+                              <input type="hidden" id="id" formControlName="id">
+                              <mat-form-field class="formMin" [formGroup]="service.form"
+                                    *ngIf="uservice.sesion['nivelAcceso'] == '551eac71-5b53-4785-b96f-4cbaab197012'">
+                                    <mat-select placeholder="Empresa" matInput formControlName="cuis">
+                                          <mat-option *ngFor="let row of dataCuis" [value]="row.cuis">{{row.nombre}}
+                                          </mat-option>
+                                    </mat-select>
+                              </mat-form-field>
+                              <mat-form-field class="formMin" [formGroup]="service.form"
+                                    *ngIf="uservice.sesion['nivelAcceso'] == '551eac71-5b53-4785-b96f-4cbaab197012'">
+                                    <mat-select placeholder="Tipo" matInput formControlName="tipo">
+                                          <!-- <mat-option *ngFor="let row of dataCuis" [value]="row.cuis">{{row.nombre}}</mat-option> -->
+                                          <mat-option [value]="1">Administradores</mat-option>
+                                          <mat-option [value]="2">Normal</mat-option>
+                                    </mat-select>
+                              </mat-form-field>
+                              <mat-form-field class="formMin" [formGroup]="service.form">
+                                    <input type="text" id="nombre_grupo" formControlName="nombre_grupo" matInput
+                                          placeholder="Nombre grupo">
+                              </mat-form-field>
+
+                              <mat-form-field class="formMin" [formGroup]="service.form">
+                                    <input type="text" id="descripcion" formControlName="descripcion" matInput
+                                          placeholder="Descripción">
+                              </mat-form-field>
+
+                              <!-- <mat-form-field class="formPlus" [formGroup]="service.form"> -->
+                              <input type="hidden" id="estado" formControlName="estado">
+                              <!-- </mat-form-field> -->
+
+                              <!-- <mat-form-field class="formPlus" [formGroup]="service.form"> -->
+                              <input type="hidden" id="ACL" formControlName="ACL">
+                              <!-- </mat-form-field> -->
+                              <div class="listaAcl">
+                                    <h2>Lista de modulos</h2>
+                                    <table class="table" matTableResponsive>
+                                          <thead>
+                                                <tr>
+                                                      <th>Modulo</th>
+                                                      <th>Acceso</th>
+                                                      <th>Crear</th>
+                                                      <th>Editar</th>
+                                                      <th>Eliminar</th>
+                                                      <th></th>
+                                                </tr>
+                                          </thead>
+                                          <tbody>
+                                                <tr *ngFor="let acl of acls">
+                                                      <td>{{acl.modulo}}</td>
+                                                      <td>
+                                                            <div *ngIf="acl.acceso == 1; then activo else inactivo">
+                                                            </div>
+                                                            <ng-template #activo>
+                                                                  <mat-slide-toggle color="primary"
+                                                                        (click)="checkAccesoList(acl.modulo,'acceso')"
+                                                                        [checked]="true">Habilitado</mat-slide-toggle>
+                                                            </ng-template>
+                                                            <ng-template #inactivo>
+                                                                  <mat-slide-toggle color="primary"
+                                                                        (click)="checkAccesoList(acl.modulo,'acceso')">
+                                                                        Deshabilitado</mat-slide-toggle>
+                                                            </ng-template>
+                                                      </td>
+                                                      <td>
+                                                            <div
+                                                                  *ngIf="acl.crear == 1; then activocrear else inactivocrear">
+                                                            </div>
+                                                            <ng-template #activocrear>
+                                                                  <mat-slide-toggle color="primary"
+                                                                        (click)="checkAccesoList(acl.modulo,'crear')"
+                                                                        [checked]="true">Habilitado</mat-slide-toggle>
+                                                            </ng-template>
+                                                            <ng-template #inactivocrear>
+                                                                  <mat-slide-toggle color="primary"
+                                                                        (click)="checkAccesoList(acl.modulo,'crear')">
+                                                                        Deshabilitado</mat-slide-toggle>
+                                                            </ng-template>
+                                                      </td>
+                                                      <td>
+                                                            <div
+                                                                  *ngIf="acl.editar == 1; then activoeditar else inactivoeditar">
+                                                            </div>
+                                                            <ng-template #activoeditar>
+                                                                  <mat-slide-toggle color="primary"
+                                                                        (click)="checkAccesoList(acl.modulo,'editar')"
+                                                                        [checked]="true">Habilitado</mat-slide-toggle>
+                                                            </ng-template>
+                                                            <ng-template #inactivoeditar>
+                                                                  <mat-slide-toggle color="primary"
+                                                                        (click)="checkAccesoList(acl.modulo,'editar')">
+                                                                        Deshabilitado</mat-slide-toggle>
+                                                            </ng-template>
+                                                      </td>
+                                                      <td>
+                                                            <div
+                                                                  *ngIf="acl.eliminar == 1; then activoeliminar else inactivoeliminar">
+                                                            </div>
+                                                            <ng-template #activoeliminar>
+                                                                  <mat-slide-toggle color="primary"
+                                                                        (click)="checkAccesoList(acl.modulo,'eliminar')"
+                                                                        [checked]="true">Habilitado</mat-slide-toggle>
+                                                            </ng-template>
+                                                            <ng-template #inactivoeliminar>
+                                                                  <mat-slide-toggle color="primary"
+                                                                        (click)="checkAccesoList(acl.modulo,'eliminar')">
+                                                                        Deshabilitado</mat-slide-toggle>
+                                                            </ng-template>
+                                                      </td>
+                                                      <td></td>
+                                                </tr>
+                                          </tbody>
+                                    </table>
+                                    <hr>
+                                    <mat-form-field class="form2" [formGroup]="form">
+                                          <mat-select placeholder="Modulos" matInput formControlName="id_modulo"
+                                                (ngModelChange)="selectModulo($event)">
+                                                <mat-option *ngFor="let modulo of modulos" [value]="modulo.id">
+                                                      {{modulo.valor}}</mat-option>
+                                          </mat-select>
+                                    </mat-form-field>
+                                    <mat-slide-toggle color="primary" class="form2" id="acceso" (click)="checkAcceso()"
+                                          [checked]="true">Acceso</mat-slide-toggle>
+                                    <mat-slide-toggle color="primary" class="form2" id="crear" (click)="checkCrear()"
+                                          [checked]="true">Crear</mat-slide-toggle>
+                                    <mat-slide-toggle color="primary" class="form2" id="editar" (click)="checkEditar()"
+                                          [checked]="true">Editar</mat-slide-toggle>
+                                    <mat-slide-toggle color="primary" class="form2" id="eliminar"
+                                          (click)="checkEliminar()" [checked]="true">Eliminar</mat-slide-toggle>
+                                    <button type="button" mat-icon-button (click)="addItemD()" color="primary">
+                                          <mat-icon>add_circle_outline</mat-icon>
+                                    </button>
+                              </div>
+
+                        </form>
+                  </mat-step>
+                  <mat-step>
+                        <ng-template matStepLabel>Lista de usuario</ng-template>
+                        <h1>Lista de usuarios</h1>
+                        <div class="row">
+                              <table class="table" matTableResponsive>
+                                    <thead>
+                                          <th>Nombres</th>
+                                          <th>Apellidos</th>
+                                          <th>id</th>
+                                    </thead>
+                                    <tbody>
+                                          <tr *ngFor="let row of dataUser">
+                                                <td> {{row["sifeUserData"]["nombre"]}} </td>
+                                                <td> {{row["sifeUserData"]["apellidos"]}} </td>
+                                                <td> {{row.id}} </td>
+                                          </tr>
+                                    </tbody>
+                              </table>
+                        </div>
+                  </mat-step>
+            </mat-horizontal-stepper>
+      </div>
+</div>
+<div mat-dialog-actions align="center">
+      <div>
+            <button mat-raised-button color="primary" (click)="onSaveGroups()">{{action}}</button>
+            <button mat-raised-button color="warn" type="button" (click)="onClose()" mat-flat-button>Cancelar</button>
+      </div>
+</div>

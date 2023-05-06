@@ -1,0 +1,102 @@
+<h1 mat-dialog-title>ListasDesplegables</h1>
+<div mat-dialog-content>
+  <form
+    [formGroup]="service.form"
+    class="normal-form"
+    (submit)="onSaveListasDesplegables()"
+  >
+    <input type="hidden" id="id" formControlName="id" />
+    <div class="form-row">
+      <div class="form-group col-md-12">
+        <label for="">Nombre</label>
+        <input
+          type="text"
+          #nombre
+          id="nombre"
+          formControlName="nombre"
+          class="form-control"
+          placeholder="nombre"
+        />
+      </div>
+    </div>
+    <div class="form-group" style="display: none">
+      <label for="">valores</label>
+      <input
+        type="text"
+        id="valores"
+        formControlName="valores"
+        class="form-control"
+        placeholder="valores"
+      />
+    </div>
+    <table class="table" matTableResponsive>
+      <thead>
+        <th>Valor</th>
+        <th>Datos visibles</th>
+        <th></th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of valores">
+          <td>{{ row.id }}</td>
+          <td>{{ row.valor }}</td>
+          <td>
+            <button (click)="deleterItem(row.id)">
+              <mat-icon>delete_outline</mat-icon>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="">Value</label>
+        <input
+          type="text"
+          id="valor"
+          class="form-control"
+          placeholder="valores"
+        />
+      </div>
+      <div class="form-group col-md-4">
+        <label for="">Display</label>
+        <div class="input-group">
+          <input
+            type="text"
+            class="form-control"
+            id="display"
+            placeholder="display"
+            aria-describedby="inputGroupPrepend"
+            required
+          />
+          <div class="invalid-feedback">Please choose a username.</div>
+          <div class="input-group-prepend">
+            <span class="input-group-text" (click)="addItem()"
+              ><mat-icon>add</mat-icon></span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="button-row">
+      <button
+        mat-button
+        type="submit"
+        class="btn btn-success"
+        [disabled]="nombre.value === ''"
+      >
+        {{ action }}
+      </button>
+      <button
+        mat-button
+        type="button"
+        (click)="onClose()"
+        mat-flat-button
+        color="warn"
+        class="btn btn-danger"
+      >
+        Cancelar
+      </button>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions></div>

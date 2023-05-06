@@ -1,0 +1,251 @@
+<!-- AGREGANDO SIDEBAR FILTRO Y CONTENIDO EN UNO SOLO -->
+<mat-drawer-container class="example-container" autosize hasBackdrop="false">
+  <!-- MENU DE ACCIONES DEL MODULO -->
+  <div class="container-menu">
+    <div class="container-menu-iz">
+      <div class="container-menu-item ">
+
+      </div>
+    </div>
+    <div class="container-menu-de">
+      <div class="container-menu-item ">
+        <ng-container *ngIf="role == 'Sistemas'; then ok"></ng-container>
+        <ng-template #ok>
+          <div class="container-menu-item ">
+            <button mat-raised-button color="primary" (click)="CrearFirma(null)">
+              <mat-icon>add</mat-icon> Nueva Firma Digital
+            </button>
+          </div>
+        </ng-template>
+      </div>
+      <div class="container-menu-item ">
+        <button type="button" class="sidebar-filtro-btn" mat-button (click)="drawer.toggle()">
+          <mat-icon>filter_list</mat-icon> Filtro
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- SIDEBAR DE FILTRO -->
+  <mat-drawer #drawer class="example-sidenav sidebar-filtro" mode="side"  position="end" >
+    <div class="row">
+      <div class="col-sm-6">
+          <h2>Filtros</h2>
+      </div>
+      <div class="col-sm-6">        
+          <button type="button" class="sidebar-filtro-btn" mat-button (click)="drawer.toggle()">
+            <mat-icon>close</mat-icon>
+          </button>
+      </div>
+    </div>
+    <mat-form-field appearance="standard" class="buscador">
+      <mat-label>Buscar por palabra</mat-label>
+      <input
+        matInput
+        placeholder="Buscar"
+        autocomplete="off"
+        (keyup)="applyFilter($event.target.value)"
+      />
+    </mat-form-field>
+  </mat-drawer>
+
+  <!-- CONTENIDO DEL SIDEBAR FILTRO PARA EL MODULO -->
+  <div class="example-sidenav-content" >  
+
+  <mat-card class="background_user_connection">  
+    <div class="row">
+      <div class="col-sm-12">
+        <mat-card-header>
+          <mat-card-title>Firma Digital</mat-card-title>
+          <mat-card-subtitle>Es un mecanismo criptográfico que permite al 
+            receptor de un mensaje firmado digitalmente identificar a la entidad 
+            originadora de dicho mensaje (autenticación de origen y no repudio).</mat-card-subtitle>
+        </mat-card-header>
+      </div>
+    </div>
+    <mat-card-content>
+      <table mat-table [dataSource]="dataSource" matSort matTableResponsive>
+        <!--Column -->
+        <ng-container matColumnDef="logo">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+          <td mat-cell *matCellDef="let element">
+            <ng-container *ngIf="element.tipo == 'Firma privada'; then fprivada; else fvalidada"></ng-container>          
+            <ng-template #fprivada>
+              <ng-container *ngIf="element.estado == '1'; then vigentef; else vencidof"></ng-container>
+              <ng-template #vigentef>            
+                <span class="logo bg-success" style="color: #7072bf !important">FP</span>
+                <mat-icon class="check">done</mat-icon>
+              </ng-template>
+              <ng-template #vencidof>
+                <span class="logo bg-success">FP</span>
+              </ng-template>                
+            </ng-template>
+            <ng-template #fvalidada>
+              <ng-container *ngIf="element.estado == '1'; then vigentef; else vencidof"></ng-container>
+              <ng-template #vigentef>            
+                <span class="logo bg-success" style="color: #7072bf !important">FV</span>
+                <mat-icon class="check">done</mat-icon>
+              </ng-template>
+              <ng-template #vencidof>
+                <span class="logo bg-success">FV</span>
+              </ng-template>               
+            </ng-template>
+          </td>
+        </ng-container>
+
+        <!--Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>id</th>
+          <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+        </ng-container>
+
+        <!--Column -->
+        <ng-container matColumnDef="descripcion">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Descripción</th>
+          <td mat-cell *matCellDef="let element">{{ element.descripcion }}</td>
+        </ng-container>
+
+        <!--Column -->
+        <ng-container matColumnDef="empresa">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Empresa</th>
+          <td mat-cell *matCellDef="let element">{{ element.empresa }}</td>
+        </ng-container>
+
+        <!--Column -->
+        <ng-container matColumnDef="tipo">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Tipo</th>
+          <td mat-cell *matCellDef="let element">
+            <ng-container *ngIf="element.tipo == 'Firma privada'; then firmaPrivada; else firmaValid"></ng-container>  
+              <ng-template #firmaPrivada>  
+                <button mat-stroked-button color="primary">                  
+                  <mat-icon>business</mat-icon> {{ element.tipo }}
+                </button>
+              </ng-template>
+              <ng-template #firmaValid>       
+                <button mat-stroked-button >
+                  <mat-icon>public</mat-icon> {{ element.tipo }}
+                </button>
+              </ng-template>
+          </td>
+        </ng-container>
+        <!--Column -->
+        <ng-container matColumnDef="firma">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Firma</th>
+          <td mat-cell *matCellDef="let element">{{ element.firma }}</td>
+        </ng-container>
+
+        <!--Column -->
+        <ng-container matColumnDef="fechaRegistro">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            Fecha Registro
+          </th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.fechaRegistro | date: "EEEE d MMMM y HH:mm:ss":"UTC" }}
+          </td>
+        </ng-container>
+
+        <!--Column -->
+        <ng-container matColumnDef="fechaVigencia">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            Fecha Vigencia
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <ng-container
+              *ngIf="
+                FechaIndicador(element.fechaVigencia) == 'Vigente';
+                then vigente;
+                else vencido
+              "
+            >
+            </ng-container>
+            <ng-template #vigente>
+              <span class="badge bg-success">
+                {{ element.fechaVigencia | date: "EEEE d MMMM y HH:mm:ss":"UTC" }}
+              </span>
+            </ng-template>
+            <ng-template #vencido>
+              <span class="badge bg-light text-dark">
+                {{
+                  element.fechaVigencia | date: "EEEE d MMMM y HH:mm:ss ":"UTC"
+                }}
+              </span>
+            </ng-template>
+          </td>
+        </ng-container>
+
+        <!--Column -->
+        <ng-container matColumnDef="estado">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Estado</th>
+          <td mat-cell *matCellDef="let element">
+            <!--mat-checkbox
+              class="example-margin"
+              [checked]="estado(element.estado)"
+              (change)="estadoCambio($event.checked, element.id)"
+            >
+            </mat-checkbox-->
+            <ng-container *ngIf="element.estado == '1'; then Activo; else Inactivo"></ng-container>
+            <ng-template #Activo>
+              <span class="badge bg-success" style="color: #6bb700;">Activo</span>
+            </ng-template>
+            <ng-template #Inactivo>
+              <span class="badge bg-danger">Inactivo</span>
+            </ng-template>          
+          </td>
+        </ng-container>
+
+        <!--Column -->
+        <ng-container matColumnDef="revocado">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Revocado</th>
+          <td mat-cell *matCellDef="let element">
+            <mat-checkbox 
+            [disabled]="true"
+              class="example-margin"
+              [checked]="element.revocado"
+            >
+            </mat-checkbox>
+          </td>
+        </ng-container>
+
+        <!-- Progress Column -->
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Acciones</th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-icon-button [matMenuTriggerFor]="Notificaciones">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #Notificaciones="matMenu">
+              <button mat-menu-item (click)="CrearFirma(element)">
+                <mat-icon>edit</mat-icon><span>Editar</span>
+              </button>
+              <!-- <button mat-menu-item (click)="CrearFirma('Eliminar',element)"><mat-icon>delete_outline</mat-icon><span>Borrar</span></button> -->
+              <!-- <button mat-menu-item (click)="estadoTrue(element.id)">
+                <span>{{ element.estado == 1 ? "Desactivar" : "Activar" }}</span>
+              </button> -->
+              <button mat-menu-item (click)="RevocarFirma(element)">
+                <mat-icon>remove_moderator</mat-icon> <span>Notifica firma revocada</span>
+              </button>
+              <ng-container *ngIf="element.estado == '1'; then Activo; else Inactivo"></ng-container>
+              <ng-template #Activo>
+                <button mat-menu-item (click)="estadoCambio(0, element.id)">
+                  <mat-icon color="warn">toggle_off</mat-icon
+                  ><span>Desactivar</span>
+                </button>
+              </ng-template>  
+              <ng-template #Inactivo>
+                <button mat-menu-item (click)="estadoCambio(1, element.id)">
+                  <mat-icon color="primary">toggle_on</mat-icon
+                  ><span>Activar</span>
+                </button>
+              </ng-template>
+            </mat-menu>
+          </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let element; columns: displayedColumns"></tr>
+      </table>
+      <mat-paginator
+        [pageSizeOptions]="[20, 40, 60, 100]"
+      ></mat-paginator> </mat-card-content
+  ></mat-card>
+
+</div>
+</mat-drawer-container>

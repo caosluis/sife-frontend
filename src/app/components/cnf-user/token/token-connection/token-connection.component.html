@@ -1,0 +1,213 @@
+<!-- AGREGANDO SIDEBAR FILTRO Y CONTENIDO EN UNO SOLO -->
+<mat-drawer-container class="example-container" autosize hasBackdrop="false">
+  <!-- MENU DE ACCIONES DEL MODULO -->
+  <div class="container-menu">
+    <div class="container-menu-iz">
+      <div class="container-menu-item ">
+
+      </div>
+    </div>
+    <div class="container-menu-de">
+      <div class="container-menu-item ">
+        <button mat-raised-button color="primary" (click)="RegistroToken()">
+          <mat-icon>add</mat-icon> Nuevo
+        </button>
+      </div>
+      <div class="container-menu-item ">
+        <button type="button" class="sidebar-filtro-btn" mat-button (click)="drawer.toggle()">
+          <mat-icon>filter_list</mat-icon> Filtro
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- SIDEBAR DE FILTRO -->
+  <mat-drawer #drawer class="example-sidenav sidebar-filtro" mode="side"  position="end"  >
+    <h2>Filtros</h2>  
+    <button type="button" class="sidebar-filtro-btn" mat-button (click)="drawer.toggle()">
+      <mat-icon>close</mat-icon>
+    </button>
+    
+    <mat-form-field appearance="standard" class="buscador">
+      <mat-label>Buscar</mat-label>
+      <input
+        matInput
+        placeholder="Buscar"
+        autocomplete="off"
+        (keyup)="applyFilter($event.target.value)"
+      />
+    </mat-form-field>
+  </mat-drawer>
+
+  <!-- CONTENIDO DEL SIDEBAR FILTRO PARA EL MODULO -->
+  <div class="example-sidenav-content" >  
+
+    <mat-card class="background_user_connection">  
+      <div class="row">
+        <div class="col-sm-12">
+          <mat-card-header>
+            <mat-card-title>Gestionar Token</mat-card-title>
+            <mat-card-subtitle>Token de seguridad que permita el 
+              consumo de los servicios requeridos, el mismo se puede obtener 
+              consumiendo un servicio web y tiene una duración de 4 horas o 
+              generar el mismo a través del Portal Web y asignarle una duración 
+              que puede variar de 1 día hasta 1 año.</mat-card-subtitle>
+          </mat-card-header>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <!--mat-form-field appearance="fill" class="date-selector">
+            <mat-label>Fecha Token de Comunicación</mat-label>
+            <input
+              matInput
+              [matDatepicker]="picker"
+              [(ngModel)]="FechaActual.start_time"
+              (dateChange)="SeleccionarFecha($event)"
+              [ngModelOptions]="{ standalone: true }"
+            />
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field-->
+        </div>
+        <div class="col-md-4">
+          
+        </div>
+      </div>    
+      <table
+        mat-table
+        [dataSource]="tokenRegistroService.dataSource"
+        class="table_user_connection"
+        matTableResponsive
+        matSort
+      >
+      <ng-container matColumnDef="logo">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header style="text-align: center;">  
+        </th>
+        <td mat-cell *matCellDef="let element" >          
+          <ng-container *ngIf="element.estado == '1'; then ActivoE; else InactivoE"></ng-container>          
+          <ng-template #ActivoE>       
+            <mat-icon style="color: #7072bf !important">book</mat-icon><mat-icon class="check">done</mat-icon>
+          </ng-template>
+          <ng-template #InactivoE>
+            <mat-icon style="color: rgb(240 133 148)">book</mat-icon>
+          </ng-template>
+        </td>
+      </ng-container>
+
+        <ng-container matColumnDef="fechaRegistro">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Fecha Registrado</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.fechaRegistro | date: "EEEE d MMMM y ":"UTC" }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="fechaVigencia">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Fecha vigencia</th>
+          <td mat-cell *matCellDef="let element">
+            <ng-container *ngIf="FechaIndicador(element.fechaVigencia) == 'Vigente';then vigente; else vencido"></ng-container>
+              <ng-template #vigente>           
+                <container-element [ngSwitch]="element.estado">
+                  <div *ngSwitchCase="1">
+                    <span class="badge bg-success">
+                      {{ element.fechaVigencia | date: "EEEE d MMMM y ":"UTC" }}
+                    </span>
+                  </div>
+                  <div *ngSwitchDefault>
+                    <span class="badge bg-light text-dark">
+                    {{ element.fechaVigencia | date: "EEEE d MMMM y ":"UTC" }}
+                    </span>
+                  </div>
+                </container-element>
+              </ng-template>
+              <ng-template #vencido>
+                <container-element [ngSwitch]="element.estado">
+                  <div *ngSwitchCase="1">
+                    <span class="badge bg-danger">
+                      {{ element.fechaVigencia | date: "EEEE d MMMM y ":"UTC" }}
+                    </span>
+                  </div>
+                  <div *ngSwitchDefault>
+                    <span class="badge bg-light text-dark">
+                    {{ element.fechaVigencia | date: "EEEE d MMMM y ":"UTC" }}
+                    </span>
+                  </div>
+                </container-element>
+              </ng-template>                       
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="descripcion">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Descripcion</th>
+          <td mat-cell *matCellDef="let element">{{ element.descripcion }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="nombreKey">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Nombre Key</th>
+          <td mat-cell *matCellDef="let element">{{ element.nombreKey }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="nit">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Nit</th>
+          <td mat-cell *matCellDef="let element">{{ element.nit }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="estado">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Estado</th>
+          <td mat-cell *matCellDef="let element" >
+            <ng-container *ngIf="element.estado == '1'; then Activo; else Inactivo">
+            </ng-container>
+            <ng-template #Activo>
+              <span class="badge bg-success">Activo</span>
+            </ng-template>
+
+            <ng-template #Inactivo>
+              <span class="badge bg-danger">Inactivo</span>
+            </ng-template>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef>Acciones</th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-icon-button [matMenuTriggerFor]="Notificaciones">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #Notificaciones="matMenu">
+              <button mat-menu-item (click)="Detalle_Token(element)">
+                <mat-icon class="mat-icon notranslate material-icons mat-icon-no-color">launch</mat-icon><span>Detalle Técnico</span>
+              </button>
+              <ng-container
+                  *ngIf="element.estado == '1'; then Activo; else Inactivo"
+              >
+              </ng-container>
+
+              <ng-template #Activo>
+                <button mat-menu-item (click)="ActivarDesactivarEmpresa(element)">
+                  <mat-icon color="warn">toggle_off</mat-icon
+                  ><span>Desactivar</span>
+                </button>
+              </ng-template>
+
+              <ng-template #Inactivo>
+                <button mat-menu-item (click)="ActivarDesactivarEmpresa(element)">
+                  <mat-icon color="primary">toggle_on</mat-icon
+                  ><span>Activar</span>
+                </button>
+              </ng-template>
+            </mat-menu>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+      <mat-paginator [pageSizeOptions]="[10, 25, 100]"></mat-paginator>
+    </mat-card>
+
+    <mat-menu #Notificaciones="matMenu">
+      <button mat-menu-item>Notificacion 1</button>
+      <button mat-menu-item>Notificacion 2</button>
+    </mat-menu>
+
+  </div>
+</mat-drawer-container>

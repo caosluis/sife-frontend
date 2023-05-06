@@ -1,0 +1,158 @@
+<!-- AGREGANDO SIDEBAR FILTRO Y CONTENIDO EN UNO SOLO -->
+<mat-drawer-container class="example-container" autosize hasBackdrop="false">
+  <!-- MENU DE ACCIONES DEL MODULO -->
+  <div class="container-menu">
+    <div class="container-menu-iz">
+      <div class="container-menu-item ">
+        
+      </div>
+    </div>
+    <div class="container-menu-de">
+      <div class="container-menu-item ">
+        <button mat-raised-button color="primary" (click)="openDialog('Crear', null)">
+          <mat-icon>add</mat-icon>Nuevo
+        </button>
+      </div>
+      <div class="container-menu-item ">
+        <button type="button" class="sidebar-filtro-btn" mat-button (click)="drawer.toggle()">
+          <mat-icon>filter_list</mat-icon> Filtro
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- SIDEBAR DE FILTRO -->
+  <mat-drawer #drawer class="example-sidenav sidebar-filtro" mode="side"  position="end" >
+    <div class="row">
+      <div class="col-sm-6">
+          <h2>Filtros</h2>
+      </div>
+      <div class="col-sm-6">        
+          <button type="button" class="sidebar-filtro-btn" mat-button (click)="drawer.toggle()">
+            <mat-icon>close</mat-icon>
+          </button>
+      </div>
+  </div>
+    <mat-form-field appearance="standard" class="buscador">
+      <mat-label>Buscar</mat-label>
+      <input
+        matInput
+        placeholder="Buscar"
+        autocomplete="off"
+        (keyup)="applyFilter($event.target.value)"
+      />
+    </mat-form-field>
+  </mat-drawer>
+
+  <!-- CONTENIDO DEL SIDEBAR FILTRO PARA EL MODULO -->
+  <div class="example-sidenav-content" > 
+
+    <mat-card class="background_user_connection">
+      <div class="row">
+        <div class="col-sm-12">
+          <mat-card-header>
+            <mat-card-title>Plantillas de Documentos</mat-card-title>
+            <mat-card-subtitle>Plantillas de los tipos de documento sector (tipo factura), que se muestra en las facturas Online y Offline.</mat-card-subtitle>
+          </mat-card-header>
+        </div>
+      </div>
+      <mat-card-content>
+        <table mat-table [dataSource]="dataSource" matTableResponsive matSort>      
+          <ng-container matColumnDef="logo">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header style="text-align: center;"></th>
+            <td mat-cell *matCellDef="let element" > 
+            <ng-container *ngIf="element.estado == '1'; then ActivoE; else InactivoE"></ng-container>          
+            <ng-template #ActivoE>       
+                <mat-icon style="color: #7072bf !important" >content_paste</mat-icon><mat-icon class="check">check</mat-icon>
+            </ng-template>
+            <ng-template #InactivoE>       
+                <mat-icon style="color: rgb(240 133 148)" >content_paste</mat-icon>
+            </ng-template>
+            </td>
+          </ng-container>
+          <!--Column -->
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>id</th>
+            <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+          </ng-container>
+
+          <!--Column -->
+          <ng-container matColumnDef="TipoDocumentoFiscal">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              Tipo Documento Fiscal
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.TipoDocumentoFiscal }}
+            </td>
+          </ng-container>
+          <!--Column -->
+          <ng-container matColumnDef="codigoClasificador">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              codigoClasificador
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.codigoClasificador }}
+            </td>
+          </ng-container>
+
+          <!--Column -->
+          <ng-container matColumnDef="plantilla">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>plantilla</th>
+            <td mat-cell *matCellDef="let element">{{ element.plantilla }}</td>
+          </ng-container>
+
+          <!--Column -->
+          <ng-container matColumnDef="estado">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Estado</th>
+            <td mat-cell *matCellDef="let element">
+              <div *ngIf="element.estado == 0; then inactivo"></div>
+              <div *ngIf="element.estado == 1; then activo"></div>
+              <ng-template #inactivo>
+                <mat-checkbox
+                  checked="0"
+                  color="primary"
+                  (click)="estadoTrue(element)"
+                  >{{ element.estado == 1 ? "Activo" : "Inactivo" }}</mat-checkbox
+                >
+              </ng-template>
+              <ng-template #activo>
+                <mat-checkbox
+                  checked="1"
+                  color="primary"
+                  (click)="estadoTrue(element)"
+                  >{{ element.estado == 1 ? "Activo" : "Inactivo" }}</mat-checkbox
+                >
+              </ng-template>
+            </td>
+          </ng-container>
+
+          <!-- Progress Column -->
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+            <td mat-cell *matCellDef="let element">
+              <button mat-icon-button [matMenuTriggerFor]="Notificaciones">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+
+              <mat-menu #Notificaciones="matMenu">
+                <button mat-menu-item (click)="openDialog('Actualizar', element)">
+                  Detalle
+                </button>
+                <button
+                  mat-menu-item
+                  color="warn"
+                  (click)="openDialog('Eliminar', element)"
+                >
+                  Eliminar
+                </button>
+              </mat-menu>
+            </td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let element; columns: displayedColumns"></tr>
+        </table>
+        <mat-paginator [pageSizeOptions]="[10, 25, 100]"></mat-paginator>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+</mat-drawer-container>

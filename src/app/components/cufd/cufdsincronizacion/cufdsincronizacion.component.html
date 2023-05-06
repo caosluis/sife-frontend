@@ -1,0 +1,198 @@
+<!-- AGREGANDO SIDEBAR FILTRO Y CONTENIDO EN UNO SOLO -->
+<mat-drawer-container class="example-container" autosize hasBackdrop="false">
+  <!-- MENU DE ACCIONES DEL MODULO -->
+  <div class="container-menu">
+    <div class="container-menu-iz">
+      <div class="container-menu-item ">
+
+      </div>
+    </div>
+    <div class="container-menu-de">
+      <div class="container-menu-item ">
+        <button type="button" class="sidebar-filtro-btn" mat-button (click)="drawer.toggle()">
+          <mat-icon>filter_list</mat-icon> Filtro
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- SIDEBAR DE FILTRO -->
+  <mat-drawer #drawer class="example-sidenav sidebar-filtro" mode="side"  position="end" >
+    <div class="row">
+      <div class="col-sm-6">
+          <h2>Filtros</h2>
+      </div>
+      <div class="col-sm-6">        
+          <button type="button" class="sidebar-filtro-btn" mat-button (click)="drawer.toggle()">
+            <mat-icon>close</mat-icon>
+          </button>
+      </div>
+    </div>
+
+    <mat-form-field appearance="standard" class="date-selector">
+      <mat-label>Fecha sincronización</mat-label>
+      <input matInput [matDatepicker]="picker" [(ngModel)]="FechaActual.start_time"
+        (dateChange)="SeleccionarFecha($event)" [ngModelOptions]="{ standalone: true }" />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <button mat-button color="primary" (click)="VerHistorialDeHoy()" >
+      <mat-icon>visibility</mat-icon> Ver intetos de hoy
+    </button>
+  </mat-drawer>
+
+  <!-- CONTENIDO DEL SIDEBAR FILTRO PARA EL MODULO -->
+  <div class="example-sidenav-content" > 
+
+    <mat-card class="background_user_connection">
+        <mat-card-content>
+          <div class="row">
+            <div class="col-sm-12">
+              <mat-card-header>
+                <mat-card-title>Sincronización de (CUFD)</mat-card-title>
+                <mat-card-subtitle>Solicitud diaria de CUFD con Impuestos Nacionales, 
+                    esta sincronización se realiza una vez al dia a las 5:00am, si la 
+                    transacción es "false" ocurrio un incomveniente con los servicios 
+                    de Impuestos Nacionales</mat-card-subtitle>
+              </mat-card-header>
+            </div>
+          </div>   
+          <ng-container *ngIf="transaccion == ''; then sincronizando"></ng-container>          
+          <ng-template #sincronizando>  
+            <div class="row">
+              <div class="col-md-4 offset-md-4">
+                <div class="alerta">
+                  <mat-list>
+                    <mat-list>
+                        <mat-list-item>
+                          <mat-icon mat-list-icon>cloud_sync</mat-icon>
+                          <div mat-line class="mat-list-item-titulo">En este momento se esta realizando la sincronización de CUFD.</div>
+                          <div mat-line class="mat-list-item-subttitulo"> Sincronizando con los Servicios de CUFD de IN.</div>
+                          <div mat-line class="mat-list-item-subttitulo"><mat-progress-bar mode="indeterminate" ></mat-progress-bar></div>
+                        </mat-list-item>
+                    </mat-list>
+                  </mat-list>
+                </div>
+              </div>
+            </div> 
+          </ng-template>
+          <ng-container *ngIf="transaccion == 'false'; then falso"></ng-container>          
+          <ng-template #falso>  
+            <div class="row">
+              <div class="col-md-4 offset-md-4">
+                <div class="alerta bg-danger">
+                    <mat-list>
+                        <mat-list-item>
+                          <mat-icon mat-list-icon>cloud_sync</mat-icon>
+                          <div mat-line class="mat-list-item-titulo">Solicitud a los servicios de CUFD de Impuestos Nacionales con error.</div>
+                          <div mat-line class="mat-list-item-subttitulo">Se realizara una nueva solicitud cada 5min.</div>
+                        </mat-list-item>
+                    </mat-list>
+                </div>
+              </div>
+            </div> 
+          </ng-template>
+          
+          <table mat-table
+          [dataSource]="cufdsincronizacionService.dataSource"
+          matSort
+          matTableResponsive>
+            <!--Column -->
+            <ng-container matColumnDef="logo">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header style="text-align: center;"> </th>
+                <td mat-cell *matCellDef="let element" >          
+                  <ng-container *ngIf="element.transaccion == 'true'; then ActivoE; else InactivoE"></ng-container>          
+                  <ng-template #ActivoE>       
+                    <span style="color: #7072bf !important"><mat-icon>content_paste</mat-icon></span><mat-icon class="check">check</mat-icon>
+                  </ng-template>
+                  <ng-template #InactivoE>
+                    <span ><mat-icon style="color: rgb(240 133 148)">content_paste_off</mat-icon></span><mat-icon class="check" style="background: red;">close</mat-icon>
+                  </ng-template>
+                </td>
+            </ng-container>
+            <!--Column --> 
+            <ng-container matColumnDef="fechaSincronizacion">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Fecha Sincronizacion</th>
+              <td mat-cell *matCellDef="let element" width="5%">
+                <ng-container *ngIf="
+                    element.transaccion == 'true';
+                    then vigente;
+                    else vencido
+                  ">
+                </ng-container>
+                <ng-template #vigente>
+                  <span class="badge bg-success">
+                    {{ element.fechaSincronizacion | date: "EEEE d MMMM y HH:mm:ss":"UTC" }}
+                  </span>
+                </ng-template>
+                <ng-template #vencido>
+                  <span class="badge bg-danger">
+                    {{
+                    element.fechaSincronizacion | date: "EEEE d MMMM y HH:mm:ss ":"UTC"
+                    }}
+                  </span>
+                </ng-template>
+              </td>
+            </ng-container>
+            <!--Column -->
+            <ng-container matColumnDef="mensaje">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>mensaje</th>
+              <td mat-cell *matCellDef="let element" width="20%">
+                {{ element.mensaje }}
+              </td>
+            </ng-container>
+      
+            <!--Column -->
+            <ng-container matColumnDef="servicioWeb">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>servicioWeb</th>
+              <td mat-cell *matCellDef="let element">{{ element.servicioWeb }}</td>
+            </ng-container>
+      
+            <!--Column -->
+            <ng-container matColumnDef="transaccion">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>transaccion</th>
+              <td mat-cell *matCellDef="let element">
+                <ng-container *ngIf="element.transaccion == 'true'; then verdadero; else falso"></ng-container>
+                <ng-template #verdadero>
+                    <span class="badge bg-success">
+                    {{ element.transaccion }}
+                    </span>
+                    <mat-icon class="check">check</mat-icon>
+                </ng-template>
+                <ng-template #falso>
+                    <span class="badge bg-danger">
+                        {{ element.transaccion }}
+                    </span>
+                </ng-template>
+                </td>
+            </ng-container>
+      
+            <!--Column -->
+            <ng-container matColumnDef="descripcionTransaccion">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>descripcionTransaccion</th>
+              <td mat-cell *matCellDef="let element">{{ element.descripcionTransaccion }}</td>
+            </ng-container>
+      
+            <!--Column Actions-->
+            <ng-container matColumnDef="actions">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+              <td mat-cell *matCellDef="let element">
+                <button mat-icon-button [matMenuTriggerFor]="Notificaciones">
+                  <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #Notificaciones="matMenu">
+                  <button  type="button" (click)="CufdRenovar()" mat-flat-button>
+                    <mat-icon>sync</mat-icon> Solicitar CUFD Masivo
+                  </button>
+                </mat-menu>
+              </td>
+            </ng-container>
+      
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let element; columns: displayedColumns"></tr>
+          </table>
+          <mat-paginator [pageSizeOptions]="[10, 25, 100]"></mat-paginator>
+        </mat-card-content>
+    </mat-card>
+
+  </div>
+</mat-drawer-container>

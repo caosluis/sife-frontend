@@ -1,0 +1,114 @@
+<mat-dialog-content>
+  <mat-card-title>
+    Token de Conexión 
+    <ng-container *ngIf="data.estado == '1'; then Activo; else Inactivo">
+    </ng-container>
+    <ng-template #Activo>
+      <span class="badge bg-success">Activo</span>
+    </ng-template>
+    <ng-template #Inactivo>
+      <span class="badge bg-danger">Inactivo</span>
+    </ng-template>
+  </mat-card-title>
+  <mat-card-subtitle>Informacion Token de seguridad que permita 
+    el consumo de los servicios requeridos, el mismo se 
+    puede obtener consumiendo un servicio web y tiene una 
+    duración de 4 horas o generar el mismo a través del Portal 
+    Web y asignarle una duración que puede variar de 1 día hasta 1 año.</mat-card-subtitle>
+  <div class="row">      
+    <div class="col-sm-6"> 
+        <div class="form-group">
+          <mat-form-field appearance="standard">
+            <mat-label>Fecha registrado</mat-label>
+            <input matInput [matDatepicker]="fechaRegistro"  value="{{ data.fechaRegistro }}" disabled>
+            <mat-datepicker-toggle matSuffix [for]="fechaRegistro"></mat-datepicker-toggle>
+            <mat-datepicker #fechaRegistro ></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+            <mat-form-field appearance="standard">
+              <mat-label>Fecha validez</mat-label>
+              <input matInput [matDatepicker]="fechaVigencia" value="{{ data.fechaVigencia }}" disabled>
+              <mat-datepicker-toggle matSuffix [for]="fechaVigencia"></mat-datepicker-toggle>
+              <mat-datepicker #fechaVigencia startView="multi-year"></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="form-group">
+            <mat-form-field appearance="standard">
+              <mat-label>Nit</mat-label>
+              <input matInput value="{{ data.fechaRegistro }}" disabled>
+            </mat-form-field>
+          </div>
+        <div class="form-group">
+            <mat-form-field appearance="standard" >
+              <mat-label>Descripción </mat-label>
+                <input
+                matInput                                             
+                value="{{ data.descripcion }}" disabled
+                />
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="col-sm-6">  
+      <div class="form-group">
+        <mat-form-field appearance="standard">
+          <mat-label>Nombre Key</mat-label>
+            <input
+            matInput                                             
+            value="{{ data.nombreKey }}" disabled
+            #nombreKey
+            />
+            <mat-icon matSuffix>key</mat-icon>
+            <mat-hint>Nombre del token, este se envia a todos los servicios de SIN, {{nombreKey.value?.length || 0}}/8</mat-hint>
+        </mat-form-field>
+      </div>   
+      <div class="form-group">
+        <mat-form-field appearance="standard">
+          <mat-label>Prefijo token</mat-label>
+            <input
+            matInput                                             
+            value="{{ data.prefijoToken }}" disabled
+            #prefijoToken
+            />
+            <mat-icon matSuffix>key</mat-icon>
+            <mat-hint>Nombre que va por delante del token registrado, definido por SIN{{prefijoToken.value?.length || 0}}/10</mat-hint>
+        </mat-form-field>
+      </div>              
+        <div class="form-group">                
+            <mat-form-field appearance="standard" >
+                <mat-label>Token</mat-label>
+                <textarea                     
+                matInput                    
+                cols="3"
+                rows="7"                    
+                value="{{ data.token }}" disabled
+                #token></textarea>
+                <mat-icon matSuffix>key</mat-icon>
+                <mat-hint>Registrar el token obtenido por Impuestos Nacionales, {{token.value?.length || 0}}/200</mat-hint>
+              </mat-form-field>
+        </div>
+        <td mat-cell *matCellDef="let element">
+          <ng-container *ngIf="element.estado == '1'; then Activo; else Inactivo">
+          </ng-container>
+          <ng-template #Activo>
+            <span class="badge bg-success">Activo</span>
+          </ng-template>
+  
+          <ng-template #Inactivo>
+            <span class="badge bg-danger">Inactivo</span>
+          </ng-template>
+        </td>
+    </div>      
+  </div>  
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+  <button
+    mat-raised-button
+    color="warn"
+    type="button"
+    mat-flat-button
+    matDialogClose
+  >
+    Cerrar
+  </button>
+</mat-dialog-actions>

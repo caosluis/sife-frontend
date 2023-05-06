@@ -1,0 +1,800 @@
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+  <p style="font-size: 20px; color: white">Cargando...</p>
+</ngx-spinner>
+<mat-tab-group mat-align-tabs="start" color="accent">
+  <mat-tab label="Productos/Servicios">
+    <mat-card class="background_user_connection">
+      <mat-card-header>
+        <mat-card-title>Productos / Servicios</mat-card-title>
+        <mat-card-subtitle>La Homologación de productos y servicios permite al Contribuyente
+          relacionar los códigos utilizados para sus productos y servicios con
+          los códigos proporcionados por la Administración
+          Tributaria.</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-horizontal-stepper>
+          <mat-step label="Busqueda de productos">
+            <p><b>Nota: </b>Seleccione los productos que <b>Homologara</b>.</p>
+            <div class="row filtro">
+              <div class="col-md-3">
+                <mat-form-field>
+                  <mat-select placeholder="Division" #division (selectionChange)="SeleccionarDivision($event.value)"
+                    [(ngModel)]="divisionSeleccionada">
+                    <ng-container *ngFor="let division of divisiones">
+                      <mat-option value="{{ division.IdDivision }}" matTooltip="{{ division.IdDivision }}">{{
+                        division.DivisionNombre
+                        }}</mat-option>
+                    </ng-container>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="col-md-3">
+                <mat-form-field>
+                  <mat-select placeholder="Área de mercado" #sector (selectionChange)="SeleccionarSector($event.value)"
+                    [(ngModel)]="sectorSeleccionado">
+                    <ng-container *ngFor="let sector of sectores">
+                      <mat-option value="{{ sector.IdSecProducto }}" matTooltip="{{ sector.IdSecProducto }}">{{
+                        sector.Sector
+                        }}</mat-option>
+                    </ng-container>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="col-md-3">
+                <mat-form-field>
+                  <mat-select placeholder="Familia" #familia (selectionChange)="SeleccionarFamilia($event.value)"
+                    [(ngModel)]="familiaSeleccionada">
+                    <ng-container *ngFor="let familia of familias">
+                      <mat-option value="{{ familia.IdFamilia }}" matTooltip="{{ familia.IdFamilia }}">{{
+                        familia.Familia
+                        }}</mat-option>
+                    </ng-container>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="col-md-3">
+                <mat-form-field>
+                  <mat-select placeholder="Grupo" #grupo (selectionChange)="SeleccionarGrupo($event.value)"
+                    [(ngModel)]="grupoSeleccionado">
+                    <mat-option value="Todos">
+                      Todos
+                    </mat-option>
+                    <ng-container *ngFor="let grupo of grupos">
+
+                      <mat-option value="{{ grupo.IdGrupo }}" matTooltip="{{  grupo.IdGrupo }}">{{
+                        grupo.Grupo
+                        }}</mat-option>
+                    </ng-container>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="col-md-3">
+                <mat-form-field>
+                  <mat-select placeholder="Sub Grupo" #subgrupo (selectionChange)="SeleccionarSubGrupo($event.value)"
+                    [(ngModel)]="subgrupoSeleccionado">
+                    <mat-option value="Todos">
+                      Todos
+                    </mat-option>
+                    <ng-container *ngFor="let subgrupo of subgrupos">
+
+                      <mat-option value="{{ subgrupo.IdSubGrupo }}" matTooltip="{{ subgrupo.IdSubGrupo }}">{{
+                        subgrupo.SubGrupo
+                        }}</mat-option>
+                    </ng-container>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="col-md-3">
+                <mat-form-field>
+                  <mat-select placeholder="Estado Homologación" (selectionChange)="
+                      SeleccionarEstadoHomologacion($event.value)
+                    " [(ngModel)]="estadoSeleccionado">
+                    <mat-option value="Todos">Todos</mat-option>
+                    <mat-option value="Homologados">Homologados</mat-option>
+                    <mat-option value="NoHomologados">No Homologados</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="col-md-3">
+                <mat-form-field>
+                  <mat-select placeholder="Estado" [(ngModel)]="estadoActivoSeleccionado" (selectionChange)="
+                  SeleccionarEstado()">
+                    <mat-option value="Todos">
+                      Todos
+                    </mat-option>
+                    <mat-option value="1">
+                      Activo
+                    </mat-option>
+                    <mat-option value="2">
+                      Inactivo
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+          </mat-step>
+          <mat-step label="Actualizar Productos">
+            <p><b>Nota: </b>Seleccione el <b>Tipo unidad</b> y el <b>Catálogo</b> de Impuestos Nacionales con el que
+              homologara sus productos y actualice sus datos de forma individual o masiva..</p>
+            <div class="row filtro">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Tipo unidad</th>
+                    <th>Catálogo</th>
+                    <th>Nandina</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <a href="#" (click)="openCatUnidadMedida(null)" onclick="return false;">{{
+                        datosUpdate.unidadMedida }}</a>
+                    </td>
+                    <td width='50%'>
+                      <a href="#" (click)="openCatServicio(null)" onclick="return false;">{{ datosUpdate.catalogo }}</a>
+                    </td>
+                    <td width='20%' style="text-align: right;">
+                      <mat-select [(ngModel)]="datosUpdate.nandina" placeholder="Nandina">
+                        <mat-option *ngFor="let element of nandinalist" [value]="element">{{
+                          element
+                          }}</mat-option>
+                      </mat-select>
+                    </td>
+                    <!--  <td>
+                      <a href="#" (click)="openCatActividadEconomica(null)"
+                        onclick="return false;">{{datosUpdate.actEconomica}}</a>
+                    </td> -->
+                    <td>
+                      <button matTooltip="Actualizar productos con el Tipo y Catalogo seleccionado." mat-raised-button
+                        color="primary" (click)="HomologacionMasiva()">
+                        Actualizar <mat-icon>update</mat-icon>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td style="text-align: right;">
+                      <mat-select appearance="standard" placeholder="Producto Activo o Inactivo"
+                        [(ngModel)]="estadoActivoActualizarSeleccionado">
+                        <mat-option value="1">
+                          Activo
+                        </mat-option>
+                        <mat-option value="2">
+                          Inactivo
+                        </mat-option>
+                      </mat-select>
+                    </td>
+                    <td>
+                      <button matTooltip="Actualizar productos como Activo o Inactivo." mat-button color="primary"
+                        (click)="ActualizacionMasivaEstado()">
+                        Actualizar Estado <mat-icon>update</mat-icon>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+          </mat-step>
+          <mat-step label="Carga Manual de productos">
+            <div class="row">
+              <mat-card-subtitle>La Carga de Productos por plantilla tiene un limite de 500 Productos.
+              </mat-card-subtitle>
+              <div class="col-md-4">
+                <h2>Paso 1</h2>
+                <mat-card-subtitle>Descargue la plantilla para disponer de un ejemplo para la creación del archivo de
+                  importación.</mat-card-subtitle>
+                <!-- <input type="file" #csvReader name="Upload CSV" id="txtFileUpload" (change)="uploadListener($event)" accept=".csv" /> -->
+                <a href="assets/Plantilla.xlsx"><img class="images" src="assets/jpg/excel.png"
+                    class="imagen_plantilla" />Descargar Plantilla</a>
+                <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                <!-- <button class="btn btn-primary" (click)="getAllProductos()">Buscar</button> -->
+              </div>
+              <div class="col-md-4">
+                <h2>Paso 2</h2>
+                <mat-card-subtitle>Seleccione su archivo en formato excel.</mat-card-subtitle>
+                <!-- <input type="file" #csvReader name="Upload CSV" id="txtFileUpload" (change)="uploadListener($event)" accept=".csv" /> -->
+                <input type="file" (change)="onFileChange($event)" id="archivoHCalculo" class=" btn " />
+                <br><br>
+                <mat-card-subtitle>
+                  Cantidad de productos válidos para cargar al sistema: {{ProductosNoExistentes.length}}
+                  <br>
+                  Cantidad de productos duplicados o erroneos encontrados: {{ProductosExistentes.length}}
+                </mat-card-subtitle>
+                <!-- <button class="btn btn-primary" (click)="getAllProductos()">Buscar</button> -->
+              </div>
+              <div class="col-md-4">
+                <h2>Paso 3</h2>
+                <mat-card-subtitle>Subir los aproductos al sistema. click en el boton para subir los productos validos
+                  al sistema</mat-card-subtitle>
+                <br>
+                <div *ngIf="ProductosNoExistentes.length > 0">
+                  <button matTooltip="Cargar Productos Válidos." mat-raised-button color="primary"
+                    (click)="CargarProductosValidos()">
+                    <span *ngIf="loading"></span><span>Cargar Productos Válidos</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-md-12">
+                <div *ngIf="Respuesta" class="alert alert-success mt-3 mb-0">
+                  {{Respuesta}}
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <table mat-table [dataSource]="dataSource2" matSort>
+
+                  <ng-container matColumnDef="IdProducto">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                      IdProducto
+                    </th>
+                    <td mat-cell *matCellDef="let element">
+                      {{ element.IdProducto }}</td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="Producto">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                      Producto
+                    </th>
+                    <td mat-cell *matCellDef="let element">
+                      {{ element.Producto }}</td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="IdFamilia">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                      IdFamilia
+                    </th>
+                    <td mat-cell *matCellDef="let element">
+                      {{ element.IdFamilia }}</td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="IdGrupo">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                      IdGrupo
+                    </th>
+                    <td mat-cell *matCellDef="let element">
+                      {{ element.IdGrupo }}</td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="IdSubGrupo">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                      IdSubGrupo
+                    </th>
+                    <td mat-cell *matCellDef="let element">
+                      {{ element.IdSubGrupo }}</td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="IdSecProducto">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                      IdSecProducto
+                    </th>
+                    <td mat-cell *matCellDef="let element">
+                      {{ element.IdSecProducto }}</td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="IdDivision">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                      IdDivision
+                    </th>
+                    <td mat-cell *matCellDef="let element">
+                      {{ element.IdDivision }}</td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="IdSector">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                      IdSector
+                    </th>
+                    <td mat-cell *matCellDef="let element">
+                      {{ element.IdSector }}</td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="PesoBruto">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                      PesoBruto
+                    </th>
+                    <td mat-cell *matCellDef="let element">
+                      {{ element.PesoBruto }}</td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="PesoNeto">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                      PesoNeto
+                    </th>
+                    <td mat-cell *matCellDef="let element">
+                      {{ element.PesoNeto }}</td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="UnidadPeso">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                      UnidadPeso
+                    </th>
+                    <td mat-cell *matCellDef="let element">
+                      {{ element.UnidadPeso }}</td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="nit">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                      nit
+                    </th>
+                    <td mat-cell *matCellDef="let element">
+                      {{ element.nit }}</td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="NoExiste">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>
+
+                    </th>
+                    <td mat-cell *matCellDef="let element">
+
+                      <ng-container *ngIf="
+                       element.NoExiste  == 'No Existe';
+                        then valido
+                      ">
+                      </ng-container>
+                      <ng-template #valido>
+                        <mat-icon class="green-icon" matTooltip="Válido">check</mat-icon>
+                      </ng-template>
+                      <ng-container *ngIf="
+                     element.NoExiste  == 'Existe';
+                      then novalido
+                    ">
+                      </ng-container>
+                      <ng-template #novalido>
+                        <mat-icon class="red-icon" matTooltip="Producto duplicado o erroneo">close</mat-icon>
+                      </ng-template>
+
+                    </td>
+                  </ng-container>
+
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+                  <tr mat-row *matRowDef="let element; columns: displayedColumns1"></tr>
+                </table>
+                <!-- <mat-paginator [pageSizeOptions]="[10, 20, 500]"></mat-paginator> -->
+              </div>
+            </div>
+          </mat-step>
+        </mat-horizontal-stepper>
+        <div class="row">
+          <div class="col-md-4">
+            <mat-form-field appearance="standard" class="buscador" style="width: 100%;margin-left: 15px;">
+              <mat-label>Buscar producto</mat-label>
+              <input id="Buscar" matInput placeholder="Buscar por IdProducto o Producto..." autocomplete="off"
+                (keyup)="applyFilter($event.target.value)" />
+            </mat-form-field>
+          </div>
+        </div>
+        <!--div class="row filtro">
+          <div class="col-md-2 offset-md-8">
+            <mat-select placeholder="Estado" [(ngModel)]="estadoActivoActualizarSeleccionado">
+              <mat-option value="1">
+                Activo
+              </mat-option>
+              <mat-option value="2">
+                Inactivo
+              </mat-option>
+            </mat-select>
+          </div>
+          <div class="col-md-2">
+            <button 
+            matTooltip="Actualizar productos como Activo o Inactivo."
+            mat-button color="primary" (click)="ActualizacionMasivaEstado()">
+              Actualizar Estado <mat-icon>update</mat-icon>
+            </button></div>
+        </div-->
+
+        <table mat-table [dataSource]="dataSource" matSort>
+          <!-- Position Column -->
+          <ng-container matColumnDef="checked">
+            <th mat-header-cell *matHeaderCellDef>
+              <mat-checkbox [(ngModel)]="selectAll" (click)="seleccionMultiple()" color="primary"></mat-checkbox>
+            </th>
+            <td mat-cell *matCellDef="let element">
+              <mat-checkbox [(ngModel)]="element.checked" color="primary"></mat-checkbox>
+            </td>
+          </ng-container>
+          <!--Column -->
+          <ng-container matColumnDef="IdProducto">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              IdProducto
+            </th>
+            <td mat-cell *matCellDef="let element"
+              matTooltip="Amercado:{{ element.IdSecProducto }},IdFamilia:{{ element.IdFamilia }},IdGrupo:{{ element.IdGrupo }},IdSubGrupo:{{ element.IdSubGrupo }}"
+              matTooltipClass="productoTooltip">
+              {{ element.IdProducto }}</td>
+          </ng-container>
+
+          <!--Column -->
+          <ng-container matColumnDef="Producto">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Producto</th>
+            <td mat-cell *matCellDef="let element">{{ element.Producto }}</td>
+          </ng-container>
+
+          <!--Column -->
+          <ng-container matColumnDef="UMBase">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              Unidad Medida
+            </th>
+            <td mat-cell *matCellDef="let element">
+              <div *ngIf="
+                  element.codigoClasificador;
+                  then conCatalogo;
+                  else sinCatalogo
+                "></div>
+              <ng-template #conCatalogo>
+                <a href="#" (click)="openCatUnidadMedida(element.IdProducto)" onclick="return false;">{{
+                  UnidadMedida(element.codigoClasificador) }}</a>
+              </ng-template>
+              <ng-template #sinCatalogo>
+                <button mat-icon-button (click)="openCatUnidadMedida(element.IdProducto)" class="success">
+                  <mat-icon matTooltip="Click para Elegir UNIDAD de MEDIDA para este PRODUCTO">open_in_new</mat-icon>
+                </button>
+              </ng-template>
+            </td>
+          </ng-container>
+          
+          <!--Column -->
+          <ng-container matColumnDef="codigoCatalogo">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Código Catálogo</th>
+            <td mat-cell *matCellDef="let element">{{ element.codigoCatalogo }}</td>
+          </ng-container>
+
+          <!--Column -->
+          <ng-container matColumnDef="catalogo">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Catálogo</th>
+            <td mat-cell *matCellDef="let element" width="15%">
+              <div *ngIf="
+                  element.codigoCatalogo != null;
+                  then conCatalogo;
+                  else sinCatalogo
+                "></div>
+              <ng-template #conCatalogo>
+                <a href="#" (click)="openCatServicio(element.IdProducto)" onclick="return false;">{{
+                  Catalogo(element.codigoCatalogo) }}</a>
+              </ng-template>
+              <ng-template #sinCatalogo>
+                <button mat-icon-button (click)="openCatServicio(element.IdProducto)" class="success">
+                  <mat-icon matTooltip="Click para Elegir CATALOGO para este PRODUCTO">open_in_new</mat-icon>
+                </button>
+              </ng-template>
+            </td>
+          </ng-container>
+          <!--Column -->
+          <ng-container matColumnDef="codigoActividad">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Código Actividad</th>
+            <td mat-cell *matCellDef="let element">{{ element.codigoActividad }}</td>
+          </ng-container>
+          <!--Column -->
+          <ng-container matColumnDef="actEconomica">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              Actividad Economica
+            </th>
+            <td mat-cell *matCellDef="let element" width="20%">
+              <div *ngIf="
+                  element.codigoActividad;
+                  then conCatalogo;
+                  else sinCatalogo
+                "></div>
+              <ng-template #conCatalogo>
+                {{ ActividadEconomica(element.codigoActividad) }}
+              </ng-template>
+              <ng-template #sinCatalogo>
+                <mat-icon matTooltip="Este campo se Asignara al Elegir un CATALOGO">pending</mat-icon>
+              </ng-template>
+            </td>
+          </ng-container>
+
+          <!--Column -->
+          <ng-container matColumnDef="descripcionLeyenda">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Leyenda</th>
+            <td mat-cell *matCellDef="let element" width="15%">
+              <mat-select [value]="element.descripcionLeyenda" (selectionChange)="
+                  SeleccionarLeyenda(element.IdProducto, $event.value)
+                " matTooltip="{{ element.descripcionLeyenda }}">
+                <ng-container *ngFor="
+                    let leyenda of CargarActividadEconomicaLeyendas(
+                      element.codigoActividad
+                    )
+                  ">
+                  <mat-option value="{{ leyenda.descripcionLeyenda }}" matTooltip="{{ leyenda.descripcionLeyenda }}">{{
+                    leyenda.descripcionLeyenda }}</mat-option>
+                </ng-container>
+              </mat-select>
+            </td>
+          </ng-container>
+
+          <!--Column -->
+          <ng-container matColumnDef="nandina">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              Nandina
+            </th>
+            <td mat-cell *matCellDef="let element" width="10%">
+              <mat-select [value]="element.nandina" (selectionChange)="
+              SeleccionarNandina(element.IdProducto, $event.value)
+            ">
+                <ng-container *ngFor="
+                let nandina of CargarNandina(
+                  element.codigoCatalogo
+                )
+              ">
+                  <mat-option value="{{ nandina }}">{{
+                    nandina }}</mat-option>
+                </ng-container>
+              </mat-select>
+            </td>
+          </ng-container>
+
+
+          <!--Column -->
+          <ng-container matColumnDef="estadoHomologado">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              Homologado
+            </th>
+            <td mat-cell *matCellDef="let element">
+              <div *ngIf="
+                  element.codigoClasificador == null ||
+                    element.codigoActividad == null ||
+                    element.codigoCatalogo == null;
+                  then NoHomologado;
+                  else Homologado
+                "></div>
+              <ng-template #NoHomologado>
+                <span class="badge bg-danger"> No Homologado </span>
+              </ng-template>
+              <ng-template #Homologado>
+                <span class="badge bg-success" style="color: #6bb700; font-weight: 500;">Homologado</span>
+                <mat-icon class="check">check</mat-icon>
+              </ng-template>
+            </td>
+          </ng-container>
+
+          <!--Column -->
+          <ng-container matColumnDef="estado">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Activo</th>
+            <td mat-cell *matCellDef="let element" style="text-align: center;">
+              <mat-checkbox [checked]="productoActivo(element)"
+                (change)="estadoCambio($event.checked, element.IdProducto)">
+              </mat-checkbox>
+            </td>
+          </ng-container>
+
+          <!-- Progress Column -->
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+            <td mat-cell *matCellDef="let element"></td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let element; columns: displayedColumns"></tr>
+        </table>
+        <mat-paginator [pageSizeOptions]="[20, 75, 1000]"></mat-paginator>
+      </mat-card-content>
+    </mat-card>
+  </mat-tab>
+  <mat-tab label="Busqueda de producto">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Buscar un Producto/Servicio</mat-card-title>
+        <mat-card-subtitle>Busqueda de un producto en especifico por su IdProducto</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+
+        <!--mat-form-field class="example-chip-list" appearance="fill">
+          <mat-label>Productos</mat-label>
+          <mat-chip-list #chipList aria-label="Productos" multiple [formControl]="formControl">
+            <mat-chip
+                *ngFor="let keyword of keywords"
+                [selected]="keyword"
+                [value]="keyword"
+                (removed)="removeKeyword(keyword)">
+              {{keyword}}
+                <mat-icon matChipRemove>cancel</mat-icon>
+            </mat-chip>
+            <input
+              placeholder="Codigo de producto..."
+              [matChipInputFor]="chipList"
+              (matChipInputTokenEnd)="addKeywordFromInput($event)">
+          </mat-chip-list>
+        </mat-form-field-->
+
+        <div class="row filtro">
+          <div class="col-md-3">
+            <!-- <mat-form-field>
+              <input #idproducto />
+            </mat-form-field> -->
+            <mat-form-field appearance="standard" class="buscador" style="width: 100%;">
+              <mat-label>Buscar producto</mat-label>
+              <input id="dproducto" #idproducto matInput placeholder="Buscar producto por su IdProducto..." />
+            </mat-form-field>
+          </div>
+          <div class="col-md-3">
+            <button mat-raised-button color="primary" (click)="BuscarProducto(idproducto.value)">
+              <mat-icon>search</mat-icon>
+            </button>
+          </div>
+        </div>
+        <table mat-table [dataSource]="dataSource1" matSort>
+          <!-- Position Column -->
+          <ng-container matColumnDef="checked">
+            <th mat-header-cell *matHeaderCellDef>
+              <mat-checkbox [(ngModel)]="selectAll" (click)="seleccionMultiple()" color="primary"></mat-checkbox>
+            </th>
+            <td mat-cell *matCellDef="let element">
+              <mat-checkbox [(ngModel)]="element.checked" color="primary"></mat-checkbox>
+            </td>
+          </ng-container>
+          <!--Column -->
+          <ng-container matColumnDef="IdProducto">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              IdProducto
+            </th>
+            <td mat-cell *matCellDef="let element">{{ element.IdProducto }}</td>
+          </ng-container>
+
+          <!--Column -->
+          <ng-container matColumnDef="Producto">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Producto</th>
+            <td mat-cell *matCellDef="let element">{{ element.Producto }}</td>
+          </ng-container>
+
+          <!--Column -->
+          <ng-container matColumnDef="nandina">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              Nandina
+            </th>
+            <td mat-cell *matCellDef="let element" width="10%">
+              <mat-select [value]="element.nandina" (selectionChange)="
+              SeleccionarNandina(element.IdProducto, $event.value)
+            ">
+                <ng-container *ngFor="
+                let nandina of CargarNandina(
+                  element.codigoCatalogo
+                )
+              ">
+                  <mat-option value="{{ nandina }}">{{
+                    nandina }}</mat-option>
+                </ng-container>
+              </mat-select>
+            </td>
+          </ng-container>
+
+          <!--Column -->
+          <ng-container matColumnDef="UMBase">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              Unidad Medida
+            </th>
+            <td mat-cell *matCellDef="let element">
+              <div *ngIf="
+                  element.codigoClasificador;
+                  then conCatalogo;
+                  else sinCatalogo
+                "></div>
+              <ng-template #conCatalogo>
+                <a href="#" (click)="openCatUnidadMedidauno(element.IdProducto)" onclick="return false;">{{
+                  UnidadMedida(element.codigoClasificador) }}</a>
+              </ng-template>
+              <ng-template #sinCatalogo>
+                <button mat-icon-button (click)="openCatUnidadMedidauno(element.IdProducto)" class="success">
+                  <mat-icon matTooltip="Click para Elegir UNIDAD de MEDIDA para este PRODUCTO">open_in_new</mat-icon>
+                </button>
+              </ng-template>
+            </td>
+          </ng-container>
+
+          <!--Column -->
+          <ng-container matColumnDef="codigoCatalogo">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Código Catálogo</th>
+            <td mat-cell *matCellDef="let element">{{ element.codigoCatalogo }}</td>
+          </ng-container>
+
+          <!--Column -->
+          <ng-container matColumnDef="catalogo">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Catálogo</th>
+            <td mat-cell *matCellDef="let element" width="15%">
+              <div *ngIf="
+                  element.codigoCatalogo != null;
+                  then conCatalogo;
+                  else sinCatalogo
+                "></div>
+              <ng-template #conCatalogo>
+                <a href="#" (click)="openCatServicio(element.IdProducto)" onclick="return false;">{{
+                  Catalogo(element.codigoCatalogo) }}</a>
+              </ng-template>
+              <ng-template #sinCatalogo>
+                <button mat-icon-button (click)="openCatServicio(element.IdProducto)" class="success">
+                  <mat-icon matTooltip="Click para Elegir CATALOGO para este PRODUCTO">open_in_new</mat-icon>
+                </button>
+              </ng-template>
+            </td>
+          </ng-container>
+          <!--Column -->
+          <ng-container matColumnDef="codigoActividad">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Código Actividad</th>
+            <td mat-cell *matCellDef="let element">{{ element.codigoActividad }}</td>
+          </ng-container>
+          <!--Column -->
+          <ng-container matColumnDef="actEconomica">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              Actividad Economica
+            </th>
+            <td mat-cell *matCellDef="let element" width="20%">
+              <div *ngIf="
+                  element.codigoActividad;
+                  then conCatalogo;
+                  else sinCatalogo
+                "></div>
+              <ng-template #conCatalogo>
+                {{ ActividadEconomica(element.codigoActividad) }}
+              </ng-template>
+              <ng-template #sinCatalogo>
+                <mat-icon matTooltip="Este campo se Asignara al Elegir un CATALOGO">pending</mat-icon>
+              </ng-template>
+            </td>
+          </ng-container>
+          <!--Column -->
+          <ng-container matColumnDef="descripcionLeyenda">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Leyenda</th>
+            <td mat-cell *matCellDef="let element" width="15%">
+              <mat-select [value]="element.descripcionLeyenda" (selectionChange)="
+                  SeleccionarLeyendaUno(element.IdProducto, $event.value)
+                " matTooltip="{{ element.descripcionLeyenda }}">
+                <ng-container *ngFor="
+                    let leyenda of CargarActividadEconomicaLeyendas(
+                      element.codigoActividad
+                    )
+                  ">
+                  <mat-option value="{{ leyenda.descripcionLeyenda }}" matTooltip="{{ leyenda.descripcionLeyenda }}">{{
+                    leyenda.descripcionLeyenda }}</mat-option>
+                </ng-container>
+              </mat-select>
+            </td>
+          </ng-container>
+          <!--Column -->
+          <ng-container matColumnDef="estadoHomologado">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              Homologado
+            </th>
+            <td mat-cell *matCellDef="let element">
+              <div *ngIf="
+                  element.codigoClasificador == null ||
+                    element.codigoActividad == null ||
+                    element.codigoCatalogo == null;
+                  then NoHomologado;
+                  else Homologado
+                "></div>
+              <ng-template #NoHomologado>
+                <span class="badge bg-danger"> No Homologado </span>
+              </ng-template>
+              <ng-template #Homologado>
+                <span class="badge bg-success" style="color: #6bb700; font-weight: 500;">Homologado</span>
+                <mat-icon class="check">check</mat-icon>
+              </ng-template>
+            </td>
+          </ng-container>
+          <!--Column -->
+          <ng-container matColumnDef="estado">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Estado</th>
+            <td mat-cell *matCellDef="let element">
+              <mat-checkbox [checked]="productoActivo(element)"
+                (change)="estadoCambio($event.checked, element.IdProducto)">
+              </mat-checkbox>
+            </td>
+          </ng-container>
+          <!-- Progress Column -->
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+            <td mat-cell *matCellDef="let element"></td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let element; columns: displayedColumns"></tr>
+        </table>
+        <mat-paginator [pageSizeOptions]="[1]"></mat-paginator>
+      </mat-card-content>
+    </mat-card>
+  </mat-tab>
+</mat-tab-group>

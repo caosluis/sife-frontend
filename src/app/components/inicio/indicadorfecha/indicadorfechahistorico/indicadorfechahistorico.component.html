@@ -1,0 +1,182 @@
+<!-- AGREGANDO SIDEBAR FILTRO Y CONTENIDO EN UNO SOLO -->
+<mat-drawer-container class="example-container" autosize hasBackdrop="false">
+  <!-- MENU DE ACCIONES DEL MODULO -->
+  <div class="container-menu">
+    <div class="container-menu-iz">
+      <div class="container-menu-item "></div>
+    </div>
+    <div class="container-menu-de">
+      <div class="container-menu-item ">
+        <button
+        class="controles"
+        mat-raised-button
+        color="primary"
+        (click)="SolicitarFecha()"
+      >
+      <mat-icon>sync</mat-icon> Solicitar actualiación de fecha
+      </button>
+      </div>
+      <div class="container-menu-item ">
+        <button type="button" class="sidebar-filtro-btn" mat-button (click)="drawer.toggle()">
+          <mat-icon>filter_list</mat-icon> Filtro
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- AGREGANDO SIDEBAR DE FILTRO -->
+  <mat-drawer #drawer class="example-sidenav sidebar-filtro" mode="side"  position="end" >
+    <div class="row">
+      <div class="col-sm-6">
+          <h2>Filtros</h2>
+      </div>
+      <div class="col-sm-6">        
+          <button type="button" class="sidebar-filtro-btn" mat-button (click)="drawer.toggle()">
+            <mat-icon>close</mat-icon>
+          </button>
+      </div>
+    </div>
+    <mat-form-field appearance="fill" class="date-selector">
+      <mat-label>Fecha Sincronización</mat-label>
+      <input
+        matInput
+        [matDatepicker]="picker"
+        [(ngModel)]="FechaActual.start_time"
+        (dateChange)="SeleccionarFecha($event)"
+        [ngModelOptions]="{ standalone: true }"
+      />
+      <mat-datepicker-toggle
+        matSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </mat-drawer>
+    <!-- CONTENIDO DEL SIDEBAR FILTRO PARA EL MODULO -->
+  <div class="example-sidenav-content" > 
+
+    <mat-card class="background_user_connection">
+      <div class="row">
+        <div class="col-sm-12">
+          <mat-card-header>
+            <mat-card-title>Sincronización Fecha y Hora</mat-card-title>
+            <mat-card-subtitle>Sincronización de Fecha y Hora de Impuestos Nacionales con la Fecha y Hora de SIFE (se actualiza cada 60 min desde la ultima actualización).
+            </mat-card-subtitle>
+          </mat-card-header>
+        </div>
+      </div>
+      <mat-card-content>
+        <table mat-table [dataSource]="dataSource" matSort matTableResponsive>
+
+          <ng-container matColumnDef="logo">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+            <td mat-cell *matCellDef="let element" width="2%">
+              <ng-container *ngIf="FechaIndicador(element.fechaHoraSer) == 'Vigente'; then ActivoE; else InactivoE"></ng-container>          
+              <ng-template #ActivoE>       
+                <mat-icon>timer</mat-icon><mat-icon class="check">done</mat-icon>
+              </ng-template>
+              <ng-template #InactivoE>
+                <mat-icon style="color: rgb(240 133 148)">timer</mat-icon><mat-icon class="check" style="background: red;">close</mat-icon>
+              </ng-template>
+              
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="fechaHora">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Fecha hora</th>
+            <td mat-cell *matCellDef="let element" width="7%">
+              {{ element.fechaHora | date: "EEEE d MMMM y HH:mm:ss" }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="transaccion">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Transacción </th>
+            <td mat-cell *matCellDef="let element" width="7%">    
+              <ng-container *ngIf="element.transaccion == 'true'; then Activo; else Inactivo">
+              </ng-container>
+              <ng-template #Activo>
+                <span class="badge bg-success">Exitoso</span>
+              </ng-template>
+      
+              <ng-template #Inactivo>
+                <span class="badge bg-danger">Falló</span>
+              </ng-template>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="fechaHoraSer">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              Fecha hora Impuestos Nacionales
+            </th>
+            <td mat-cell *matCellDef="let element" width="7%">
+              <ng-container
+                *ngIf="
+                  FechaIndicador(element.fechaHoraSer) == 'Vigente';
+                  then vigente;
+                  else vencido
+                "
+              >
+              </ng-container>
+              <ng-template #vigente>
+                <span class="badge bg-success">
+                  {{ element.fechaHoraSer | date: "EEEE d MMMM y HH:mm:ss " }}
+                </span>
+              </ng-template>
+              <ng-template #vencido>
+                <span class="badge bg-danger">
+                  {{
+                    element.fechaHoraSer | date: "EEEE d MMMM y HH:mm:ss "
+                  }}
+                </span>
+              </ng-template>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="delta">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Delta</th>
+            <td mat-cell *matCellDef="let element" width="7%">
+                <ng-container *ngIf="element.delta >= 0; then Activot; else Inactivot"></ng-container>
+                <ng-template #Activot>
+                  <span class="badge bg-success">
+                    {{ element.delta }} seg.
+                  </span>
+                </ng-template>
+                <ng-template #Inactivot>
+                  <span class="badge bg-danger">
+                    {{ element.delta }} seg.
+                  </span>
+                </ng-template>
+              
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="listaCodigosRespuestas">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              Lista respuestas
+            </th>
+            <td mat-cell *matCellDef="let element" width="7%">
+              {{ element.listaCodigosRespuestas }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+            <td mat-cell *matCellDef="let element" width="7%">
+              <button mat-icon-button [matMenuTriggerFor]="Notificaciones">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #Notificaciones="matMenu">
+                <button mat-menu-item (click)="detalle(element)">
+                  <mat-icon>launch</mat-icon><span>Detalle</span>
+                </button>
+              </mat-menu>
+            </td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let element; columns: displayedColumns"></tr>
+        </table>
+        <mat-paginator [pageSizeOptions]="[10, 25, 100]"></mat-paginator>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+</mat-drawer-container>

@@ -1,0 +1,151 @@
+
+  <h1 mat-dialog-title>Productos</h1>
+  <div mat-dialog-content>
+          <form [formGroup]="service.form" class="normal-form" (submit)="onSaveProductos()">               
+                  <input type="hidden" id="IdProducto" formControlName="IdProducto">
+                  
+                  <div class="form-group">
+                      <label for="">Producto</label>
+                      <input type="text" id="Producto" formControlName="Producto" class="form-control" placeholder="Producto" >
+                  </div>
+
+                  <div class="form-group">
+                      <label for="">IdProdFabrica</label>
+                      <input type="text" id="IdProdFabrica" formControlName="IdProdFabrica" class="form-control" placeholder="IdProdFabrica" >
+                  </div>
+
+                  <div class="form-group">
+                      <label for="">IdProdAS400</label>
+                      <input type="text" id="IdProdAS400" formControlName="IdProdAS400" class="form-control" placeholder="IdProdAS400" >
+                  </div>
+
+                  <div class="form-group">
+                      <label for="">PrdBloqueado</label>
+                      <input type="text" id="PrdBloqueado" formControlName="PrdBloqueado" class="form-control" placeholder="PrdBloqueado" >
+                  </div>
+
+                  <div class="form-group">
+                      <label for="">IdProdCons</label>
+                      <input type="text" id="IdProdCons" formControlName="IdProdCons" class="form-control" placeholder="IdProdCons" >
+                  </div>
+
+                  <div class="form-group">
+                      <label for="">IdProdSBO</label>
+                      <input type="text" id="IdProdSBO" formControlName="IdProdSBO" class="form-control" placeholder="IdProdSBO" >
+                  </div>
+
+                  <div class="form-group">
+                      <label for="">IdFamilia</label>
+                      <input type="text" id="IdFamilia" formControlName="IdFamilia" class="form-control" placeholder="IdFamilia" >
+                  </div>
+
+                  <div class="form-group">
+                      <label for="">IdGrupo</label>
+                      <input type="text" id="IdGrupo" formControlName="IdGrupo" class="form-control" placeholder="IdGrupo" >
+                  </div>
+
+                  <div class="form-group">
+                      <label for="">IdSubGrupo</label>
+                      <input type="text" id="IdSubGrupo" formControlName="IdSubGrupo" class="form-control" placeholder="IdSubGrupo" >
+                  </div>
+
+                  <div class="form-group">
+                      <label for="">IdSecProducto</label>
+                      <input type="text" id="IdSecProducto" formControlName="IdSecProducto" class="form-control" placeholder="IdSecProducto" >
+                  </div>
+
+                  <div class="form-group">
+                      <label for="">IdDivision</label>
+                      <input type="text" id="IdDivision" formControlName="IdDivision" class="form-control" placeholder="IdDivision" >
+                  </div>
+
+                  <div class="form-group">
+                      <label for="">IdTipoMaterial</label>
+                      <input type="text" id="IdTipoMaterial" formControlName="IdTipoMaterial" class="form-control" placeholder="IdTipoMaterial" >
+                  </div>
+
+                  <div class="form-group">
+                      <label for="">UMBase</label>
+                      <input type="text" id="UMBase" formControlName="UMBase" class="form-control" placeholder="UMBase" >
+                  </div>
+
+                  <div class="form-group">
+                      <label for="">IdSector</label>
+                      <input type="text" id="IdSector" formControlName="IdSector" class="form-control" placeholder="IdSector" >
+                  </div>
+
+                  <div class="form-group">
+                      <label for="">PesoBruto</label>
+                      <input type="text" id="PesoBruto" formControlName="PesoBruto" class="form-control" placeholder="PesoBruto" >
+                  </div>
+
+                  <div class="form-group">
+                      <label for="">PesoNeto</label>
+                      <input type="text" id="PesoNeto" formControlName="PesoNeto" class="form-control" placeholder="PesoNeto" >
+                  </div>
+
+                  <div class="form-group">
+                      <label for="">UnidadPeso</label>
+                      <input type="text" id="UnidadPeso" formControlName="UnidadPeso" class="form-control" placeholder="UnidadPeso" >
+                  </div>
+
+                  <div class="form-group">
+                      <label for="">TipoNumeroEAN</label>
+                      <input type="text" id="TipoNumeroEAN" formControlName="TipoNumeroEAN" class="form-control" placeholder="TipoNumeroEAN" >
+                  </div>
+
+                  <div class="form-group">
+                      <label for="">NumeroCodigoBarra</label>
+                      <input type="text" id="NumeroCodigoBarra" formControlName="NumeroCodigoBarra" class="form-control" placeholder="NumeroCodigoBarra" >
+                  </div>
+
+                  <div class="form-group">
+                      <label for="">LongitudProducto</label>
+                      <input type="text" id="LongitudProducto" formControlName="LongitudProducto" class="form-control" placeholder="LongitudProducto" >
+                  </div>
+
+                  <div class="form-group">
+                      <label for="">AnchoProducto</label>
+                      <input type="text" id="AnchoProducto" formControlName="AnchoProducto" class="form-control" placeholder="AnchoProducto" >
+                  </div>
+
+                  <div class="form-group">
+                      <label for="">AlturaProducto</label>
+                      <input type="text" id="AlturaProducto" formControlName="AlturaProducto" class="form-control" placeholder="AlturaProducto" >
+                  </div>
+
+                  <div class="form-group">
+                      <label for="">UnidadLongitud</label>
+                      <input type="text" id="UnidadLongitud" formControlName="UnidadLongitud" class="form-control" placeholder="UnidadLongitud" >
+                  </div>
+
+                  <div class="form-group">
+                      <label for="">Sujeto_Lote</label>
+                      <input type="text" id="Sujeto_Lote" formControlName="Sujeto_Lote" class="form-control" placeholder="Sujeto_Lote" >
+                  </div>
+
+                  <div class="form-group">
+                      <label for="">catalogo</label>
+                      <input type="text" id="catalogo" formControlName="catalogo" class="form-control" placeholder="catalogo" >
+                  </div>
+
+                  <div class="form-group">
+                      <label for="">nandina</label>
+                      <input type="text" id="nandina" formControlName="nandina" class="form-control" placeholder="nandina" >
+                  </div>
+
+                  <div class="form-group">
+                      <label for="">estadoHomologado</label>
+                      <input type="text" id="estadoHomologado" formControlName="estadoHomologado" class="form-control" placeholder="estadoHomologado" >
+                  </div>
+
+                  <div class="button-row">
+                      <button mat-button type="submit" class="btn btn-success">{{action}}</button>
+                      <button mat-button type="button" (click)="onClose()" mat-flat-button color="warn" class="btn btn-danger">Cancelar</button>
+                  </div>
+          </form>
+  </div>
+  <div mat-dialog-actions>
+  </div>
+    
+  

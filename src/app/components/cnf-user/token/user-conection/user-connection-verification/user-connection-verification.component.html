@@ -1,0 +1,89 @@
+<mat-card-title>Usuario de Conexión</mat-card-title>
+<mat-card-subtitle>Registro de Usuario de Conexión</mat-card-subtitle>
+<mat-dialog-content>
+  <h1 mat-dialog-title></h1>
+  <form [formGroup]="formularioUserConnection">
+    <mat-grid-list cols="2" rowHeight="70px">
+      <input type="hidden" #id formControlName="idCampo" />
+
+      <mat-grid-tile>
+        <mat-form-field class="form">
+          <mat-label>login</mat-label>
+          <input #login matInput formControlName="loginCampo" required />
+          <mat-error>{{ getErrorMessage() }}</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field class="form">
+          <mat-label>password</mat-label>
+          <input #password matInput formControlName="passwordCampo" required />
+          <mat-error>{{ getErrorMessage() }}</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field class="form">
+          <mat-label>client</mat-label>
+          <input #client matInput formControlName="clientCampo" required />
+          <mat-error>{{ getErrorMessage() }}</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field class="form">
+          <mat-label>ip</mat-label>
+          <input #ip matInput formControlName="ipCampo" />
+          <mat-error>{{ getErrorMessage() }}</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field class="form">
+          <mat-label>tipoClienteId</mat-label>
+          <input #tipoClienteId matInput formControlName="tipoClienteIdCampo" />
+          <mat-error>{{ getErrorMessage() }}</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field class="form">
+          <mat-label>tipoUsuarioId</mat-label>
+          <input #tipoUsuarioId matInput formControlName="tipoUsuarioIdCampo" />
+          <mat-error>{{ getErrorMessage() }}</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-raised-button (click)="onNoClick()">Cancelar</button>
+  <button
+    mat-raised-button
+    class="button_user_connection"
+    color="primary"
+    class="button_user_connection"
+    [mat-dialog-close]="{
+      id: id.value,
+      nit: empresaSeleccionada,
+      login: login.value,
+      password: password.value,
+      client: client.value,
+      ip: ip.value,
+      tipoClienteId: tipoClienteId.value,
+      tipoUsuarioId: tipoUsuarioId.value
+    }"
+    [disabled]="
+      login.value === '' || password.value === '' || client.value === ''
+    "
+  >
+    <ng-container *ngIf="id.value === ''; then registrar; else modificar">
+    </ng-container>
+    <ng-template #registrar>
+      <span>Crear</span>
+    </ng-template>
+    <ng-template #modificar>
+      <span>Modificar</span>
+    </ng-template>
+  </button>
+</mat-dialog-actions>

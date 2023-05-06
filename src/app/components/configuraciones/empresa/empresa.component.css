@@ -1,0 +1,10 @@
+.bg-success{
+    color: #6bb700;
+    /*color: #7072bf*/;
+    font-weight: 500 !important;
+    background: #f7f8ff !important;
+}
+.bg-danger {    
+    background: #fff5f8 !important;
+    color: #8c435b !important;
+}

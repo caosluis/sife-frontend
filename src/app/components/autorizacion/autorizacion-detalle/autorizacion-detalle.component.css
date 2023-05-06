@@ -1,0 +1,28 @@
+mat-form-field{
+    width:100%
+}
+.archivo{
+    background-color: #eee;
+    height: 100%;
+}
+.form-group {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 0rem;
+}
+.subtitulo-modal{    
+    display: flex;
+    padding: 5px 2px;
+    margin-bottom: 10px;
+}
+.subtitulo-modal-nombre{
+    color: #000000 !important;
+    font-weight: 500;
+    font-size: 17px;
+    margin-right: 5px;
+}
+.subtitulo-modal-descripcion{
+    font-size: 12px;
+    padding-top: 2px;
+    color: #8e8e8e;
+}

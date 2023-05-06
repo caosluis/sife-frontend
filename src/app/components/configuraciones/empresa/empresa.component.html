@@ -1,0 +1,173 @@
+<!-- AGREGANDO SIDEBAR FILTRO Y CONTENIDO EN UNO SOLO -->
+<mat-drawer-container class="example-container" autosize hasBackdrop="false">
+  <!-- MENU DE ACCIONES DEL MODULO -->
+<div class="container-menu">
+  <div class="container-menu-iz">
+    <div class="container-menu-item ">
+      <button 
+            #tooltip="matTooltip"
+            matTooltip="Información de sobre Empresa"
+            matTooltipPosition="top"
+            type="button" class="sidebar-filtro-btn" mat-button  (click)="informacionEmpresa()">
+            <mat-icon>info</mat-icon> Información
+          </button>
+    </div>
+    <div class="container-menu-item ">
+
+    </div>
+  </div>
+  <div class="container-menu-de">
+    <div class="container-menu-item ">
+      <button mat-raised-button color="primary" (click)="openDialog('Vacio')">
+        <mat-icon>add</mat-icon><span>Nuevo</span>
+      </button>
+    </div>
+    <div class="container-menu-item ">
+      <button type="button" class="sidebar-filtro-btn" mat-button (click)="drawer.toggle()">
+        <mat-icon>filter_list</mat-icon> Filtro
+      </button>
+    </div>
+  </div>
+</div>
+  <!-- SIDEBAR DE FILTRO -->
+  <mat-drawer #drawer class="example-sidenav sidebar-filtro" mode="side"  position="end">
+    <div class="row">
+      <div class="col-sm-6">
+          <h2>Filtros</h2>
+      </div>
+      <div class="col-sm-6">        
+          <button type="button" class="sidebar-filtro-btn" mat-button (click)="drawer.toggle()">
+            <mat-icon>close</mat-icon>
+          </button>
+      </div>
+  </div>
+
+  </mat-drawer>
+
+  <!-- CONTENIDO DEL SIDEBAR FILTRO PARA EL MODULO -->
+  <div class="example-sidenav-content" >  
+
+  <mat-card class="background_user_connection">
+    <div class="row">
+      <div class="col-sm-12">
+        <mat-card-header>
+          <mat-card-title>Empresas registradas</mat-card-title>
+          <mat-card-subtitle>
+            Los Sistemas Informáticos de Facturación para interactuar con la
+            Administración Tributaria, deberán contar con el <b>registro del
+            contribuyente</b>. <br>
+            <b>Nota:</b> Los CUFD (Código Único de Facturación Diaria) se solicitan Automaticamente a las 05:00 am diariamente.
+          </mat-card-subtitle>
+        </mat-card-header>
+      </div>
+    </div>
+    <mat-card-content>
+      <div class="row">
+        <div class="col-md-6">
+
+        </div>
+        <div class="col-md-2 offset-md-4" style="text-align: right;">
+          
+          
+      </div> 
+      </div>
+
+      <table mat-table [dataSource]="dataSource" matSort width="100%"matTableResponsive>
+        <ng-container matColumnDef="logo">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header style="text-align: center;">  <mat-icon color="primary">business</mat-icon> </th>
+          <td mat-cell *matCellDef="let element" >          
+            <ng-container *ngIf="element.estado == 'Activo'; then ActivoE; else InactivoE"></ng-container>          
+            <ng-template #ActivoE>       
+              <span class="logo bg-success" style="color: #7072bf !important">{{ element.razonSocial.substring(0,2).toUpperCase() }}</span><mat-icon class="check">check</mat-icon>
+            </ng-template>
+            <ng-template #InactivoE>
+              <span class="logo bg-success">{{ element.razonSocial.substring(0,2).toUpperCase() }}</span>
+            </ng-template>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Nit">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Nit</th>
+          <td mat-cell *matCellDef="let element">{{ element.nit }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="Nombre">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Razon social</th>
+          <td mat-cell *matCellDef="let element">{{ element.razonSocial }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="Estado">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Estado</th>
+          <td mat-cell *matCellDef="let element">
+            <ng-container *ngIf="element.estado == 'Activo'; then Activo; else Inactivo"></ng-container>
+            
+            <ng-template #Activo>       
+              <span class="badge bg-success">{{ element.estado }}</span>
+            </ng-template>
+            <ng-template #Inactivo>
+              <span class="badge bg-danger">{{ element.estado }}</span>
+            </ng-template>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="principal">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Principal</th>
+          <td mat-cell *matCellDef="let element">
+            <mat-checkbox
+            class="example-margin"
+            [checked]="estado(element.principal)"
+            (change)="PriorizarNIt(element.nit, element.id)"
+          >
+          </mat-checkbox>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="fechaCreacion">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Fecha creación</th>
+          <td mat-cell *matCellDef="let element">{{ element.fechaCreacion | date: "EEEE d MMMM y HH:mm:ss ":"UTC" }}</td>
+        </ng-container>
+        
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+          <td mat-cell *matCellDef="let element" width="3%">
+            <button mat-icon-button [matMenuTriggerFor]="Notificaciones">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+
+            <mat-menu #Notificaciones="matMenu">
+              <button mat-menu-item (click)="openDialog(element)">
+                <mat-icon>launch</mat-icon><span>Detalle</span>
+              </button>
+
+              <ng-container
+                *ngIf="element.estado == 'Activo'; then Activo; else Inactivo"
+              >
+              </ng-container>
+
+              <ng-template #Activo>
+                <button mat-menu-item (click)="ActivarDesactivarEmpresa(element)">
+                  <mat-icon color="warn">toggle_off</mat-icon
+                  ><span>Desactivar</span>
+                </button>
+              </ng-template>
+
+              <ng-template #Inactivo>
+                <button mat-menu-item (click)="ActivarDesactivarEmpresa(element)">
+                  <mat-icon color="primary">toggle_on</mat-icon
+                  ><span>Activar</span>
+                </button>
+              </ng-template>
+
+            </mat-menu>
+          </td></ng-container>
+        
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let element; columns: displayedColumns"></tr>
+      </table>
+      <mat-paginator [pageSizeOptions]="[20, 40, 60, 100]"></mat-paginator>
+
+    </mat-card-content>
+  </mat-card>
+
+</div>
+</mat-drawer-container>

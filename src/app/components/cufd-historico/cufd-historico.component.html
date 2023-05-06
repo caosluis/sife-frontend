@@ -1,0 +1,307 @@
+<mat-tab-group>
+  <mat-tab label="Listado CUFD">  
+  <!-- AGREGANDO SIDEBAR FILTRO Y CONTENIDO EN UNO SOLO -->
+  <mat-drawer-container class="example-container" autosize hasBackdrop="false">
+     <!-- MENU DE ACCIONES DEL MODULO -->
+    <div class="container-menu">
+      <div class="container-menu-iz">
+        <div class="container-menu-item ">
+
+        </div>
+        <div class="container-menu-item ">
+          
+        </div>
+      </div>
+      <div class="container-menu-de">
+        <div class="container-menu-item ">
+          <button mat-raised-button color="primary" type="button" (click)="AbrirReenviar('Todos')" mat-flat-button>
+            <mat-icon>import_export</mat-icon> Reenviar cufd a contribuyente
+          </button>
+        </div>
+        <div class="container-menu-item ">          
+          <ng-container *ngIf="role == 'Sistemas'; then ok"></ng-container>
+          <ng-template #ok>
+            <div class="container-menu-item ">
+              <button mat-raised-button color="primary" type="button" (click)="CufdRenovar()" mat-flat-button
+                [disabled]="HabilitaRenovar">
+                <mat-icon>sync</mat-icon> Solicitar cufd SIAT
+              </button>
+            </div>
+          </ng-template>
+        </div>
+        <div class="container-menu-item ">
+          <button type="button" class="sidebar-filtro-btn" mat-button (click)="drawer.toggle()">
+            <mat-icon>filter_list</mat-icon> Filtro
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- SIDEBAR DE FILTRO -->
+    <mat-drawer #drawer class="example-sidenav sidebar-filtro" mode="side"  position="end" >
+      <div class="row">
+        <div class="col-sm-6">
+            <h2>Filtros</h2>
+        </div>
+        <div class="col-sm-6">        
+            <button type="button" class="sidebar-filtro-btn" mat-button (click)="drawer.toggle()">
+              <mat-icon>close</mat-icon>
+            </button>
+        </div>
+      </div>
+      <form [formGroup]="FiltroCategory">
+      <mat-form-field appearance="standard" class="date-selector">
+        <mat-label>Fecha sincronización</mat-label>
+        <input matInput [matDatepicker]="picker" [(ngModel)]="FechaActual.start_time"
+          (dateChange)="SeleccionarFecha($event)" [ngModelOptions]="{ standalone: true }" />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field class="full-width" appearance="standard">
+        <mat-label>Seleccionar sucursal</mat-label>
+        <mat-select (selectionChange)="SeleccionarSucursal($event.value)" [value]="SucursalSeleccionada">
+          <mat-option [value]="'Todas'"> Todos </mat-option>
+          <mat-option *ngFor="let element of Sucursales" [value]="element.codigoSucursal">
+            <span class="badge rounded-pill bg-light text-dark">{{ element.codigoSucursal }}</span> {{
+            element.descripcion }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="full-width" appearance="standard">
+        <mat-label>Seleccionar Punto de venta</mat-label>
+        <mat-select (selectionChange)="SeleccionarPDV($event.value)" (click)="$event.stopPropagation()"
+          [value]="PDVSeleccionada">
+          <mat-option [value]="'Todos'"> Todos </mat-option>
+          <mat-option *ngFor="let element of PDVs" [value]="element.codigoPDV">
+            <span class="badge rounded-pill bg-light text-dark">{{ element.codigoPDV }}</span> {{
+            element.nombrePuntoVenta }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+    </mat-drawer>
+
+    <!-- CONTENIDO DEL SIDEBAR FILTRO PARA EL MODULO -->
+    <div class="example-sidenav-content" > 
+
+      <mat-card class="background_user_connection">
+        <mat-card-content>
+          <div class="row">          
+            <div class="col-sm-12">
+              <mat-card-header>
+                <mat-card-title>Código Unico de Facturación Diario (CUFD)</mat-card-title>
+                <mat-card-subtitle>
+                  <b>Nota:</b> Los CUFD (Código Único de Facturación Diaria) se solicitan Automaticamente a las 05:00 am diariamente.
+                </mat-card-subtitle>
+              </mat-card-header>
+            </div>
+          </div>
+          <ng-container *ngIf="transaccion == ''; then sincronizando"></ng-container>          
+          <ng-template #sincronizando>  
+            <div class="row">
+              <div class="col-md-4 offset-md-4">
+                <div class="alerta">
+                  <mat-list>
+                      <mat-list-item>
+                        <mat-icon mat-list-icon>cloud_sync</mat-icon>
+                        <div mat-line class="mat-list-item-titulo">En este momento se esta realizando la sincronización de CUFD con los servicios de SIN.</div>
+                        <div mat-line class="mat-list-item-subttitulo"> Sincronizando con los Servicios de CUFD de IN.</div>
+                        <div mat-line class="mat-list-item-subttitulo"><mat-progress-bar mode="indeterminate" ></mat-progress-bar></div>
+                      </mat-list-item>
+                  </mat-list>
+                </div>
+              </div>
+            </div> 
+          </ng-template>
+          <ng-container *ngIf="transaccion == 'false'; then falso"></ng-container>          
+          <ng-template #falso>  
+            <div class="row">
+              <div class="col-md-4 offset-md-4">
+                <div class="alerta bg-danger">
+                  <mat-list>
+                    <mat-list>
+                      <mat-list-item>
+                        <mat-icon mat-list-icon>cloud_sync</mat-icon>
+                        <div mat-line class="mat-list-item-titulo">Solicitud a los servicios de CUFD de Impuestos Nacionales con error.</div>
+                        <div mat-line class="mat-list-item-subttitulo">Se realizara una nueva solicitud cada 5min.</div>
+                      </mat-list-item>
+                    </mat-list>
+                  </mat-list>
+                </div>
+              </div>
+            </div> 
+          </ng-template>
+          <ng-container *ngIf="totalEnviadosCufd != totalCufd; then totalerror" ></ng-container>
+          <ng-template #totalerror>
+            <div class="row">
+              <div class="col-md-4 offset-md-4">
+                <div class="alerta bg-danger">
+                  <mat-list>
+                    <mat-list-item  
+                      matTooltip="Se esta intentado enviar los CUFD al sistema del contribuyente, si el mensaje continua demasiado tiempo existe un problema y contactece con su administrador." 
+                      matTooltipPosition="right">
+                      <div mat-line class="mat-list-item-titulo">En este momento se esta realizando el envio de cdigos al sistema del contribuyente.</div>
+                      <div mat-line class="mat-list-item-subttitulo">Enviando CUFD al sistema del contribuyente, total enviado {{ totalEnviadosCufd }} de {{ totalCufd }}.</div>
+                      <div mat-line class="mat-list-item-subttitulo"><mat-progress-bar mode="indeterminate" color="accent"></mat-progress-bar></div>
+                    </mat-list-item>
+                  </mat-list>
+                </div>
+              </div>
+            </div>
+          </ng-template>               
+      
+          <table mat-table [dataSource]="dataSource" matSort matTableResponsive>
+            <!--Column -->
+            <ng-container matColumnDef="fechaVigencia">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Vigencia</th>
+              <td mat-cell *matCellDef="let element">
+                <ng-container *ngIf="
+                    FechaIndicador(element.fechaVigencia) == 'Vigente';
+                    then vigente;
+                    else vencido
+                  ">
+                </ng-container>
+                <ng-template #vigente>
+                  <span class="badge bg-success">
+                    {{ element.fechaVigencia | date: "EEEE d MMMM y HH:mm:ss":"UTC" }}
+                  </span>
+                </ng-template>
+                <ng-template #vencido>
+                  <span class="badge bg-danger">
+                    {{
+                    element.fechaVigencia | date: "EEEE d MMMM y HH:mm:ss ":"UTC"
+                    }}
+                  </span>
+                </ng-template>
+              </td>
+            </ng-container>
+      
+            <ng-container matColumnDef="logo">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header style="text-align: center;"> </th>
+              <td mat-cell *matCellDef="let element" >          
+                <ng-container *ngIf="FechaIndicador(element.fechaVigencia) == 'Vigente'; then ActivoE; else InactivoE"></ng-container>          
+                <ng-template #ActivoE>       
+                  <span  style="color: #7072bf !important"><mat-icon>browser_updated</mat-icon></span><mat-icon class="check">check</mat-icon>
+                </ng-template>
+                <ng-template #InactivoE>
+                  <span><mat-icon style="color: rgb(240 133 148)">browser_updated</mat-icon></span><mat-icon class="check" style="background: red;">block</mat-icon>
+                </ng-template>
+              </td>
+            </ng-container>
+            <!--Column -->
+            <ng-container matColumnDef="cufd">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>cufd</th>
+              <td mat-cell *matCellDef="let element" width="7%">
+                {{ element.cufd }}
+              </td>
+            </ng-container>
+      
+            <!--Column -->
+            <ng-container matColumnDef="nit">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Nit</th>
+              <td mat-cell *matCellDef="let element">{{ element.nit }}</td>
+            </ng-container>
+      
+            <!--Column -->
+            <ng-container matColumnDef="codigoPDV">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Codigo PDV</th>
+              <td mat-cell *matCellDef="let element">{{ element.codigoPDV }}</td>
+            </ng-container>
+      
+            <!--Column -->
+            <ng-container matColumnDef="nombrePuntoVenta">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Punto Venta</th>
+              <td mat-cell *matCellDef="let element">{{ PDV(element.cuis) }}</td>
+            </ng-container>
+      
+            <!--Column -->
+            <ng-container matColumnDef="codigoSucursal">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>CodigoSucursal</th>
+              <td mat-cell *matCellDef="let element">{{ element.codigoSucursal }}</td>
+            </ng-container>
+      
+            <!--Column -->
+            <ng-container matColumnDef="direccion">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Dirección</th>
+              <td mat-cell *matCellDef="let element">{{ element.direccion }}</td>
+            </ng-container>
+      
+            <!--Column -->
+            <ng-container matColumnDef="sucursal">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Sucursal</th>
+              <td mat-cell *matCellDef="let element">
+                {{ Sucursal(element.nit, element.codigoSucursal) }}
+              </td>
+            </ng-container>
+      
+            <!--Column -->
+            <ng-container matColumnDef="cuis">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>cuis</th>
+              <td mat-cell *matCellDef="let element">{{ element.cuis }}</td>
+            </ng-container>
+      
+            <!--Column-->
+            <ng-container matColumnDef="codigoControl">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                Codigo control
+              </th>
+              <td mat-cell *matCellDef="let element">{{ element.codigoControl }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="transaccionOrigen">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Recepcion Contribuyente</th>
+              <td mat-cell *matCellDef="let element" matTooltip="Si los códigos fueron recepcionados correctamente por el sistema del contribuyente muestra como Recibido">
+                <ng-container *ngIf="
+                    element.transaccionOrigen == 1;
+                    then recibido;
+                    else noRecibido
+                  ">
+                </ng-container>
+                <ng-template #recibido>
+                  <span class="badge bg-success">
+                    Recibido
+                  </span><mat-icon class="check">check</mat-icon>
+                </ng-template>
+                <ng-template #noRecibido>
+                  <span class="badge bg-danger">
+                    No Recibido
+                  </span><mat-icon class="check" style="background: red;">sync</mat-icon>
+                </ng-template>
+              </td>
+            </ng-container>
+                      <!--Column Actions-->
+            <ng-container matColumnDef="actions">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+              <td mat-cell *matCellDef="let element" width="3%">
+                <button mat-icon-button [matMenuTriggerFor]="Notificaciones">
+                  <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #Notificaciones="matMenu">
+                  <button mat-menu-item (click)="detalle(element)">
+                    <mat-icon>launch</mat-icon><span>Ver Detalle</span>
+                  </button>
+                  <button mat-menu-item (click)="AbrirReenviar(element)">
+                    <mat-icon>schedule_send</mat-icon><span>Reenviar a contribuyente</span>
+                  </button>
+                </mat-menu>
+      
+              </td>
+            </ng-container>
+      
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let element; columns: displayedColumns"></tr>
+          </table>
+          <mat-paginator [pageSizeOptions]="[10, 25, 100]"></mat-paginator>
+        </mat-card-content>
+      </mat-card>
+
+    </div>
+  </mat-drawer-container>
+  
+  </mat-tab>
+  <mat-tab label="Sincronizacion de CUFD">
+    <app-cufdsincronizacion></app-cufdsincronizacion>
+  </mat-tab>
+</mat-tab-group>
+
+
+

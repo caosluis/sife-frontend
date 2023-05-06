@@ -1,0 +1,128 @@
+<mat-card-title>Cerrar Operaciones PDV</mat-card-title>
+<mat-card-subtitle>Este proceso no puede ser revertido</mat-card-subtitle>
+<mat-dialog-content align="center">
+  <div class="row">
+    <div class="col-md-4 col-sm-4 col-xs-12"></div>
+    <div class="col-md-4 col-sm-4 col-xs-12">
+      <mat-icon [inline]="true" color="warm">cancel</mat-icon>
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-12"></div>
+  </div>
+
+  <div class="row" style="font-size: 12px; padding-top: 1%">
+    <label
+      for=""
+      class="control-label col-md-3 col-sm-3 col-xs-12"
+      style="text-align: right"
+      >Código PDV:
+    </label>
+    <div class="col-md-9 col-sm-9 col-xs-12">
+      <input
+        class="form-control"
+        value="{{ data.codigoPDV }}"
+        style="font-size: 12px"
+        disabled
+      />
+    </div>
+  </div>
+
+  <div class="row" style="font-size: 12px; padding-top: 1%">
+    <label
+      for=""
+      class="control-label col-md-3 col-sm-3 col-xs-12"
+      style="text-align: right"
+      >Código Sucursal:
+    </label>
+    <div class="col-md-9 col-sm-9 col-xs-12">
+      <input
+        class="form-control"
+        value="{{ data.codigoSucursal }}"
+        style="font-size: 12px"
+        disabled
+      />
+    </div>
+  </div>
+
+  <div class="row" style="font-size: 12px; padding-top: 1%">
+    <label
+      for=""
+      class="control-label col-md-3 col-sm-3 col-xs-12"
+      style="text-align: right"
+      >Código Tipo Punto de Venta:
+    </label>
+    <div class="col-md-9 col-sm-9 col-xs-12">
+      <input
+        class="form-control"
+        value="{{ data.codigoTipoPuntoVenta }}"
+        style="font-size: 12px"
+        disabled
+      />
+    </div>
+  </div>
+
+  <div class="row" style="font-size: 12px; padding-top: 1%">
+    <label
+      for=""
+      class="control-label col-md-3 col-sm-3 col-xs-12"
+      style="text-align: right"
+      >CUIS:
+    </label>
+    <div class="col-md-9 col-sm-9 col-xs-12">
+      <input
+        class="form-control"
+        value="{{ data.cuis }}"
+        style="font-size: 12px"
+        disabled
+      />
+    </div>
+  </div>
+
+  <div class="row" style="font-size: 12px; padding-top: 1%">
+    <label
+      for=""
+      class="control-label col-md-3 col-sm-3 col-xs-12"
+      style="text-align: right"
+      >Descripción:
+    </label>
+    <div class="col-md-9 col-sm-9 col-xs-12">
+      <input
+        class="form-control"
+        value="{{ data.descripcion }}"
+        style="font-size: 12px"
+        disabled
+      />
+    </div>
+  </div>
+</mat-dialog-content>
+
+<div *ngIf="transaccion == 'true'">
+  <div *ngIf="Respuesta" class="alert alert-success mt-3 mb-0">
+    {{ Respuesta.Respuesta.descripcion }}
+  </div>
+</div>
+<div *ngIf="transaccion == 'false'">
+  <div *ngIf="Respuesta" class="alert alert-danger mt-3 mb-0">
+    {{ Respuesta.Respuesta.descripcion }}
+  </div>
+</div>
+
+<mat-dialog-actions align="center">
+  <button
+    mat-raised-button
+    [disabled]="loading"
+    color="primary"
+    (click)="CerrarOperacionesPDV()"
+  >
+    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span
+    >Confirmar
+  </button>
+  <button
+    mat-raised-button
+    color="warn"
+    (click)="onClose()"
+    type="button"
+    mat-flat-button
+  >
+    Cancelar
+  </button>
+</mat-dialog-actions>

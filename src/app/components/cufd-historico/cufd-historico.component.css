@@ -1,0 +1,29 @@
+mat-form-field{
+  width: 100%;
+}
+table {
+  width: 100%;
+}
+.contenedor-indicador[_ngcontent-rsf-c21] {
+  padding: 20px;
+}
+.conten[_ngcontent-rsf-c21] {
+  padding: 20px;
+  padding-top: 1px;
+}
+button {
+  border-radius: 10px;
+  outline: none;
+}
+.badge {
+  font-size: large;
+}
+.bg-success{
+  color: #6bb700;
+  background: #f7f8ff !important;
+}
+.bg-danger {    
+  background: #fff5f8 !important;
+  color: #8c435b !important;
+}
+

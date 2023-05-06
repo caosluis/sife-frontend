@@ -1,0 +1,66 @@
+.form {
+  padding-left: 1%;
+  padding-right: 1%;
+  width: 50%;
+}
+.formPlus {
+  padding-left: 1%;
+  padding-right: 1%;
+  width: 100%;
+}
+.formMin {
+  padding-left: 1%;
+  padding-right: 1%;
+  width: 25%;
+}
+.center-btn {
+  text-align: center;
+}
+.example-button-row button,
+.example-button-row a {
+  margin-right: 8px;
+}
+.ItemCabecera:hover {
+  color: rgb(71, 111, 223);
+}
+.codigo {
+  color: rgb(28, 108, 228);
+}
+.template {
+  background-color: rgb(245, 247, 246);
+  color: rgb(8, 8, 8);
+}
+.estados {
+  font-size: 12px !important;
+  padding-top: 1% !important;
+  position: static !important;
+}
+.form .table th,
+.table td {
+  padding: 0px 4px;
+}
+
+.encabezado_factura {
+  font-size: x-small;
+}
+.moneda_factura{
+  font-size: small;
+  padding: 10px;
+}
+.titulo_campo {
+  font-weight: bold;
+}
+.noBorder {
+  border: 0;
+}
+img {
+  height: 30px;
+}
+.bg-success{
+  color: #6bb700;
+  background: #f7f8ff !important;
+}
+.bg-danger {    
+  background: #fff5f8 !important;
+  color: #8c435b !important;
+}

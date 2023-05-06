@@ -1,0 +1,34 @@
+
+<h1 mat-dialog-title>Verificar código</h1>
+<div mat-dialog-content>
+        <form [formGroup]="service.formVal" class="normal-form" (submit)="onSave()">               
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <b>Empresa: </b>{{obj.cuis}}
+                    </div>
+                    <div class="form-group col-md-6">
+                        <b>Sucursal: </b>{{obj.codigoSucursal}}
+                    </div>
+                </div>
+                <div class="form-row">
+                        <div class="form-group col-md-6">
+                           <b>Descripción: </b>{{obj.descripcion}}
+                        </div>
+                        <div class="form-group col-md-6">
+                                
+                        </div>
+                </div>
+                <div class="form-row">
+                        <label for="">Código Solicitud</label>
+                        <input type="text" id="codigoSolicitud" formControlName="codigoSolicitud" class="form-control" placeholder="codigoSolicitud" disabled>
+                </div>
+                <div class="button-row">
+                    <button mat-button type="submit" class="btn btn-success">{{action}}</button>
+                    <button mat-button type="button" (click)="onClose()" mat-flat-button color="warn" class="btn btn-danger">Cancelar</button>
+                </div>
+        </form>
+</div>
+<div mat-dialog-actions>
+  <!-- <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button cdkFocusInitial>Ok</button> -->
+</div>

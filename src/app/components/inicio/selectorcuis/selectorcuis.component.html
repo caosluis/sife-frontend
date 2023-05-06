@@ -1,0 +1,141 @@
+<br>
+<div class="empresa">
+  <mat-list role="list">
+    <mat-list-item>
+      <ng-container
+        *ngIf="UsuarioActual.role == 'Sistemas' || UsuarioActual.role == 'Coorporativo'; then sistemas; else usuario">
+      </ng-container>
+      <ng-template #sistemas>
+        <ng-container *ngIf="UsuarioActual.role == 'Sistemas'">
+          <mat-form-field [formGroup]="EmpresaForm">
+            <mat-select placeholder="Empresa" [value]="EmpresaSeleccionada"
+              (selectionChange)="seleccionarEmpresa($event.value)">
+              <ng-container *ngFor="let empresa of empresaList">
+
+                <mat-option [value]="empresa.nit" matTooltip="empresa.razonSocial" matTooltipPosition="left">
+                  {{ empresa.razonSocial }}
+                </mat-option>
+
+              </ng-container>
+            </mat-select>
+          </mat-form-field>
+        </ng-container>
+
+
+        <ng-container *ngIf="UsuarioActual.role == 'Coorporativo'">
+
+          <mat-form-field [formGroup]="EmpresaForm">
+            <mat-select placeholder="Empresa" [value]="EmpresaSeleccionada"
+              (selectionChange)="seleccionarEmpresa($event.value)">
+              <ng-container *ngFor="let empresa of empresaList">
+                <mat-option *ngIf="UsuarioActual.empresa == empresa.nit" [value]="empresa.nit"
+                  matTooltip="empresa.razonSocial" matTooltipPosition="left">
+                  {{ empresa.razonSocial }}
+                </mat-option>
+
+                <mat-option *ngIf="habilitado(empresa.nit)" [value]="empresa.nit" matTooltip="empresa.razonSocial"
+                  matTooltipPosition="left">
+                  {{ empresa.razonSocial }}
+                </mat-option>
+
+              </ng-container>
+            </mat-select>
+          </mat-form-field>
+        </ng-container>
+
+
+      </ng-template>
+      <ng-template #usuario>
+        <mat-form-field [formGroup]="EmpresaForm">
+          <mat-select placeholder="Empresa" [value]="EmpresaSeleccionada"
+            (selectionChange)="seleccionarEmpresa($event.value)" disabled>
+            <mat-option *ngFor="let empresa of empresaList" [value]="empresa.nit" matTooltip="empresa.razonSocial"
+              matTooltipPosition="left">
+              {{ empresa.razonSocial }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </ng-template>
+
+    </mat-list-item>
+    <mat-list-item>
+
+      <ng-container *ngIf=" candiafirma >= '0'; then valido; else vencido"></ng-container>
+      <ng-template #valido>
+        <a [routerLink]="['/firmaDigital']" onclick="return false;" class="link-success">
+          <ng-container [ngSwitch]="candiafirma">
+            <div *ngSwitchCase="0">
+              <a [routerLink]="['/firmaDigital']" onclick="return false;" class="link-warning">
+                {{ fecha }}
+              </a>
+              <mat-icon class="alerta">notifications</mat-icon>
+            </div>
+            <div *ngSwitchDefault>
+              <a [routerLink]="['/firmaDigital']" onclick="return false;" class="link-success">
+                {{ fecha }}
+              </a>
+            </div>
+          </ng-container>
+        </a>
+      </ng-template>
+      <ng-template #vencido>
+        <a [routerLink]="['/firmaDigital']" onclick="return false;" class="link-danger">
+          {{ fecha }}
+        </a>
+        <mat-icon class="alerta">notifications</mat-icon>
+      </ng-template>
+    </mat-list-item>
+    <mat-list-item>
+      <ng-container *ngIf=" candiatoken >= '0'; then validotoken; else vencidotoken"></ng-container>
+      <ng-template #validotoken>
+        <a [routerLink]="['/token']" class="link-success">
+          <ng-container [ngSwitch]="candiatoken">
+            <div *ngSwitchCase="0">
+              <a [routerLink]="['/firmaDigital']" onclick="return false;" class="link-warning">
+                {{ fechatoken }}
+              </a>
+              <mat-icon class="alerta">notifications</mat-icon>
+            </div>
+            <div *ngSwitchDefault>
+              <a [routerLink]="['/firmaDigital']" onclick="return false;" class="link-success">
+                {{ fechatoken }}
+              </a>
+            </div>
+          </ng-container>
+        </a>
+      </ng-template>
+      <ng-template #vencidotoken>
+        <a [routerLink]="['/token']" class="link-danger">
+          {{ fechatoken }}
+        </a>
+        <mat-icon class="alerta">notifications</mat-icon>
+      </ng-template>
+    </mat-list-item>
+    <mat-list-item>
+      <ng-container *ngIf=" candiacert >= '0'; then validoCert; else vencidoCert"></ng-container>
+      <ng-template #validoCert>
+        <a [routerLink]="['/certificados']" class="link-success">
+          <ng-container [ngSwitch]="candiacert">
+            <div *ngSwitchCase="0">
+              <a [routerLink]="['/certificados']" onclick="return false;" class="link-warning">
+                {{ fechacert }}
+              </a>
+              <mat-icon class="alerta">notifications</mat-icon>
+            </div>
+            <div *ngSwitchDefault>
+              <a [routerLink]="['/certificados']" onclick="return false;" class="link-success">
+                {{ fechacert }}
+              </a>
+            </div>
+          </ng-container>
+        </a>
+      </ng-template>
+      <ng-template #vencidoCert>
+        <a [routerLink]="['/certificados']" class="link-danger">
+          {{ fechacert }}
+        </a>
+        <mat-icon class="alerta">notifications</mat-icon>
+      </ng-template>
+    </mat-list-item>
+  </mat-list>
+</div>

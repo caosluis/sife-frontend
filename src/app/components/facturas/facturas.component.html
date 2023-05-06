@@ -1,0 +1,591 @@
+<ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple"
+>
+  <p style="font-size: 20px; color: white">Cargando...</p>
+</ngx-spinner>
+<mat-tab-group mat-align-tabs="start" color="primary">
+  <mat-tab label="Facturas On-line" >    
+    <!-- AGREGANDO SIDEBAR FILTRO Y CONTENIDO EN UNO SOLO -->
+    <mat-drawer-container class="example-container" autosize hasBackdrop="false">
+      <!-- MENU DE ACCIONES DEL MODULO -->
+      <div class="container-menu">
+        <div class="container-menu-iz">
+          <div class="container-menu-item "></div>
+        </div>
+        <div class="container-menu-de">
+          <div class="container-menu-item ">
+            <button
+            [disabled]="loading"
+            mat-raised-button
+            color="primary"
+            (click)="Recargar()">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            <mat-icon>sync</mat-icon> Actualizar tabla
+          </button>
+          </div>
+          <div class="container-menu-item ">
+            <button type="button" class="sidebar-filtro-btn" mat-button (click)="drawer.toggle()">
+              <mat-icon>filter_list</mat-icon> Filtro
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- SIDEBAR DE FILTRO -->
+      <mat-drawer #drawer class="example-sidenav sidebar-filtro" mode="side"  position="end" >
+        <div class="row">
+          <div class="col-sm-6">
+              <h2>Filtros</h2>
+          </div>
+          <div class="col-sm-6">        
+              <button type="button" class="sidebar-filtro-btn" mat-button (click)="drawer.toggle()">
+                <mat-icon>close</mat-icon>
+              </button>
+          </div>
+        </div>
+        <form [formGroup]="formFiltro" class="normal-form">
+          <div class="row">
+            <div class="col-md-12">
+              <mat-form-field class="formMin">
+                <mat-select
+                  placeholder="Origen de Factura"
+                  (selectionChange)="SeleccionarOrigen($event.value)"
+                  [value]="origenSeleccionado"
+                >
+                  <mat-option value="Todos">Todos</mat-option>
+                  <mat-option
+                    *ngFor="let element of origenList"
+                    [value]="element.origen"
+                    ><span class="badge rounded-pill bg-light">{{ element.origen }} </span> {{ element.descripcion }}</mat-option
+                  >
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-md-12">
+              <mat-form-field class="formMin">
+                <mat-select
+                  placeholder="Tipo de Factura"
+                  (selectionChange)="SeleccionarTipoFactura($event.value)"
+                  [value]="tipofacturaSeleccionada"
+                >
+                  <mat-option value="Todos">Todos</mat-option>
+                  <mat-option value="1">FACTURA COMPRA-VENTA</mat-option>
+                  <mat-option value="2"
+                    >RECIBO DE ALQUILER DE BIENES INMUEBLES</mat-option
+                  >
+                  <mat-option value="3"
+                    >FACTURA COMERCIAL DE EXPORTACIÓN</mat-option
+                  >
+                  <mat-option value="24">NOTA DE CRÉDITO-DÉBITO</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-md-12">
+              <mat-form-field class="formMin" [formGroup]="formFiltro">
+                <mat-select
+                  placeholder="Sucursales"
+                  id="sucursales"
+                  matInput
+                  (selectionChange)="SeleccionarSucursal($event.value)"
+                  [value]="sucursalSeleccionada"
+                >
+                  <mat-option value="Todas">Todas</mat-option>
+                  <mat-option
+                    *ngFor="let element of Sucursales"
+                    [value]="element.codigoSucursal"
+                    ><span class="badge rounded-pill bg-light">{{ element.codigoSucursal }}</span>
+                    {{ element.descripcion }}</mat-option
+                  >
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-md-12">
+              <mat-form-field class="formMin" [formGroup]="formFiltro">
+                <mat-select
+                  placeholder="Punto de venta"
+                  id="pdv"
+                  matInput
+                  (selectionChange)="SeleccionarPDV($event.value)"
+                  [value]="pdvSeleccionado"
+                >
+                  <mat-option value="Todos">Todos</mat-option>
+                  <mat-option value="0">Punto Venta 0</mat-option>
+                  <mat-option
+                    *ngFor="let element of PDVs"
+                    [value]="element.codigoPDV"
+                    ><span class="badge rounded-pill bg-light">{{ element.codigoPDV }}</span>
+                    {{ element.nombrePuntoVenta }}</mat-option
+                  >
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-md-12">
+              <mat-form-field class="formMin" [formGroup]="formFiltro">
+                <mat-select
+                  placeholder="Estados Factura"
+                  id="estadosFactura"
+                  matInput
+                  (selectionChange)="SeleccionarEstado($event.value)"
+                  [value]="estadoSeleccionado"
+                >
+                  <mat-option value="Todos">Todos</mat-option>
+                  <mat-option
+                    *ngFor="let element of estadosF"
+                    [value]="element.id"
+                    >{{ element.valor }}</mat-option
+                  >
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-md-12">
+              
+              <!-- <div *ngIf="play == 1; then socketOn; else socketOff"></div>
+              <ng-template #socketOn
+                ><button mat-fab color="primary" (click)="play = 0">
+                  <mat-icon>pause_circle_filled</mat-icon>
+                </button></ng-template
+              >
+              <ng-template #socketOff
+                ><button mat-fab color="primary" (click)="play = 1">
+                  <mat-icon>play_arrow</mat-icon>
+                </button></ng-template
+              > -->
+            </div>
+          </div>
+        </form>        
+      </mat-drawer>
+
+      <!-- CONTENIDO DEL SIDEBAR FILTRO PARA EL MODULO -->
+      <div class="example-sidenav-content" >        
+        <mat-card class="background_user_connection">
+          <div class="row">
+            <div class="col-sm-12">
+              <mat-card-header>
+                <mat-card-title>Facturas en linea</mat-card-title>
+                <mat-card-subtitle>Una Factura Digital es emitida a través de un Sistema Informático de
+                  Facturación autorizado por la Administración Tributaria.</mat-card-subtitle>
+              </mat-card-header>
+            </div>
+          </div>
+          <mat-card-content>
+            <div class="row">   
+              <div class="col-md-6">
+                <mat-form-field appearance="standard" class="buscador" style="width: 100%;">
+                  <mat-label>Buscar factura por palabra</mat-label>
+                  <input
+                    matInput
+                    placeholder="Buscar"
+                    autocomplete="off"
+                    (keyup)="FiltroBuscar($event.target.value)"
+                  />
+                </mat-form-field>
+              </div>
+              <div class="col-md-2">
+                <mat-form-field appearance="standard" class="date-selector">
+                  <mat-label>Seleccionar Fecha Emisión</mat-label>
+                  <input
+                    matInput
+                    [matDatepicker]="picker"
+                    [(ngModel)]="FechaActual.start_time"
+                    (dateChange)="SeleccionarFecha($event)"
+                    [ngModelOptions]="{ standalone: true }"
+                  />
+                  <mat-datepicker-toggle
+                    matSuffix
+                    [for]="picker"
+                  ></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+              </div>            
+              <div class="col-md-4">
+                <span
+                  *ngIf="loading1"
+                  class="spinner-border spinner-border-sm mr-1"
+                ></span>
+              </div>
+            </div>
+            <table mat-table [dataSource]="dataSource" matTableResponsive matSort width="100%">
+              <ng-container matColumnDef="logo">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header  style="text-align: center;"></th>
+                <td mat-cell *matCellDef="let element">              
+                    <img src="./../../../../assets/png/fa1_opt.png" alt="" />
+                </td>
+              </ng-container>
+    
+              <ng-container matColumnDef="Nro.Factura">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Nro. Factura</th>
+                <td mat-cell *matCellDef="let element" style="text-align: center;">
+                      {{ element.numeroFactura }}
+                </td>
+              </ng-container>
+        
+              <ng-container matColumnDef="CUIS">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>CUIS</th>
+                <td mat-cell *matCellDef="let element">{{ element.cuis }}</td>
+              </ng-container>
+        
+              <ng-container matColumnDef="CUF" >
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>CUF</th>
+                <td mat-cell *matCellDef="let element" >{{ element.cuf }}</td>
+              </ng-container>
+        
+              <ng-container matColumnDef="PuntodeVenta">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                  Punto de Venta
+                </th>
+                <td mat-cell *matCellDef="let element">
+                  {{ element.codigoPuntoVenta }} {{ PDV(element.cuis) }}
+                </td>
+              </ng-container>
+        
+              <ng-container matColumnDef="Sucursal">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Sucursal</th>
+                <td mat-cell *matCellDef="let element">
+                  {{ sucursalesIndex[element["codigoSucursal"]] }}
+                </td>
+              </ng-container>
+
+              <ng-container matColumnDef="TipoDocumento">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                  Tipo Documento
+                </th>
+                <td mat-cell *matCellDef="let element">
+                  {{ documentosSector[element.codigoDocumentoSector] }}
+                </td>
+              </ng-container>
+
+              <ng-container matColumnDef="FechadeEmision">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                  Fecha de Emisión
+                </th>
+                <td mat-cell *matCellDef="let element">
+                  {{ element.fecha | date: "EEEE d MMMM y HH:mm:ss":"UTC"  }}
+                </td>
+              </ng-container>
+
+              <ng-container matColumnDef="Origen">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Origen</th>
+                <td mat-cell *matCellDef="let element">{{ element.origen }}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="MontoTotal">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Monto Total</th>
+                <td mat-cell *matCellDef="let element">{{ element.montoTotal }}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="Estado">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Estado</th>
+                <td mat-cell *matCellDef="let element">
+                  <div class="fatura-listado-estado">     
+                    <ng-container *ngIf="element.estado == '2'; then Activo; else Inactivo"></ng-container>
+              
+                    <ng-template #Activo>       
+                      <span class="badge bg-success">{{ estados[element.estado] }}  </span>
+                    </ng-template>
+                    <ng-template #Inactivo>
+                      <span class="badge bg-danger">{{ estados[element.estado] }}  </span>
+                    </ng-template>
+    
+                    <ng-container [ngSwitch]="element.estado">
+                      <div *ngSwitchCase="0">                    
+                        <mat-icon class="check" style="background: #ffc72c;">info</mat-icon>
+                      </div>
+                      <div *ngSwitchCase="1">                    
+                        <mat-icon class="check" style="background: #ffc72c;">autorenew</mat-icon>
+                      </div>
+                      <div *ngSwitchCase="2">                    
+                        <mat-icon class="check">done</mat-icon>
+                      </div>
+                      <div *ngSwitchCase="6">                    
+                        <mat-icon class="check">done</mat-icon>
+                      </div>
+                      <div *ngSwitchCase="91">                    
+                        <mat-icon class="check" style="background: #ff562c;">close</mat-icon>
+                      </div>
+                      <div *ngSwitchCase="4">                    
+                        <mat-icon class="check" style="background: #666666;">notifications_off</mat-icon>
+                      </div>
+                      <div *ngSwitchCase="5">
+                        <mat-icon class="check" style="background: #ffc72c;">event</mat-icon>
+                      </div>
+                    </ng-container>
+                  </div>
+                </td>
+              </ng-container>
+
+              <ng-container matColumnDef="actions">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+                <td mat-cell *matCellDef="let element">
+                  <button mat-icon-button [matMenuTriggerFor]="Opciones">
+                    <mat-icon>more_vert</mat-icon>
+                  </button>
+                  <mat-menu #Opciones="matMenu">
+                    <button mat-menu-item (click)="Detalle('Anular', element)">
+                      <mat-icon>launch</mat-icon><span>Detalle factura</span>
+                    </button>
+        
+                    <!--ng-container
+                      *ngIf="Anulado(element.estado) == 'Anulado'; then anulado"
+                    >
+                    </ng-container>
+                    <ng-template #anulado>
+                      <button
+                        mat-menu-item
+                        (click)="ReversionAnulacionFactura(element)"
+                      >
+                        <span>Revertir Anulación en SIN</span>
+                      </button>
+                    </ng-template-->            
+        
+                    <ng-container
+                      *ngIf="NoAnulado(element.estado) !== 'Anulado'; then noanulado"
+                    >
+                    </ng-container>
+                    <ng-template #noanulado>
+                      <button mat-menu-item (click)="AnulacionFactura(element)">
+                        <mat-icon>dangerous</mat-icon><span> Anular en SIN</span>
+                      </button>
+                    </ng-template>
+    
+                    <ng-container *ngIf="element.estado == '91'; then rechazado">
+                    </ng-container>
+                    <ng-template #rechazado>
+                      <button mat-menu-item (click)="AnulacionFactura(element)">
+                        <mat-icon>dangerous</mat-icon><span> Anular en SIN</span>
+                      </button>
+                    </ng-template>
+        
+                    <!--button mat-menu-item (click)="RegularizacionFactura(element)">
+                      <mat-icon>system_update_alt</mat-icon><span>Regularizar Factura en SIN</span>
+                    </button-->
+        
+                    <ng-container
+                      *ngIf="Valido(element.estado) == 'Valido'; then mostrar"
+                    >
+                    </ng-container>
+                    <ng-template #mostrar>
+                      <button mat-menu-item (click)="ConsultarFactura(element)">
+                        <mat-icon>sync</mat-icon><span> Consultar Estado a IN</span>
+                      </button>
+                    </ng-template>
+                  </mat-menu>
+                </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let element; columns: displayedColumns"></tr>
+            </table>
+            <mat-paginator [pageSizeOptions]="[10, 20, 30, 100]"></mat-paginator>        
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </mat-drawer-container>
+  </mat-tab>
+  <mat-tab label="Buscar Factura">
+    <!-- MODULO PARA BUSCAR UNA FACTURA EN ESPECIFICO -->
+    <mat-card class="background_user_connection">
+      <mat-card-header>
+        <mat-card-title>Buscar factura por CUF</mat-card-title>
+        <mat-card-subtitle
+          >Busqueda de una factura por su Codigo Unico de Factura (CUF)</mat-card-subtitle
+        >
+      </mat-card-header>
+      <mat-card-content>
+        <div class="row filtro">
+          <div class="col-md-5">
+            <!-- <mat-form-field>
+              <input #idproducto />
+            </mat-form-field> -->
+            <mat-form-field appearance="standard" class="buscador" style="width: 100%;">
+              <mat-label>Buscar factura por CUF</mat-label>
+              <input id="dproducto" #idproducto matInput placeholder="Buscar" />
+            </mat-form-field>
+          </div>
+          <div class="col-md-2">
+            <button
+              mat-raised-button
+              color="primary"
+              (click)="BuscarFactura(idproducto.value)"
+            >
+              <mat-icon>search</mat-icon>
+            </button>
+          </div>
+        </div>
+        <table mat-table [dataSource]="dataSource1" matSort width="100%"matTableResponsive>
+          <ng-container matColumnDef="logo">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header style="text-align: center;"><mat-icon color="default">file</mat-icon></th>
+            <td mat-cell *matCellDef="let element">              
+              <img src="./../../../../assets/png/fa1_opt.png" alt="" />
+            </td>
+          </ng-container>
+          <ng-container matColumnDef="Nro.Factura">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Nro. Factura</th>
+            <td mat-cell *matCellDef="let element" style="text-align: center;">
+                  {{ element.numeroFactura }}                
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="CUIS">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>CUIS</th>
+            <td mat-cell *matCellDef="let element">{{ element.cuis }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="CUF">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>CUF</th>
+            <td mat-cell *matCellDef="let element">{{ element.cuf }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="PuntodeVenta">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              Punto de Venta
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.codigoPuntoVenta }} {{ PDV(element.cuis) }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="Sucursal">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Sucursal</th>
+            <td mat-cell *matCellDef="let element">
+              {{ sucursalesIndex[element["codigoSucursal"]] }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="TipoDocumento">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              Tipo Documento
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ documentosSector[element.codigoDocumentoSector] }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="FechadeEmision">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              Fecha de Emisión
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.fecha | date: "EEEE d MMMM y HH:mm:ss":"UTC" }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="Origen">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Origen</th>
+            <td mat-cell *matCellDef="let element">{{ element.origen }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="MontoTotal">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Monto Total</th>
+            <td mat-cell *matCellDef="let element">{{ element.montoTotal }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="Estado">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Estado</th>
+            <td mat-cell *matCellDef="let element">
+              <div class="fatura-listado-estado">  
+                
+                <ng-container *ngIf="element.estado == '2'; then Activo; else Inactivo"></ng-container>
+          
+                <ng-template #Activo>       
+                  <span class="badge bg-success">{{ estados[element.estado] }}  </span>
+                </ng-template>
+                <ng-template #Inactivo>
+                  <span class="badge bg-danger">{{ estados[element.estado] }}  </span>
+                </ng-template>
+      
+                <ng-container [ngSwitch]="element.estado">
+                  <div *ngSwitchCase="0">                    
+                    <mat-icon class="check" style="background: #ffc72c;">info</mat-icon>
+                  </div>
+                  <div *ngSwitchCase="1">                    
+                    <mat-icon class="check" style="background: #ffc72c;">autorenew</mat-icon>
+                  </div>
+                  <div *ngSwitchCase="2">                    
+                    <mat-icon class="check">done</mat-icon>
+                  </div>
+                  <div *ngSwitchCase="6">                    
+                    <mat-icon class="check">done</mat-icon>
+                  </div>
+                  <div *ngSwitchCase="91">                    
+                    <mat-icon class="check" style="background: #ff562c;">close</mat-icon>
+                  </div>
+                  <div *ngSwitchCase="4">                    
+                    <mat-icon class="check" style="background: #666666;">notifications_off</mat-icon>
+                  </div>
+                  <div *ngSwitchCase="5">
+                    <mat-icon class="check" style="background: #ffc72c;">event</mat-icon>
+                  </div>
+                </ng-container>
+              </div>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+            <td mat-cell *matCellDef="let element">
+              <button mat-icon-button [matMenuTriggerFor]="Opciones">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #Opciones="matMenu">
+                <button mat-menu-item (click)="Detalle('Anular', element)">
+                  <mat-icon>launch</mat-icon><span>Detalle factura</span>
+                </button>
+
+                <!--ng-container
+                  *ngIf="Anulado(element.estado) == 'Anulado'; then anulado"
+                >
+                </ng-container>
+                <ng-template #anulado>
+                  <button
+                    mat-menu-item
+                    (click)="ReversionAnulacionFactura(element)"
+                  >
+                    <span>Revertir Anulación en SIN</span>
+                  </button>
+                </ng-template-->            
+
+                <ng-container
+                  *ngIf="NoAnulado(element.estado) !== 'Anulado'; then noanulado"
+                >
+                </ng-container>
+                <ng-template #noanulado>
+                  <button mat-menu-item (click)="AnulacionFactura(element)">
+                    <mat-icon>dangerous</mat-icon><span> Anular en SIN</span>
+                  </button>
+                </ng-template>
+
+                <ng-container *ngIf="element.estado == '91'; then rechazado">
+                </ng-container>
+                <ng-template #rechazado>
+                  <button mat-menu-item (click)="AnulacionFactura(element)">
+                    <mat-icon>dangerous</mat-icon><span> Anular en SIN</span>
+                  </button>
+                </ng-template>
+
+                <!--button mat-menu-item (click)="RegularizacionFactura(element)">
+                  <mat-icon>system_update_alt</mat-icon><span>Regularizar Factura en SIN</span>
+                </button-->
+
+                <ng-container
+                  *ngIf="Valido(element.estado) == 'Valido'; then mostrar"
+                >
+                </ng-container>
+                <ng-template #mostrar>
+                  <button mat-menu-item (click)="ConsultarFactura(element)">
+                    <mat-icon>sync</mat-icon><span> Consultar Estado a IN</span>
+                  </button>
+                </ng-template>
+              </mat-menu>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let element; columns: displayedColumns"></tr>
+        </table>
+      <mat-paginator [pageSizeOptions]="[10, 20, 30, 100]"></mat-paginator> 
+      </mat-card-content>
+    </mat-card>
+  </mat-tab>
+

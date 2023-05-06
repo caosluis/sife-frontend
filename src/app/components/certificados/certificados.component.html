@@ -1,0 +1,88 @@
+
+<!-- AGREGANDO SIDEBAR FILTRO Y CONTENIDO EN UNO SOLO -->
+<mat-drawer-container class="example-container" autosize hasBackdrop="false">
+    <!-- MENU DE ACCIONES DEL MODULO -->
+    <div class="container-menu">
+      <div class="container-menu-iz">
+        <div class="container-menu-item ">
+  
+        </div>
+      </div>
+      <div class="container-menu-de">
+
+        <div class="container-menu-item ">
+          <button type="button" class="sidebar-filtro-btn" mat-button (click)="drawer.toggle()">
+            <mat-icon>filter_list</mat-icon> Filtro
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- SIDEBAR DE FILTRO -->
+    <mat-drawer #drawer class="example-sidenav sidebar-filtro" mode="side"  position="end" >
+      <h2>Filtros</h2>  
+      <button type="button" class="sidebar-filtro-btn" mat-button (click)="drawer.toggle()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-drawer>
+  
+    <!-- CONTENIDO DEL SIDEBAR FILTRO PARA EL MODULO -->
+    <div class="example-sidenav-content" >   
+        <mat-card class="background_user_connection">  
+            <div class="row">
+                <div class="col-sm-12">
+                <mat-card-header>
+                    <mat-card-title>Información del certificado</mat-card-title>
+                    <mat-card-subtitle>Este registro prueba su identidad ante un equipo remoto de *impuestos.gob.bo
+                        .</mat-card-subtitle>
+                </mat-card-header>
+                </div>
+            </div>    
+
+            <table
+            mat-table
+            [dataSource]="certificadosService.dataSource"
+            class="table_user_connection"
+            matSort
+            matTableResponsive
+            >
+                    
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>id</th>
+                <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+            </ng-container>
+            <ng-container matColumnDef="nombre">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>nombre</th>
+                <td mat-cell *matCellDef="let element">{{ element.nombre }}</td>
+            </ng-container>
+            <ng-container matColumnDef="fechaCreacion">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>fechaCreacion</th>        
+                <td mat-cell *matCellDef="let element">
+                    {{ element.fechaCreacion | date: "EEEE d MMMM y  ":"UTC"}}
+                </td>        
+            </ng-container>
+            <ng-container matColumnDef="fechaModificacion">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>fechaModificacion</th>         
+                <td mat-cell *matCellDef="let element">
+                    <button mat-stroked-button color="primary">  
+                    {{ element.fechaModificacion | date: "EEEE d MMMM y  ":"UTC"}}
+                    </button>
+                </td>        
+            </ng-container>
+            <ng-container matColumnDef="fechaVencimiento">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>fechaVencimiento</th>
+                <td mat-cell *matCellDef="let element">
+                <span class="bg-light text-dark">
+                {{ element.fechaVencimiento | date: "EEEE d MMMM y  ":"UTC"}}
+                </span>
+                </td>
+            </ng-container>      
+            
+        
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+            </table>
+            <mat-paginator [pageSizeOptions]="[10, 25, 100]"></mat-paginator>
+            
+        </mat-card>
+    </div>
+  </mat-drawer-container>

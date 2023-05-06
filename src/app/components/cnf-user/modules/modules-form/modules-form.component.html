@@ -1,0 +1,96 @@
+<h1 mat-dialog-title>Modulo</h1>
+<h4>Datos de Modulo y Permisos</h4>
+<div mat-dialog-content>
+  <form [formGroup]="formularioModulo">
+    <input type="hidden" #id formControlName="id" />
+    <div class="row" style="font-size: 12px; padding-top: 1%">
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <mat-form-field class="formPlus">
+          <input
+            type="text"
+            #nombre_modulo
+            matInput
+            placeholder="nombre_modulo"
+            formControlName="nombre_modulo"
+          />
+        </mat-form-field>
+      </div>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <mat-form-field class="formPlus">
+          <input
+            type="text"
+            #url_modulo
+            matInput
+            placeholder="url_modulo"
+            formControlName="url_modulo"
+          />
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row" style="font-size: 12px; padding-top: 1%">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <mat-form-field class="formPlus">
+          <input
+            type="text"
+            #descripcion
+            matInput
+            placeholder="descripcion"
+            formControlName="descripcion"
+          />
+        </mat-form-field>
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+    <h4>Roles que cuentan con Acceso al Modulo:</h4>
+    <div class="row" style="font-size: 12px; padding-top: 1%">
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <mat-list>
+          <ng-container *ngFor="let role of rolesList">
+            <mat-list-item
+              >{{ role.role }}
+              <button mat-icon-button (click)="SeleccionarRole(role.role)">
+                <div
+                  *ngIf="
+                    ModuloAcceso(role.role) == true;
+                    then acceso;
+                    else noacceso
+                  "
+                ></div>
+                <ng-template #acceso>
+                  <mat-icon>check</mat-icon>
+                </ng-template>
+                <ng-template #noacceso>
+                  <mat-icon>clear</mat-icon>
+                </ng-template>
+              </button></mat-list-item
+            >
+          </ng-container>
+        </mat-list>
+      </div>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions align="center">
+  <button
+    mat-raised-button
+    [mat-dialog-close]="{
+      id: id.value,
+      nombre_modulo: nombre_modulo.value,
+      url_modulo: url_modulo.value,
+      descripcion: descripcion.value,
+      roles_asignados: rolescargados
+    }"
+  >
+    {{ id.value == "" ? "Registrar Nuevo Modulo" : "Modificar Modulo" }}
+  </button>
+  <button
+    mat-button
+    type="button"
+    mat-flat-button
+    color="warn"
+    class="btn btn-danger"
+    (click)="onClose()"
+  >
+    Cerrar
+  </button>
+</div>

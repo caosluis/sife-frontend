@@ -1,0 +1,35 @@
+.form {
+  padding-left: 1%;
+  padding-right: 1%;
+  width: 100%;
+}
+.formPlus {
+  padding-left: 1%;
+  padding-right: 1%;
+  width: 100%;
+}
+.formMin {
+  padding-left: 1%;
+  padding-right: 1%;
+  width: 25%;
+}
+.center-btn {
+  text-align: center;
+}
+.example-button-row button,
+.example-button-row a {
+  margin-right: 8px;
+}
+
+.sidebar_der {
+  width: 50%;
+}
+.verificacion-input {
+  width: 80%;
+}
+.titulo_campo {
+  font-weight: bold;
+}
+mat-expansion-panel-header {
+  font-size: 12px !important;
+}

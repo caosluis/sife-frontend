@@ -1,0 +1,86 @@
+<mat-dialog-content>
+  <mat-card-title>Solicitud CUIS</mat-card-title>
+  <mat-card-subtitle>Conforme a normativa vigente el proceso de obtención del 
+    CUIS para una sucursal o punto de venta debe realizarse mediante el Sistema Informático de Facturación autorizado</mat-card-subtitle>
+  <div class="row" style="font-size: 12px; padding-top: 1%">
+    <label
+      for=""
+      class="control-label col-md-3 col-sm-3 col-xs-12"
+      style="text-align: right"
+      >NIT:</label
+    >
+    <div class="col-md-9 col-sm-9 col-xs-12">
+      <input
+        class="form-control"
+        value="{{ data.nit }}"
+        style="font-size: 12px"
+        disabled
+      />
+    </div>
+  </div>
+
+  <div class="row" style="font-size: 12px; padding-top: 1%">
+    <label
+      for=""
+      class="control-label col-md-3 col-sm-3 col-xs-12"
+      style="text-align: right"
+      >Código Sucursal:</label
+    >
+    <div class="col-md-9 col-sm-9 col-xs-12">
+      <input
+        class="form-control"
+        value="{{ data.codigoSucursal }}"
+        style="font-size: 12px"
+        disabled
+      />
+    </div>
+  </div>
+
+  <div class="row" style="font-size: 12px; padding-top: 1%">
+    <label
+      for=""
+      class="control-label col-md-3 col-sm-3 col-xs-12"
+      style="text-align: right"
+      >Código Punto de Venta:</label
+    >
+    <div class="col-md-9 col-sm-9 col-xs-12">
+      <input
+        class="form-control"
+        value="{{ data.codigoPDV }}"
+        style="font-size: 12px"
+        disabled
+      />
+    </div>
+  </div>
+</mat-dialog-content>
+
+
+<div *ngIf="transaccion == 'true'">
+  <div *ngIf="Respuesta" class="alert alert-success mt-3 mb-0">
+    {{ Respuesta.Respuesta.descripcion }}
+  </div>
+</div>
+<div *ngIf="transaccion == 'false'">
+  <div *ngIf="Respuesta" class="alert alert-danger mt-3 mb-0">
+    {{ Respuesta.Respuesta.descripcion }}
+  </div>
+</div>
+
+
+<div mat-dialog-actions align="center">
+  <button mat-raised-button [disabled]="loading" (click)="Solicitar(data)">
+    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span
+    >Solicitar
+  </button>
+  <button
+    mat-button
+    type="button"
+    mat-raised-button
+    [disabled]="loading"
+    color="warn"
+    class="btn btn-danger"
+    (click)="onClose()"
+  >
+    Cerrar
+  </button>
+</div>

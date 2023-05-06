@@ -1,0 +1,116 @@
+table{
+    width: 100%;
+}
+.filtro{
+    padding-left: 10px;
+}
+.success:hover{
+    color: green;
+}
+.custom-file-input::-webkit-file-upload-button {
+    visibility: hidden;
+  }
+  .custom-file-input::before {
+    content: 'Seleccione su archivo';
+    display: inline-block;
+    /* background: linear-gradient(top, #f9f9f9, #e3e3e3); */
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 5px 8px;
+    -webkit-user-select: none;
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+    font-weight: 700;
+    font-size: 10pt;
+  }
+  .custom-file-input:hover::before {
+    border-color: black;
+  }
+  .custom-file-input:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+  }
+  label[for="archivoHCalculo"] {
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #106BA0;
+    display: inline-block;
+    transition: all .5s;
+    cursor: pointer;
+    padding: 10px 20px !important;
+    text-transform: uppercase;
+    width: fit-content;
+    text-align: center;
+    }
+
+    .form{
+      padding-left: 1%;
+      padding-right: 1%;
+      width: 50%;
+    }
+    .formPlus{
+      padding-left: 1%;
+      padding-right: 1%;
+      width: 100%;
+    }
+    .formMin{
+      padding-left: 1%;
+      padding-right: 1%;
+      width: 25%;
+    }
+    .example-container {
+      display: flex;
+      flex-direction: column;
+      max-height: 500px;
+      min-width: 300px;
+    }
+    
+    .mat-table {
+      overflow: auto;
+      max-height: 500px;
+    }
+    .modelo1{
+      font-size: 14px;
+      font-weight: 600;
+      /* color: #fff !important; */
+      /* background-color: rgb(22, 16, 107); */
+      display: inline-block;
+      transition: all .5s;
+      cursor: pointer;
+      /* padding: 7px 15px !important; */
+      text-transform: uppercase;
+      width: fit-content;
+      text-align: center;
+      border-radius: 5px;
+      border: 1px solid #ccc!important;
+    }
+.imagen_plantilla{
+  width:50px; 
+  height:50px;
+}
+.badge{
+  font-size: large;
+}
+.bg-success{
+  color: #6bb700;
+  background: #f7f8ff !important;
+}
+
+.bg-danger {    
+  /*background: #999bd2 !important;*/
+  background: #fff5f8 !important;
+  color: #8c435b !important;
+}
+.example-chip-list {
+  width: 100%;
+}
+
+mat-horizontal-stepper {
+  background: #f6f6f6 !important;
+}
+.green-icon{
+  color: #198754;
+}
+.red-icon{
+  color: #e62f17;
+}

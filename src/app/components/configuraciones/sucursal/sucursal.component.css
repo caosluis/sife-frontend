@@ -1,0 +1,19 @@
+table {
+  width: 100%;
+}
+.badge {
+  font-size: large;
+}
+.green-icon {
+  color: #45c78a;
+}
+
+.bg-success{
+  color: #7072bf;
+  background: #f7f8ff !important;
+}
+
+.bg-danger {    
+  background: #fff5f8 !important;
+  color: #8c435b !important;
+}

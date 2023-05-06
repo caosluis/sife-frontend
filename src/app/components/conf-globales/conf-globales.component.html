@@ -1,0 +1,133 @@
+  <!-- AGREGANDO SIDEBAR FILTRO Y CONTENIDO EN UNO SOLO -->
+  <mat-drawer-container class="example-container" autosize hasBackdrop="false">
+    <!-- MENU DE ACCIONES DEL MODULO -->
+    <div class="container-menu">
+        <div class="container-menu-iz">
+        <div class="container-menu-item ">
+            
+        </div>
+        </div>
+        <div class="container-menu-de">
+        <div class="container-menu-item ">
+            <button mat-raised-button color="primary" (click)="openDialog('Crear',null)">
+                <mat-icon>add</mat-icon> Nuevo 
+            </button>
+        </div>
+        <div class="container-menu-item ">
+            <button type="button" class="sidebar-filtro-btn" mat-button (click)="drawer.toggle()">
+            <mat-icon>filter_list</mat-icon> Filtro
+            </button>
+        </div>
+        </div>
+    </div>
+    <!-- SIDEBAR DE FILTRO -->
+    <mat-drawer #drawer class="example-sidenav sidebar-filtro" mode="side"  position="end"  >
+    <div class="row">
+        <div class="col-sm-6">
+            <h2>Filtros</h2>
+        </div>
+        <div class="col-sm-6">        
+            <button type="button" class="sidebar-filtro-btn" mat-button (click)="drawer.toggle()">
+                <mat-icon>close</mat-icon>
+            </button>
+        </div>
+    </div>
+      <mat-form-field appearance="standard" class="buscador">
+        <mat-label>Buscar</mat-label>
+        <input matInput  placeholder="Buscar" autocomplete="off" (keyup)="applyFilter($event.target.value)">
+        </mat-form-field>
+    </mat-drawer>
+  
+    <!-- CONTENIDO DEL SIDEBAR FILTRO PARA EL MODULO -->
+    <div class="example-sidenav-content" > 
+
+        <mat-card class="background_user_connection">  
+            <div class="row">
+                <div class="col-sm-12">
+                    <mat-card-header>
+                        <mat-card-title>Configuraciones y Variables globales</mat-card-title>
+                        <mat-card-subtitle>Configuraciones y variables globales para utilizar en el entorno del sistema.</mat-card-subtitle>
+                    </mat-card-header>
+                </div>
+            </div>
+            <mat-card-content>
+
+            <table mat-table [dataSource]="dataSource" matTableResponsive matSort>
+                    <ng-container matColumnDef="logo">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header style="text-align: center;"></th>
+                    <td mat-cell *matCellDef="let element" > 
+                        <ng-container *ngIf="element.Bloquear == '1'; then ActivoE; else InactivoE"></ng-container>          
+                        <ng-template #ActivoE>       
+                            <mat-icon style="color: #7072bf !important" >settings</mat-icon><mat-icon class="check">check</mat-icon>
+                        </ng-template>
+                        <ng-template #InactivoE>       
+                            <mat-icon style="color: rgb(240 133 148)" >settings</mat-icon>
+                        </ng-template>
+                    </td>
+                    </ng-container>
+            
+                    <!--Column -->
+                    <ng-container matColumnDef="id">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> id </th>
+                        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                    </ng-container>
+            
+                    <!--Column -->
+                    <ng-container matColumnDef="Grupo">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Grupo </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Grupo}} </td>
+                    </ng-container>
+                
+                    <!--Column -->
+                    <ng-container matColumnDef="Nombre">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Nombre}} </td>
+                    </ng-container>
+                
+                    <!--Column -->
+                    <ng-container matColumnDef="Propiedad">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Propiedad </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Propiedad}} </td>
+                    </ng-container>
+                
+                    <!--Column -->
+                    <ng-container matColumnDef="Valor">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Valor </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Valor}} </td>
+                    </ng-container>
+                
+                    <!--Column -->
+                    <ng-container matColumnDef="Bloquear">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Bloquear </th>
+                        <td mat-cell *matCellDef="let element">
+                        <ng-container *ngIf="element.Bloquear == '1'; then ActivoE; else InactivoE"></ng-container>          
+                        <ng-template #ActivoE>       
+                            <span class="badge bg-success">Activo</span>
+                        </ng-template>
+                        <ng-template #InactivoE>       
+                            <span class="badge bg-danger" >Inactivo</span>
+                        </ng-template>
+
+                        </td>
+                    </ng-container>                      
+                            <!-- Progress Column -->
+                            <ng-container matColumnDef="actions">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+                                <td mat-cell *matCellDef="let element">
+                                    <button mat-icon-button [matMenuTriggerFor]="opciones"><mat-icon>more_vert</mat-icon></button>
+                                    <mat-menu #opciones="matMenu">
+                                        <button mat-menu-item (click)="openDialog('Actualizar',element)">
+                                            <mat-icon>launch</mat-icon><span>Ver detalle</span>
+                                        </button>
+                                        <button mat-menu-item color="warn" (click)="openDialog('Eliminar',element)">
+                                            <mat-icon>delete_outline</mat-icon><span>Eliminar</span>
+                                        </button>
+                                    </mat-menu>
+                                </td>
+                            </ng-container>
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let element; columns: displayedColumns;"></tr>
+            </table>
+            <mat-paginator [pageSizeOptions]="[10, 25, 100]"></mat-paginator>
+
+

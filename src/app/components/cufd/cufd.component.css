@@ -1,0 +1,42 @@
+table {
+    width: 100%;
+}
+.contenedor-indicador[_ngcontent-rsf-c21] {
+    padding: 20px;
+}
+.conten[_ngcontent-rsf-c21] {
+    padding: 20px;
+    padding-top: 1px;
+}
+button{
+    border-radius:10px;
+    outline:none;
+}
+.badge{
+    font-size: large;
+}
+
+.example-container {
+    height: 400px;
+    overflow: auto;
+  }
+  
+  table {
+    width: 100%;
+  }
+  .Indicador-envio td .badge{
+    border-radius: 4px;
+    height: 25px;
+    width: 90%;
+    
+  }
+  .bg-success{
+    color: #6bb700;
+    background: #f7f8ff !important;
+  }
+  
+  .bg-danger {    
+    /*background: #999bd2 !important;*/
+    background: #fff5f8 !important;
+    color: #8c435b !important;
+  }

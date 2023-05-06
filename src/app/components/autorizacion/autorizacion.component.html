@@ -1,0 +1,176 @@
+
+<!-- AGREGANDO SIDEBAR FILTRO Y CONTENIDO EN UNO SOLO -->
+<mat-drawer-container class="example-container" autosize hasBackdrop="false">
+  <!-- MENU DE ACCIONES DEL MODULO -->
+  <div class="container-menu">
+    <div class="container-menu-iz">
+      <div class="container-menu-item ">
+
+      </div>
+    </div>
+    <div class="container-menu-de">
+      <div class="container-menu-item ">
+        <button mat-raised-button color="primary" (click)="RegistroAutorizacion()">
+          <mat-icon>add</mat-icon> Nuevo
+        </button>
+      </div>
+      <div class="container-menu-item ">
+        <button type="button" class="sidebar-filtro-btn" mat-button (click)="drawer.toggle()">
+          <mat-icon>filter_list</mat-icon> Filtro
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- SIDEBAR DE FILTRO -->
+  <mat-drawer #drawer class="example-sidenav sidebar-filtro" mode="side"  position="end" >
+    <h2>Filtros</h2>  
+    <button type="button" class="sidebar-filtro-btn" mat-button (click)="drawer.toggle()">
+      <mat-icon>close</mat-icon>
+    </button>
+    <mat-form-field appearance="standard" class="buscador">
+      <mat-label>Buscar</mat-label>
+      <input
+        matInput
+        placeholder="Buscar"
+        autocomplete="off"
+        (keyup)="applyFilter($event.target.value)"
+      />
+    </mat-form-field>
+  </mat-drawer>
+
+  <!-- CONTENIDO DEL SIDEBAR FILTRO PARA EL MODULO -->
+  <div class="example-sidenav-content" >   
+
+<mat-card class="background_user_connection">  
+    <div class="row">
+      <div class="col-sm-12">
+        <mat-card-header>
+          <mat-card-title>Inicio de Autorizacion</mat-card-title>
+          <mat-card-subtitle>Este proceso se logra superando exitósamente todas las etapas del proceso conocido como Autorización de Sistemas.</mat-card-subtitle>
+        </mat-card-header>
+      </div>
+    </div>    
+
+    <table
+    mat-table
+      [dataSource]="autorizacionService.dataSource"
+      matTableResponsive matSort width="100%"
+    >
+  
+      <ng-container matColumnDef="logo">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header style="text-align: center;">  
+          
+        </th>
+        <td mat-cell *matCellDef="let element" >          
+          <ng-container *ngIf="element.estado == '1'; then ActivoE; else InactivoE"></ng-container>          
+          <ng-template #ActivoE>       
+            <mat-icon style="color: #7072bf !important">book</mat-icon><mat-icon class="check">done</mat-icon>
+          </ng-template>
+          <ng-template #InactivoE>
+            <mat-icon style="color: rgb(240 133 148)">book</mat-icon>
+          </ng-template>
+        </td>
+      </ng-container>
+      
+      <ng-container matColumnDef="modalidad">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Modalidad</th>
+        <td mat-cell *matCellDef="let element">{{ element.modalidad }}</td>
+      </ng-container>
+      <ng-container matColumnDef="nit">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Nit</th>
+        <td mat-cell *matCellDef="let element">{{ element.nit }}</td>
+      </ng-container>
+      <ng-container matColumnDef="codigoSistema">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Codigo sistema</th>        
+        <td mat-cell *matCellDef="let element">
+            {{ element.codigoSistema }}
+        </td>        
+      </ng-container>
+      <ng-container matColumnDef="codigoModalidad">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Codigo modalidad</th>         
+          <td mat-cell *matCellDef="let element">
+            <button mat-stroked-button color="primary">  
+              {{ element.codigoModalidad }}
+            </button>
+          </td>        
+      </ng-container>
+      <ng-container matColumnDef="codigoAmbiente">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Codigo ambiente</th>         
+          <td mat-cell *matCellDef="let element">
+            <button mat-stroked-button color="primary">  
+              {{ element.codigoAmbiente }}
+            </button>
+          </td>        
+      </ng-container>
+      <ng-container matColumnDef="fechaCreacion">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Fecha registro</th>
+        <td mat-cell *matCellDef="let element">
+          <span class="bg-light text-dark">
+          {{ element.fechaCreacion | date: "EEEE d MMMM y  ":"UTC"}}
+        </span>
+        </td>
+      </ng-container>  
+      <ng-container matColumnDef="version">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Version</th>        
+        <td mat-cell *matCellDef="let element">
+            {{ element.version }}
+        </td>        
+      </ng-container>    
+      <ng-container matColumnDef="dependencia">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Dependencia</th>
+        <td mat-cell *matCellDef="let element">{{ element.dependencia }}</td>
+      </ng-container>
+      <ng-container matColumnDef="estado">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Estado</th>
+        <td mat-cell *matCellDef="let element" >
+          <ng-container *ngIf="element.estado == '1'; then Activo; else Inactivo">
+          </ng-container>
+          <ng-template #Activo>
+            <span class="badge bg-success">Activo</span>
+          </ng-template>
+  
+          <ng-template #Inactivo>
+            <span class="badge bg-danger">Inactivo</span>
+          </ng-template>
+        </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Acciones</th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button [matMenuTriggerFor]="Notificaciones">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #Notificaciones="matMenu">
+            <button mat-menu-item (click)="DetalleAutorizacion(element)">
+              <mat-icon class="mat-icon notranslate material-icons mat-icon-no-color">launch</mat-icon><span>Detalle Técnico</span>
+            </button>
+            <ng-container *ngIf="element.estado == '1'; then Activo; else Inactivo"></ng-container>
+              <ng-template #Activo>
+                <button mat-menu-item (click)="ActivarDesactivar(element)">
+                  <mat-icon color="warn">toggle_off</mat-icon
+                  ><span>Desactivar</span>
+                </button>
+              </ng-template>
+              <ng-template #Inactivo>
+                <button mat-menu-item (click)="ActivarDesactivar(element)">
+                  <mat-icon color="primary">toggle_on</mat-icon
+                  ><span>Activar</span>
+                </button>
+              </ng-template>
+          </mat-menu>
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[10, 25, 100]"></mat-paginator>
+  </mat-card>
+
+  <mat-menu #Notificaciones="matMenu">
+    <button mat-menu-item>Notificacion 1</button>
+    <button mat-menu-item>Notificacion 2</button>
+  </mat-menu>
+</div>
+</mat-drawer-container>

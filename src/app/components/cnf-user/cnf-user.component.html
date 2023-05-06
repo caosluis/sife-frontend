@@ -1,0 +1,22 @@
+<!-- <mat-tab-group dynamicHeight *ngIf="UserService.sesion['nivelAcceso']=='551eac71-5b53-4785-b96f-4cbaab197012' || UserService.sesion['nivelAcceso']=='7faa0d5e-5fb1-4476-94ab-216f5191a341'">
+    <mat-tab label="Usuarios">
+      <app-user></app-user>
+    </mat-tab>
+    <mat-tab label="Grupos">
+      <app-groups></app-groups>
+    </mat-tab>
+  </mat-tab-group>
+<div *ngIf="UserService.sesion['nivelAcceso']=='109c0dba-8d1f-42fa-8400-a6b1c62adb91'">
+  <h1 style="text-align: center;">Acceso denegado</h1>
+</div> -->
+<mat-tab-group dynamicHeight>
+  <mat-tab label="Usuarios">
+    <app-user></app-user>
+  </mat-tab>
+  <mat-tab label="Modulos">
+    <app-modules></app-modules>
+  </mat-tab>
+  <mat-tab label="Roles">
+    <app-roles></app-roles>
+  </mat-tab>
+</mat-tab-group>

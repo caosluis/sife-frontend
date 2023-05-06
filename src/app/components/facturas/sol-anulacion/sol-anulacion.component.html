@@ -1,0 +1,50 @@
+
+  <form [formGroup]="form" class="normal-form" (submit)="solicita()">               
+    <h1 mat-dialog-title>Solicitud de Anulación</h1>
+    <div mat-dialog-content>
+            
+              <mat-form-field class="form" [formGroup]="form">
+                  <mat-select placeholder="Punto de venta" id="codigoPuntoVenta" formControlName="codigoPuntoVenta" matInput>
+                      
+                      <mat-option *ngFor="let codigoPuntoVenta of codigoPuntoVentas" [value]="codigoPuntoVenta.codigoPDV">{{codigoPuntoVenta.nombrePuntoVenta}}</mat-option>
+                  </mat-select>
+              </mat-form-field>
+      
+              <mat-form-field class="form" [formGroup]="form">
+                  <mat-select placeholder="Sucursal" id="codigoSucursal" formControlName="codigoSucursal" matInput>
+                      
+                      <mat-option *ngFor="let codigoSucursal of codigoSucursals" [value]="codigoSucursal.codigoSucursal">{{codigoSucursal.descripcion}}</mat-option>
+                  </mat-select>
+              </mat-form-field>
+      
+              <mat-form-field class="form" [formGroup]="form">
+                    <input type="text" id="cuf" formControlName="cuf" matInput placeholder="CUF" >
+              </mat-form-field>
+      
+              <mat-form-field class="form" [formGroup]="form">
+                    <input type="text" id="numeroDocumentoFiscal" formControlName="numeroDocumentoFiscal" matInput placeholder="Número de documento" >
+              </mat-form-field>
+      
+              <mat-form-field class="formPlus" [formGroup]="form">
+                  <mat-select placeholder="Motivo de anulación" id="codigoMotivo" formControlName="codigoMotivo" matInput>
+                      
+                      <mat-option *ngFor="let codigoMotivo of codigoMotivos" [value]="codigoMotivo.codigoClasificador">{{codigoMotivo.descripcion}}</mat-option>
+                  </mat-select>
+              </mat-form-field>
+      
+                    <input type="hidden" id="cufd" formControlName="cufd">
+      
+                    <input type="hidden" id="cuis" formControlName="cuis">
+      
+                    <input type="hidden" id="nit" formControlName="nit">
+      
+    </div>
+    <div mat-dialog-actions align="center">
+    <div>
+          <button mat-raised-button color="primary" type="submit">Solicitar anulación</button>
+          <button mat-raised-button color="warn" type="button" (click)="onClose()" mat-flat-button>Cancelar</button>
+    </div>
+  </div>
+  </form>
+      
+    

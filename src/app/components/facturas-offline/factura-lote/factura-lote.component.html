@@ -1,0 +1,280 @@
+<mat-tab-group mat-align-tabs="start" color="accent">
+  <mat-tab label="Lotes">    
+    <!-- AGREGANDO SIDEBAR FILTRO Y CONTENIDO EN UNO SOLO -->
+    <mat-drawer-container class="example-container" autosize hasBackdrop="false">
+      <!-- MENU DE ACCIONES DEL MODULO -->
+      <div class="container-menu">
+        <div class="container-menu-iz">
+          <div class="container-menu-item ">
+            <mat-list>
+              <mat-list-item >
+                <mat-icon mat-list-icon>event</mat-icon>
+                <div mat-line class="mat-list-item-titulo">Fecha ultima solicitud de Lotes.</div>
+                <div mat-line class="mat-list-item-subttitulo"> {{ Respuesta | date: "EEEE d MMMM y HH:mm:ss":"UTC"  }} </div>
+              </mat-list-item>
+            <!--mat-divider></mat-divider-->
+            </mat-list>
+          </div>
+        </div>
+        <div class="container-menu-de">
+          <div class="container-menu-item ">
+            <button
+                  mat-raised-button
+                  [disabled]="loading"
+                  color="primary"
+                  (click)="Recargar()"
+                >
+                  <span
+                    *ngIf="loading"
+                    class="spinner-border spinner-border-sm mr-1"
+                  ></span
+                  ><mat-icon>sync</mat-icon> Actualizar tabla
+            </button>
+          </div>
+          <div class="container-menu-item ">
+            <button type="button" class="sidebar-filtro-btn" mat-button (click)="drawer.toggle()">
+              <mat-icon>filter_list</mat-icon> Filtro
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- SIDEBAR DE FILTRO -->
+      <mat-drawer #drawer class="example-sidenav sidebar-filtro" mode="side"  position="end"  >
+        <div class="row">
+          <div class="col-sm-6">
+              <h2>Filtros</h2>
+          </div>
+          <div class="col-sm-6">        
+              <button type="button" class="sidebar-filtro-btn" mat-button (click)="drawer.toggle()">
+                <mat-icon>close</mat-icon>
+              </button>
+          </div>
+        </div>
+        <mat-form-field appearance="standard" class="buscador">
+          <mat-label>Buscar por palabra</mat-label>
+          <input
+            matInput
+            placeholder="Buscar"
+            autocomplete="off"
+            (keyup)="FiltroBuscar($event.target.value)"
+            value="{{ this.LoteActual }}"
+          />
+        </mat-form-field>
+
+        <mat-form-field appearance="standard" class="date-selector">
+          <mat-label>Fecha Lote</mat-label>
+          <input
+            matInput
+            [matDatepicker]="picker"
+            [(ngModel)]="FechaActual.start_time"
+            (dateChange)="SeleccionarFecha($event)"
+            [ngModelOptions]="{ standalone: true }"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </mat-drawer>
+
+      <!-- CONTENIDO DEL SIDEBAR FILTRO PARA EL MODULO -->
+      <div class="example-sidenav-content" >   
+
+    <mat-card class="background_user_connection">
+      <div class="row">
+        <div class="col-sm-12">
+          <mat-card-header>
+            <mat-card-title>Lotes</mat-card-title>
+            <mat-card-subtitle>Las Facturas emitidas fuera empaquetadas hasta 500 facturas por lote.</mat-card-subtitle>
+          </mat-card-header>
+        </div>
+      </div>
+      <mat-card-content>        
+        <table mat-table [dataSource]="dataSource" matSort width="100%" class="table-responsive" matTableResponsive>
+          <!--Column -->
+          <ng-container matColumnDef="logo">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header  style="text-align: center;"></th>
+            <td mat-cell *matCellDef="let element">              
+                <img class="lote-img" src="./../../../../assets/png/paquete.png"alt="" />
+            </td>
+          </ng-container>
+          <!--Column -->
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Id Lote</th>
+            <td mat-cell *matCellDef="let element" >
+                <a
+                  class="mat-green"
+                  (click)="RedireccionaraOffline(element.id)"
+                >
+                  {{ element.id }}
+            </a>
+            </td>
+          </ng-container>
+          <!--Column -->
+          <ng-container matColumnDef="cuis">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>cuis</th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.cuis }}
+            </td>
+          </ng-container>
+          <!--Column -->
+          <ng-container matColumnDef="nit">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>nit</th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.nit }}
+            </td>
+          </ng-container>
+          <!--Column -->
+          <ng-container matColumnDef="codigoSucursal">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              codigoSucursal
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.codigoSucursal }}
+            </td>
+          </ng-container>
+          <!--Column -->
+          <ng-container matColumnDef="Cafc">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Cafc</th>
+            <td mat-cell *matCellDef="let element">
+              <ng-container [ngSwitch]="element.cafc">
+                <div *ngSwitchCase="0">
+                </div>
+                <div *ngSwitchDefault>
+                  <span class="text-dark">
+                    {{ element.cafc }}
+                  </span>
+                </div>                
+              </ng-container> 
+            </td>
+          </ng-container>
+          <!--Column -->
+          <ng-container matColumnDef="codigoPuntoVenta">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Punto Venta</th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.codigoPuntoVenta }}
+            </td>
+          </ng-container>
+          <!--Column -->
+          <ng-container matColumnDef="codigoDocumentoSector">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              Codigo documento sector
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.codigoDocumentoSector }}
+            </td>
+          </ng-container>
+          <!--Column -->
+          <ng-container matColumnDef="tipoFacturaDocumento">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              tipoFacturaDocumento
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.tipoFacturaDocumento }}
+            </td>
+          </ng-container>
+          <!--Column -->
+          <ng-container matColumnDef="codigoEvento">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Codigo evento</th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.codigoEvento }}
+            </td>
+          </ng-container>
+          <!--Column -->
+          <ng-container matColumnDef="cantidadFacturas">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              Cantidad facturas
+            </th>
+            <td mat-cell *matCellDef="let element">
+              <span class="codigoMotivoEvento">
+                {{ element.cantidadFacturas }}
+              </span> 
+            </td>
+          </ng-container>
+          <!--Column -->
+          <ng-container matColumnDef="cufd">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>cufd</th>
+            <td mat-cell *matCellDef="let element" >
+              {{ element.cufd }}
+            </td>
+          </ng-container>
+          <!--Column -->
+          <ng-container matColumnDef="estado">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Estado</th>
+            <td mat-cell *matCellDef="let element">
+              <div class="lote-estado">
+                {{ estados[element.estado] }}
+                <ng-container [ngSwitch]="element.estado">
+                  <div *ngSwitchCase="2">
+                    <mat-icon class="mat-green">done</mat-icon>
+                  </div>
+                  <div *ngSwitchCase="3">
+                    <mat-icon class="mat-warn">highlight_off</mat-icon>
+                  </div>
+                </ng-container>
+              </div>
+            </td>
+          </ng-container>
+          <!--Column -->
+          <ng-container matColumnDef="descripcionTransaccion">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Descripción</th>
+            <td mat-cell *matCellDef="let element">          
+                {{ element.descripcionTransaccion }}            
+            </td>
+          </ng-container>
+          <!--Column -->
+          <ng-container matColumnDef="fecha">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Fecha</th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.fecha | date: "EEEE d MMMM y HH:mm:ss":"UTC"  }}
+            </td>
+          </ng-container>
+          <!--Column -->
+          <ng-container matColumnDef="codigoRecepcion">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              Codigo recepcion
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.codigoRecepcion }}
+            </td>
+          </ng-container>
+          <!--Column -->
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+            <td mat-cell *matCellDef="let element">
+              <button mat-icon-button [matMenuTriggerFor]="Notificaciones">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #Notificaciones="matMenu">
+                <button mat-menu-item (click)="Detalle(element)">
+                  <mat-icon>launch</mat-icon><span>Detalles</span>
+                </button>
+                <button mat-menu-item (click)="VerificarLote(element)">
+                  <mat-icon>wifi_protected_setup</mat-icon><span>Verificar</span>
+                </button>
+
+                <ng-container *ngIf="element.estado == '5'; then Activol"></ng-container>          
+                <ng-template #Activol>       
+                  <button mat-menu-item (click)="ReenvioLote(element)">
+                    <mat-icon>schedule_send</mat-icon> <span>Reenviar el lote</span>
+                  </button>
+                </ng-template>
+
+              </mat-menu>
+            </td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let element; columns: displayedColumns"></tr>
+        </table>
+        <div *ngIf="isLoading"><mat-progress-bar mode="indeterminate"></mat-progress-bar></div>
+        <mat-paginator [pageSizeOptions]="[10, 25, 100]"></mat-paginator>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</mat-drawer-container>
+  </mat-tab>
+  <mat-tab label="Solicitar proceso de lotes">
+    <app-factura-lote-solicita></app-factura-lote-solicita>
+  </mat-tab>
+</mat-tab-group>

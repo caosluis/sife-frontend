@@ -1,0 +1,177 @@
+<mat-card class="background_user_connection">
+  <mat-card-header>
+    <mat-card-title><a class="firmavalida"><span [routerLink]="['/cufd-historico']" title="CUFD Histórico">
+          Código Unico de Facturación Diaria (CUFD)</span></a>
+        </mat-card-title>
+    <mat-card-subtitle>
+        <b>Nota:</b> Los CUFD (Código Único de Facturación Diaria) se solicitan Automaticamente a las 05:00 am diariamente.
+      </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="row">
+      <div class="col-md-10 col-sm-10 col-xs-12">
+        <!--mat-form-field class="search-form-field">
+          <input
+            matInput
+            placeholder="Buscar"
+            autocomplete="off"
+            (keyup)="applyFilter($event.target.value)"
+          />
+        </mat-form-field-->
+        <mat-form-field appearance="standard" class="buscador">
+          <mat-label>Buscar</mat-label>
+          <input matInput placeholder="Buscar" autocomplete="off" (keyup)="applyFilter($event.target.value)" />
+        </mat-form-field>
+      </div>
+      <div class="col-md-2 col-sm-2 col-xs-12">
+        <!--button mat-raised-button color="primary" type="button" (click)="CufdRenovar()" mat-flat-button
+          [disabled]="HabilitaRenovar">
+          <mat-icon>sync</mat-icon> Solicitar CUFD Masivo
+        </button-->
+      </div>
+    </div>
+
+    <table mat-table [dataSource]="dataSource" matSort class="table-hover Indicador-envio"matTableResponsive>
+      
+      <ng-container matColumnDef="logo">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header style="text-align: center;"> </th>
+        <td mat-cell *matCellDef="let element" >          
+          <ng-container *ngIf="FechaIndicador(element.fechaVigencia) == 'Vigente'; then ActivoE; else InactivoE"></ng-container>          
+          <ng-template #ActivoE>       
+            <span  style="color: #7072bf !important"><mat-icon>browser_updated</mat-icon></span><mat-icon class="check">check</mat-icon>
+          </ng-template>
+          <ng-template #InactivoE>
+            <span><mat-icon style="color: rgb(240 133 148)">browser_updated</mat-icon></span><mat-icon class="check" style="background: red;">block</mat-icon>
+          </ng-template>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="fechaVigencia">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Vigencia</th>
+        <td mat-cell *matCellDef="let element">
+          <ng-container *ngIf="
+              FechaIndicador(element.fechaVigencia) == 'Vigente';
+              then vigente;
+              else vencido
+            ">
+          </ng-container>
+          <ng-template #vigente>
+            <span class="badge bg-success">
+              {{ element.fechaVigencia | date: "EEEE d MMMM y HH:mm:ss":"UTC" }}
+            </span>
+          </ng-template>
+          <ng-template #vencido>
+            <span class="badge bg-danger">
+              {{
+              element.fechaVigencia | date: "EEEE d MMMM y HH:mm:ss ":"UTC"
+              }}
+            </span>
+          </ng-template>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="cufd">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>cufd</th>
+        <td mat-cell *matCellDef="let element" width="7%">
+          {{ element.cufd }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="empresa">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Empresa</th>
+        <td mat-cell *matCellDef="let element">{{ Empresa(element.nit) }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="nit">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Nit</th>
+        <td mat-cell *matCellDef="let element">{{ element.nit }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="nombrePuntoVenta">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Punto de Venta</th>
+        <td mat-cell *matCellDef="let element" style="text-align: left;">
+          {{ PDV(element.nit, element.codigoSucursal, element.codigoPDV) }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="codigoPDV">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Codigo punto de venta</th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-stroked-button color="primary">{{ element.codigoPDV }}</button>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="sucursal">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Sucursal</th>
+        <td mat-cell *matCellDef="let element" style="text-align: left;">
+          {{ Sucursal(element.nit, element.codigoSucursal) }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="codigoSucursal">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Codigo sucursal</th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-stroked-button color="accent">{{ element.codigoSucursal }}</button>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="cuis">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>cuis</th>
+        <td mat-cell *matCellDef="let element">{{ element.cuis }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="listaCodigosRespuestas">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          Mesaje de respuesta
+        </th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.listaCodigosRespuestas }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="transaccionOrigen">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Recepcion Contribuyente</th>
+        <td mat-cell *matCellDef="let element" matTooltip="Si los códigos fueron recepcionados correctamente por el sistema del contribuyente muestra como Recibido">
+          <ng-container *ngIf="
+              element.transaccionOrigen == 1;
+              then recibido;
+              else noRecibido
+            ">
+          </ng-container>
+          <ng-template #recibido>
+            <span class="badge bg-success">
+              Recibido
+            </span><mat-icon class="check">check</mat-icon>
+          </ng-template>
+          <ng-template #noRecibido>
+            <span class="badge bg-danger">
+              No Recibido
+            </span><mat-icon class="check" style="background: red;">sync</mat-icon>
+          </ng-template>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button [matMenuTriggerFor]="Notificaciones">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #Notificaciones="matMenu">
+            <button mat-menu-item (click)="detalle(element)">
+              <mat-icon>launch</mat-icon><span>Ver Detalle</span>
+            </button>
+
+            <button mat-menu-item>
+              <span>Renovar CUFD</span>
+            </button>
+          </mat-menu>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let element; columns: displayedColumns"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[10, 20, 30, 100]"></mat-paginator>
+  </mat-card-content>
+</mat-card>

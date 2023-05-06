@@ -1,0 +1,25 @@
+
+.form{
+  padding-left: 1%;
+  padding-right: 1%;
+  width: 50%;
+}
+.formPlus{
+  padding-left: 1%;
+  padding-right: 1%;
+  width: 100%;
+}
+.formMin{
+  padding-left: 1%;
+  padding-right: 1%;
+  width: 25%;
+}
+.center-btn{
+  text-align: center;
+}
+.example-button-row button,
+.example-button-row a {
+  margin-right: 8px;
+}
+    
+  

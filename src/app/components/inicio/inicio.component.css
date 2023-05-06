@@ -1,0 +1,10 @@
+.container-fluid{
+    background: #fff;
+  }
+
+.container-menu button mat-icon{
+    color: #6264a7;
+}
+.container-menu{
+  background-color: #f0f0f0;
+}

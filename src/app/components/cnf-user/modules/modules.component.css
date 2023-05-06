@@ -1,0 +1,11 @@
+
+table{
+  width: 100%;
+}
+button{
+  border-radius:10px;
+  outline:none;
+  }
+  mat-form-field{
+    width: 100%;
+  }

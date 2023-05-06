@@ -1,0 +1,864 @@
+<mat-card-title>
+  {{ data.obj.DocumentoSector }}  
+  <ng-container *ngIf="data.obj.estado == 2; then autorizado; else rechazado">
+  </ng-container>
+  <ng-template #autorizado>
+    <span class="badge bg-success">{{ estados[data.obj.estado] }}</span>
+  </ng-template>
+  <ng-template #rechazado>
+    <span class="badge bg-danger">{{ estados[data.obj.estado] }}</span> 
+  </ng-template>
+</mat-card-title>
+  <!--img src="./../../../../assets/png/fa1_opt.png" alt="" /-->
+<mat-card-subtitle
+  >{{ data.obj.DocumentoSector }} emitida en linea, esta factura digital es
+  emitida a través de un Sistema Informático de Facturación autorizado por la
+  Administración Tributaria, su existencia es digital y debe ser registrada y
+  validada en la base de datos del Servicio de Impuestos Nacionales.
+</mat-card-subtitle>
+<mat-dialog-content class="mat-typography">
+  <form
+    [formGroup]="facturaService.form"
+    class="normal-form"
+    (submit)="onSaveFacturas()"
+  >
+    <div class="row">
+      <div class="col-md-9">
+        <div class="contenidoFactura">
+          <input type="hidden" id="cuf" formControlName="cuf" />
+          <!-- <mat-form-field class="form" [formGroup]="service.form"> -->
+          <input type="hidden" id="cuis" formControlName="cuis" />
+          <!-- </mat-form-field> -->
+
+          <!-- <mat-form-field class="form" [formGroup]="service.form">
+                  <input type="text" id="empresa" formControlName="empresa" matInput placeholder="Empresa" >
+            </mat-form-field>
+            
+            <mat-form-field class="form" [formGroup]="service.form">
+                  <input type="text" id="sucursal" formControlName="sucursal" matInput placeholder="Sucursal" >
+            </mat-form-field>
+
+            <mat-form-field class="form" [formGroup]="service.form">
+                  <input  id="fecha" matInput formControlName="fecha"  placeholder="Fecha" [matDatepicker]="fecha" >
+                  <mat-datepicker-toggle matSuffix [for]="fecha"></mat-datepicker-toggle>
+                  <mat-datepicker #fecha></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field class="form" [formGroup]="service.form">
+                  <input type="text" id="DocumentoSector" formControlName="DocumentoSector" matInput placeholder="Documento sector" >
+            </mat-form-field> -->
+
+          <mat-tab-group>
+            <mat-tab label="Representación Grafica ">
+              <!-- Vista cabecera -->
+              <!--  <div *ngFor="let item of plantillaC_vista" style="text-align: center;">
+                                          {{item.label}} <span *ngIf="item.key == 'fechaEmision'">{{item.value | date: 'dd/MM/yyyy'}}</span>
+                                          <span *ngIf="item.key != 'fechaEmision'">{{item.value}}</span>
+                                    </div> -->
+
+              <!-- Vista detalle -->
+              <div class="row">
+                <div
+                  class="col-md-5 col-sm-5 col-xs-12"
+                  style="text-align: center"
+                >
+                  <div>
+                    <span class="encabezado_factura titulo_campo">
+                      {{ razonSocialEmisor }}
+                    </span>
+                  </div>
+                  <div>
+                    <span class="encabezado_factura titulo_campo">
+                      Sucursal No. {{ obj.codigoSucursal }}
+                    </span>
+                  </div>                  
+                  <div>
+                    <span class="encabezado_factura titulo_campo">
+                      No. Punto de venta {{ obj.codigoPuntoVenta }}
+                    </span>
+                  </div>
+                  <div>
+                    <span class="encabezado_factura">{{
+                      Sucursal("direccion", obj.nit, obj.codigoSucursal)
+                    }}</span>
+                  </div>
+
+                  <div><span class="encabezado_factura">Teléfono: {{ telefono }}</span></div>
+                  <div>
+                    <span class="encabezado_factura">
+                      {{ Sucursal("municipio", obj.nit, obj.codigoSucursal) }} -
+                      Bolivia
+                    </span>
+                  </div>
+                </div>
+
+                <div class="col-md-2 col-sm-2 col-xs-12"></div>
+
+                <div class="col-md-5 col-sm-5 col-xs-12">
+                  <div class="row">
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                      <span class="encabezado_factura titulo_campo">NIT</span>
+                    </div>
+                    <div class="col-md-10 col-sm-10 col-xs-12">
+                      <span class="encabezado_factura">{{ data.obj.nit }}</span>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                      <span class="encabezado_factura titulo_campo"
+                        >FACTURA N°</span
+                      >
+                    </div>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                      <span class="encabezado_factura">{{
+                        data.obj.numeroFactura
+                      }}</span>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                      <span class="encabezado_factura titulo_campo">CUF</span>
+                    </div>
+                    <div class="col-md-10 col-sm-10 col-xs-12">
+                      <span class="encabezado_factura">{{ data.obj.cuf }}</span>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                      <span class="encabezado_factura titulo_campo"
+                        >Actividad</span
+                      >
+                    </div>
+                    <div class="col-md-10 col-sm-10 col-xs-12">
+                      <span class="encabezado_factura">{{ actividadEco }}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div
+                  class="col-md-12 col-sm-12 col-xs-12"
+                  style="text-align: center"
+                >
+                  <span class="titulo_campo">
+                    {{ data.obj.DocumentoSector }}
+                  </span>
+                </div>
+              </div>
+              <div class="row">
+                <div
+                  class="col-md-12 col-sm-12 col-xs-12"
+                  style="text-align: center"
+                >
+                  <span class="titulo_campo"> (COMERCIAL INVOICE) </span>
+                </div>
+              </div>
+              <div class="row">
+                <div
+                  class="col-md-12 col-sm-12 col-xs-12"
+                  style="text-align: center"
+                >
+                  <span class="encabezado_factura"
+                    >(Sin Derecho a Crédito Fiscal)</span
+                  >
+                </div>
+              </div>
+
+              <ng-container
+                *ngIf="
+                  data.obj.DocumentoSector == 'FACTURA COMERCIAL DE EXPORTACIÓN';
+                  then facturaExportacion"
+              ></ng-container>
+
+              <ng-template #facturaExportacion>
+                <div class="row">
+                  <div class="col-md-5 col-sm-5 col-xs-12">
+                    <div class="row">
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <span class="encabezado_factura titulo_campo"
+                          >Fecha(Date):</span
+                        >
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <span class="encabezado_factura">
+                          {{ obj.fecha | date: "dd/MM/yyyy HH:mm:ss" }}
+                        </span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <span class="encabezado_factura titulo_campo">
+                          Nombre/Razon Social(Name Buyer):
+                        </span>
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <span class="encabezado_factura">{{
+                          nombreRazonSocial
+                        }}</span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <span class="encabezado_factura titulo_campo">
+                          INCOTERM:
+                        </span>
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <span class="encabezado_factura">{{ incoterm }}</span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <span class="encabezado_factura titulo_campo">
+                          Moneda de la Transacccion Comercial:<br />(Comercial
+                          Transactión Currency)
+                        </span>
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <span class="encabezado_factura">{{
+                          Moneda(codigoMoneda)
+                        }}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-2 col-sm-2 col-xs-12"></div>
+                  <div class="col-md-5 col-sm-5 col-xs-12">
+                    <div class="row">
+                      <div
+                        class="col-md-6 col-sm-6 col-xs-12"
+                        style="text-align: right"
+                      >
+                        <span class="encabezado_factura titulo_campo"
+                          >NIT/CI/CEX:</span
+                        >
+                      </div>
+                      <div
+                        class="col-md-6 col-sm-6 col-xs-12"
+                        style="text-align: left"
+                      >
+                        <span class="encabezado_factura">{{
+                          numeroDocumento
+                        }}</span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div
+                        class="col-md-6 col-sm-6 col-xs-12"
+                        style="text-align: right"
+                      >
+                        <span class="encabezado_factura titulo_campo"
+                          >Dirección Comprador (Address):</span
+                        >
+                      </div>
+                      <div
+                        class="col-md-6 col-sm-6 col-xs-12"
+                        style="text-align: left"
+                      >
+                        <span class="encabezado_factura">{{
+                          direccionComprador
+                        }}</span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div
+                        class="col-md-6 col-sm-6 col-xs-12"
+                        style="text-align: right"
+                      >
+                        <span class="encabezado_factura titulo_campo"
+                          >Puerto Destino (Destination Port):</span
+                        >
+                      </div>
+                      <div
+                        class="col-md-6 col-sm-6 col-xs-12"
+                        style="text-align: left"
+                      >
+                        <span class="encabezado_factura">{{
+                          puertoDestino
+                        }}</span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div
+                        class="col-md-6 col-sm-6 col-xs-12"
+                        style="text-align: right"
+                      >
+                        <span class="encabezado_factura titulo_campo"
+                          >Tipo de Cambio: (Exchange Rate):</span
+                        >
+                      </div>
+                      <div
+                        class="col-md-6 col-sm-6 col-xs-12"
+                        style="text-align: right"
+                      >
+                        <span class="encabezado_factura">{{ tipoCambio }}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </ng-template>
+
+              <ng-container
+                *ngIf="
+                  data.obj.DocumentoSector == 'FACTURA COMERCIAL DE EXPORTACIÓN DE SERVICIOS';
+                  then facturaExportacionServicios"
+              ></ng-container>
+
+              <ng-template #facturaExportacionServicios>
+                <div class="row">
+                  <div class="col-md-5 col-sm-5 col-xs-12">
+                    <div class="row">
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <span class="encabezado_factura titulo_campo"
+                          >Fecha(Date):</span
+                        >
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <span class="encabezado_factura">
+                          {{ obj.fecha | date: "dd/MM/yyyy HH:mm:ss" }}
+                        </span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <span class="encabezado_factura titulo_campo">
+                          Nombre/Razon Social(Name Buyer):
+                        </span>
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <span class="encabezado_factura">{{
+                          nombreRazonSocial
+                        }}</span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <span class="encabezado_factura titulo_campo">
+                          Tipo de Cambio: <br />(Exchange Rate)
+                        </span>
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <span class="encabezado_factura">{{ tipoCambio }}</span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <span class="encabezado_factura titulo_campo">
+                          Moneda de la Transacccion Comercial:<br />(Comercial Transactión Currency)
+                        </span>
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <span class="encabezado_factura">{{
+                          Moneda(codigoMoneda)
+                        }}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-1 col-sm-1 col-xs-12"></div>
+                  <div class="col-md-5 col-sm-5 col-xs-12">
+                    <div class="row">
+                      <div
+                        class="col-md-6 col-sm-6 col-xs-12"
+                        style="text-align: right"
+                      >
+                        <span class="encabezado_factura titulo_campo"
+                          >NIT/CI/CEX:</span
+                        >
+                      </div>
+                      <div
+                        class="col-md-6 col-sm-6 col-xs-12"
+                        style="text-align: left"
+                      >
+                        <span class="encabezado_factura">{{
+                          numeroDocumento
+                        }}</span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div
+                        class="col-md-6 col-sm-6 col-xs-12"
+                        style="text-align: right"
+                      >
+                        <span class="encabezado_factura titulo_campo"
+                          >Cod. Cliente:</span
+                        >
+                      </div>
+                      <div
+                        class="col-md-6 col-sm-6 col-xs-12"
+                        style="text-align: left"
+                      >
+                        <span class="encabezado_factura">{{
+                          codigoCliente
+                        }}</span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div
+                        class="col-md-6 col-sm-6 col-xs-12"
+                        style="text-align: right"
+                      >
+                        <span class="encabezado_factura titulo_campo"
+                          >Dirección Comprador (Address):</span
+                        >
+                      </div>
+                      <div
+                        class="col-md-6 col-sm-6 col-xs-12"
+                        style="text-align: left"
+                      >
+                        <span class="encabezado_factura">{{
+                          direccionComprador
+                        }}</span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div
+                        class="col-md-6 col-sm-6 col-xs-12"
+                        style="text-align: right"
+                      >
+                        <span class="encabezado_factura titulo_campo"
+                          >Lugar Destino (Destination Port):</span
+                        >
+                      </div>
+                      <div
+                        class="col-md-6 col-sm-6 col-xs-12"
+                        style="text-align: left"
+                      >
+                        <span class="encabezado_factura">{{
+                          lugarDestino
+                        }}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </ng-template>
+
+              <ng-container
+                *ngIf="
+                  data.obj.DocumentoSector != 'FACTURA COMERCIAL DE EXPORTACIÓN' && 
+                  data.obj.DocumentoSector != 'FACTURA COMERCIAL DE EXPORTACIÓN DE SERVICIOS';
+                  then Otras"
+              ></ng-container>
+
+              <ng-template #Otras>
+                <div class="row">
+                  <div class="col-md-5 col-sm-4 col-xs-12">
+                    <div class="row">
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <span class="encabezado_factura titulo_campo"
+                          >Fecha:</span
+                        >
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <span class="encabezado_factura">
+                          {{ obj.fecha | date: "dd/MM/yyyy HH:mm:ss":"UTC" }}
+                        </span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <span class="encabezado_factura titulo_campo">
+                          Nombre/Razon Social:
+                        </span>
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <span class="encabezado_factura">{{
+                          nombreRazonSocial
+                        }}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-2 col-sm-4 col-xs-12"></div>
+                  <div class="col-md-5 col-sm-4 col-xs-12">
+                    <div class="row">
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <span class="encabezado_factura titulo_campo"
+                          >NIT/CI/CEX:</span
+                        >
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <span class="encabezado_factura">{{
+                          numeroDocumento
+                        }}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </ng-template>
+
+              <br>
+              
+              <table class="table table-bordered">
+                <thead style="background-color: rgb(240 240 240)">
+                  <tr>
+                    <th
+                      *ngFor="let pv of plantillaD_vista"
+                      style="font-size: 12px"
+                    >
+                      {{ pv.label }}
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let dt of detalle">
+                    <td *ngFor="let pv of plantillaD_vista">
+                      {{ dt[pv.key] }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="noBorder"></td>
+                    <td class="noBorder"></td>
+                    <td class="noBorder"></td>
+                    <td>
+                      <span class="titulo_campo"
+                        >TOTAL ({{ Moneda(codigoMoneda) }})</span
+                      >
+                    </td>
+                    <td>
+                      <ng-container
+                        *ngIf="
+                          data.obj.DocumentoSector == 'NOTA DE CRÉDITO-DÉBITO';
+                          then montoTotalOriginal;
+                          else montoTotal
+                        "
+                      ></ng-container>
+
+                      <ng-template #montoTotalOriginal>
+                        <span>{{ MontoTotalOriginal }}</span>
+                      </ng-template>
+                      <ng-template #montoTotal>
+                        <span>{{ MontoTotal }}</span>
+                      </ng-template>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="noBorder"></td>
+                    <td class="noBorder"></td>
+                    <td class="noBorder"></td>
+                    <td>
+                      <span class="titulo_campo"
+                        >IMPORTE BASE CREDITO FISCAL</span
+                      >
+                    </td>
+                    <td>
+                      <ng-container
+                        *ngIf="
+                          data.obj.DocumentoSector == 'NOTA DE CRÉDITO-DÉBITO';
+                          then montoTotalOriginal;
+                          else montoTotal
+                        "
+                      ></ng-container>
+
+                      <ng-template #montoTotalOriginal>
+                        <span>{{ MontoTotalOriginal }}</span>
+                      </ng-template>
+                      <ng-template #montoTotal>
+                        <span>{{ MontoTotal }}</span>
+                      </ng-template>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- Vista pie -->
+
+              <ng-container
+                *ngIf="
+                  data.obj.DocumentoSector ==
+                    'FACTURA COMERCIAL DE EXPORTACIÓN';
+                  then desgloseCostes
+                "
+              ></ng-container>
+
+              <ng-template #desgloseCostes>
+                <div class="row">
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <span class="encabezado_factura titulo_campo">
+                      Desglose de Costos y Gastos Nacionales e
+                      Internacionales<br />((National and International Costs
+                      and Expenses Detail))
+                    </span>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12">
+                    <table width="100%" class="table table-bordered">
+                      <tr
+                        *ngFor="let item of costosGastosNacionales | keyvalue"
+                      >
+                        <td>{{ item.key }}</td>
+                        <td>{{ item.value }}</td>
+                      </tr>
+                      <tr>
+                        <td>SUBTOTAL FOB</td>
+                        <td>{{ totalGastosNacionalesFob }}</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <span class="encabezado_factura titulo_campo">
+                      Desglose de Costos y Gastos Internacionales
+                    </span>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12">
+                    <table width="100%" class="table table-bordered">
+                      <tr
+                        *ngFor="
+                          let item of costosGastosInternacionales | keyvalue
+                        "
+                      >
+                        <td>{{ item.key }}</td>
+                        <td>{{ item.value }}</td>
+                      </tr>
+                      <tr>
+                        <td>TOTAL CIF</td>
+                        <td>{{ totalGastosInternacionales }}</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <span class="moneda_factura titulo_campo">
+                      Son: {{ MontoTotalLiteral }} 00/100 ({{
+                        Moneda(codigoMoneda)
+                      }})
+                    </span>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <span class="encabezado_factura titulo_campo">
+                      Número y Descripción de Paquetes (Bultos)<br />
+                      (Number and Description of Boxes)
+                    </span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12">
+                    <table width="100%" class="table table-bordered">
+                      <tr>
+                        <td>{{ numeroDescripcionPaquetesBultos }}</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <span class="encabezado_factura titulo_campo">
+                      Información Adicional<br />
+                      (Additional Information)
+                    </span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12">
+                    <table width="100%" class="table table-bordered">
+                      <tr>
+                        <td>{{ informacionAdicional }}</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </ng-template>
+
+              <ng-container
+                *ngIf="
+                  data.obj.DocumentoSector ==
+                    'FACTURA COMERCIAL DE EXPORTACIÓN DE SERVICIOS';
+                  then informacionAdicional
+                "
+              ></ng-container>
+
+              <ng-template #informacionAdicional>
+                <div class="row">
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <span class="encabezado_factura titulo_campo">
+                      Información Adicional<br />(Additional Information)
+                    </span>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12" style="border: 0.5px solid #dee2e6;">
+                    <table width="100%" class="table table-bordered" >
+                      <tr *ngFor="let item of objInformacionAdicional | keyvalue">
+                        <td>{{ item.key }}</td>
+                        <td>{{ item.value }}</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </ng-template>
+
+              <!--  <div class="row">
+              <div
+                class="col-md-6 col-sm-6 col-xs-12"
+                style="text-align: left"
+              >
+                son bolivianos
+              </div>
+            </div> -->
+
+              <div class="row">
+                <div
+                  class="col-md-9 col-sm-9 col-xs-12"
+                  style="text-align: center; font-size: 12px;"
+                >
+                <br>
+                ESTA FACTURA CONTRIBUYE AL DESARROLLO DEL PAÍS, EL USO ILÍCITO SERÁ SANCIONADO PENALMENTE DE ACUERDO A LEY
+                <br><br>
+                  "{{ leyenda }}"
+                <br><br>
+                “Este documento es la Representación Gráfica de un Documento Fiscal Digital emitido en una modalidad de facturación en línea”
+                </div>
+                <div
+                  class="col-md-3 col-sm-3 col-xs-12"
+                  style="text-align: center"
+                >
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="{{ value }}"
+                  >
+                    <ngx-qrcode
+                      *ngIf="display"
+                      id="qrCodeImage"
+                      [value]="value"
+                      align="center"
+                    ></ngx-qrcode>
+                  </a>
+                </div>
+              </div>
+            </mat-tab>
+            <!-- ---------------------------------------------------------Simulacion de codigo XML INICIO------------------------------------------------------- -->
+            <mat-tab label="Vista XML">
+              <textarea rows="100" cols="120" style="border: none">
+              {{ xmlFacturaFirmada }}
+            </textarea
+              >
+
+              <!-- <pre class="template">
+<code class="codigo">&#60;?xml version="1.0" encoding="utf-8" ?&#62;</code>
+<code  class="codigo">&#60;facturaComputarizadaEstandar xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="facturaComputarizadaEstandar.xsd"&#62;</code>
+      <code class="codigo">&#60;cabecera&#62;</code>
+<div *ngFor="let item of valuesCabecera;let indice=index">        <code class="codigo">&#60;{{item}}&#62;</code>{{cabecera[item]}}<code class="codigo">&#60;/{{item}}&#62;</code></div>
+      <code class="codigo">&#60;/cabecera&#62;</code>
+<div *ngFor="let detall of detalle">      <code class="codigo">&#60;detalle&#62;</code>
+<div *ngFor="let item of valuesDetalle"><code class="codigo">           &#60;{{item}}<span *ngIf="detall[item] == null || detall[item] == ''"> xsi:nil="true"</span>&#62;</code>{{detall[item]}}<code class="codigo">&#60;/{{item}}&#62;</code></div>  
+      <code class="codigo">&#60;/detalle&#62;</code>      
+</div>
+<code  class="codigo">&#60;/facturaComputarizadaEstandar&#62;</code>   
+</pre> -->
+              <!-- ----------------------------------------------------------FIN--------------------------------------------------------------------------------- -->
+            </mat-tab>
+            <mat-tab label="Vista Tabla">
+              <div class="row" style="font-size: 12px; padding-top: 1%">
+                <form class="formPlus form-horizontal">
+                  <div
+                    class="form-group row"
+                    *ngFor="let item of valuesCabecera; let indice = index"
+                  >
+                    <label
+                      for=""
+                      class="control-label col-md-3 col-sm-3 col-xs-12"
+                      style="text-align: right"
+                      >{{ item }} :</label
+                    >
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                      <input
+                        class="form-control"
+                        value="{{ cabecera[item] }}"
+                        style="font-size: 12px"
+                        disabled
+                      />
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <table class="table" style="font-size: 12px">
+                <thead>
+                  <tr>
+                    <th
+                      *ngFor="let item of valuesDetalle"
+                      style="font-size: 12px"
+                    >
+                      {{ item }}
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let detall of detalle">
+                    <td
+                      *ngFor="let item of valuesDetalle"
+                      style="font-size: 12px"
+                    >
+                      {{ detall[item] }}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </mat-tab>
+          </mat-tab-group>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="col-estadoFactura">
+          <div class="estadoFactura">
+            <h3>Factura</h3>
+            <div class="titulos">
+              <div class="titulos-2">
+                <span class="campoTitulo">Sucursal:</span>
+                <span class="campoValor">({{ obj.codigoSucursal }}) {{
+                  Sucursal("descripcion", obj.nit, obj.codigoSucursal)
+                }}</span>
+              </div>
+              <div class="titulos-2">
+                <span class="campoTitulo">Punto de Venta:</span>
+                <span class="campoValor"><b>({{ obj.codigoPuntoVenta }})</b> {{
+                  PDV(obj.nit, obj.codigoSucursal, obj.codigoPuntoVenta)
+                }}</span>
+              </div>
+              <div class="titulos-2">
+                <span class="campoTitulo">Nro Factura:</span>
+                <span class="campoValor">{{ data.obj.numeroFactura }}</span>
+              </div>
+            </div>
+            <h3>Estados</h3>
+            <mat-accordion class="example-headers-align" hidetoggle>
+              <mat-expansion-panel *ngFor="let mensaje of mensajes" hideToggle>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <span class="numero-estado">{{ mensaje.estado }}</span>
+                    {{ estados[mensaje.estado] }}
+                  </mat-panel-title>
+                  <mat-panel-description>
+                    {{ mensaje.fecha | date: "dd/MM/yyyy HH:mm:ss":"UTC" }}
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <p>{{ mensaje.mensaje }}</p>
+              </mat-expansion-panel>
+            </mat-accordion>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+  <!-- <button mat-raised-button color="primary" type="button" (click)="SolicitudAnula()"></button> -->
+  <button
+    mat-raised-button
+    color="warn"
+    type="button"
+    (click)="onClose()"
+    mat-flat-button
+  >
+    Cerrar
+  </button>
+</mat-dialog-actions>

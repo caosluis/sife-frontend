@@ -1,0 +1,18 @@
+table {
+  width: 100%;
+}
+img{
+  height: 30px;
+}
+mat-card-header.mat-card-header {
+  border-left: 5px solid #198754;
+}
+.bg-success{
+  color: #6bb700;
+  background: #f7f8ff !important;
+}
+.bg-danger {    
+  background: #fff5f8 !important;
+  color: #8c435b !important;
+}
+

@@ -1,0 +1,127 @@
+<mat-card class="background_user_connection">  
+  <div class="row">
+    <div class="col-sm-11">
+      <mat-card-header>
+        <mat-card-title>Roles</mat-card-title>
+        <mat-card-subtitle>Administración de roles de la empresa.</mat-card-subtitle>
+      </mat-card-header>
+    </div>
+    <div class="col-sm-1">
+      <ul class="nav justify-content-end menuboton">
+        <li class="nav-item">
+          <button mat-raised-button color="primary" [disabled]="loading" (click)="guardarCambios()">
+          <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>Guardar Configuración
+        </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <mat-card-content>
+    <mat-card>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-3">
+              <mat-form-field appearance="legacy" appearance="">
+                <mat-label>Nombre del nuevo Rol</mat-label>
+                <input
+                  matInput
+                  #nuevoRol
+                  placeholder="Usuario, Administrador ..."
+                  value=""
+                />
+                <mat-hint>Crear nuevo menu rol para los usuario.</mat-hint>
+              </mat-form-field>
+            </div>
+            <div class="col-md-3">
+              <button
+                mat-raised-button
+                color="primary"
+                [disabled]="nuevoRol.value == ''"
+                (click)="RegistrarRole(nuevoRol.value)"
+              >
+                Agregar Rol
+              </button>
+            </div>
+            <div class="col-md-3"></div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <div *ngFor="let role of rolesList">
+            <div class="row">
+              <div class="col-md-11">
+                <mat-accordion class="example-headers-align" multi>
+                  <mat-expansion-panel class="panel-role" hideToggle (opened)="panelOpenState = true"
+                  (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        {{ role.role }}
+                      </mat-panel-title>
+                      <mat-panel-description>
+                        Click para {{panelOpenState ? 'cerrar' : 'abrir'}} el menu de {{ role.role }}
+                        <mat-icon style="color: #7072bf !important" >supervised_user_circle</mat-icon>
+                      </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <ul>
+                      <li *ngFor="let Modulo of role.configuracion.Modulos">
+                        <span class="example-list-section">
+                          <mat-checkbox
+                            name="{{ Modulo.name }}"
+                            class="example-margin"
+                            [(ngModel)]="Modulo.show"
+                            [color]="Modulo.color"
+                            [indeterminate]="false"
+                            (change)="habilitarModulo(role.role, Modulo.name)"
+                          >
+                            {{ Modulo.name }}
+                          </mat-checkbox>
+                        </span>
+
+                        <span class="example-list-section">
+                          <ul>
+                            <li *ngFor="let SubModulo of Modulo.SubModulos">
+                              <mat-checkbox
+                                name="{{ SubModulo.name }}"
+                                [(ngModel)]="SubModulo.show"
+                                [color]="SubModulo.color"
+                                (change)="
+                                  habilitarSubModulo(
+                                    role.role,
+                                    Modulo.name,
+                                    SubModulo.name
+                                  )
+                                "
+                              >
+                                {{ SubModulo.name }}
+                              </mat-checkbox>
+                            </li>
+                          </ul>
+                        </span>
+                      </li>
+                    </ul>
+                  </mat-expansion-panel>
+                </mat-accordion>
+              </div>
+              <div class="col-md-1">
+                <button
+                  [hidden]="role.role == 'Sistemas'"
+                  mat-raised-button
+                  color="warn"
+                  (click)="BorrarRole(role.roleID, role.role)"
+                >
+                  Eliminar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+    </mat-card>
+  </mat-card-content>
+</mat-card>

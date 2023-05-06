@@ -1,0 +1,104 @@
+<mat-card class="background_user_connection">
+    <div class="cuerpo">
+        <mat-card-title>Información general</mat-card-title>
+        <mat-card-subtitle>Información básica, como el nombre y la foto, que utilizas para comunicarte con el sistema</mat-card-subtitle>
+        <mat-card-subtitle><b>Nota.</b> Solo tu podras ver esta información</mat-card-subtitle>
+        <form  [formGroup]="form" > 
+            <div class="row contenido">    
+                <div class="col-sm-6">
+                    <h2>Información básica</h2>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="foto">                    
+                                <img src="../../../../../assets/png/avatar.jpg" alt="" class="foto-imagen">
+                                <div class="foto-pie">
+                                    <div class="foto-pie-nombre">{{ nombre }}</div>
+                                    <div class="foto-pie-rol">{{ rol.toUpperCase() }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6" >
+                            <mat-form-field class="formPlus">
+                                <input
+                                type="text"
+                                #nombres
+                                matInput
+                                placeholder="Nombres"
+                                formControlName="nombres"
+                                />
+                            </mat-form-field>
+                            <mat-form-field class="formPlus">
+                                <input
+                                type="text"
+                                #apellidos
+                                matInput
+                                placeholder="Apellidos"
+                                formControlName="apellidos"
+                                />
+                            </mat-form-field>
+                            <mat-form-field class="formPlus">
+                                <input
+                                type="text"
+                                #telefono
+                                matInput
+                                placeholder="Telefono"
+                                formControlName="telefono"
+                                />
+                            </mat-form-field>
+                            <mat-form-field class="formPlus">
+                                <input
+                                type="text"
+                                #empresa
+                                matInput
+                                placeholder="Empresa"
+                                formControlName="empresa"
+                                />
+                            </mat-form-field>
+                            <mat-form-field class="formPlus">
+                                <input
+                                type="text"
+                                #division
+                                matInput
+                                placeholder="división"
+                                formControlName="division"
+                                />
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-1"></div>
+                <div class="col-sm-5">
+                    <h2>Información adicional</h2>
+                    <br>
+                    <mat-form-field class="formPlus">
+                        <input
+                        type="text"
+                        #username
+                        matInput
+                        placeholder="Usuario"
+                        formControlName="username"
+                        />
+                    </mat-form-field>
+                    <mat-form-field class="formPlus">
+                        <input
+                        type="text"
+                        #email
+                        matInput
+                        placeholder="Email"
+                        formControlName="email"
+                        />
+                    </mat-form-field>
+                    <mat-form-field class="formPlus">
+                        <input
+                        type="text"
+                        #role
+                        matInput
+                        placeholder="Rol"
+                        formControlName="role"/>
+                    </mat-form-field>
+                </div>
+            </div>
+        </form>
+    </div>
+</mat-card>

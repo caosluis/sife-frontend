@@ -1,0 +1,149 @@
+<mat-card-title>Notifica Certificado Revocado </mat-card-title>
+<mat-card-subtitle> </mat-card-subtitle>
+<form  [formGroup]="form" (ngSubmit)="save($event)">
+<mat-dialog-content>
+  <div class="alert alert-warning d-flex align-items-center" role="alert">
+    <mat-icon class="bi flex-shrink-0 me-2" width="24" height="24" role aria-label="Warning:">warning</mat-icon>Si confirma su envio de certificado revocado, este proceso no puede ser revertido.
+  </div>
+<div class="row"> 
+  <div class="col-md-6">
+    <div class="subtitulo-modal">
+      <div class="subtitulo-modal-nombre">Información</div><span class="subtitulo-modal-descripcion">sobre el certificado registrado en el sistema</span>
+    </div> 
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="form-group">
+          <mat-form-field appearance="standard">
+            <mat-label>Descripción </mat-label>
+              <input
+              matInput
+              value="{{ data.descripcion }}" 
+              disabled                                     
+              />
+          </mat-form-field>
+        </div>
+        <div class="form-group" style="display: none;">
+          <mat-form-field appearance="standard">
+            <mat-label>id </mat-label>
+              <input
+              matInput
+              value="{{ data.id }}" 
+              disabled                                     
+              />
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field appearance="standard">
+            <mat-label>Fecha Registro </mat-label>
+              <input
+              matInput
+              value='{{ data.fechaRegistro | date: "EEEE d MMMM"}}'
+              disabled                                     
+              />
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field appearance="standard">
+            <mat-label>Fecha Vigencia </mat-label>
+              <input
+              matInput
+              value='{{ data.fechaVigencia | date: "EEEE d MMMM"}}'
+              disabled                                     
+              />
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field appearance="standard">
+            <mat-label>Tipo </mat-label>
+              <input
+              matInput
+              value="{{ data.tipo }}"
+              disabled                                     
+              />
+          </mat-form-field>
+        </div>
+      </div>
+    </div>    
+  </div>
+  <div class="col-md-6">
+    <div class="subtitulo-modal">
+      <div class="subtitulo-modal-nombre">Revocar </div><span class="subtitulo-modal-descripcion"> certificado en Immpuestos Nacionales</span>
+    </div> 
+    <div class="row" >      
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="form-group">
+          <mat-form-field appearance="standard">
+            <mat-label>Fecha revocación </mat-label>
+              <input
+              matInput
+              value='{{ fechaActual | date: "EEEE d MMMM"}}'
+              disabled                                     
+              />
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field appearance="standard">
+            <mat-label>Razón revocación </mat-label>
+              <input
+              formControlName="razonRevocacion"
+              matInput              
+              #razonRevocacion                               
+              />
+              <mat-hint>Razón de la revocación del certificado {{razonRevocacion.value?.length || 0}}/200</mat-hint>
+          </mat-form-field>
+        </div>      
+        <div class="form-group">
+          <mat-form-field appearance="standard">
+            <mat-label>certificado </mat-label>
+              <textarea
+              cols="30" rows="10"
+              matInput                                             
+              formControlName="certificado"
+              #certificado
+              disabled
+              >
+              </textarea>
+              
+              <mat-hint>Cantidad caracteres del certificado a revocar {{certificado.value?.length || 0}}/2000</mat-hint>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <mat-card-subtitle>Esto puede tardar unos segundos, espere su respuesta aqui. <mat-icon>south</mat-icon> </mat-card-subtitle>
+        <div *ngIf="transaccion == 'true'">
+          <div *ngIf="Respuesta" class="alert alert-success mt-3 mb-0">
+            {{ descripcion }}
+          </div>
+        </div>
+        <div *ngIf="transaccion == 'false'">
+          <div *ngIf="Respuesta" class="alert alert-danger mt-3 mb-0">
+            {{ descripcion }}
+          </div>
+        </div>
+    </div>
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <br>
+      <button mat-raised-button color="primary" type="submit" [disabled]="loading" [disabled]="form.invalid">
+        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+        Confirmar y revocar
+      </button>
+      <button
+        mat-raised-button
+        color="warn"
+        type="button"
+        (click)="onNoClick()"
+        mat-flat-button
+      >
+        Cancelar
+      </button>
+    </div>
+  </div>
+</mat-dialog-actions>
+</form>

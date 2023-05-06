@@ -1,0 +1,180 @@
+<mat-card-title>Registro de Firma Digital</mat-card-title>
+<mat-card-subtitle>Descripcion Registro de Firma Digital</mat-card-subtitle>
+<!-- <form
+  [formGroup]="FirmaDigitalService.form"
+  class="normal-form"
+  (submit)="onSaveFirmaDigital()"
+> -->
+
+<input type="hidden" #id_ id="id" [value]="id" />
+<div mat-dialog-content>
+  <div class="row">
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <mat-form-field class="form">
+        <input
+          matInput
+          #descripcion_
+          placeholder="Descripción"
+          [value]="descripcion"
+        />
+        <mat-hint>Ejemplo: FIRMA PRIVATE "nombre" o FIRMA CERTIFICADA "nombre"</mat-hint>
+      </mat-form-field>      
+    </div>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <mat-form-field class="form">
+        <mat-select
+          placeholder="Tipo firma"
+          id="tipo"
+          #tipo_
+          matInput
+          [value]="tipo"
+        >
+          <mat-option>-Seleccione-</mat-option>
+          <mat-option
+            *ngFor="let tipoFirma of tipoFirmas"
+            [value]="tipoFirma.id"
+            >{{ tipoFirma.valor }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <div [hidden]="data == null">
+        <mat-form-field class="form">
+          <input
+            id="fecha_Registro"
+            matInput
+            placeholder="Fecha Registro"
+            [matDatepicker]="fecha_Registro"
+            [value]="fechaRegistro"
+            (dateChange)="SeleccionarFechaRegistro($event)"
+            disabled
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="fecha_Registro"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #fecha_Registro></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+      <div [hidden]="data != null">
+        <mat-form-field class="form">
+          <input
+            id="fechaRegistro_"
+            matInput
+            [min]="HoraActual"
+            placeholder="Fecha registro"
+            [matDatepicker]="fechaRegistro_"
+            (dateChange)="SeleccionarFechaRegistro($event)"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="fechaRegistro_"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #fechaRegistro_></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <div [hidden]="data == null">
+        <mat-form-field class="form">
+          <input
+            id="fecha_Vigencia"
+            matInput
+            placeholder="Fecha vigencia"
+            [matDatepicker]="fecha_Vigencia"
+            [value]="fechaVigencia"
+            (dateChange)="SeleccionarFechaVigencia($event)"
+            disabled
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="fecha_Vigencia"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #fecha_Vigencia></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+      <div [hidden]="data != null">
+        <mat-form-field class="form">
+          <input
+            id="fechaVigencia_"
+            matInput
+            [min]="HoraActual"
+            placeholder="Fecha vigencia"
+            [matDatepicker]="fechaVigencia_"
+            (dateChange)="SeleccionarFechaVigencia($event)"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="fechaVigencia_"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #fechaVigencia_></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+  <div class="formPlus">
+    <input
+      type="file"
+      class="form-control"
+      (change)="mostrarTexto($event)"
+      id="fileTxt"
+      accept=".pem,.cer"
+      placeholder="Seleccione el archivo .txt que contiene la firma"
+      [hidden]="data != null"
+    />
+  </div>
+
+  <mat-form-field class="formPlus">
+    <textarea
+      #firma_
+      matInput
+      placeholder="Firma"
+      cols="3"
+      rows="10"
+      [value]="firma"
+      disabled
+    ></textarea>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions align="end">
+  <button
+    mat-raised-button
+    color="primary"
+    type="submit"
+    [mat-dialog-close]="{
+      id: id,
+      descripcion: descripcion_.value,
+      estado: '1',
+      fechaRegistro: fechaRegistro,
+      fechaVigencia: fechaVigencia,
+      firma: firma_.value,
+      tipo: tipo_.value
+    }"
+    [disabled]="
+      id.value === '' ||
+      firma_.value === '' ||
+      fechaRegistro === '' ||
+      fechaVigencia === ''
+    "
+  >
+    {{ id_.value == "" ? "Registrar Nueva Firma" : "Modificar Firma" }}
+  </button>
+  <button
+    mat-raised-button
+    type="button"
+    (click)="onNoClick()"
+    mat-flat-button
+    color="warn"
+    class="btn btn-danger"
+  >
+    Cancelar
+  </button>
+</div>
+<!-- </form> -->

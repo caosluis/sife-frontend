@@ -1,0 +1,255 @@
+<form
+  [formGroup]="PlantillasDocService.form"
+  class="normal-form"
+  (submit)="onSavePlantillasDoc()"
+>
+  <h1 mat-dialog-title>PlantillasDoc</h1>
+  <div mat-dialog-content>
+    <input type="hidden" id="id" formControlName="id" />
+    <input
+      type="hidden"
+      id="TipoDocumentoFiscal"
+      formControlName="TipoDocumentoFiscal"
+    />
+    <input type="hidden" id="plantilla" formControlName="plantilla" />
+    <input type="hidden" id="estado" formControlName="estado" />
+    <mat-form-field class="formPlus" [formGroup]="PlantillasDocService.form">
+      <mat-select
+        placeholder="Tipo documento fiscal"
+        id="codigoClasificador"
+        #codigoClasificador
+        formControlName="codigoClasificador"
+        matInput
+        (selectionChange)="seleccionarTipoDoc($event)"
+        [value]=""
+      >
+        <mat-option
+          *ngFor="let element of plantilladocList"
+          [value]="element.codigoClasificador"
+          >{{ element.descripcion }}</mat-option
+        >
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="formPlus" [formGroup]="PlantillasDocService.form">
+      <input
+        type="text"
+        id="url_qr"
+        #url_qr
+        formControlName="url_qr"
+        matInput
+        placeholder="URL para el QR"
+      />
+    </mat-form-field>
+    <div id="plantilla">
+      <mat-accordion>
+        <!-- Panel de cabecera -->
+        <mat-expansion-panel>
+          <mat-expansion-panel-header
+            style="background-color: rgb(19, 155, 76)"
+          >
+            <mat-panel-title style="color: white !important">
+              Cabecera
+            </mat-panel-title>
+            <mat-panel-description style="color: white !important">
+              Datos de cabecera documento fiscal
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <!-- Datos de cabecera Inicio -->
+          <table class="table " matTableResponsive>
+            <thead>
+              <th>Posición</th>
+              <th>Clave</th>
+              <th>Label</th>
+              <th></th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let cabecera of cabeceras">
+                <td>{{ cabecera.posicion }}</td>
+                <td>{{ cabecera.clave }}</td>
+                <td>{{ cabecera.label }}</td>
+                <td>
+                  <button
+                    (click)="deleterItem(cabecera.clave)"
+                    mat-icon-button
+                    type="button"
+                    color="warn"
+                  >
+                    <mat-icon>delete_outline</mat-icon>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <mat-form-field class="form2">
+            <input
+              matInput
+              id="posicion"
+              placeholder="Posición"
+              type="number"
+            />
+          </mat-form-field>
+          <mat-form-field class="form2">
+            <input matInput id="valor" placeholder="Clave" />
+          </mat-form-field>
+          <mat-form-field class="form2">
+            <input matInput id="display" placeholder="Label" />
+          </mat-form-field>
+          <button
+            type="button"
+            mat-icon-button
+            (click)="addItem()"
+            color="primary"
+          >
+            <mat-icon>add_circle_outline</mat-icon>
+          </button>
+          <!-- FIN -->
+        </mat-expansion-panel>
+        <!-- Panel de Detalle -->
+        <mat-expansion-panel>
+          <mat-expansion-panel-header
+            style="background-color: rgb(40, 67, 141)"
+          >
+            <mat-panel-title style="color: white !important">
+              Detalle
+            </mat-panel-title>
+            <mat-panel-description style="color: white !important">
+              Detalle de documento fiscal
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <!-- Datos de cabecera Inicio -->
+          <table class="table" matTableResponsive >
+            <thead>
+              <th>Posición</th>
+              <th>Clave</th>
+              <th>Label</th>
+              <th></th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let detalle of detalles">
+                <td>{{ detalle.posicion }}</td>
+                <td>{{ detalle.clave }}</td>
+                <td>{{ detalle.label }}</td>
+                <td>
+                  <button
+                    (click)="deleterItemD(detalle.clave)"
+                    mat-icon-button
+                    type="button"
+                    color="warn"
+                  >
+                    <mat-icon>delete_outline</mat-icon>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <mat-form-field class="form2">
+            <input
+              matInput
+              id="posicionD"
+              placeholder="Posición"
+              type="number"
+            />
+          </mat-form-field>
+          <mat-form-field class="form2">
+            <input matInput id="valorD" placeholder="Clave" />
+          </mat-form-field>
+          <mat-form-field class="form2">
+            <input matInput id="displayD" placeholder="Label" />
+          </mat-form-field>
+          <button
+            type="button"
+            mat-icon-button
+            (click)="addItemD()"
+            color="primary"
+          >
+            <mat-icon>add_circle_outline</mat-icon>
+          </button>
+          <!-- FIN -->
+        </mat-expansion-panel>
+        <!-- Panel de Pie -->
+        <mat-expansion-panel>
+          <mat-expansion-panel-header
+            style="background-color: rgb(31, 164, 241)"
+          >
+            <mat-panel-title style="color: white !important">
+              Pie
+            </mat-panel-title>
+            <mat-panel-description style="color: white !important">
+              Datos de pie de documento fiscal
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <!-- Datos de pie Inicio -->
+          <table class="table" matTableResponsive>
+            <thead>
+              <th>Posición</th>
+              <th>Clave</th>
+              <th>Label</th>
+              <th></th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let pie of pies">
+                <td>{{ pie.posicion }}</td>
+                <td>{{ pie.clave }}</td>
+                <td>{{ pie.label }}</td>
+                <td>
+                  <button
+                    (click)="deleterItemP(pie.clave)"
+                    mat-icon-button
+                    type="button"
+                    color="warn"
+                  >
+                    <mat-icon>delete_outline</mat-icon>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <mat-form-field class="form2">
+            <input
+              matInput
+              id="posicionP"
+              placeholder="Posición"
+              type="number"
+            />
+          </mat-form-field>
+          <mat-form-field class="form2">
+            <input matInput id="valorP" placeholder="Clave" />
+          </mat-form-field>
+          <mat-form-field class="form2">
+            <input matInput id="displayP" placeholder="Label" />
+          </mat-form-field>
+          <button
+            type="button"
+            mat-icon-button
+            (click)="addItemP()"
+            color="primary"
+          >
+            <mat-icon>add_circle_outline</mat-icon>
+          </button>
+          <!-- FIN -->
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div>
+  <div mat-dialog-actions align="center">
+    <div>
+      <button
+        mat-raised-button
+        [disabled]="url_qr.value === '' || codigoClasificador.value === ''"
+        color="primary"
+        type="submit"
+      >
+        {{ action }}
+      </button>
+      <button
+        mat-raised-button
+        color="warn"
+        type="button"
+        (click)="onClose()"
+        mat-flat-button
+      >
+        Cancelar
+      </button>
+    </div>
+  </div>
+</form>

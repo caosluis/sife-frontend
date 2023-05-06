@@ -1,0 +1,133 @@
+<mat-card-title>Registro de Autorizacion
+    <ng-container *ngIf="data.estado == '1'; then Activo; else Inactivo">
+    </ng-container>
+    <ng-template #Activo>
+      <span class="badge bg-success">Activo</span>
+    </ng-template>
+    <ng-template #Inactivo>
+      <span class="badge bg-danger">Inactivo</span>
+    </ng-template>
+</mat-card-title>
+<mat-card-subtitle>Informacion de la slicitud de autorizacion realizada con Impuestos Nacionales.</mat-card-subtitle>
+
+  <mat-dialog-content>    
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="subtitulo-modal">
+            <div class="subtitulo-modal-nombre">Códigos</div><span class="subtitulo-modal-descripcion">Información importante para el funcionamiento de todo el entorno de SIFE</span>
+          </div>  
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <mat-form-field appearance="standard">
+                    <mat-label>Codigo Sistema </mat-label>
+                      <input
+                      matInput                                             
+                      value="{{ data.codigoSistema }}" disabled
+                      />                    
+                  </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field appearance="standard">
+                      <mat-label>Codigo modalidad </mat-label>
+                        <input
+                        matInput                                             
+                        value="{{ data.codigoModalidad }}" disabled
+                        type="number"
+                        />                    
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field appearance="standard">
+                      <mat-label>Codigo ambiente </mat-label>
+                        <input
+                        matInput                                             
+                        value="{{ data.codigoAmbiente }}" disabled
+                        type="number"
+                        />                    
+                    </mat-form-field>
+                  </div>
+              </div>
+            </div>                    
+          </div>
+        <div class="col-sm-6">
+          <div class="subtitulo-modal">
+            <div class="subtitulo-modal-nombre">Sistema</div><span class="subtitulo-modal-descripcion">Información importante para el funcionamiento de todo el entorno de SIFE</span>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <mat-form-field appearance="standard">
+                  <mat-label>Nombre sistema </mat-label>
+                    <input
+                    matInput                                             
+                    value="{{ data.sistema }}" disabled
+                    />                    
+                </mat-form-field>
+              </div>
+              <div class="form-group">
+                <mat-form-field appearance="standard">
+                  <mat-label>Version sistema</mat-label>
+                    <input
+                    matInput                                             
+                    value="{{ data.version }}" disabled
+                    />                    
+                </mat-form-field>
+              </div>
+              <div class="form-group">
+                <mat-form-field appearance="standard">
+                  <mat-label>Tipo sistema</mat-label>
+                    <input
+                    matInput                                             
+                    value="{{ data.tipoSistema }}" disabled
+                    />                    
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="subtitulo-modal">
+            <div class="subtitulo-modal-nombre">Impuestos Nacionales</div><span class="subtitulo-modal-descripcion">Información de la solicitud realizada a Impuestos Nacionales</span>
+          </div>  
+          <div class="form-group">
+            <mat-form-field appearance="standard">
+              <mat-label>Version SIAT </mat-label>
+                <input
+                matInput                                             
+                value="{{ data.versionSiat }}" disabled
+                />                    
+            </mat-form-field>
+          </div>
+          <div class="form-group">
+            <mat-form-field appearance="standard">
+              <mat-label>Nro solicitud </mat-label>
+                <input
+                matInput                                             
+                value="{{ data.nroSolicitud }}" disabled
+                type="number"
+                />                    
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="archivo">
+              <br>
+              <embed
+                src="{{ archivo }}"
+                type="application/pdf" width="100%" height="200px"/>
+            </div>            
+        </div>
+      </div>
+  </mat-dialog-content>
+<mat-dialog-actions align="center">
+  <div class="row">
+    <div class="col-sm-12">
+      <button mat-raised-button type="button" (click)="close()" color="warn">
+      Cerrar
+      </button>
+    </div>
+  </div>
+</mat-dialog-actions>

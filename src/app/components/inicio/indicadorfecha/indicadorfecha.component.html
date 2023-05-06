@@ -1,0 +1,34 @@
+<div class="fecha">
+  <ng-container *ngIf="
+      delt == '';
+      then notifica;
+    ">
+  </ng-container>
+  <ng-template #notifica>
+    <mat-icon class="alerta">notifications</mat-icon>
+  </ng-template>
+  <div class="titulo">
+    <span class="titulo-nombre"><a [routerLink]="['/fechahistorico']">Fecha</a></span>
+    <a class="ancla" [routerLink]="['/fechahistorico']">
+      <img class="titulo-img" src="./../../../../assets/png/41.png" alt="" />
+    </a>
+  </div>
+  <div class="cuerpo">
+    <div class="fecha-hora">
+      <span class="fecha-label">{{ horahansa | date: "EEEE d MMMM y":"UTC"  }}</span>
+      <span class="fecha-var"></span>
+    </div>
+    <div class="fecha-hora">
+      <span class="fecha-label">Hora SIN</span>
+      <span class="fecha-var">{{ horasin | date: "HH:mm:ss" }}</span>
+    </div>
+    <div class="fecha-hora">
+      <span class="fecha-label">Hora Hansa</span>
+      <span class="fecha-var">{{ horahansa | date: "HH:mm:ss" }}</span>
+    </div>
+    <div class="fecha-hora">
+      <span class="fecha-label">Delta </span>
+      <span class="fecha-var">{{ delt }} seg.</span>
+    </div>
+  </div>
+</div>

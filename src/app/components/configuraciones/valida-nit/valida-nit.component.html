@@ -1,0 +1,67 @@
+<mat-card class="background_user_connection">
+    <div class="row">        
+      <div class="col-sm-10">
+        <mat-card-header>
+          <mat-card-title>Validacion de nit</mat-card-title>
+          <mat-card-subtitle
+            >Servicio de validacion de Nits, de  empresa o clientes.</mat-card-subtitle>
+        </mat-card-header>
+      </div>
+      <div class="col-sm-2">
+        <ul class="nav justify-content-end menuboton">
+          <li class="nav-item">
+            
+          </li>
+        </ul>
+      </div>
+    </div>
+    <mat-card-content>
+        <br>
+        <div class="contenido">
+          <div class="row">
+            <div class="col-sm-6">           
+              <form  [formGroup]="form" (ngSubmit)="save($event)">
+                  <div class="form-group">
+                    <mat-form-field appearance="standard">
+                      <mat-label>Nit Emisor</mat-label>
+                      <input matInput formControlName="nitEmisor" #nit maxlength="15" type="number">
+                      <mat-icon matSuffix>account_balance</mat-icon>
+                      <mat-hint>Nit del emisor a enviar. Maximo de caracteres {{nit.value?.length || 0}}/15</mat-hint>
+                    </mat-form-field>
+                  </div>
+                <div class="form-group">
+                    <mat-form-field appearance="standard">
+                        <mat-label>Nit a validar</mat-label>
+                        <input matInput formControlName="nitCliente" #nitValidar maxlength="15" type="number" >
+                        <mat-icon matSuffix>perm_identity</mat-icon>
+                        <mat-hint>Ingrese el nit que se validara con Impuestos Nacionales. Maximo de caracteres {{nitValidar.value?.length || 0}}/15</mat-hint>
+                      </mat-form-field>   
+                </div>
+                <br>
+                <button mat-raised-button color="primary" type="submit"  [disabled]="loading" [disabled]="form.invalid"> 
+                  <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                  Envar los datos 
+                </button>
+              </form>
+            </div>
+            <div class="col-sm-6" >            
+              <mat-icon>south</mat-icon> <mat-hint>Aquí se mostrara la respuesta de Impuestos Nacionales.</mat-hint>
+                <br>                                
+                <div *ngIf="transaccion == 'true'">
+                  <div class="alert alert-success">
+                    <p><b>Descripcion:</b> {{ descripcion }}</p> 
+                    <p><b>Codigo respuesta:</b> {{ codigo }}</p> 
+                  </div>
+                </div>
+                <div *ngIf="transaccion == 'false'">
+                  <div class="alert alert-danger">
+                      <p><b>Descripcion:</b> {{ descripcion }}</p> 
+                      <p><b>Codigo respuesta:</b> {{ codigo }}</p> 
+                    </div>
+                </div>    
+            </div>    
+          </div>   
+        </div>
+    </mat-card-content>
+  </mat-card>
+  

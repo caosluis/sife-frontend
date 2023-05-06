@@ -1,0 +1,11 @@
+table {
+  width: 100%;
+}
+
+.panel-role {
+  margin-bottom: 4px;
+}
+
+mat-form-field{
+  width: 100%;
+}

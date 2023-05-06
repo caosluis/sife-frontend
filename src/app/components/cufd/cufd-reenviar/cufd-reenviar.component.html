@@ -1,0 +1,38 @@
+<mat-card-title>Reenviar CUFD</mat-card-title>
+<mat-card-subtitle>Este servicio reenvia los CUFDs al sistema.</mat-card-subtitle>
+<mat-divider></mat-divider>
+<mat-dialog-content>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="icon">
+                <mat-icon>import_export</mat-icon>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="alert alert-success mt-3 mb-0">
+                "¿Está seguro de Reenviar?"
+            </div>
+        </div>
+    </div>
+    <div *ngIf="transaccion == 'true'">
+        <div *ngIf="Respuesta" class="alert alert-success mt-3 mb-0">
+            {{ Respuesta }}
+        </div>
+    </div>
+    <div *ngIf="transaccion == 'false'">
+        <div *ngIf="Respuesta" class="alert alert-danger mt-3 mb-0">
+            {{ Respuesta }}
+        </div>
+    </div>
+</mat-dialog-content>
+<mat-divider></mat-divider>
+<mat-dialog-actions align="center">
+    <button mat-raised-button color="primary" type="button" (click)="EnviarCUFDSAP()" mat-flat-button
+        [disabled]="loading">
+        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+        <span [hidden]="loading">Reenviar</span>
+    </button>
+    <button mat-raised-button color="warn" type="button" (click)="onNoClick()" mat-flat-button>
+        Cerrar
+    </button>
+</mat-dialog-actions>

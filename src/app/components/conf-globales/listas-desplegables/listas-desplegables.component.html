@@ -1,0 +1,116 @@
+<!-- AGREGANDO SIDEBAR FILTRO Y CONTENIDO EN UNO SOLO -->
+<mat-drawer-container class="example-container" autosize hasBackdrop="false">
+  <!-- MENU DE ACCIONES DEL MODULO -->
+  <div class="container-menu">
+    <div class="container-menu-iz">
+      <div class="container-menu-item ">
+        
+      </div>
+    </div>
+    <div class="container-menu-de">
+      <div class="container-menu-item ">
+        <button mat-raised-button color="primary" (click)="openDialog('Crear', null)">
+          <mat-icon>add</mat-icon> Nuevo
+        </button>
+      </div>
+      <div class="container-menu-item ">
+        <button type="button" class="sidebar-filtro-btn" mat-button (click)="drawer.toggle()">
+          <mat-icon>filter_list</mat-icon> Filtro
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- SIDEBAR DE FILTRO -->
+  <mat-drawer #drawer class="example-sidenav sidebar-filtro" mode="side"  position="end"  >
+    <div class="row">
+      <div class="col-sm-6">
+          <h2>Filtros</h2>
+      </div>
+      <div class="col-sm-6">        
+          <button type="button" class="sidebar-filtro-btn" mat-button (click)="drawer.toggle()">
+            <mat-icon>close</mat-icon>
+          </button>
+      </div>
+  </div>
+    <mat-form-field appearance="standard" class="buscador">
+      <mat-label>Buscar</mat-label>
+      <input
+        matInput
+        placeholder="Buscar"
+        autocomplete="off"
+        (keyup)="applyFilter($event.target.value)"
+      />
+    </mat-form-field> 
+  </mat-drawer>
+
+  <!-- CONTENIDO DEL SIDEBAR FILTRO PARA EL MODULO -->
+  <div class="example-sidenav-content" > 
+
+    <mat-card class="background_user_connection">  
+      <div class="row">
+        <div class="col-sm-12">
+          <mat-card-header>
+            <mat-card-title>Listas Desplegables</mat-card-title>
+            <mat-card-subtitle>Todas las listas desplegables que funcionan en el sistema.</mat-card-subtitle>
+          </mat-card-header>
+        </div>
+      </div>
+      <mat-card-content>
+           
+        <table mat-table [dataSource]="dataSource" matTableResponsive matSort>      
+          <ng-container matColumnDef="logo">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header style="text-align: center;"></th>
+            <td mat-cell *matCellDef="let element" > 
+                <mat-icon style="color: #7072bf !important" >featured_play_list</mat-icon><mat-icon class="check">check</mat-icon>
+            </td>
+          </ng-container>
+          <!--Column -->
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Identificador</th>
+            <td mat-cell *matCellDef="let element">
+              <button mat-stroked-button color="primary">{{ element.id }}</button>
+              </td>
+          </ng-container>
+
+          <!--Column -->
+          <ng-container matColumnDef="nombre">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Nombre</th>
+            <td mat-cell *matCellDef="let element">{{ element.nombre }}</td>
+          </ng-container>
+
+          <!--Column -->
+          <ng-container matColumnDef="valores">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Cantidad de valores</th>
+            <td mat-cell *matCellDef="let element">{{ element.valores.length }}</td>
+          </ng-container>
+
+          <!-- Progress Column -->
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+            <td mat-cell *matCellDef="let element">
+              <button mat-icon-button [matMenuTriggerFor]="Notificaciones">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #Notificaciones="matMenu">
+                <button mat-menu-item (click)="openDialog('Actualizar', element)">
+                  <mat-icon>launch</mat-icon>Detalle
+                </button>
+                <button
+                  mat-menu-item
+                  color="warn"
+                  (click)="openDialog('Eliminar', element)"
+                >
+                  <mat-icon>delete_outline</mat-icon>Eliminar
+                </button>
+              </mat-menu>
+            </td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let element; columns: displayedColumns"></tr>
+        </table>
+        <mat-paginator [pageSizeOptions]="[10, 25, 100]"></mat-paginator>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+</mat-drawer-container>

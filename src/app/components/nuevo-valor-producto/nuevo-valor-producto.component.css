@@ -1,0 +1,16 @@
+table {
+    width: 100%;
+  }
+.btnWarn{
+  color:rgb(240, 149, 30)
+}
+.codigoCorrecto{
+  color: rgb(17, 110, 197);
+}
+.codigoInCorrecto{
+  color: yellowgreen;
+}
+.conten[_ngcontent-rsf-c21] {
+  padding: 20px;
+  padding-top: 50px;
+}

@@ -1,0 +1,39 @@
+.form {
+  padding-left: 1%;
+  padding-right: 1%;
+  width: 100%;
+}
+.sidebar_der {
+  width: 50%;
+}
+.verificacion-input {
+  width: 80%;
+}
+.titulo_campo {
+  font-weight: bold;
+}
+.table_user_connection {
+  width: 100%;
+}
+.verificacion-input {
+  width: 80%;
+}
+mat-icon.mat-icon.notranslate.material-icons.mat-icon-no-color {
+  margin-right: 5px;
+}
+.mat-radio-button {
+  display: inline-grid;
+  padding: 2px 30px 2px 30px;
+}
+.example-radio-button {
+  margin: 5px;
+}
+
+table{
+  width: 97%;
+  margin: 18px 7px 5px 5px;
+}
+table .label-td{
+  font-size: 12px;
+  color: #666;
+}

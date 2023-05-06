@@ -1,0 +1,88 @@
+<!-- <h1 mat-dialog-title>Punto de venta</h1>
+<div mat-dialog-content>
+<form [formGroup]="service.form" class="normal-form" (submit)="onSavePDV()">
+        <div class="example-container">
+            <input name="codigoSistemaProveedor" id="codigoSistemaProveedor" placeholder="codigoSistemaProveedor" type="hidden">
+            <input name="codigoTipoPuntoVenta" id="codigoTipoPuntoVenta" placeholder="codigoTipoPuntoVenta" type="hidden">
+            <mat-form-field>
+                <input name="cuis" placeholder="CUIS">
+            </mat-form-field>
+            <mat-form-field>
+                <input name="nit" type="number" placeholder="Nit">
+            </mat-form-field>
+            <mat-form-field>
+                <input name="codigoSucursal" type="number" placeholder="Sucursal" >
+            </mat-form-field>
+            <mat-form-field>
+                <input name="nombrePuntoVenta" placeholder="nombrePuntoVenta">
+            </mat-form-field>
+            <mat-form-field>
+                <textarea name="descripcion" placeholder="descripcion"></textarea>
+            </mat-form-field>
+            <div class="button-row">
+                <button mat-button type="submit">Guardar</button>
+                <button mat-button type="button" (click)="onClose()" mat-flat-button color="warn">Clear</button>
+            </div>
+</div>
+</form>
+</div> -->
+
+
+<h1 mat-dialog-title>Punto de venta</h1>
+<div mat-dialog-content>
+        <form [formGroup]="service.form" class="normal-form" (submit)="onSavePDV()">               
+                <input type="hidden" id="codigoPDV" formControlName="codigoPDV">
+                <div class="form-group">
+                    <label for="">Empresa</label>
+                    <select id="cuis" formControlName="cuis" class="form-control" placeholder="Empresa"  (ngModelChange)="selectNit($event)" >
+                    <ng-container *ngFor="let empresa of empresas">
+                            <option value="{{ empresa.cuis }}">{{ empresa.nombre }}</option>
+                    </ng-container>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="">Sucursal</label>
+                    <select id="codigoSucursal" formControlName="codigoSucursal" class="form-control" placeholder="Sucursal" >
+                    <ng-container *ngFor="let sucursal of sucursales">
+                        <option value="{{ sucursal.codigoSucursal }}">{{ sucursal.descripcion }}</option>
+                    </ng-container>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="">Tipo punto de venta</label>
+                        <!-- <input type="text" id="codigoTipoPuntoVenta" formControlName="codigoTipoPuntoVenta" class="form-control" placeholder="Tipo punto de venta"> -->
+                        <select id="codigoTipoPuntoVenta" formControlName="codigoTipoPuntoVenta" class="form-control" placeholder="Tipo punto de venta">
+                            <option value="1">Móvil</option> 
+                            <option value="2">Fijo</option>
+                            <option value="3">Consolidado</option>
+                            <option value="4">Proveedor</option>
+                            <option value="5">Webservice</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="">Nombre punto de venta</label>
+                        <input type="text" id="nombrePuntoVenta" formControlName="nombrePuntoVenta" class="form-control" placeholder="nombre punto de venta">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <label for="">Nit</label>
+                    <input type="text" formControlName="nit" id="nit" class="form-control" disabled>
+                </div>
+                <div class="form-row">
+                    <label for="">Descripción</label>
+                    <textarea formControlName="descripcion" id="descripcion" class="form-control" cols="30" rows="4"></textarea>
+                </div>
+                <div class="button-row">
+                    <button mat-button type="submit" class="btn btn-success">{{action}}</button>
+                    <button mat-button type="button" (click)="onClose()" mat-flat-button color="warn" class="btn btn-danger">Cancelar</button>
+                </div>
+        </form>
+</div>
+<div mat-dialog-actions>
+  <!-- <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button cdkFocusInitial>Ok</button> -->
+</div>
+
+        
+    

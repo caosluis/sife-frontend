@@ -1,0 +1,14 @@
+.card_table_user_connection{
+    width: 100%;
+}
+.table_user_connection{
+    width: 100%;
+}
+.bg-success{
+  color: #6bb700;
+  background: #f7f8ff !important;
+}
+.bg-danger {    
+  background: #fff5f8 !important;
+  color: #8c435b !important;
+}

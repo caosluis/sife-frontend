@@ -1,0 +1,999 @@
+<!--div class="indicador">
+  <div class="row">        
+    <div class="col-sm-4">
+      <mat-card class="example-card">
+        <mat-card-title-group>
+          <mat-card-title><a [routerLink]="['/facturas']">Facturas Online </a></mat-card-title>
+          <mat-card-subtitle>En linea hoy 
+            <div class="indicador-facturas">
+              <div class="contador">
+                <span class="contador-label">Autorizadas</span>
+                <span class="contador-valor exitoso">
+                  {{ IndicadorFacturasExitosas }}</span
+                >
+              </div>
+              <div class="contador">
+                <span class="contador-label">Rechazadas</span>
+                <span class="contador-valor rechazado">
+                  {{ IndicadorFacturasRechazadas }}</span
+                >
+              </div>
+              <div class="contador">
+                <span class="contador-label">Enviadas</span>
+                <span class="contador-valor">
+                  {{ IndicadorFacturasEnviadosIN }}</span
+                >
+              </div>
+              <div class="contador">
+                <span class="contador-label">Recepcionadas</span>
+                <span class="contador-valor">
+                  {{ IndicadorFacturasRecibido }}</span
+                >
+              </div>
+            </div>            
+          </mat-card-subtitle>
+          <img mat-card-sm-image src="./../../../../assets/png/fa1.png" >
+        </mat-card-title-group>
+        <mat-card-content>
+          <span class="badge bg-indigo">{{ fechaActual | date: "EEEE d MMMM y ":"UTC"}}  </span><span class="badge bg-light text-dark">
+            Total de facturas online:
+            <b>
+            {{
+              IndicadorFacturasExitosas +
+                IndicadorFacturasRechazadas +
+                IndicadorFacturasEnviadosIN +
+                IndicadorFacturasRecibido
+            }}
+            </b>
+          </span>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="col-sm-4">
+      <ng-container *ngIf="transaccion == 'true' && totalEnviadosCufd == totalCufd; then exitosoCufd; else errorCufd" ></ng-container>
+      <ng-template #exitosoCufd >
+        <mat-card class="example-card" >
+          <mat-card-title-group>
+            <mat-card-title> <a [routerLink]="['/cufd-historico']">CUFD </a></mat-card-title>
+            <mat-card-subtitle>Codigo de autorizacion
+              <div class="indicador-facturas">
+                Solicitud exitosa               
+              </div>
+              <div class="badge bg-success ng-star-inserted">
+                {{ fechaSincronizacion | date: "EEEE d MMMM y HH:mm:ss ":"UTC" }}
+              </div><mat-icon class="check">check</mat-icon>
+            </mat-card-subtitle>
+            <img mat-card-sm-image src="./../../../../assets/png/5.png" >
+          </mat-card-title-group>
+          <mat-card-content>
+            <ng-container *ngIf="totalEnviadosCufd == totalCufd; then totalexitos; else totalerror" ></ng-container>
+            <ng-template #totalexitos>
+              <mat-list>
+                <mat-list-item>
+                  <div mat-line class="mat-list-item-titulo">Envio de CUFD exitoso al sistema del contribuyente.</div>
+                  <div mat-line class="mat-list-item-subttitulo">Total de codigos enviados al contribuyente <span class="bg-success">{{ totalEnviadosCufd }}</span> de {{ totalCufd }}.</div>
+                </mat-list-item>
+              </mat-list>
+            </ng-template>
+            <ng-template #totalerror>
+              <mat-list>
+                <mat-list-item>
+                  <div mat-line class="mat-list-item-titulo">En este momento se esta realizando el envio de CUFD al contribuyente.</div>
+                  <div mat-line class="mat-list-item-subttitulo">Total de codigos enviados al contribuyente {{ totalEnviadosCufd }} de {{ totalCufd }}.</div>
+                  <div mat-line class="mat-list-item-subttitulo"><mat-progress-bar mode="determinate" [value]="(totalEnviadosCufd/totalCufd)*100" color="accent"></mat-progress-bar></div>
+                </mat-list-item>
+              </mat-list>
+            </ng-template>           
+          </mat-card-content>
+        </mat-card>        
+      </ng-template>   
+      <ng-template #errorCufd >
+        <mat-card class="example-card"style="background-color: #fff5f8;">
+          <mat-card-title-group>
+            <mat-card-title> <a [routerLink]="['/cufd-historico']"class="bg-danger">CUFD </a></mat-card-title>
+            <mat-card-subtitle>Codigo de autorizacion
+              <div class="indicador-facturas">
+                Problema solicitud.                
+              </div>
+              <div class="badge bg-danger ng-star-inserted">
+                {{ fechaSincronizacion | date: "EEEE d MMMM y HH:mm:ss ":"UTC" }}
+              </div>
+            </mat-card-subtitle>
+            <img mat-card-sm-image src="./../../../../assets/png/5.png" >
+          </mat-card-title-group>
+          <mat-card-content>
+            <ng-container *ngIf="totalEnviadosCufd == totalCufd; then totalexitos; else totalerror" ></ng-container>
+            <ng-template #totalexitos>
+              <mat-list>
+                <mat-list-item>
+                  <div mat-line class="mat-list-item-titulo">Se esta realizando la sincronizacion de codigos.</div>
+                  <div mat-line class="mat-list-item-subttitulo">Total de codigos de autorizacion <span class="bg-danger">{{ totalEnviadosCufd }}</span> de {{ totalCufd }}.</div>
+                  <div mat-line class="mat-list-item-subttitulo"><mat-progress-bar mode="indeterminate" color="accent"></mat-progress-bar></div>
+                </mat-list-item>
+              </mat-list>
+            </ng-template>
+            <ng-template #totalerror>
+              <mat-list>
+                <mat-list-item>
+                  <div mat-line class="mat-list-item-titulo">En este momento se esta realizando el envio de CUFD al contribuyente.</div>
+                  <div mat-line class="mat-list-item-subttitulo">Total de codigos enviados al contribuyente {{ totalEnviadosCufd }} de {{ totalCufd }}.</div>
+                  <div mat-line class="mat-list-item-subttitulo"><mat-progress-bar mode="indeterminate" color="accent"></mat-progress-bar></div>
+                </mat-list-item>
+              </mat-list>
+            </ng-template> 
+          </mat-card-content>
+        </mat-card><mat-icon class="alerta">notifications</mat-icon>
+      </ng-template>   
+    </div>    
+    <div class="col-sm-4">    
+      <ng-container *ngIf="EstadoIndicador('Internet') == '0'; then exitosoInternet; else errorInternet" ></ng-container>
+      <ng-template #exitosoInternet >
+        <mat-card class="example-card" >
+          <mat-card-title-group>
+            <mat-card-title><a [routerLink]="['/conexiones']">Internet </a></mat-card-title>
+            <mat-card-subtitle>Conexión de internet.
+              <div class="indicador-facturas">
+                 Conexión exitosa            
+              </div>
+              <div class="badge bg-success ng-star-inserted">
+                {{ FechaIndicador("Internet") | date: "EEEE d MMMM y HH:mm:ss ":"UTC" }}
+              </div><mat-icon class="check">check</mat-icon>
+            </mat-card-subtitle>
+            <img mat-card-sm-image src="./../../../../assets/png/77.png" >
+          </mat-card-title-group>
+          <mat-card-content>            
+            <mat-list>
+              <mat-list-item>
+                <div mat-line class="mat-list-item-titulo">Internet.</div>
+                <div mat-line class="mat-list-item-subttitulo">Conexión a internet satisfactoriamente.</div>
+              </mat-list-item>
+            </mat-list>
+          </mat-card-content>
+        </mat-card>
+      </ng-template>
+      <ng-template #errorInternet >
+        <mat-card class="example-card" style="background-color: #fff5f8;">
+          <mat-card-title-group >
+            <mat-card-title class="bg-danger"><a [routerLink]="['/conexiones']">Internet </a></mat-card-title>
+            <mat-card-subtitle>Conexión de internet.
+              <div class="indicador-facturas">
+                Conexión con problemas {{ EstadoIndicador("Internet") }}              
+              </div>
+              <div class="badge bg-danger ng-star-inserted">
+                {{ FechaIndicador("Internet") | date: "EEEE d MMMM y HH:mm:ss ":"UTC" }}
+              </div>
+            </mat-card-subtitle>
+            <img mat-card-sm-image src="./../../../../assets/png/77.png" >
+          </mat-card-title-group>
+          <mat-card-content>
+            <mat-list>
+              <mat-list-item>
+                <div mat-line class="mat-list-item-titulo">Internet.</div>
+                <div mat-line class="mat-list-item-subttitulo">Conexión a internet con incomvenientes o problemas.</div>
+              </mat-list-item>
+            </mat-list>
+          </mat-card-content>
+        </mat-card><mat-icon class="alerta">notifications</mat-icon>
+      </ng-template>
+    </div>
+  </div>
+</div-->
+<!--div class="indicador">
+  <div class="row">     
+    <div class="col-sm-4">
+      <mat-card class="example-card">
+        <mat-card-title-group>
+          <mat-card-title><a [routerLink]="['/facturas-sap']">Facturas Offline</a></mat-card-title>
+          <mat-card-subtitle>Fuera de linea hoy
+            
+            <div class="indicador-facturas">
+              <div class="contador">
+                <span class="contador-label">Autorizadas</span>
+                <span class="contador-valor exitoso">
+                  {{ IndicadorFacturasExitosasOffline }}</span
+                >
+              </div>
+              <div class="contador">
+                <span class="contador-label">Rechazadas</span>
+                <span class="contador-valor rechazado">
+                  {{ IndicadorFacturasRechazadasOffline }}</span
+                >
+              </div>
+              <div class="contador">
+                <span class="contador-label">Lotes </span>
+                <span class="contador-valor">
+                  {{ IndicadorFacturasEmpaquetadosOffline }}</span
+                >
+              </div>
+              <div class="contador">
+                <span class="contador-label">Recepcionadas</span>
+                <span class="contador-valor">
+                  {{ IndicadorFacturasOfflineOffline }}</span
+                >
+              </div>
+            </div>            
+          </mat-card-subtitle>
+          <img mat-card-sm-image src="./../../../../assets/png/fac.png" >
+        </mat-card-title-group>
+        <mat-card-content>   
+          <span class="badge bg-indigo">{{ fechaActual | date: "EEEE d MMMM y ":"UTC"}} </span>   
+          <span class="badge bg-light text-dark">
+            Total de facturas offline:
+            <b>{{
+              IndicadorFacturasExitosasOffline +
+                IndicadorFacturasRechazadasOffline +
+                IndicadorFacturasEmpaquetadosOffline +
+                IndicadorFacturasOfflineOffline
+            }}
+            </b>
+          </span>
+        </mat-card-content>
+      </mat-card>
+    </div>       
+    <div class="col-sm-4">      
+      <ng-container *ngIf="c == 0; then exitosoCatalogo; else errorCatalogo" ></ng-container>
+      <ng-template #exitosoCatalogo >   
+        <mat-card class="example-card" >
+          <mat-card-title-group>
+            <mat-card-title><a [routerLink]="['/catalogos']">Catalogos </a> </mat-card-title>
+            <mat-card-subtitle>Sincronización de catalogos.
+              <div class="indicador-facturas" >
+                <div>Sincronización exitosa</div>         
+              </div>
+              <span class="badge bg-success">{{ fechaActual | date: "EEEE d MMMM y ":"UTC"}}</span><mat-icon class="check">check</mat-icon>
+            </mat-card-subtitle>
+            <img mat-card-sm-image src="./../../../../assets/png/92.png" >
+          </mat-card-title-group>
+          <mat-card-content>
+            <ng-container *ngIf="totalCatalogosSincronizados == 17; then sicexitos; else sincerror" ></ng-container>
+            <ng-template #sicexitos>
+              <mat-list>
+                <mat-list-item>
+                  <div mat-line class="mat-list-item-titulo">Solicitud de catalogos exitoso.</div>
+                  <div mat-line class="mat-list-item-subttitulo">Total de catalogos sincronizados con Impuestos <span class="bg-success">{{ totalCatalogosSincronizados }}</span> de 17.</div>
+                </mat-list-item>
+              </mat-list>
+            </ng-template>
+            <ng-template #sincerror>
+              <mat-list>
+                <mat-list-item>
+                  <div mat-line class="mat-list-item-titulo">No se logro sincronizar todos los catalogos con Impuestos Nacionales.</div>
+                  <div mat-line class="mat-list-item-subttitulo">Total de catalogos sincronizados {{ totalCatalogosSincronizados }} de 17.</div>
+                  <div mat-line class="mat-list-item-subttitulo"><mat-progress-bar mode="determinate" [value]="(totalCatalogosSincronizados/17)*100"></mat-progress-bar></div>
+                </mat-list-item>
+              </mat-list>
+            </ng-template>
+          </mat-card-content>
+        </mat-card>
+      </ng-template>
+      <ng-template #errorCatalogo >
+        <mat-card class="example-card" style="background-color: #fdf1f4;">
+          <mat-card-title-group>
+            <mat-card-title><a [routerLink]="['/catalogos']" class="bg-danger">Catalogos </a>  </mat-card-title>
+            <mat-card-subtitle>Sincronización de catalogos.
+              <div class="indicador-facturas" >
+                <div>Problemas solicitud</div>               
+              </div>
+              <span class="badge bg-danger">{{ fechaActual | date: "EEEE d MMMM y ":"UTC"}}</span>
+            </mat-card-subtitle>
+            <img mat-card-sm-image src="./../../../../assets/png/92.png" >
+          </mat-card-title-group>
+          <mat-card-content>
+            <ng-container *ngIf="totalCatalogosSincronizados == 17; then sicexitos; else sincerror" ></ng-container>
+            <ng-template #sicexitos>
+              <mat-list>
+                <mat-list-item>
+                  <div mat-line class="mat-list-item-titulo">Solicitud de catalogos exitoso.</div>
+                  <div mat-line class="mat-list-item-subttitulo">Total de catalogos sincronizados con Impuestos <span class="bg-success">{{ totalCatalogosSincronizados }}</span> de 17.</div>
+                </mat-list-item>
+              </mat-list>
+            </ng-template>
+            <ng-template #sincerror>
+              <mat-list>
+                <mat-list-item>
+                  <div mat-line class="mat-list-item-titulo">No se logro sincronizar todos los catalogos con Impuestos Nacionales.</div>
+                  <div mat-line class="mat-list-item-subttitulo">Total de catalogos sincronizados {{ totalCatalogosSincronizados }} de 17.</div>
+                  <div mat-line class="mat-list-item-subttitulo"><mat-progress-bar mode="determinate" [value]="(totalCatalogosSincronizados/17)*100" color='accent'></mat-progress-bar></div>
+                </mat-list-item>
+              </mat-list>
+            </ng-template> 
+          </mat-card-content>
+        </mat-card><mat-icon class="alerta">notifications</mat-icon>
+      </ng-template>
+    </div>
+    <div class="col-sm-4">
+      <ng-container *ngIf="EstadoIndicador('ServiciosSIN') == '0'; then exitosoServ; else errorServ" ></ng-container>
+      <ng-template #exitosoServ >
+        <mat-card class="example-card" >
+          <mat-card-title-group>
+            <mat-card-title><a [routerLink]="['/hardware']">Servicios Impuestos </a>  </mat-card-title>
+            <mat-card-subtitle>Servicios de SIAT.
+              <div class="indicador-facturas">
+                Conexiones exitosas.
+              </div>
+              <span class="badge bg-success ng-star-inserted">
+                {{ FechaIndicador("ServiciosSIN") | date: "EEEE d MMMM y HH:mm:ss":"UTC"}}
+              </span><mat-icon class="check">check</mat-icon>
+            </mat-card-subtitle>
+            <img mat-card-sm-image src="./../../../../assets/png/40.png" >
+          </mat-card-title-group>
+          <mat-card-content >
+            <mat-list>
+              <mat-list-item>
+                <div mat-line class="mat-list-item-titulo">Servicios de facturas de Impuestos Nacionales.</div>
+                <div mat-line class="mat-list-item-subttitulo">Conexion exitosa con Factura electrónica, Documento de ajuste, Factura compra y venta.</div>
+              </mat-list-item>
+            </mat-list>
+          </mat-card-content>
+        </mat-card>        
+      </ng-template>
+      <ng-template #errorServ >
+        <mat-card class="example-card" style="background-color: #fff5f8;">
+          <mat-card-title-group>
+            <mat-card-title><a [routerLink]="['/hardware']"class="bg-danger">Servicios Impuestos </a>  </mat-card-title>
+            <mat-card-subtitle>Servicios de SIAT.
+              <div class="indicador-facturas">
+                Errores encontrados en servicios {{ EstadoIndicador("ServiciosSIN") }}                
+              </div>
+              <div class="badge bg-danger ng-star-inserted">
+                {{ FechaIndicador("ServiciosSIN") | date: "EEEE d MMMM y HH:mm:ss":"UTC"}}
+              </div>
+            </mat-card-subtitle>
+            <img mat-card-sm-image src="./../../../../assets/png/40.png" >
+          </mat-card-title-group>
+          <mat-card-content >
+            <mat-list>
+              <mat-list-item>
+                <div mat-line class="mat-list-item-titulo">Servicios de facturas de Impuestos Nacionales.</div>
+                <div mat-line class="mat-list-item-subttitulo">Error de conexión con Factura electrónica.</div>
+              </mat-list-item>
+            </mat-list>
+          </mat-card-content>
+        </mat-card><mat-icon class="alerta">notifications</mat-icon>
+      </ng-template>
+    </div>
+  </div>
+</div-->
+<!--div class="indicador">
+  <div class="row">   
+    <div class="col-sm-4">
+      <mat-card class="example-card">
+        <mat-card-title-group>
+          <mat-card-title><a [routerLink]="['/facturas-lote']">Lotes de facturas </a></mat-card-title>        
+        </mat-card-title-group>
+        <mat-card-content>   
+    
+              <mat-list>
+                <mat-list-item >
+                  <mat-icon mat-list-icon><img src="./../../../../assets/png/paquete.png" height="30" style="vertical-align: top;" alt=""></mat-icon>
+                  <div mat-line class="mat-list-item-titulo">Ultima sincronizacion o solicitud de Lotes.</div>
+                  <div mat-line class="mat-list-item-subttitulo"> {{ Respuesta | date: "EEEE d MMMM y HH:mm:ss":"UTC"  }} </div>
+                </mat-list-item>
+                <mat-list-item >
+                  <div mat-line class="mat-list-item-titulo">Emisión y envío de Paquetes por Fuera de Linea.</div>
+                  <div mat-line class="mat-list-item-titulo"> Proceso que asigna eventos singificativos, empaqueta facturas, envia a SIN y valida su existencia. </div>
+                </mat-list-item>
+              </mat-list>
+
+        </mat-card-content>        
+      </mat-card>      
+    </div>  
+    <div class="col-sm-4">
+      <ng-container  *ngIf="delt == ''; then errorFecha else exitosoFecha;" ></ng-container>
+      <ng-template #exitosoFecha>
+        <mat-card class="example-card">
+          <mat-card-title-group>
+            <mat-card-title><a [routerLink]="['/fechahistorico']">Fecha y hora</a></mat-card-title>
+            <mat-card-subtitle>Sincronización de fecha y hora.            
+              <div class="indicador-facturas">
+                <div class="contador">
+                  <span class="contador-label">SIN</span>
+                  <span class="contador-valor">{{ horasin | date: "HH:mm:ss" }}</span>
+                </div>
+                <div class="contador">
+                  <span class="contador-label">Hansa</span>
+                  <span class="contador-valor">{{ horahansa | date: "HH:mm:ss" }}</span>
+                </div>
+                <div class="contador">
+                  <span class="contador-label">Delta</span>
+                  <span class="contador-valor">{{ delt }}s</span>
+                </div>
+              </div>            
+            </mat-card-subtitle>
+            <img mat-card-sm-image src="./../../../../assets/png/41.png" >
+          </mat-card-title-group>
+          <mat-card-content>   
+            <span class="badge bg-success">{{ horahansa | date: "EEEE d MMMM y":"UTC"  }}</span> Ultima sincronización.
+          </mat-card-content>
+        </mat-card>
+      </ng-template>
+      <ng-template #errorFecha>
+        <mat-card class="example-card" style="background-color: #fff5f8;">
+          <mat-card-title-group>
+            <mat-card-title><a [routerLink]="['/fechahistorico']">Fecha y hora</a></mat-card-title>
+            <mat-card-subtitle>Sincronización de fecha y hora.            
+              <div class="indicador-facturas">
+                <div class="contador">
+                  <span class="contador-label">SIN</span>
+                  <span class="contador-valor">{{ horasin | date: "HH:mm:ss" }}</span>
+                </div>
+                <div class="contador">
+                  <span class="contador-label">Hansa</span>
+                  <span class="contador-valor">{{ horahansa | date: "HH:mm:ss" }}</span>
+                </div>
+                <div class="contador">
+                  <span class="contador-label">Delta</span>
+                  <span class="contador-valor">{{ delt }}s</span>
+                </div>
+              </div>            
+            </mat-card-subtitle>
+            <img mat-card-sm-image src="./../../../../assets/png/41.png" >
+          </mat-card-title-group>
+          <mat-card-content>   
+            <span class="badge bg-success">{{ horahansa | date: "EEEE d MMMM y":"UTC"  }}</span> Ultima sincronización.
+          </mat-card-content>
+        </mat-card><mat-icon class="alerta">notifications</mat-icon>
+      </ng-template>
+    </div>           
+    <div class="col-sm-4">
+      <ng-container *ngIf="EstadoIndicador('ServiciosSIFE') == '0'; then exitosoSife; else errorSife" ></ng-container>
+      <ng-template #exitosoSife >
+        <mat-card class="example-card" >
+          <mat-card-title-group>
+            <mat-card-title><a [routerLink]="['/serviciosSife']">Servicios SIFE </a>  </mat-card-title>
+            <mat-card-subtitle>Servicios de internos.
+              <div class="indicador-facturas">
+                Conexiones exitosas.
+              </div>
+              <span class="badge bg-success ng-star-inserted">
+                {{ FechaIndicador("ServiciosSIFE") | date: "EEEE d MMMM y HH:mm:ss":"UTC"}}
+              </span><mat-icon class="check">check</mat-icon>
+            </mat-card-subtitle>
+            <img mat-card-sm-image src="./../../../../assets/png/40.png" >
+          </mat-card-title-group>
+          <mat-card-content >
+            <mat-list>
+              <mat-list-item>
+                <div mat-line class="mat-list-item-titulo">Servicios internos de SIFE.</div>
+                <div mat-line class="mat-list-item-subttitulo">Todos los servicios se encuentran disponibles.</div>
+              </mat-list-item>
+            </mat-list>
+          </mat-card-content>
+        </mat-card>        
+      </ng-template>
+      <ng-template #errorSife >
+        <mat-card class="example-card" style="background-color: #fff5f8;">
+          <mat-card-title-group>
+            <mat-card-title><a [routerLink]="['/serviciosSife']"class="bg-danger">Servicios SIFE </a>  </mat-card-title>
+            <mat-card-subtitle>Servicios de internos.
+              <div class="indicador-facturas">
+                Errores encontrados en servicios {{ EstadoIndicador("ServiciosSIFE") }}                
+              </div>
+              <div class="badge bg-danger ng-star-inserted">
+                {{ FechaIndicador("ServiciosSIFE") | date: "EEEE d MMMM y HH:mm:ss":"UTC"}}
+              </div>
+            </mat-card-subtitle>
+            <img mat-card-sm-image src="./../../../../assets/png/40.png" >
+          </mat-card-title-group>
+          <mat-card-content >
+            <mat-list>
+              <mat-list-item>
+                <div mat-line class="mat-list-item-titulo">Servicios internos de SIFE.</div>
+                <div mat-line class="mat-list-item-subttitulo">Existen servicios que no estan disponibles.</div>
+              </mat-list-item>
+            </mat-list>
+          </mat-card-content>
+        </mat-card><mat-icon class="alerta">notifications</mat-icon>
+      </ng-template>
+    </div>
+  </div>
+</div-->
+
+<div class="row indicadores">
+  <div class="col-sm-4">
+    <mat-card class="example-card">
+      <div class="fondo_mat">
+        <mat-card-title style="background-color: #9c28af;">FO</mat-card-title>
+        <mat-card-subtitle>Facturas Online</mat-card-subtitle>
+      </div>
+      <mat-card-content>
+        <div class="indicador-facturas">
+          <div class="contador">
+            <span class="contador-label">Autorizadas</span>
+              <span class="contador-valor exitoso" >
+                {{ IndicadorFacturasExitosas }}
+              </span>
+          </div>
+          <div class="contador">
+            <span class="contador-label">Rechazadas</span>
+            <span class="contador-valor rechazado">
+              {{ IndicadorFacturasRechazadas }}</span
+            >
+          </div>
+          <div class="contador">
+            <span class="contador-label">Enviadas</span>
+            <span class="contador-valor proceso" >
+              {{ IndicadorFacturasEnviadosIN }}</span
+            >
+          </div>
+          <div class="contador">
+            <span class="contador-label">Recepcionadas</span>
+            <span class="contador-valor" >
+              {{ IndicadorFacturasRecibido }}</span
+            >
+          </div>          
+        </div> 
+        
+      </mat-card-content>
+      <mat-card-actions>
+        <div class="row">
+          <div class="col-sm-6">
+            <span class="mat-focus-indicator mat-button mat-button-base">
+              Total de facturas online:  
+              <b>
+              {{
+                IndicadorFacturasExitosas +
+                  IndicadorFacturasRechazadas +
+                  IndicadorFacturasEnviadosIN +
+                  IndicadorFacturasRecibido
+              }}
+              </b>
+            </span>
+          </div>
+          <div class="col-sm-6">
+            <button mat-button [routerLink]="['/facturas']"><mat-icon>logout</mat-icon> Ir a la pagina</button>    
+          </div>
+        </div>            
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <div class="col-sm-4">
+    <mat-card class="example-card">
+      <div class="fondo_mat">
+        <mat-card-title style="background-color: #673bb7;">CD</mat-card-title>      
+        <mat-card-subtitle>CUFD (Codigo Unico de Facturacion Diaria)</mat-card-subtitle>
+      </div>      
+      <ng-container *ngIf="transaccion == 'true' && totalEnviadosCufd == totalCufd; then exitosoCufd; else errorCufd" ></ng-container>
+      <ng-template #exitosoCufd >
+        <mat-card-content>
+          Codigo de autorizacion Solicitud exitosa   <br> 
+                    <div class="badge bg-success ng-star-inserted">
+                      {{ fechaSincronizacion | date: "EEEE d MMMM y HH:mm:ss ":"UTC" }}
+                    </div>
+          <ng-container *ngIf="totalEnviadosCufd == totalCufd; then totalexitos; else totalerror" ></ng-container>
+          <ng-template #totalexitos>
+            <mat-list>
+              <mat-list-item>
+                <div mat-line class="mat-list-item-titulo">Envio de CUFD exitoso al sistema del contribuyente.</div>
+                <div mat-line class="mat-list-item-subttitulo">Total de codigos enviados al contribuyente <span class="bg-success">{{ totalEnviadosCufd }}</span> de {{ totalCufd }}.</div>
+              </mat-list-item>
+            </mat-list>
+          </ng-template>
+          <ng-template #totalerror>
+            <mat-list>
+              <mat-list-item>
+                <div mat-line class="mat-list-item-titulo">En este momento se esta realizando el envio de CUFD al contribuyente.</div>
+                <div mat-line class="mat-list-item-subttitulo">Total de codigos enviados al contribuyente {{ totalEnviadosCufd }} de {{ totalCufd }}.</div>
+                <div mat-line class="mat-list-item-subttitulo"><mat-progress-bar mode="determinate" [value]="(totalEnviadosCufd/totalCufd)*100" color="accent"></mat-progress-bar></div>
+              </mat-list-item>
+            </mat-list>
+          </ng-template> 
+        </mat-card-content>  
+      </ng-template>
+      <ng-template #errorCufd >
+        <mat-card-content style="background-color: #fff5f8;">
+          Codigo de autorizacion Problema solicitud. <br>
+                    <div class="badge bg-danger ng-star-inserted">
+                      {{ fechaSincronizacion | date: "EEEE d MMMM y HH:mm:ss ":"UTC" }}
+                    </div>
+          <ng-container *ngIf="totalEnviadosCufd == totalCufd; then totalexitos; else totalerror" ></ng-container>
+            <ng-template #totalexitos>
+              <mat-list>
+                <mat-list-item>
+                  <div mat-line class="mat-list-item-titulo">Se esta realizando la sincronizacion de codigos.</div>
+                  <div mat-line class="mat-list-item-subttitulo">Total de codigos de autorizacion <span class="bg-danger">{{ totalEnviadosCufd }}</span> de {{ totalCufd }}.</div>
+                  <div mat-line class="mat-list-item-subttitulo"><mat-progress-bar mode="indeterminate" color="accent"></mat-progress-bar></div>
+                </mat-list-item>
+              </mat-list>
+            </ng-template>
+            <ng-template #totalerror>
+              <mat-list>
+                <mat-list-item>
+                  <div mat-line class="mat-list-item-titulo">En este momento se esta realizando el envio de CUFD al contribuyente.</div>
+                  <div mat-line class="mat-list-item-subttitulo">Total de codigos enviados al contribuyente {{ totalEnviadosCufd }} de {{ totalCufd }}.</div>
+                  <div mat-line class="mat-list-item-subttitulo"><mat-progress-bar mode="indeterminate" color="accent"></mat-progress-bar></div>
+                </mat-list-item>
+              </mat-list>
+            </ng-template> 
+          </mat-card-content>
+          <mat-icon class="alerta">notifications</mat-icon>
+      </ng-template>
+      <mat-card-actions>
+        <button mat-button [routerLink]="['/cufd-historico']"><mat-icon>logout</mat-icon> Ir a la pagina</button>        
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <div class="col-sm-4">
+    <mat-card class="example-card">
+      <div class="fondo_mat">
+        <mat-card-title style="background-color: #3f51b5;">IN</mat-card-title>
+        <mat-card-subtitle>Internet</mat-card-subtitle>
+      </div>
+      <ng-container *ngIf="EstadoIndicador('Internet') == '0'; then exitosoInternet; else errorInternet" ></ng-container>
+      <ng-template #exitosoInternet >
+        <mat-card-content>
+          Conexión de internet exitosa <br>
+              <div class="badge bg-success ng-star-inserted">
+                {{ FechaIndicador("Internet") | date: "EEEE d MMMM y HH:mm:ss ":"UTC" }}
+              </div>
+              <mat-list>
+                <mat-list-item>
+                  <div mat-line class="mat-list-item-titulo">Internet.</div>
+                  <div mat-line class="mat-list-item-subttitulo">PING a Internet satisfactorio.</div>
+                </mat-list-item>
+              </mat-list>
+        </mat-card-content>
+      </ng-template>
+      <ng-template #errorInternet >
+        <mat-card-content style="background-color: #fff5f8;">
+          Conexión de internet con problemas {{ EstadoIndicador("Internet") }} <br>
+              <div class="badge bg-danger ng-star-inserted">
+                {{ FechaIndicador("Internet") | date: "EEEE d MMMM y HH:mm:ss ":"UTC" }}
+              </div>
+              <mat-list>
+                <mat-list-item>
+                  <div mat-line class="mat-list-item-titulo">Internet.</div>
+                  <div mat-line class="mat-list-item-subttitulo">Conexión a internet con incomvenientes o problemas.</div>
+                </mat-list-item>
+              </mat-list>
+        </mat-card-content>
+        <mat-icon class="alerta">notifications</mat-icon>
+      </ng-template>
+      <mat-card-actions>
+        <button mat-button [routerLink]="['/conexiones']"><mat-icon>logout</mat-icon> Ir a la pagina</button>        
+      </mat-card-actions>
+    </mat-card>      
+  </div>
+
+  <div class="col-sm-4">
+    <mat-card class="example-card">
+      <div class="fondo_mat">
+        <mat-card-title style="background-color: #009788;">FO</mat-card-title>
+        <mat-card-subtitle>Facturas Offline</mat-card-subtitle>
+      </div>
+      <mat-card-content>
+        <div class="indicador-facturas">
+          <div class="contador">
+            <span class="contador-label">Autorizadas</span>
+            <span class="contador-valor exitoso" >
+              {{ IndicadorFacturasExitosasOffline }}</span
+            >
+          </div>
+          <div class="contador">
+            <span class="contador-label">Rechazadas</span>
+            <span class="contador-valor rechazado" >
+              {{ IndicadorFacturasRechazadasOffline }}</span
+            >
+          </div>
+          <div class="contador">
+            <span class="contador-label">Lotes </span>
+            <span class="contador-valor proceso" >
+              {{ IndicadorFacturasEmpaquetadosOffline }}</span
+            >
+          </div>
+          <div class="contador">
+            <span class="contador-label">Evento Asignado </span>
+            <span class="contador-valor proceso" >
+              {{ IndicadorFacturasEventoSignificativo }}</span
+            >
+          </div>
+          <div class="contador">
+            <span class="contador-label">Recepcionadas</span>
+            <span class="contador-valor" >
+              {{ IndicadorFacturasOfflineOffline }}</span
+            >
+          </div>
+        </div>  
+      </mat-card-content>
+      <mat-card-actions>
+        <div class="row">
+          <div class="col-sm-6">
+            <span class="mat-focus-indicator mat-button mat-button-base">
+              Total de facturas offline:
+              <b>{{
+                IndicadorFacturasExitosasOffline +
+                  IndicadorFacturasRechazadasOffline +
+                  IndicadorFacturasEmpaquetadosOffline +
+                  IndicadorFacturasOfflineOffline
+              }}
+              </b>
+            </span>
+          </div>
+          <div class="col-sm-6">
+            <button mat-button [routerLink]="['/facturas-sap']"><mat-icon>logout</mat-icon> Ir a la pagina</button>
+          </div>
+        </div>                
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <div class="col-sm-4">
+    <mat-card class="example-card">
+      <div class="fondo_mat">
+        <mat-card-title style="background-color: #4caf52;">CA</mat-card-title>
+        <mat-card-subtitle>Catalogos</mat-card-subtitle>
+      </div>
+      <ng-container *ngIf="c == 0; then exitosoCatalogo; else errorCatalogo" ></ng-container>
+      <ng-template #exitosoCatalogo >  
+        <mat-card-content>
+          Sincronización de catalogos exitosa <br>
+              <span class="badge bg-success">{{ fechaActual | date: "EEEE d MMMM y ":"UTC"}}</span>
+          <ng-container *ngIf="totalCatalogosSincronizados == 17; then sicexitos; else sincerror" ></ng-container>
+          <ng-template #sicexitos>
+            <mat-list>
+              <mat-list-item>
+                <div mat-line class="mat-list-item-titulo">Solicitud de catalogos exitoso.</div>
+                <div mat-line class="mat-list-item-subttitulo">Total de catalogos sincronizados con Impuestos <span class="bg-success">{{ totalCatalogosSincronizados }}</span> de 17.</div>
+              </mat-list-item>
+            </mat-list>
+          </ng-template>
+          <ng-template #sincerror>
+            <mat-list>
+              <mat-list-item>
+                <div mat-line class="mat-list-item-titulo">No se logro sincronizar todos los catalogos con Impuestos Nacionales.</div>
+                <div mat-line class="mat-list-item-subttitulo">Total de catalogos sincronizados {{ totalCatalogosSincronizados }} de 17.</div>
+                <div mat-line class="mat-list-item-subttitulo"><mat-progress-bar mode="determinate" [value]="(totalCatalogosSincronizados/17)*100"></mat-progress-bar></div>
+              </mat-list-item>
+            </mat-list>
+          </ng-template>
+        </mat-card-content>
+      </ng-template>
+      <ng-template #errorCatalogo >
+        <mat-card-content style="background-color: #fdf1f4;">
+          Sincronización con problemas solicitud <br>             
+              <span class="badge bg-danger">{{ fechaActual | date: "EEEE d MMMM y ":"UTC"}}</span>
+          <ng-container *ngIf="totalCatalogosSincronizados == 17; then sicexitos; else sincerror" ></ng-container>
+          <ng-template #sicexitos>
+            <mat-list>
+              <mat-list-item>
+                <div mat-line class="mat-list-item-titulo">Solicitud de catalogos exitoso.</div>
+                <div mat-line class="mat-list-item-subttitulo">Total de catalogos sincronizados con Impuestos <span class="bg-success">{{ totalCatalogosSincronizados }}</span> de 17.</div>
+              </mat-list-item>
+            </mat-list>
+          </ng-template>
+          <ng-template #sincerror>
+            <mat-list>
+              <mat-list-item>
+                <div mat-line class="mat-list-item-titulo">No se logro sincronizar todos los catalogos con Impuestos Nacionales.</div>
+                <div mat-line class="mat-list-item-subttitulo">Total de catalogos sincronizados {{ totalCatalogosSincronizados }} de 17.</div>
+                <div mat-line class="mat-list-item-subttitulo"><mat-progress-bar mode="determinate" [value]="(totalCatalogosSincronizados/17)*100" color='accent'></mat-progress-bar></div>
+              </mat-list-item>
+            </mat-list>
+          </ng-template> 
+        </mat-card-content>
+        <mat-icon class="alerta">notifications</mat-icon>
+      </ng-template>
+      <mat-card-actions>
+        <button mat-button [routerLink]="['/catalogos']"><mat-icon>logout</mat-icon> Ir a la pagina</button>        
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <div class="col-sm-4">
+    <mat-card class="example-card">
+      <div class="fondo_mat">
+        <mat-card-title style="background-color: #8bc24a;">SI</mat-card-title>
+        <mat-card-subtitle>Servicios de Impuestos Nacionales</mat-card-subtitle>
+      </div>
+      <ng-container *ngIf="EstadoIndicador('ServiciosSIN') == '0'; then exitosoServ; else errorServ" ></ng-container>
+      <ng-template #exitosoServ >
+        <mat-card-content>
+          Servicios de SIAT Conexiones exitosas. <br>
+              <span class="badge bg-success ng-star-inserted">
+                {{ FechaIndicador("ServiciosSIN") | date: "EEEE d MMMM y HH:mm:ss":"UTC"}}
+              </span>
+          
+          <mat-list>
+            <mat-list-item>
+              <div mat-line class="mat-list-item-titulo">Servicios de facturas de Impuestos Nacionales.</div>
+              <div mat-line class="mat-list-item-subttitulo">Conexion exitosa con Factura electrónica, Documento de ajuste, Factura compra y venta.</div>
+            </mat-list-item>
+          </mat-list>
+        </mat-card-content>
+      </ng-template>
+      <ng-template #errorServ >
+        <mat-card-content style="background-color: #fff5f8;">
+          Servicios de SIAT con errores encontrados {{ EstadoIndicador("ServiciosSIN") }}                
+              <div class="badge bg-danger ng-star-inserted">
+                {{ FechaIndicador("ServiciosSIN") | date: "EEEE d MMMM y HH:mm:ss":"UTC"}}
+              </div>
+              <mat-list>
+                <mat-list-item>
+                  <div mat-line class="mat-list-item-titulo">Servicios de facturas de Impuestos Nacionales.</div>
+                  <div mat-line class="mat-list-item-subttitulo">Error de conexión con Factura electrónica.</div>
+                </mat-list-item>
+              </mat-list>
+        </mat-card-content>
+        <mat-icon class="alerta">notifications</mat-icon>
+      </ng-template>
+      <mat-card-actions>
+        <button mat-button [routerLink]="['/hardware']"><mat-icon>logout</mat-icon> Ir a la pagina</button>        
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <div class="col-sm-4">
+    <mat-card class="example-card">
+      <div class="fondo_mat">
+        <mat-card-title style="background-color: rgb(63, 81, 181)">FO</mat-card-title>
+        <mat-card-subtitle>Lotes Offline</mat-card-subtitle>
+      </div>
+      <mat-card-content>
+        <div class="indicador-facturas">
+          <div class="contador">
+            <span class="contador-label">Autorizado</span>
+              <span class="contador-valor exitoso" >
+                {{ IndicadorLote2 }}
+              </span>
+          </div>                           
+          <div class="contador">
+            <ng-container  *ngIf="IndicadorLote5 > 0; then error else success;" ></ng-container>
+            <ng-template #error>
+              <span class="contador-label" style="background: red; color: #FFF;">Error Envio</span>
+              <span class="contador-valor rechazado" >
+              {{ IndicadorLote5 }}</span>
+            </ng-template>
+            <ng-template #success>
+              <span class="contador-label" >Error Envio</span>
+              <span class="contador-valor rechazado" >
+              {{ IndicadorLote5 }}</span>
+            </ng-template>            
+              
+          </div>
+          <div class="contador">
+            <ng-container  *ngIf="IndicadorLote3 > 0; then errorES else successES;" ></ng-container>
+            <ng-template #errorES>
+              <span class="contador-label" style="background: red; color: #FFF;">Rechazados</span>
+              <span class="contador-valor rechazado" >
+              {{ IndicadorLote3 }}</span>
+            </ng-template>
+            <ng-template #successES>
+              <span class="contador-label" >Rechazados</span>
+              <span class="contador-valor rechazado" >
+              {{ IndicadorLote3 }}</span>
+            </ng-template>            
+              
+          </div>
+          <div class="contador">
+            <span class="contador-label">Pendientes validar</span>
+            <span class="contador-valor proceso" >
+              {{ IndicadorLote7 }}</span
+            >
+          </div>   
+          <div class="contador">
+            <span class="contador-label">Enviado SIAT</span>
+            <span class="contador-valor rechazado">
+              {{ IndicadorLote1 }}</span
+            >
+          </div>
+          <div class="contador">
+            <span class="contador-label">Paquetes</span>
+            <span class="contador-valor proceso" >
+              {{ IndicadorLote0 }}</span
+            >
+          </div>          
+        </div> 
+      </mat-card-content>
+      <mat-card-actions>
+        <div class="row">
+          <div class="col-sm-6">
+          </div>
+          <div class="col-sm-6">
+            <button mat-button [routerLink]="['/facturas-lote']"><mat-icon>logout</mat-icon> Ir a la pagina</button>  
+          </div>
+        </div>              
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <div class="col-sm-4">
+    <mat-card class="example-card">
+      <div class="fondo_mat">
+        <mat-card-title style="background-color: rgb(33, 150, 243)">FE</mat-card-title>
+        <mat-card-subtitle>Fecha y hora con Impuestos Nacionales</mat-card-subtitle>
+      </div>
+
+      <ng-container  *ngIf="delt == ''; then errorFecha else exitosoFecha;" ></ng-container>
+      <ng-template #exitosoFecha>
+        <mat-card-content>
+          Sincronización de fecha y hora.            
+            <div class="indicador-facturas">
+              <div class="contador">
+                <span class="contador-label">SIN</span>
+                <span class="contador-valor">{{ horasin | date: "HH:mm:ss" }}</span>
+              </div>
+              <div class="contador">
+                <span class="contador-label">Hansa</span>
+                <span class="contador-valor">{{ horahansa | date: "HH:mm:ss" }}</span>
+              </div>
+              <div class="contador">
+                <span class="contador-label">Delta</span>
+                <span class="contador-valor">{{ delt }}s</span>
+              </div>
+            </div>
+        </mat-card-content>
+      </ng-template>
+      <ng-template #errorFecha>
+        <mat-card-content>
+          Sincronización de fecha y hora.            
+              <div class="indicador-facturas">
+                <div class="contador">
+                  <span class="contador-label">SIN</span>
+                  <span class="contador-valor">{{ horasin | date: "HH:mm:ss" }}</span>
+                </div>
+                <div class="contador">
+                  <span class="contador-label">Hansa</span>
+                  <span class="contador-valor">{{ horahansa | date: "HH:mm:ss" }}</span>
+                </div>
+                <div class="contador">
+                  <span class="contador-label">Delta</span>
+                  <span class="contador-valor">{{ delt }}s</span>
+                </div>
+              </div>  
+          
+        </mat-card-content>
+        <mat-icon class="alerta">notifications</mat-icon>
+      </ng-template>
+      <mat-card-actions>
+        <div class="row">
+          <div class="col-sm-6">
+            <span class="mat-focus-indicator mat-button mat-button-base">{{ horahansa | date: "EEEE d MMMM y":"UTC"  }}.</span> 
+          </div>
+          <div class="col-sm-6">
+            <button mat-button [routerLink]="['/fechahistorico']"><mat-icon>logout</mat-icon> Ir a la pagina</button>    
+          </div>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <div class="col-sm-4">
+    <mat-card class="example-card">
+      <div class="fondo_mat">
+        <mat-card-title style="background-color: rgb(3, 169, 244)">SI</mat-card-title>
+        <mat-card-subtitle>Servicios internos de SIFE</mat-card-subtitle>
+      </div>
+          <ng-container *ngIf="EstadoIndicador('ServiciosSIFE') == '0'; then exitosoSife; else errorSife" ></ng-container>
+          <ng-template #exitosoSife >
+            <mat-card-content>
+              Conexiones exitosas de servicios SIFE. <br>
+                  <span class="badge bg-success ng-star-inserted">
+                    {{ FechaIndicador("ServiciosSIFE") | date: "EEEE d MMMM y HH:mm:ss":"UTC"}}
+                  </span>
+              <mat-list>
+                <mat-list-item>
+                  <div mat-line class="mat-list-item-titulo">Servicios internos de SIFE.</div>
+                  <div mat-line class="mat-list-item-subttitulo">Todos los servicios se encuentran disponibles.</div>
+                </mat-list-item>
+              </mat-list>
+            </mat-card-content>
+          </ng-template>
+          <ng-template #errorSife >
+            <mat-card-content style="background-color: #fff5f8;">
+              Errores encontrados en servicios {{ EstadoIndicador("ServiciosSIFE") }}                
+                  <div class="badge bg-danger ng-star-inserted">
+                    {{ FechaIndicador("ServiciosSIFE") | date: "EEEE d MMMM y HH:mm:ss":"UTC"}}
+                  </div>
+              <mat-list>
+                <mat-list-item>
+                  <div mat-line class="mat-list-item-titulo">Servicios internos de SIFE.</div>
+                  <div mat-line class="mat-list-item-subttitulo">Existen servicios que no estan disponibles.</div>
+                </mat-list-item>
+              </mat-list>
+            </mat-card-content>
+            <mat-icon class="alerta">notifications</mat-icon>
+          </ng-template>
+
+      
+      <mat-card-actions>
+        <button mat-button [routerLink]="['/serviciosSife']"><mat-icon>logout</mat-icon> Ir a la pagina</button>        
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

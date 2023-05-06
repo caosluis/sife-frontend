@@ -1,0 +1,32 @@
+.cuerpo{
+    padding: 20px;
+}
+.contenido{
+    margin-top: 2%;
+}
+mat-form-field{
+    width: 100%;
+    margin: 5px 0px ;
+}
+.foto{
+    margin: auto;
+    margin-top: 20%;
+    text-align: center;
+}
+.foto-imagen{
+    height: 170px;
+    width: 170px;
+    border-radius: 50%;
+}
+.foto-pie{
+    margin: 10px 0px 10px 0px;
+}
+.foto-pie-nombre{
+    margin: 30px 0px 5px 0px;
+    font-size: 17px;
+}
+.foto-pie-rol{
+    font-size: 23px;
+    margin: 10px 0px 5px 0px;
+    font-weight: 500;
+}

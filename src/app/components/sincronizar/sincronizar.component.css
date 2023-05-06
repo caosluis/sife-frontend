@@ -1,0 +1,55 @@
+.sincronizar[_ngcontent-rsf-c21] {
+    padding: 20px;
+    padding-top: 10px;
+}
+table {
+    width: 100%;
+  }
+  .mat-form-field {
+    width: 100%;
+  }
+.contenedor-indicador[_ngcontent-rsf-c21] {
+    padding: 20px;
+}
+.btnSuccess{
+  color: #6bb700
+}
+.btnDanger{
+  color:rgb(230, 51, 75)
+}
+.btnWarn{
+  color:rgb(240, 149, 30)
+}
+
+.loading{
+  position: absolute;
+  width: 400px; height: 400px;
+  text-align: center
+}
+  
+.sinc{
+  display: flex;
+}
+.img-sinc{
+  height: 25px;   
+
+}
+.sinc-label{
+  margin-top: 4px;
+  margin-left: 5px;
+}
+
+.bg-success{
+  color: #6bb700;
+  background: #f7f8ff !important;
+}
+
+.bg-danger {    
+  /*background: #999bd2 !important;*/
+  background: #fff5f8 !important;
+  color: #8c435b !important;
+}
+
+table span.badge {
+  width: auto;
+}

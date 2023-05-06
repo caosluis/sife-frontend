@@ -1,0 +1,100 @@
+<mat-card-title>Token Registro</mat-card-title>
+<mat-card-subtitle>Regitrar Token de seguridad que permita 
+    el consumo de los servicios requeridos, el mismo se 
+    puede obtener consumiendo un servicio web y tiene una 
+    duración de 4 horas o generar el mismo a través del Portal 
+    Web y asignarle una duración que puede variar de 1 día hasta 1 año.</mat-card-subtitle>
+<mat-dialog-content>
+  <form  [formGroup]="form" (ngSubmit)="save($event)">
+    <div class="row">      
+        <div class="col-sm-6"> 
+            <div class="form-group deshabilitar">
+              <mat-form-field appearance="standard">
+                <mat-label>Fecha registrado</mat-label>
+                <input matInput [matDatepicker]="fechaRegistro"  formControlName="fechaRegistro" >
+                <mat-datepicker-toggle matSuffix [for]="fechaRegistro"></mat-datepicker-toggle>
+                <mat-datepicker #fechaRegistro ></mat-datepicker>
+              </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-form-field appearance="standard">
+                  <mat-label>Fecha validez</mat-label>
+                  <input matInput [matDatepicker]="fechaVigencia" formControlName="fechaVigencia">
+                  <mat-datepicker-toggle matSuffix [for]="fechaVigencia"></mat-datepicker-toggle>
+                  <mat-datepicker #fechaVigencia startView="multi-year"></mat-datepicker>
+                </mat-form-field>
+              </div>
+              <div class="form-group deshabilitar">
+                <mat-form-field appearance="standard">
+                  <mat-label>Nit</mat-label>
+                  <input matInput formControlName="nit">
+                </mat-form-field>
+              </div>
+            <div class="form-group">
+                <mat-form-field appearance="standard">
+                  <mat-label>Descripción </mat-label>
+                    <input
+                    matInput                                             
+                    formControlName="descripcion"
+                    />
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="col-sm-6">     
+          <div class="form-group">
+            <mat-form-field appearance="standard">
+              <mat-label>Nombre Key</mat-label>
+                <input
+                matInput                                             
+                formControlName="nombreKey"
+                #nombreKey
+                />
+                <mat-icon matSuffix>key</mat-icon>
+                <mat-hint>Nombre del token, este se envia a todos los servicios de SIN, {{nombreKey.value?.length || 0}}/8</mat-hint>
+            </mat-form-field>
+          </div>   
+          <div class="form-group">
+            <mat-form-field appearance="standard">
+              <mat-label>Prefijo token</mat-label>
+                <input
+                matInput                                             
+                formControlName="prefijoToken"
+                #prefijoToken
+                />
+                <mat-icon matSuffix>key</mat-icon>
+                <mat-hint>Nombre que va por delante del token registrado, definido por SIN{{prefijoToken.value?.length || 0}}/10</mat-hint>
+            </mat-form-field>
+          </div>       
+          <div class="form-group">                
+            <mat-form-field appearance="standard" >
+              <mat-label>Token</mat-label>
+              <textarea                     
+                matInput                    
+                cols="3"
+                rows="7"                    
+                formControlName="token"
+                #token></textarea>
+                <mat-icon matSuffix>key</mat-icon>
+                <mat-hint>Registrar el token obtenido por Impuestos Nacionales, {{token.value?.length || 0}}/200</mat-hint>
+            </mat-form-field>
+          </div>
+      </div>      
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <button mat-raised-button color="primary" type="submit"  [disabled]="loading" [disabled]="form.invalid"> 
+          <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+          Guardar 
+        </button>
+      </div>
+      <div class="col-sm-6">
+        <button mat-raised-button type="button" (click)="onNoClick()" color="warn">
+        Cancelar
+        </button>
+      </div>
+    </div>
+  </form>
+  
+</mat-dialog-content>
+
+

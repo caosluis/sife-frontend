@@ -1,0 +1,366 @@
+.sidenav-container {
+  height: 100%;
+}
+.mat-drawer-content{
+  background: #fff;
+}
+.contenido{
+  padding: 0px 0px 5px 0px;
+}
+
+.menu-iniciales {
+  background: #fff;
+  color: #110c54;
+  margin-left: 15px;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  border-radius: 50%;
+  padding: 1px;
+  cursor: pointer;
+  text-align: center;
+  z-index: 1;
+}
+
+.menu-iniciales-texto{
+  margin: auto;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.activo {
+  height: 10px !important;
+  width: 10px !important;
+  background-color: #6bb700;
+  /* color: #FFF; */
+  border-radius: 50%;
+  /* font-size: 9px; */
+  /* text-align: center; */
+  padding: 2px 2px;
+  margin-left: -8px;
+  margin-top: 22px;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidebar .sidebar-wrapper {
+  position: fixed;
+  height: calc(100vh - 75px);
+  overflow: auto;
+  width: 260px;
+  z-index: 4;
+  padding-bottom: 30px;
+}
+
+a{
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+} 
+.derecha{
+  text-align: right;
+}
+
+.example-icon {
+  padding: 0 14px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.example-is-mobile .example-toolbar {
+  position: fixed;
+  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+  z-index: 2;
+}
+
+h1.example-app-name {
+  margin-left: 8px;
+}
+.example-app-name {
+  margin-left: 8px;
+  margin: auto;
+  color: #fff;
+  /*text-transform: uppercase;
+  letter-spacing: 3px;*/
+  font-size: 1.2rem;
+  margin-right: 15px;
+}
+.example-sidenav-container {
+  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+     causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+  flex: 1;
+}
+
+.example-is-mobile .example-sidenav-container {
+  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+     `<body>` to be our scrolling element for mobile layouts. */
+  flex: 1 0 auto;
+}
+
+.link{
+  color: white;
+}
+.link:hover{
+  background-color:  rgba(114, 110, 110, 0.37);;
+  color: white;
+}
+span{
+  padding: 1px 0px 1px 0px !important; 
+}
+.toolbar2{
+  background-color: #304ffe00 !important;
+  color: #000;
+}
+mat-toolbar{
+  height: 35px;
+  min-height: 35px !important;
+  padding: 0px;
+}
+mat-toolbar-row{
+  height: 35px;
+  /* padding: 0px; */
+}
+.example-tree-invisible {
+  display: none;
+}
+
+.nav-custom2{
+  height: 55px;
+  min-height: 55px !important;
+  padding: 0px 5px 0px 5px;
+  color: #fff;
+  display: inline-table;
+  border-bottom: solid 1px #ddd;
+}
+.nav2-titulo{
+  margin: auto;
+  font-size: 30px;
+}
+.nav2-grupo0{
+  text-align: center;
+  display: flex;
+  margin-right: -10px;
+  cursor: pointer;
+}
+.nav2-grupo1{
+  text-align: left;
+  display: grid;
+}
+.nav2-grupo2{
+  text-align: right;
+  display: grid;
+}
+.nav2-subtitulo1{
+  font-size: 15px;
+  margin-bottom: -15px;
+  font-weight: 400;
+}
+.nav2-subtitulo2{
+  font-size: 12px;
+  font-weight: 200;
+}
+
+/*############### NAV #################*/
+
+.nav-custom{
+  /*PRD*/
+  
+  /*QAS*/
+  /*background-color: #6264a7 !important;*/
+  color: #fff;
+  z-index: 1000;
+}
+.nav-body-custom{
+    background-color: rgb(243 242 241);
+    color: #1f262d;
+    font-weight: 300;
+    letter-spacing: 0.15px;
+    height: 44px;
+    border-bottom: solid 1px #edebe9;
+}
+app-indicadorfecha {
+  margin: auto;
+}
+.example-app-name{
+  height: 34px;
+  color: #fff;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.example-app-name_small{
+  height: 16px;
+  width: 54px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.username{
+  font-size: 15px;
+  line-height: 20px;
+  
+  font-weight: 400;
+}
+
+/*############# SIDEBAR ###############*/
+mat-sidenav{
+  background-color: #f0f0f0;
+  width: 235px;
+}
+.img-nav{
+  margin-top: 20px;
+  margin-left: 30%;  
+  width: 80px; 
+  height: 80px;
+  border: solid #fff 1px;
+}
+.my-row-sidebar{
+  padding: 15px;
+  color: #FFF;
+}
+.mat-drawer-side{
+  border-right:0.1rem solid#e1dfdd;
+}
+.secciones{
+  color: #000;
+  letter-spacing: 0.5px;
+  font-size: 14,5px; 
+  font-weight: 500;
+}
+.secciones mat-icon{
+  font-size: 1.3rem;
+  margin-right: 7px;
+  width: 25px;
+  text-align: left;
+  color: #000;
+}
+.secciones .secciones-name{
+  line-height: 36px;
+}
+.sidenav {
+  width: 230px;
+  margin-top: 0px;
+  font-weight: 400;
+  line-height: 1.5;
+  /*box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;*/
+  box-shadow: 0 4px 20px 1px rgba(0,0,0,.06), 0 1px 4px rgba(0,0,0,.08);
+}
+mat-nav-list mat-icon{
+  font-size: 1.2rem;
+  color: #6264a7;  
+  margin-right: 5px;
+  line-height: 21px;
+  width: 25px;
+  text-align: center;
+}
+mat-nav-list{
+  /*margin-left: 0.5rem;*/
+  color: #323130;
+}
+mat-nav-list a{
+  color:#323130;
+  font-size: 14px;
+  height: 36px;
+}
+button:focus {
+  outline: 0px dotted !important;
+  outline: 0px auto -webkit-focus-ring-color !important;
+}
+
+.mat-list-base{
+  padding-top: 0px;
+}
+.mat-tree {
+  background: #e1e1e100;
+}
+.mat-list-item-content{
+  padding: 0 0px !important;
+}
+.example-tree ul,
+.example-tree li {
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+}
+
+mat-nav-list.mat-nav-list.mat-list-base {
+  height: 60%;
+  overflow: auto;
+}
+.mat-tree-node {
+  min-height: 40px;
+}
+
+/*############## ##############*/
+
+/*MOVIENDO LA IMGAEN LOGO*/
+.icon-logo{
+    height: 30px;
+    position: absolute;
+}
+.icon-logo.moviendo{
+  animation-duration: 30s;
+  animation-name: moviendo;
+  animation-iteration-count: infinite;
+  animation-direction: inherit;
+  animation-timing-function: linear;
+}
+
+@keyframes moviendo {
+  from {
+    left: 0;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+
+.clouds {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 35px;
+  overflow: hidden;
+}
+
+.clouds img {
+  position: absolute;
+  bottom: 0;
+  height: 150px;
+  max-width: 100%;
+  animation: animate calc(20s * var(--i)) linear infinite;
+}
+@keyframes animate {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.mat-toolbar-row, .mat-toolbar-single-row{
+  white-space: break-spaces;
+}

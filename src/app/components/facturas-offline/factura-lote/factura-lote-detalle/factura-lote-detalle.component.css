@@ -1,0 +1,10 @@
+table {
+  width: 100%;
+}
+.offline-estado {
+  display: flex;
+}
+.offline-estado mat-icon {
+  margin-left: 4px;
+  font-size: 1.2rem;
+}

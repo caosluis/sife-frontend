@@ -1,0 +1,191 @@
+<mat-card-title>Verificar estado de Lote en SIN</mat-card-title>
+<mat-card-subtitle
+  >Consulta el estado del Lote en Impuestos Nacionales, y si hay alguna observacion se devolvera la factura observada.
+</mat-card-subtitle>
+<mat-dialog-content class="mat-typography">
+<div class="row">
+  <div class="col-sm-4">
+    <div class="subtitulo-modal">
+      <div class="subtitulo-modal-nombre">Información</div><span class="subtitulo-modal-descripcion"> sobre el Lote</span>
+    </div> 
+    <div class="row" style="font-size: 12px; padding-top: 1%">
+      <label
+        for=""
+        class="control-label col-md-3 col-sm-3 col-xs-12"
+        style="text-align: right"
+        >NIT:</label
+      >
+      <div class="col-md-9 col-sm-9 col-xs-12">
+        <input
+          class="form-control"
+          value="{{ data.nit }}"
+          style="font-size: 12px"
+          disabled
+        />
+      </div>
+    </div>
+  
+    <div class="row" style="font-size: 12px; padding-top: 1%">
+      <label
+        for=""
+        class="control-label col-md-3 col-sm-3 col-xs-12"
+        style="text-align: right"
+        >Código Sucursal:</label
+      >
+      <div class="col-md-9 col-sm-9 col-xs-12">
+        <input
+          class="form-control"
+          value="{{ data.codigoSucursal }}"
+          style="font-size: 12px"
+          disabled
+        />
+      </div>
+    </div>
+  
+    <div class="row" style="font-size: 12px; padding-top: 1%">
+      <label
+        for=""
+        class="control-label col-md-3 col-sm-3 col-xs-12"
+        style="text-align: right"
+        >Código Punto de Venta:</label
+      >
+      <div class="col-md-9 col-sm-9 col-xs-12">
+        <input
+          class="form-control"
+          value="{{ data.codigoPuntoVenta }}"
+          style="font-size: 12px"
+          disabled
+        />
+      </div>
+    </div>
+  
+    <div class="row" style="font-size: 12px; padding-top: 1%">
+      <label
+        for=""
+        class="control-label col-md-3 col-sm-3 col-xs-12"
+        style="text-align: right"
+        >Código de Recepción:</label
+      >
+      <div class="col-md-9 col-sm-9 col-xs-12">
+        <input
+          class="form-control"
+          value="{{ data.codigoRecepcion }}"
+          style="font-size: 12px"
+          disabled
+        />
+      </div>
+    </div>
+  
+    <div class="row" style="font-size: 12px; padding-top: 1%">
+      <label
+        for=""
+        class="control-label col-md-3 col-sm-3 col-xs-12"
+        style="text-align: right"
+        >Tipo de Factura Documento:</label
+      >
+      <div class="col-md-9 col-sm-9 col-xs-12">
+        <input
+          class="form-control"
+          value="{{ data.tipoFacturaDocumento }}"
+          style="font-size: 12px"
+          disabled
+        />
+      </div>
+    </div>
+  
+    <div class="row" style="font-size: 12px; padding-top: 1%">
+      <label
+        for=""
+        class="control-label col-md-3 col-sm-3 col-xs-12"
+        style="text-align: right"
+        >Código Documento Sector:</label
+      >
+      <div class="col-md-9 col-sm-9 col-xs-12">
+        <input
+          class="form-control"
+          value="{{ data.codigoDocumentoSector }}"
+          style="font-size: 12px"
+          disabled
+        />
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-8">
+    <div class="subtitulo-modal">
+      <div class="subtitulo-modal-nombre">Respuesta consulta </div><span class="subtitulo-modal-descripcion"> estados de facturas.</span>
+    </div> 
+    <div *ngIf="transaccion == 'true'">
+      <div *ngIf="Respuesta" class="alert alert-success mt-3 mb-0">
+        {{ Respuesta.respuesta.codigoDescripcion }} Código:
+        {{ Respuesta.respuesta.codigoEstado }}
+      </div>
+    </div>
+    <div *ngIf="transaccion == 'false'">
+      <div *ngIf="Respuesta" class="alert alert-danger mt-3 mb-0">
+        {{ Respuesta.respuesta.codigoDescripcion }} Código:
+        {{ Respuesta.respuesta.codigoEstado }}
+      </div>
+    </div>
+    
+    <table
+      *ngIf="mostrarTabla"
+      mat-table
+      [dataSource]="datos_observacion"
+      class="table_user_connection"
+      width="100%"
+    >
+      <ng-container matColumnDef="advertencia">
+        <th mat-header-cell *matHeaderCellDef>Advertencia</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.advertencia }}
+        </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="codigo">
+        <th mat-header-cell *matHeaderCellDef>Código</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.codigo }}
+        </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="descripcion">
+        <th mat-header-cell *matHeaderCellDef>Descripción</th>
+        <td mat-cell *matCellDef="let element">{{ element.descripcion }}</td>
+      </ng-container>
+    
+      <ng-container matColumnDef="numeroArchivo">
+        <th mat-header-cell *matHeaderCellDef>Número Archivo</th>
+        <td mat-cell *matCellDef="let element">{{ element.numeroArchivo }}</td>
+      </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+</div>
+
+</mat-dialog-content>
+
+
+
+<mat-dialog-actions align="end">
+  <button
+    mat-raised-button
+    type="button"
+    (click)="VerificarLote()"
+    mat-flat-button
+    color="primary"
+  >
+    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+    Verificar estado de Lote
+  </button>
+  <button
+    mat-raised-button
+    color="warn"
+    type="button"
+    (click)="onNoClick()"
+    mat-flat-button
+  >
+    Cerrar
+  </button>
+</mat-dialog-actions>

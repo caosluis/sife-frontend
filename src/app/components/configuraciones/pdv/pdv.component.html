@@ -1,0 +1,325 @@
+<!-- AGREGANDO SIDEBAR FILTRO Y CONTENIDO EN UNO SOLO -->
+<mat-drawer-container class="example-container" autosize hasBackdrop="false">
+  <!-- MENU DE ACCIONES DEL MODULO -->
+  <div class="container-menu">
+    <div class="container-menu-iz">
+      <div class="container-menu-item ">
+        <button 
+                  #tooltip="matTooltip"
+                  matTooltip="Información de sobre Punto de Venta"
+                  matTooltipPosition="left"
+                  mat-icon-button  (click)="informacion()">
+                  <mat-icon>info</mat-icon>
+                </button>
+
+      </div>
+      <div class="container-menu-item ">
+        
+      </div>
+    </div>
+    <div class="container-menu-de">
+      <div class="container-menu-item ">
+        <button mat-raised-button color="primary" (click)="RegistrarPDV('Vacio')">
+          <mat-icon>add</mat-icon>Nuevo
+        </button>
+      </div>
+      <div class="container-menu-item ">
+        <button mat-raised-button color="primary" (click)="ConsultarPDV('Vacio')">
+          <mat-icon>info</mat-icon> Consultar Puntos de Venta
+        </button>
+      </div>
+      <div class="container-menu-item ">
+        <button mat-raised-button color="primary" (click)="SolicitarCuisMasivo()">
+          <mat-icon>sync</mat-icon>  Solicitar Cuis Masivo
+        </button>
+      </div>
+      <div class="container-menu-item ">
+        <button type="button" class="sidebar-filtro-btn" mat-button (click)="drawer.toggle()">
+          <mat-icon>filter_list</mat-icon> Filtro
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- SIDEBAR DE FILTRO -->
+  <mat-drawer #drawer class="example-sidenav sidebar-filtro" mode="side"  position="end" opened>
+    <div class="row">
+      <div class="col-sm-6">
+          <h2>Filtros</h2>
+      </div>
+      <div class="col-sm-6">        
+          <button type="button" class="sidebar-filtro-btn" mat-button (click)="drawer.toggle()">
+            <mat-icon>close</mat-icon>
+          </button>
+      </div>
+    </div>
+    <mat-form-field appearance="standard" class="buscador">
+      <mat-label>Buscar</mat-label>
+      <input
+        matInput
+        placeholder="Buscar"
+        autocomplete="off"
+        (keyup)="applyFilter($event.target.value)"
+      />
+    </mat-form-field>
+    <mat-form-field class="formMin" appearance="standard" >
+      <mat-label>Seleccionar sucursal</mat-label>
+      <mat-select
+        placeholder="Sucursales"
+        id="sucursales"
+        matInput
+        (selectionChange)="SeleccionarSucursal($event.value)"
+        [value]="sucursalSeleccionada"
+      >
+        <mat-option value="Todas">Todas</mat-option>
+        <mat-option
+          *ngFor="let element of sucursalList"
+          [value]="element.codigoSucursal"
+          ><span class="badge rounded-pill bg-light text-dark">{{ element.codigoSucursal }}</span> 
+          {{ element.descripcion }}</mat-option
+        >
+      </mat-select>
+    </mat-form-field>
+  </mat-drawer>
+
+  <!-- CONTENIDO DEL SIDEBAR FILTRO PARA EL MODULO -->
+  <div class="example-sidenav-content" >  
+
+    <mat-card class="background_user_connection">
+      <div class="row">
+        <div class="col-sm-12">
+          <mat-card-header>
+            <mat-card-title>Registro de Puntos de Venta</mat-card-title>
+            <mat-card-subtitle>
+              Un punto de venta es un lugar, dispositivo o medio de venta asociado a
+              una sucursal o casa matriz. Los CUFD (Código Único de Facturación Diaria) se solicitan Automaticamente a las 05:00 am diariamente. En el caso de  
+              <b>cerrar</b> un <b>CUIS</b> el <b>Punto de Venta</b> y <b>CUFD</b> del mismo queda deshabilitado en Impuestos Nacionales.
+            </mat-card-subtitle>
+          </mat-card-header>
+        </div>
+      </div>
+
+      <mat-card-content>
+        <div class="row">
+          <div class="col-md-3">
+            
+          </div>
+          <div class="col-md-3">
+            
+          </div>   
+          <div class="col-md-2 offset-md-4" style="text-align: right;">
+              
+          </div>   
+        </div>
+
+        <table mat-table [dataSource]="pdvService.dataSource" matSort width="100%" matTableResponsive>
+          <!--Column -->
+          <ng-container matColumnDef="codigoPDV">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Código PDV</th>
+            <td mat-cell *matCellDef="let element" >
+              <ng-container *ngIf="element.estado == 'Cuis Activo'; then ActivoE; else InactivoE"></ng-container>
+              <ng-template #ActivoE>       
+                <span class="badge bg-success">{{ element.codigoPDV }}</span>
+              </ng-template>
+              <ng-template #InactivoE>
+                <span class="badge bg-danger">{{ element.codigoPDV }}</span>
+              </ng-template>
+            </td>
+          </ng-container>
+
+          <!--Column -->
+          <ng-container matColumnDef="Empresa">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Empresa</th>
+            <td mat-cell *matCellDef="let element">
+              {{ EmpresaSucursal(element.nit) }}
+            </td>
+          </ng-container>
+
+          <!--Column -->
+          <ng-container matColumnDef="Sucursal">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Sucursal</th>
+            <td mat-cell *matCellDef="let element">
+              {{ SucursalPdv(element.nit, element.codigoSucursal) }}
+            </td>
+          </ng-container>
+
+          <!--Column -->
+          <ng-container matColumnDef="nombrePuntoVenta">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              Punto de Venta
+            </th>
+            <td mat-cell *matCellDef="let element" >
+              {{ element.nombrePuntoVenta }}
+            </td>
+          </ng-container>
+
+          <!--Column -->
+          <ng-container matColumnDef="TipoPuntoVenta">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              Tipo Punto de Venta
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.valorTipoPuntoVenta }}
+            </td>
+          </ng-container>
+
+          <!--Column -->
+          <ng-container matColumnDef="descripcion_transaccion">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              Descripción Transacción
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.descripcionTransaccion }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="estado">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Estado</th>
+            <td mat-cell *matCellDef="let element">
+              <ng-container *ngIf="element.estado == 'Cuis Activo'; then Activo; else Inactivo"></ng-container>
+              
+              <ng-template #Activo>       
+                <span class="badge bg-success" style="color: #6bb700; font-weight: 500;">{{ element.estado }}</span>
+              </ng-template>
+              <ng-template #Inactivo>
+                <span class="badge bg-danger">{{ element.estado }}</span>
+              </ng-template>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="CUIS">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>CUIS</th>
+            <td mat-cell *matCellDef="let element">
+              <ng-container [ngSwitch]="element.solicitudCuis">
+                <div *ngSwitchCase="1">Pendiente...</div>
+                <div *ngSwitchCase="2">
+                  {{ element.cuis }}
+                </div>
+              </ng-container>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="CUFD">
+            <th mat-header-cell *matHeaderCellDef>CUFD</th>
+            <td mat-cell *matCellDef="let element">
+              <ng-container
+                *ngIf="
+                  CufdPdv(element.nit, element.codigoSucursal, element.codigoPDV) ==
+                    'CUFD';
+                  then sicufd
+                "
+              >
+              </ng-container>
+              <ng-template #sicufd>
+                <mat-icon class="green-icon" matTooltip="Cuenta con CUFD"
+                  >check</mat-icon
+                >
+              </ng-template>
+            </td>
+          </ng-container>
+
+          <!--Column -->
+          <ng-container matColumnDef="VigenciaCUIS">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Vigencia CUIS</th>
+            <td mat-cell *matCellDef="let element">
+              <ng-container [ngSwitch]="element.solicitudCuis">
+                <div *ngSwitchCase="1">Pendiente...</div>
+                <div *ngSwitchCase="2">
+                  <ng-container
+                    *ngIf="
+                      (VigenciaCuisPdv(
+                        element.nit,
+                        element.codigoSucursal,
+                        element.codigoPDV,
+                        element.solicitudCuis
+                      ) | date: 'yyyy-MM-dd') >
+                        (FechaVencimiento | date: 'yyyy-MM-dd');
+                      then vencido;
+                      else novencido
+                    "
+                  >
+                  </ng-container>
+                  <ng-template #vencido>
+                    <span class="badge bg-success">{{
+                      VigenciaCuisPdv(
+                        element.nit,
+                        element.codigoSucursal,
+                        element.codigoPDV,
+                        element.solicitudCuis
+                      ) | date: "EEEE d MMMM y HH:mm:ss ":"UTC" 
+                    }}</span>
+                  </ng-template>
+                  <ng-template #novencido>
+                      <span class="badge bg-danger">
+                        {{
+                          VigenciaCuisPdv(
+                            element.nit,
+                            element.codigoSucursal,
+                            element.codigoPDV,
+                            element.solicitudCuis
+                          ) | date: "EEEE d MMMM y HH:mm:ss ":"UTC" 
+                        }}
+                        </span>
+                  </ng-template>
+                </div>
+              </ng-container>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+            <td mat-cell *matCellDef="let element">
+              <button mat-icon-button [matMenuTriggerFor]="Notificaciones">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #Notificaciones="matMenu">
+                <button mat-menu-item (click)="RegistrarPDV(element)">
+                  <mat-icon>launch</mat-icon><span>Detalle</span>
+                </button>
+
+                <!-- <ng-container
+                  *ngIf="element.estado == '1'; then abierto"
+                >
+                </ng-container>
+                <ng-template #abierto></ng-template> -->
+                <button
+                  mat-menu-item
+                  *ngIf="element.estado == 'Cuis Cerrado' || element.estado == 'PDV Activo'"
+                  (click)="CerrarPDV(element)"
+                >
+                <mat-icon>highlight_off</mat-icon><span>Cerrar PDV</span>
+                </button>
+
+                <button
+                  matTooltip="Cierre de CUIS de PDV en Impuestos Nacionales"
+                  matTooltipPosition="left"
+                  mat-menu-item
+                  *ngIf="element.estado == 'Cuis Activo'"
+                  (click)="CerrarOperacionesPDV(element)"
+                >
+                <mat-icon>block</mat-icon><span>Cerrar CUIS</span>
+                </button>
+
+                <button 
+                mat-menu-item 
+                *ngIf="element.estado != 'Cuis Activo'"
+                (click)="solicitudCuis(element)">
+                <mat-icon>cloud_sync</mat-icon><span>Solicitar CUIS</span>
+                </button>
+                <button 
+                mat-menu-item 
+                *ngIf="element.estado == 'Cuis Activo'"
+                (click)="solicitudCufd(element)">
+                <mat-icon>cloud_sync</mat-icon><span>Solicitar CUFD</span>
+                </button>
+              </mat-menu>
+            </td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let element; columns: displayedColumns"></tr>
+        </table>
+        <mat-paginator [pageSizeOptions]="[20, 40, 60, 100]"></mat-paginator>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+</mat-drawer-container>

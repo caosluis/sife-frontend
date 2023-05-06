@@ -1,0 +1,170 @@
+<mat-card-title>Lote</mat-card-title>
+<mat-card-subtitle
+  >Una Factura Digital es emitida a través de un Sistema Informático de
+  Facturación autorizado por la Administración Tributaria, su existencia es
+  digital y debe ser registrada y validada en la base de datos del Servicio de
+  Impuestos Nacionales.
+</mat-card-subtitle>
+<mat-dialog-content class="mat-typography">
+  <div class="row">
+    <div class="col-md-9">
+      <div class="col-cuerpoFactura">
+        <table mat-table [dataSource]="dataSource" matSort width="100%" matTableResponsive>
+          <!--Column -->
+          <ng-container matColumnDef="CUIS">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>CUIS</th>
+            <td mat-cell *matCellDef="let element">{{ element.cuis }}</td>
+          </ng-container>
+          <!--Column -->
+          <ng-container matColumnDef="Nro. Factura">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              Nro. Factura
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.numeroFactura }}
+            </td>
+          </ng-container>
+          <!--Column -->
+          <ng-container matColumnDef="Sucursal">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Sucursal</th>
+            <td mat-cell *matCellDef="let element">
+              {{ sucursalesIndex[element["codigoSucursal"]] }}
+            </td>
+          </ng-container>
+          <!--Column -->
+          <ng-container matColumnDef="Punto de Venta">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              Punto de Venta
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.codigoPuntoVenta }} {{ PDV(element.cuis) }}
+            </td>
+          </ng-container>
+          <!--Column -->
+          <ng-container matColumnDef="Tipo Documento">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              Tipo Documento
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ documentosSector[element.codigoDocumentoSector] }}
+            </td>
+          </ng-container>
+          <!--Column -->
+          <ng-container matColumnDef="Fecha de Emisión">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              Fecha de Emisión
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.fechaEmision | date: "dd/MM/yyyy HH:mm:ss":"UTC" }}
+            </td>
+          </ng-container>
+          <!--Column -->
+          <ng-container matColumnDef="Codigo Evento">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              Codigo Evento
+            </th>
+            <td mat-cell *matCellDef="let element">
+              <span
+                class="mat-green"
+                *ngIf="
+                  element.codigoRecepcionEventoSignificativo != 0;
+                  else menor
+                "
+              >
+                {{ element.codigoRecepcionEventoSignificativo }}
+              </span>
+              <ng-template #menor
+                ><span class="mat-warn">
+                  {{ element.codigoRecepcionEventoSignificativo }}
+                </span></ng-template
+              >
+            </td>
+          </ng-container>
+          <!--Column -->
+          <ng-container matColumnDef="Tipo Evento">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Tipo Evento</th>
+            <td mat-cell *matCellDef="let element">
+              <span color="warn">
+                {{ element.codigoClasificadorEvento }}
+              </span>
+            </td>
+          </ng-container>
+          <!--Column -->
+          <ng-container matColumnDef="Lote">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Lote</th>
+            <td mat-cell *matCellDef="let element">
+              <a
+                class="mat-green"
+                (click)="RedireccionaraOffline(); onClose()"
+              >
+                {{ element.idlote }}
+            </a>
+            </td>
+          </ng-container>
+          <!--Column -->
+          <ng-container matColumnDef="Estado">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Estado</th>
+            <td mat-cell *matCellDef="let element">
+              <div class="offline-estado">
+                {{ estados[element.estado] }}
+                <ng-container [ngSwitch]="element.estado">
+                  <div *ngSwitchCase="2">
+                    <mat-icon class="mat-green">
+                      <span class="material-icons-outlined">done</span>
+                    </mat-icon>
+                  </div>
+                  <div *ngSwitchCase="91">
+                    <mat-icon class="mat-warn">highlight_off</mat-icon>
+                  </div>
+                  <div *ngSwitchCase="4">
+                    <mat-icon class="mat-accent">error_outline</mat-icon>
+                  </div>
+                  <div *ngSwitchCase="5">
+                    <mat-icon class="mat-warning">event</mat-icon>
+                  </div>
+                </ng-container>
+              </div>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let element; columns: displayedColumns"></tr>
+        </table>
+        <div *ngIf="isLoading"><mat-progress-bar mode="indeterminate"></mat-progress-bar></div>
+        <mat-paginator [pageSizeOptions]="[10, 25, 100]"></mat-paginator>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="col-estadoFactura">
+        <div class="estadoFactura">
+          <h3>Estados de Lote</h3>
+          <mat-accordion class="example-headers-align">
+            <mat-expansion-panel *ngFor="let element of EstadosLote" hideToggle>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <span class="numero-estado">{{ element.estado }}</span>
+                  {{ estados[element.estado] }}
+                </mat-panel-title>
+                <mat-panel-description>
+                  {{ element.fecha | date: "dd/MM/yyyy HH:mm:ss":"UTC" }}
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <p>{{ element.mensaje }}</p>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+  <button
+    mat-raised-button
+    color="warn"
+    type="button"
+    (click)="onClose()"
+    mat-flat-button
+  >
+    Cerrar
+  </button>
+</mat-dialog-actions>

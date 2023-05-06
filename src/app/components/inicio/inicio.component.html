@@ -1,0 +1,49 @@
+<!-- <app-indicadorfecha></app-indicadorfecha> -->
+<!-- MENU DE ACCIONES DEL MODULO -->
+<div class="container-menu">
+  <div class="container-menu-iz">
+    <div class="container-menu-item ">
+      <b style="background: #6264a7; padding: 2px 10px; border-radius: 2px; color: #fff;">
+        Versión del sistema {{ versionSife }}
+      </b>
+    </div>
+  </div>
+  <div class="container-menu-de">
+    <div class="container-menu-item ">
+      <button type="button"mat-button  [routerLink]="['/eventosignificativo']">
+        <mat-icon>event_note</mat-icon> Registro Contingecias
+      </button>
+    </div>
+    <div class="container-menu-item ">
+      <button type="button"mat-button  [routerLink]="['/valida-nit']">
+        <mat-icon>playlist_add</mat-icon> Validar Nit
+      </button>
+    </div>
+    <div class="container-menu-item ">
+      <button type="button"mat-button [routerLink]="['/fechahistorico']">
+        <mat-icon>calendar_view_day</mat-icon> {{ fechaActual | date: "EEEE d MMMM y":"UTC" }}
+      </button>
+    </div>
+    <div class="container-menu-item ">
+      <button type="button"mat-button  [routerLink]="['/about']">
+        <mat-icon>work</mat-icon> About
+      </button>
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <br />
+  <div class="row">
+    <div class="col-sm-12">
+      <app-indicadores></app-indicadores>
+    </div>
+    <div class="col-sm-12">
+      <app-facturas-resumen></app-facturas-resumen>
+    </div>   
+    <div class="col-sm-12">
+      <app-cufd></app-cufd>
+    </div>      
+  </div>
+  <br />
+  
+</div>

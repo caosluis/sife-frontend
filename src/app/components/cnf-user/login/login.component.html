@@ -1,0 +1,220 @@
+<!--html>
+  <body class="login-body">
+    <div class="container-login">
+      <div class="login">
+        <img class="imagefactura" src="./../../../../assets/png/fac.png" />
+      </div>
+      <div class="login-box">
+        <div class="login-title">
+          <span class="title">Bienvenido a SIFE </span><br /><span
+            class="title-small"
+            >Sistema de Facturación electrónica</span
+          >
+        </div>
+        <div class="login-title">
+          <span>Vamos a conectarte</span>
+        </div>
+        <form>
+          <mat-form-field appearance="standard">
+            <mat-label>Ingrese su Usuario</mat-label>
+            <input 
+            type="text"
+            name="username"
+            matInput placeholder="Ingrese su Usuario"
+            [(ngModel)]="user">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'person' : 'person'}}</mat-icon>
+            </button>
+          </mat-form-field>
+            <br>
+          <mat-form-field appearance="standard">
+            <mat-label>Ingrese password</mat-label>
+            <input
+            type="password"
+            name="password" 
+            matInput [type]="hide ? 'password' : 'text'"
+            [(ngModel)]="pass"
+            >
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>                    
+          <br>
+          <button
+            class="iniciaSesion"
+            [disabled]="loading"
+            type="submit"
+            mat-raised-button
+            color="primary"
+            type="button"
+            (click)="login()"
+          >
+            <span
+              *ngIf="loading"
+              class="spinner-border spinner-border-sm mr-1"
+            ></span
+            >Iniciar sesion
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html-->
+<!--div class="container register">
+  <div class="row">
+      <div class="col-md-3 register-left">
+          <img src="./../../../../assets/logo/avion.png" alt=""/>
+          <h1>Información</h1>
+          <p>
+            Una Factura Electrónica es un documento 
+            digital de índole fiscal,  emitido a través de un Sistema Informático 
+            de Facturación autorizado por la Administración Tributaria, 
+            su existencia es digital y debe ser registrada y validada en la 
+            base de datos del Servicio de Impuestos Nacionales. <br><br>
+
+            Las facturas deben cumplir con los requisitos legales y reglamentarios establecidos en la <a href="https://www.impuestos.gob.bo/ckeditor/plugins/imageuploader/uploads/491335f008.pdf">Resolución Normativa de Directorio N° 102100000011</a>.
+          </p>
+          <br/>
+      </div>
+      <div class="col-md-9 register-right">
+          <div class="tab-content" id="myTabContent">
+              <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">                                  
+                  <div class="row register-form">
+                      <div class="col-md-12">
+                        <div class="cabecera">
+                          <div class="titulo">
+                            <span class="title">{{ titulo }}</span>
+                          </div>
+                          <p style="text-align: center !important;">{{ subtitulo }}</p>
+                          <div class="subtitulo">
+                            <span class="title-small" > Vamos a conectarte</span> 
+                          </div>
+                        </div>  
+                        <br>
+                        <form>
+                          <mat-form-field appearance="fill">
+                            <mat-label>Ingrese su usuario</mat-label>
+                            <input 
+                            type="text"
+                            name="username"
+                            matInput placeholder="Ingrese su Usuario"
+                            [(ngModel)]="user">
+                            <span mat-icon-button matSuffix [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                              <mat-icon>person</mat-icon>
+                            </span>
+                          </mat-form-field>
+                            <br>
+                          <mat-form-field appearance="fill">
+                            <mat-label>Ingrese password</mat-label>
+                            <input
+                            type="password"
+                            name="password" 
+                            matInput [type]="hide ? 'password' : 'text'"
+                            [(ngModel)]="pass"
+                            >
+                            <span mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </span>
+                          </mat-form-field>                    
+                                    
+                          <button
+                            class="iniciaSesion"
+                            [disabled]="loading"
+                            type="submit"
+                            mat-raised-button
+                            color="primary"
+                            type="button"
+                            (click)="login()"
+                          >
+                            <span
+                              *ngIf="loading"
+                              class="spinner-border spinner-border-sm mr-1"
+                            ></span
+                            >Iniciar sesion
+                          </button>
+
+                          <a class="cambiopass" mat-raised-button href="http://swarm-qas.hansa.com.bo:44" >Olvide mi Contraseña </a>
+                        </form>                          
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div-->
+<div class="sife-contenido">
+  <div class="sife-block">
+    <div class="row">
+      <div class="col-sm-5">
+        <div class="sife-block-titulo">
+          HANSA
+        </div>
+        <img class="img1" src="./../../../../assets/logo/idea.png" alt="">
+        <div class="sife-block-subtitulo">
+          {{ subtitulo }}
+        </div>
+      </div>
+      <div class="col-sm-7">
+        <img class="img2" src="../../../../assets/logo/laptop.png" alt="">
+        <div class="tab-content" id="myTabContent">                                
+          <div class="row register-form">                  
+            <div class="cabecera">
+              <div class="">
+                <span class="title">{{ titulo }}</span>
+              </div>
+              <p style="text-align: center !important;"></p>
+              <div class="subtitulo">
+                <span > Iniciar sesión</span> 
+              </div>
+            </div>  
+            <br>
+            <form>
+              <mat-form-field appearance="fill">
+                <mat-label>Ingrese su usuario</mat-label>
+                <input 
+                type="text"
+                name="username"
+                matInput placeholder="Ingrese su Usuario"
+                [(ngModel)]="user">
+                <span mat-icon-button matSuffix [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>person</mat-icon>
+                </span>
+              </mat-form-field>
+                <br>
+              <mat-form-field appearance="fill">
+                <mat-label>Ingrese password</mat-label>
+                <input
+                type="password"
+                name="password" 
+                matInput [type]="hide ? 'password' : 'text'"
+                [(ngModel)]="pass"
+                >
+                <span mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </span>
+              </mat-form-field>                    
+                        
+              <button
+                class="iniciaSesion"
+                [disabled]="loading"
+                type="submit"
+                mat-raised-button
+                color="primary"
+                type="button"
+                (click)="login()"
+              >
+                <span
+                  *ngIf="loading"
+                  class="spinner-border spinner-border-sm mr-1"
+                ></span
+                >Iniciar sesion
+              </button>
+
+              <a class="cambiopass" mat-raised-button [href]="ruta" >Olvide mi Contraseña </a>
+            </form>                          
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

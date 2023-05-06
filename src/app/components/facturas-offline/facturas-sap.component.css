@@ -1,0 +1,25 @@
+table {
+  width: 100%;
+}
+img{
+  height: 30px;
+}
+.codigoMotivoEvento{
+  background: #ededed;
+  padding: 5px 20px;
+  border-radius: 2px;
+  font-weight: 500;
+}
+.lote-img{
+  height: 27px;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+.bg-success{
+  color: #6bb700;
+  background: #f7f8ff !important;
+}
+.bg-danger {    
+  background: #fff5f8 !important;
+  color: #8c435b !important;
+}

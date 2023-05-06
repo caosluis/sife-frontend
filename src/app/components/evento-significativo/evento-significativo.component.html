@@ -1,0 +1,186 @@
+<!-- AGREGANDO SIDEBAR FILTRO Y CONTENIDO EN UNO SOLO -->
+<mat-drawer-container class="example-container" autosize hasBackdrop="false">
+  <!-- MENU DE ACCIONES DEL MODULO -->
+  <div class="container-menu">
+    <div class="container-menu-iz">
+      <div class="container-menu-item ">
+        
+      </div>
+    </div>
+    <div class="container-menu-de">
+      <div class="container-menu-item ">
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="RegistrarEventoSignificativo('Vacio')">
+          <mat-icon>add</mat-icon> Nuevo
+        </button>
+      </div>
+      <div class="container-menu-item ">
+        <button type="button" class="sidebar-filtro-btn" mat-button (click)="drawer.toggle()">
+          <mat-icon>filter_list</mat-icon> Filtro
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- SIDEBAR DE FILTRO -->
+  <mat-drawer #drawer class="example-sidenav sidebar-filtro" mode="side"  position="end" >
+    <div class="row">
+      <div class="col-sm-6">
+          <h2>Filtros</h2>
+      </div>
+      <div class="col-sm-6">        
+          <button type="button" class="sidebar-filtro-btn" mat-button (click)="drawer.toggle()">
+            <mat-icon>close</mat-icon>
+          </button>
+      </div>
+    </div>
+    <mat-form-field appearance="standard" class="buscador">
+      <mat-label>Buscar</mat-label>
+      <input
+        matInput
+        placeholder="Buscar"
+        autocomplete="off"
+        (keyup)="applyFilter($event.target.value)"
+      />
+    </mat-form-field>
+  </mat-drawer>
+
+  <!-- CONTENIDO DEL SIDEBAR FILTRO PARA EL MODULO -->
+  <div class="example-sidenav-content" > 
+
+    <mat-card class="background_user_connection">
+      <div class="row">
+        <div class="col-sm-12">
+          <mat-card-header>
+            <mat-card-title>Evento Significativo</mat-card-title>
+            <mat-card-subtitle>Los eventos significativos son hechos inherentes al Sistema informático
+              de Facturación que intervienen en su funcionamiento o que podrían afectar
+              la emisión de las Facturas Digitales. Deben ser registrados hasta 24 horas
+              posteriores de finalizada la contingencia, a través del sistema autorizado
+              por la Administración Tributaria y enviados automáticamente a través del
+              servicio Web correspondiente.</mat-card-subtitle>
+          </mat-card-header>
+        </div>
+      </div>
+      <mat-card-content>
+        <table mat-table [dataSource]="dataSource" matSort width="100%" matTableResponsive>
+          <ng-container matColumnDef="logo">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header style="text-align: center;"> </th>
+            <td mat-cell *matCellDef="let element" >                         
+                <mat-icon style="color: #6264a7;">notifications</mat-icon><mat-icon class="check">check</mat-icon>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="codigoSucursal">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Código sucursal</th>
+            <td mat-cell *matCellDef="let element">
+                <button mat-stroked-button color="primary">
+                  {{ element.codigoSucursal }}
+                </button>
+            </td>
+          </ng-container>
+          <ng-container matColumnDef="codigoPDV">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Código Punto Venta</th>
+            <td mat-cell *matCellDef="let element">
+              <button mat-stroked-button color="primary">
+                {{ element.codigoPDV }}
+              </button></td>
+          </ng-container>
+
+          <ng-container matColumnDef="cuis">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>CUIS</th>
+            <td mat-cell *matCellDef="let element">{{ element.cuis }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="codigoMotivoEvento">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              Código motivo
+            </th>
+            <td mat-cell *matCellDef="let element">
+              <span class="codigoMotivoEvento">
+                {{ element.codigoMotivoEvento }}
+              </span>        
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="descripcion">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Descripción</th>
+            <td mat-cell *matCellDef="let element">{{ element.descripcion }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="fechaHoraInicioEvento">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              Fecha inicio evento
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.fechaHoraInicioEvento | date: "EEEE d MMMM y HH:mm:ss" }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="fechaHoraFinEvento">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              Fecha fin evento
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.fechaHoraFinEvento | date: "EEEE d MMMM y HH:mm:ss" }}          
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="codigoRecepcionEventoSignificativo">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              Código evento
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.codigoRecepcionEventoSignificativo }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="mensaje">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Mensaje</th>
+            <td mat-cell *matCellDef="let element">{{ element.mensaje }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="tiporegistro">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Tipo registro</th>
+            <td mat-cell *matCellDef="let element">
+              <ng-container *ngIf="element.tiporegistro == 'Manual'; then manual else automatico">
+              </ng-container>
+              <ng-template #manual>
+                  <mat-icon matTooltip="Manual"color="accent">person</mat-icon> 
+              </ng-template>
+              <ng-template #automatico>
+                <mat-icon matTooltip="Automático" style="color: #ddd;">precision_manufacturing</mat-icon> 
+            </ng-template>
+              </td>
+          </ng-container>
+
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+            <td mat-cell *matCellDef="let element">
+              <button mat-icon-button [matMenuTriggerFor]="Notificaciones">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #Notificaciones="matMenu">
+                <button
+                  mat-menu-item
+                  (click)="RegistrarEventoSignificativo(element)"
+                >
+                  <mat-icon>launch</mat-icon><span>Ver Detalle</span>
+                </button>
+              </mat-menu>
+            </td></ng-container
+          >
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let element; columns: displayedColumns"></tr>
+        </table>
+        <div *ngIf="isLoading">
+          <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+        </div>
+        <mat-paginator [pageSizeOptions]="[10, 20, 50, 100]"></mat-paginator>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+</mat-drawer-container>

@@ -1,0 +1,250 @@
+<form [formGroup]="formularioPDV" class="normal-form">
+  <mat-dialog-content>
+    <input type="hidden" #id formControlName="id" />
+    <input type="hidden" #cuis formControlName="cuis" />
+    <input type="hidden" #codigoPDV formControlName="codigoPDV" />
+    <input type="hidden" #valorTipoPuntoVenta formControlName="valorTipoPuntoVenta"/>
+    <div class="row">
+      <div class="col-sm-8">
+        <mat-card-title>Punto de Venta</mat-card-title>
+        <mat-card-subtitle>Los punto de venta que serán registrador directamente en los sistemas de Impuestos Nacionales, los cuales se les asignara un correlativo que empieza en 1 a N,
+          estos Puntos de Venta no podran ser <b>modificados</b>.</mat-card-subtitle>
+        <mat-card-subtitle>Una vez registrado el Punto de Venta, solicita tu <b> Código de Autorización del Sistema (CUIS)</b>.</mat-card-subtitle>
+        <mat-card >
+          <div class="row">
+            <div class="col-sm-6">
+              <mat-form-field class="formPlus">
+                <mat-select placeholder="Sucursal" #codigoSucursal formControlName="codigoSucursal" (selectionChange)="SeleccionarSucursal($event.value)" [disabled]="id.value !== ''">
+                  <mat-option *ngFor="let element of SucursalList" [value]="element.codigoSucursal"><span class="badge rounded-pill bg-light text-dark">{{ element.codigoSucursal }}</span>  {{ element.descripcion }}</mat-option>
+                  <!-- <mat-option *ngFor="let codigoSucursal of sucurcursalS.dataSource.data" [value]="codigoSucursal.codigoSucursal">{{codigoSucursal.descripcion}}</mat-option> -->
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-sm-6"></div>
+
+            <div class="col-sm-6">
+              <mat-form-field class="formPlus">
+                <input type="text" #nombrePuntoVenta formControlName="nombrePuntoVenta" matInput placeholder="Nombre Punto de venta" [attr.disabled]="id.value !== ''"/>
+              </mat-form-field>
+            </div>
+            <div class="col-sm-6">
+              <mat-form-field class="formPlus">
+                <mat-select
+                  placeholder="Tipo punto de venta"
+                  #codigoTipoPuntoVenta
+                  formControlName="codigoTipoPuntoVenta"
+                  (selectionChange)="SeleccionaroTipoPuntoVenta($event)"
+                  matInput
+                  [disabled]="id.value !== ''"
+                >
+                  <mat-option
+                    *ngFor="let codigoTipoPuntoVenta of codigoTipoPuntoVentas"
+                    [value]="codigoTipoPuntoVenta.codigoClasificador"
+                    >{{ codigoTipoPuntoVenta.descripcion }}</mat-option
+                  >
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+            <div class="col-sm-6">
+              <mat-form-field class="formPlus">
+                <input
+                  #descripcion
+                  formControlName="descripcion"
+                  matInput
+                  placeholder="Descripción"
+                  [attr.disabled]="id.value !== ''"
+                />
+              </mat-form-field>
+            </div>
+            <div class="col-sm-6">
+              <mat-form-field class="formPlus">
+                <input
+                  #telefono
+                  formControlName="telefono"
+                  matInput
+                  placeholder="Teléfono/Celular"
+                />
+              </mat-form-field>
+            </div>
+          </div>
+        </mat-card>
+        <span [hidden]="data.cuis == null">
+          <mat-card-title>Transacción</mat-card-title>
+          <mat-card >
+              <div class="row">
+                <div class="col-sm-3">
+                  <mat-form-field class="form">
+                    <input type="text" #codigoPDV matInput placeholder="Codigo punto de venta" [value]="data.codigoPDV" disabled/>
+                  </mat-form-field>
+                </div>
+                <div class="col-sm-3">
+                  <mat-form-field class="form">
+                    <input
+                      type="text"
+                      #estado
+                      matInput
+                      placeholder="Estado "
+                      [value]="data.estado"
+                      disabled
+                    />
+                  </mat-form-field>
+                </div>
+                <div class="col-sm-3">
+                  <mat-form-field class="form">
+                    <input
+                      type="text"
+                      #transaccion
+                      matInput
+                      placeholder="Transaccion SIN "
+                      [value]="data.transaccion"
+                      disabled
+                    />
+                  </mat-form-field>
+                </div>
+                <div class="col-sm-3">
+                  <mat-form-field class="form">
+                    <input
+                      type="text"
+                      #cuis
+                      matInput
+                      placeholder="CUIS "
+                      [value]="data.cuis"
+                      disabled
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-4">
+                  <mat-form-field class="form">
+                    <input
+                      type="text"
+                      #vigencia
+                      matInput
+                      placeholder="Vigencia cuis "
+                      [value]="
+                        VigenciaCuisPdv(data.cuis)
+                          | date: 'EEEE d MMMM y HH:mm:ss ':'UTC'
+                      "
+                      disabled
+                    />
+                  </mat-form-field>
+                </div>
+                  <div class="col-sm-8">
+                  <mat-form-field class="form">
+                    <input
+                      type="text"
+                      #descripcionTransaccion
+                      matInput
+                      placeholder="Descripcion transaccion SIN "
+                      [value]="data.descripcionTransaccion"
+                      disabled
+                    />
+                  </mat-form-field>
+                </div>
+              </div>          
+        </mat-card>
+      </span>
+      </div>
+      <div class="col-sm-4">
+          <mat-card-title>Historial</mat-card-title>
+          <mat-accordion [hidden]="data.codigoPDV == null" class="example-headers-align" >
+            <mat-expansion-panel *ngFor="let element of EstadoPDV; let isFirst = first" [expanded]="isFirst"  hideToggle>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <span class="numero-estado">{{ element.estado }}</span>
+                </mat-panel-title>
+                <mat-panel-description>
+                  {{
+                    element.fechaCreacion | date: "dd/MM/yyyy HH:mm:ss":"UTC"
+                  }}
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <p>{{ element.descripcion }}</p>
+            </mat-expansion-panel>
+          </mat-accordion>
+      </div>
+    </div>
+
+    <div *ngIf="transaccion == true">
+      <div class="alert alert-success mt-3 mb-0">
+        {{ Respuesta.Respuesta.descripcion }}
+      </div>
+    </div>
+    <div *ngIf="transaccion == false">
+      <div class="alert alert-danger mt-3 mb-0">
+        {{ Respuesta.Respuesta.descripcion }}
+      </div>
+    </div>
+
+
+
+    <!-- <ng-container *ngIf="data.solicitudCuis == 0; then nosolicita else solicita" >
+        </ng-container>
+        <ng-template #nosolicita>
+            <mat-checkbox #solicitudCuis color="primary"  [value]="0" (change)="SolicitaCuis($event.checked)">Solicitar CUIS Para el PDV</mat-checkbox>
+        </ng-template>
+        <ng-template #solicita>
+            <mat-checkbox #solicitudCuis color="primary" checked="true" [value]="1" (change)="SolicitaCuis($event.checked)">Solicitar CUIS Para el PDV</mat-checkbox>
+        </ng-template> -->
+  </mat-dialog-content>
+
+
+
+  <mat-dialog-actions align="center">
+    <div *ngIf="transaccion == true">
+      <div class="alert alert-success mt-3 mb-0">
+        {{ descripcion }}
+      </div>
+    </div>
+    <div *ngIf="transaccion == false">
+      <div class="alert alert-danger mt-3 mb-0">
+        {{ descripcion }}
+      </div>
+    </div>
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="
+        GuardarCambios({
+          id: id.value,
+          cuis: cuis.value,
+          codigoPDV: codigoPDV.value,
+          nit: EmpresaSeleccionada,
+          codigoSucursal: codigoSucursal.value,
+          nombrePuntoVenta: nombrePuntoVenta.value,
+          codigoTipoPuntoVenta: codigoTipoPuntoVenta.value,
+          valorTipoPuntoVenta: valorTipoPuntoVenta.value,
+          descripcion: descripcion.value,
+          telefono: telefono.value,
+          solicitudCuis: solicitudCuisPdv
+        })
+      "
+      [disabled]="
+        codigoSucursal.value === undefined ||
+        nombrePuntoVenta.value === '' ||
+        codigoTipoPuntoVenta.value === undefined ||
+        descripcion.value === '' ||
+        loading
+      "
+      [hidden]="id.value !== ''"
+    >
+      <span
+        *ngIf="loading"
+        class="spinner-border spinner-border-sm mr-1"
+      ></span>
+      {{ id.value == "" ? "Registrar Nuevo PDV" : "Modificar PDV" }}
+    </button>
+    <button
+      mat-raised-button
+      color="warn"
+      type="button"
+      (click)="onNoClick()"
+      mat-flat-button
+    >
+      Cancelar
+    </button>
+  </mat-dialog-actions>
+</form>
