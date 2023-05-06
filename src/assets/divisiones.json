@@ -1,0 +1,38 @@
+[
+  {
+    "IdDivision": "01",
+    "DivisionNombre": "01 Industria y Construcción"
+  },
+  {
+    "IdDivision": "02",
+    "DivisionNombre": "02 Consumo y Pharma"
+  },
+  {
+    "IdDivision": "03",
+    "DivisionNombre": "03 Automotriz"
+  },
+  {
+    "IdDivision": "04",
+    "DivisionNombre": "04 Soluciones Médicas"
+  },
+  {
+    "IdDivision": "05",
+    "DivisionNombre": "05 Energia & Automatización"
+  },
+  {
+    "IdDivision": "06",
+    "DivisionNombre": "06 Proyectos & Servicios"
+  },
+  {
+    "IdDivision": "07",
+    "DivisionNombre": "07 Windsor"
+  },
+  {
+    "IdDivision": "98",
+    "DivisionNombre": "98 Holding"
+  },
+  {
+    "IdDivision": "99",
+    "DivisionNombre": "99 Administración y Finanzas"
+  }
+]

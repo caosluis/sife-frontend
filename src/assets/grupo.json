@@ -1,0 +1,6690 @@
+[
+    {
+        "IdGrupo": "01010101",
+        "Grupo": "01 MARTILLOS PERFORADORES, 5-11 KG BOSCH"
+    },
+    {
+        "IdGrupo": "01010102",
+        "Grupo": "02 MARTILLOS DEMOLEDORES, >= 16 KG BOSCH"
+    },
+    {
+        "IdGrupo": "01010103",
+        "Grupo": "03 MARTILLOS DEMOLEDORES, <= 11 K "
+    },
+    {
+        "IdGrupo": "01010104",
+        "Grupo": "04 MARTILLOS PERFORADORES, 2-4 KG BOSCH "
+    },
+    {
+        "IdGrupo": "01010105",
+        "Grupo": "05 MARTILLOS INALAMBRICOS BOSCH "
+    },
+    {
+        "IdGrupo": "01010106",
+        "Grupo": "06 TALADROS/ATORN. INALAMBRICOS BOSCH"
+    },
+    {
+        "IdGrupo": "01010107",
+        "Grupo": "07 OTRAS HERRAM. INALAMBRICAS BOSCH"
+    },
+    {
+        "IdGrupo": "01010108",
+        "Grupo": "08 TALADROS BOSCH "
+    },
+    {
+        "IdGrupo": "01010109",
+        "Grupo": "09 ATORNILLADORES BOSCH "
+    },
+    {
+        "IdGrupo": "01010110",
+        "Grupo": "10 TALADROS IMPACTO BOSCH "
+    },
+    {
+        "IdGrupo": "01010111",
+        "Grupo": "11 AMOLADORAS ANGULARES BOSCH"
+    },
+    {
+        "IdGrupo": "01010112",
+        "Grupo": "12 PULIDORAS BOSCH"
+    },
+    {
+        "IdGrupo": "01010113",
+        "Grupo": "13 MINIAMOLADORAS BOSCH "
+    },
+    {
+        "IdGrupo": "01010114",
+        "Grupo": "14 SIERRAS DIAMANTE BOSCH "
+    },
+    {
+        "IdGrupo": "01010115",
+        "Grupo": "15 AMOLADORAS RECTAS BOSCH"
+    },
+    {
+        "IdGrupo": "01010116",
+        "Grupo": "16 SIERRAS CIRCULARES BOSCH"
+    },
+    {
+        "IdGrupo": "01010117",
+        "Grupo": "17 LIJADORAS BANDA BOSCH"
+    },
+    {
+        "IdGrupo": "01010118",
+        "Grupo": "18 LIJADORAS ORBITALES BOSCH "
+    },
+    {
+        "IdGrupo": "01010119",
+        "Grupo": "19 LIJADORAS EXCENTRICAS BOSCH"
+    },
+    {
+        "IdGrupo": "01010120",
+        "Grupo": "20 SIERRAS CALADORAS BOSCH"
+    },
+    {
+        "IdGrupo": "01010121",
+        "Grupo": "21 CEPILLOS BOSCH "
+    },
+    {
+        "IdGrupo": "01010122",
+        "Grupo": "22 FRESADORAS BOSCH"
+    },
+    {
+        "IdGrupo": "01010123",
+        "Grupo": "23 BENCHTOPS BOSCH"
+    },
+    {
+        "IdGrupo": "01010124",
+        "Grupo": "24 OTRAS HERRAMIENTAS ELECTRICAS BOSCH"
+    },
+    {
+        "IdGrupo": "01010125",
+        "Grupo": "25 NK- HERRAMIENTAS BOSCH "
+    },
+    {
+        "IdGrupo": "01010126",
+        "Grupo": "26 MEDICION- BLUE"
+    },
+    {
+        "IdGrupo": "01010127",
+        "Grupo": "27 OTRAS HERR. ELECTRICAS "
+    },
+    {
+        "IdGrupo": "01010128",
+        "Grupo": "28 LIQUIDACION HERR. BOSCH"
+    },
+    {
+        "IdGrupo": "01010129",
+        "Grupo": "29 NK - HERRAMIENTAS "
+    },
+    {
+        "IdGrupo": "01010130",
+        "Grupo": "30 HERRAMIENTAS BOSCH - STD"
+    },
+    {
+        "IdGrupo": "01010201",
+        "Grupo": "01 HERRAMIENTAS DREMEL"
+    },
+    {
+        "IdGrupo": "01010202",
+        "Grupo": "02 ACCESORIOS HERRAMIENTAS ROTATIVAS "
+    },
+    {
+        "IdGrupo": "01010203",
+        "Grupo": "03 ACCESORIOS HERRAMIENTAS ESPECIALES"
+    },
+    {
+        "IdGrupo": "01010204",
+        "Grupo": "04 COMPLEMENTOS HERRAMIENTAS DREMEL"
+    },
+    {
+        "IdGrupo": "01010205",
+        "Grupo": "05 Grupo Prueba "
+    },
+    {
+        "IdGrupo": "01010206",
+        "Grupo": "06 "
+    },
+    {
+        "IdGrupo": "01010207",
+        "Grupo": "07 "
+    },
+    {
+        "IdGrupo": "01010208",
+        "Grupo": "08 "
+    },
+    {
+        "IdGrupo": "01010209",
+        "Grupo": "09 "
+    },
+    {
+        "IdGrupo": "01010210",
+        "Grupo": "10 "
+    },
+    {
+        "IdGrupo": "01010211",
+        "Grupo": "11 "
+    },
+    {
+        "IdGrupo": "01010212",
+        "Grupo": "12 "
+    },
+    {
+        "IdGrupo": "01010213",
+        "Grupo": "13 "
+    },
+    {
+        "IdGrupo": "01010214",
+        "Grupo": "14 "
+    },
+    {
+        "IdGrupo": "01010215",
+        "Grupo": "15 "
+    },
+    {
+        "IdGrupo": "01010216",
+        "Grupo": "16 "
+    },
+    {
+        "IdGrupo": "01010217",
+        "Grupo": "17 "
+    },
+    {
+        "IdGrupo": "01010218",
+        "Grupo": "18 "
+    },
+    {
+        "IdGrupo": "01010301",
+        "Grupo": "01 BOSCH MT"
+    },
+    {
+        "IdGrupo": "01010302",
+        "Grupo": "02 SKIL MT "
+    },
+    {
+        "IdGrupo": "01010303",
+        "Grupo": "03 CST- BERGER"
+    },
+    {
+        "IdGrupo": "01010304",
+        "Grupo": "04 "
+    },
+    {
+        "IdGrupo": "01010305",
+        "Grupo": "05 "
+    },
+    {
+        "IdGrupo": "01010306",
+        "Grupo": "06 "
+    },
+    {
+        "IdGrupo": "01010307",
+        "Grupo": "07 "
+    },
+    {
+        "IdGrupo": "01010308",
+        "Grupo": "08 "
+    },
+    {
+        "IdGrupo": "01010309",
+        "Grupo": "09 "
+    },
+    {
+        "IdGrupo": "01010310",
+        "Grupo": "10 "
+    },
+    {
+        "IdGrupo": "01010311",
+        "Grupo": "11 "
+    },
+    {
+        "IdGrupo": "01010312",
+        "Grupo": "12 "
+    },
+    {
+        "IdGrupo": "01010313",
+        "Grupo": "13 "
+    },
+    {
+        "IdGrupo": "01010314",
+        "Grupo": "14 "
+    },
+    {
+        "IdGrupo": "01010315",
+        "Grupo": "15 "
+    },
+    {
+        "IdGrupo": "01010316",
+        "Grupo": "16 "
+    },
+    {
+        "IdGrupo": "01010317",
+        "Grupo": "17 "
+    },
+    {
+        "IdGrupo": "01010318",
+        "Grupo": "18 "
+    },
+    {
+        "IdGrupo": "01010319",
+        "Grupo": "19 "
+    },
+    {
+        "IdGrupo": "01010320",
+        "Grupo": "20 "
+    },
+    {
+        "IdGrupo": "01010321",
+        "Grupo": "21 "
+    },
+    {
+        "IdGrupo": "01010322",
+        "Grupo": "22 "
+    },
+    {
+        "IdGrupo": "01010401",
+        "Grupo": "01 MARTILLOS PERFORADORES 2-4 KG SKIL"
+    },
+    {
+        "IdGrupo": "01010402",
+        "Grupo": "02 TALADROS IMPACTO SKIL"
+    },
+    {
+        "IdGrupo": "01010403",
+        "Grupo": "03 SIERRAS DIAMANTE SKIL"
+    },
+    {
+        "IdGrupo": "01010404",
+        "Grupo": "04 HERRAMIENTAS INALAMBRICAS < 9.6 V SKI"
+    },
+    {
+        "IdGrupo": "01010405",
+        "Grupo": "05 HERRAMIENTAS INALAMBRICAS >= 9.6 V SK"
+    },
+    {
+        "IdGrupo": "01010406",
+        "Grupo": "06 SIERRAS CALADORAS SKIL "
+    },
+    {
+        "IdGrupo": "01010407",
+        "Grupo": "07 SIERRAS CIRCULARES SKIL"
+    },
+    {
+        "IdGrupo": "01010408",
+        "Grupo": "08 LIJADORAS ORBITALES SKIL"
+    },
+    {
+        "IdGrupo": "01010409",
+        "Grupo": "09 LIJADORAS BANDA SKIL "
+    },
+    {
+        "IdGrupo": "01010410",
+        "Grupo": "10 CEPILLOS SKIL"
+    },
+    {
+        "IdGrupo": "01010411",
+        "Grupo": "11 FRESADORAS SKIL"
+    },
+    {
+        "IdGrupo": "01010412",
+        "Grupo": "12 AMOLADORAS ANGULARES SKIL "
+    },
+    {
+        "IdGrupo": "01010413",
+        "Grupo": "13 MINIAMOLADORAS SKIL"
+    },
+    {
+        "IdGrupo": "01010414",
+        "Grupo": "14 PULIDORAS SKIL "
+    },
+    {
+        "IdGrupo": "01010415",
+        "Grupo": "15 BENCHTOP SKIL"
+    },
+    {
+        "IdGrupo": "01010416",
+        "Grupo": "16 PISTOLA CALOR SKIL"
+    },
+    {
+        "IdGrupo": "01010417",
+        "Grupo": "17 OTRAS HERRAMIENTAS SKIL"
+    },
+    {
+        "IdGrupo": "01010501",
+        "Grupo": "01 MARTILLOS DEMOLED <= 11 K BOSCH PROF "
+    },
+    {
+        "IdGrupo": "01010502",
+        "Grupo": "02 MARTILLOS PERFOR 2-4 KG BOSCH PROF"
+    },
+    {
+        "IdGrupo": "01010503",
+        "Grupo": "03 MARTILLOS INALAMBRICOS BOSCH PROF "
+    },
+    {
+        "IdGrupo": "01010504",
+        "Grupo": "04 TALADROS/ATORN. INALAMB BOSCH PROF"
+    },
+    {
+        "IdGrupo": "01010505",
+        "Grupo": "05 TALADROS BOSCH PROF"
+    },
+    {
+        "IdGrupo": "01010506",
+        "Grupo": "06 ATORNILLADORES BOSCH PROF "
+    },
+    {
+        "IdGrupo": "01010507",
+        "Grupo": "07 TALADROS IMPACTO BOSCH PROF"
+    },
+    {
+        "IdGrupo": "01010508",
+        "Grupo": "08 AMOLADORAS ANGULARES BOSCH PROF"
+    },
+    {
+        "IdGrupo": "01010509",
+        "Grupo": "09 MINIAMOLADORAS BOSCH PROF "
+    },
+    {
+        "IdGrupo": "01010510",
+        "Grupo": "10 SIERRAS CIRCULARES BOSCH PROF"
+    },
+    {
+        "IdGrupo": "01010511",
+        "Grupo": "11 LIJADORAS ORBITALES BOSCH PROF "
+    },
+    {
+        "IdGrupo": "01010512",
+        "Grupo": "12 SIERRAS CALADORAS BOSCH PROF "
+    },
+    {
+        "IdGrupo": "01010513",
+        "Grupo": "13 CEPILLOS BOSCH PROF"
+    },
+    {
+        "IdGrupo": "01010514",
+        "Grupo": "14 FRESADORAS BOSCH PROF"
+    },
+    {
+        "IdGrupo": "01010515",
+        "Grupo": "15 BENCHTOPS BOSCH PROF "
+    },
+    {
+        "IdGrupo": "01010516",
+        "Grupo": "16 OTRAS HERRAM ELECT BOSCH PROF"
+    },
+    {
+        "IdGrupo": "01020101",
+        "Grupo": "01 HERRAMIENTAS "
+    },
+    {
+        "IdGrupo": "01020102",
+        "Grupo": "02 SERVICIO TECNICO"
+    },
+    {
+        "IdGrupo": "01020103",
+        "Grupo": "03 CONSTRUCCION "
+    },
+    {
+        "IdGrupo": "01020104",
+        "Grupo": "04 MATERIAL ELECTRICO"
+    },
+    {
+        "IdGrupo": "01020105",
+        "Grupo": "05 ILUMINACION"
+    },
+    {
+        "IdGrupo": "01020106",
+        "Grupo": "06 BOMBAS"
+    },
+    {
+        "IdGrupo": "01020107",
+        "Grupo": "07 INTERRUP Y TOMACORR"
+    },
+    {
+        "IdGrupo": "01020108",
+        "Grupo": "08 GRUPOS Y EQUIPOS"
+    },
+    {
+        "IdGrupo": "01020109",
+        "Grupo": "09 AGRO"
+    },
+    {
+        "IdGrupo": "01020110",
+        "Grupo": "10 METAL MECANICA "
+    },
+    {
+        "IdGrupo": "01020201",
+        "Grupo": "01 NO KARDEX "
+    },
+    {
+        "IdGrupo": "01020202",
+        "Grupo": "02 NK ELECTRICA "
+    },
+    {
+        "IdGrupo": "01020301",
+        "Grupo": "01 REPUESTOS VARIOS"
+    },
+    {
+        "IdGrupo": "01020302",
+        "Grupo": "02 LIQUIDACION REP. VARIOS"
+    },
+    {
+        "IdGrupo": "01020401",
+        "Grupo": "01 FILTRO"
+    },
+    {
+        "IdGrupo": "01020402",
+        "Grupo": "02 JUNTA "
+    },
+    {
+        "IdGrupo": "01020403",
+        "Grupo": "03 PERNO "
+    },
+    {
+        "IdGrupo": "01020404",
+        "Grupo": "04 RODAMIENTO"
+    },
+    {
+        "IdGrupo": "01020405",
+        "Grupo": "05 VALVULA "
+    },
+    {
+        "IdGrupo": "01020406",
+        "Grupo": "06 CARBURADOR"
+    },
+    {
+        "IdGrupo": "01020407",
+        "Grupo": "07 SELLO "
+    },
+    {
+        "IdGrupo": "01020408",
+        "Grupo": "08 RESORTE "
+    },
+    {
+        "IdGrupo": "01020409",
+        "Grupo": "09 TAPA"
+    },
+    {
+        "IdGrupo": "01020410",
+        "Grupo": "10 TOBERA"
+    },
+    {
+        "IdGrupo": "01020411",
+        "Grupo": "11 ANILLA"
+    },
+    {
+        "IdGrupo": "01020412",
+        "Grupo": "12 TUERCA"
+    },
+    {
+        "IdGrupo": "01020413",
+        "Grupo": "13 PISTON"
+    },
+    {
+        "IdGrupo": "01020414",
+        "Grupo": "14 ARANDELA"
+    },
+    {
+        "IdGrupo": "01020415",
+        "Grupo": "15 PLACA "
+    },
+    {
+        "IdGrupo": "01020416",
+        "Grupo": "16 INTERRUPTOR"
+    },
+    {
+        "IdGrupo": "01020417",
+        "Grupo": "17 CABLE "
+    },
+    {
+        "IdGrupo": "01020418",
+        "Grupo": "18 BUJE"
+    },
+    {
+        "IdGrupo": "01020419",
+        "Grupo": "19 BUJIA "
+    },
+    {
+        "IdGrupo": "01020420",
+        "Grupo": "20 ANILLO"
+    },
+    {
+        "IdGrupo": "01020421",
+        "Grupo": "21 MANGUERA"
+    },
+    {
+        "IdGrupo": "01020422",
+        "Grupo": "22 UNION "
+    },
+    {
+        "IdGrupo": "01020423",
+        "Grupo": "23 TUBO DE AIRE "
+    },
+    {
+        "IdGrupo": "01020424",
+        "Grupo": "24 CILINDRO"
+    },
+    {
+        "IdGrupo": "01020425",
+        "Grupo": "25 ADAPTADOR "
+    },
+    {
+        "IdGrupo": "01020426",
+        "Grupo": "26 BOMBA "
+    },
+    {
+        "IdGrupo": "01020427",
+        "Grupo": "27 EJE"
+    },
+    {
+        "IdGrupo": "01020428",
+        "Grupo": "28 CORREA"
+    },
+    {
+        "IdGrupo": "01020429",
+        "Grupo": "29 MOTOR "
+    },
+    {
+        "IdGrupo": "01020430",
+        "Grupo": "30 PALANCA "
+    },
+    {
+        "IdGrupo": "01020431",
+        "Grupo": "31 AMORTIGUADOR "
+    },
+    {
+        "IdGrupo": "01020432",
+        "Grupo": "32 ABRAZADERA"
+    },
+    {
+        "IdGrupo": "01020433",
+        "Grupo": "33 MODULO ENCENDIDO"
+    },
+    {
+        "IdGrupo": "01020434",
+        "Grupo": "34 PRE FILTRO"
+    },
+    {
+        "IdGrupo": "01020435",
+        "Grupo": "35 ARRANCADOR"
+    },
+    {
+        "IdGrupo": "01020436",
+        "Grupo": "36 FUELLE"
+    },
+    {
+        "IdGrupo": "01020437",
+        "Grupo": "37 EMBRAGUE"
+    },
+    {
+        "IdGrupo": "01020438",
+        "Grupo": "38 CAMPANA "
+    },
+    {
+        "IdGrupo": "01020439",
+        "Grupo": "39 TANQUE"
+    },
+    {
+        "IdGrupo": "01020440",
+        "Grupo": "40 REPARO CARBURADOR "
+    },
+    {
+        "IdGrupo": "01020441",
+        "Grupo": "41 OTROS REPUESTOS"
+    },
+    {
+        "IdGrupo": "01020442",
+        "Grupo": "42 HERRAMIENTAS REPARACION"
+    },
+    {
+        "IdGrupo": "01020501",
+        "Grupo": "01 INDUCIDO"
+    },
+    {
+        "IdGrupo": "01020502",
+        "Grupo": "02 RODAMIENTO"
+    },
+    {
+        "IdGrupo": "01020503",
+        "Grupo": "03 INTERRUPTOR"
+    },
+    {
+        "IdGrupo": "01020504",
+        "Grupo": "04 CARBON"
+    },
+    {
+        "IdGrupo": "01020505",
+        "Grupo": "05 ENGRANAJE "
+    },
+    {
+        "IdGrupo": "01020506",
+        "Grupo": "06 ANILLO"
+    },
+    {
+        "IdGrupo": "01020507",
+        "Grupo": "07 ESTATOR "
+    },
+    {
+        "IdGrupo": "01020508",
+        "Grupo": "08 CARCASA "
+    },
+    {
+        "IdGrupo": "01020509",
+        "Grupo": "09 PORTA CARBON "
+    },
+    {
+        "IdGrupo": "01020510",
+        "Grupo": "10 ARANDELA"
+    },
+    {
+        "IdGrupo": "01020511",
+        "Grupo": "11 TAPA"
+    },
+    {
+        "IdGrupo": "01020512",
+        "Grupo": "12 PAQUETE SERVICIO"
+    },
+    {
+        "IdGrupo": "01020513",
+        "Grupo": "13 EJE"
+    },
+    {
+        "IdGrupo": "01020514",
+        "Grupo": "14 RESORTE "
+    },
+    {
+        "IdGrupo": "01020515",
+        "Grupo": "15 BRIDA "
+    },
+    {
+        "IdGrupo": "01020516",
+        "Grupo": "16 BUJE"
+    },
+    {
+        "IdGrupo": "01020517",
+        "Grupo": "17 PORTA HERRAMIENTA "
+    },
+    {
+        "IdGrupo": "01020518",
+        "Grupo": "18 PLACA "
+    },
+    {
+        "IdGrupo": "01020519",
+        "Grupo": "19 TORNILLO"
+    },
+    {
+        "IdGrupo": "01020520",
+        "Grupo": "20 CAJA"
+    },
+    {
+        "IdGrupo": "01020521",
+        "Grupo": "21 REGULADOR "
+    },
+    {
+        "IdGrupo": "01020522",
+        "Grupo": "22 MOTOR "
+    },
+    {
+        "IdGrupo": "01020523",
+        "Grupo": "23 CABLE "
+    },
+    {
+        "IdGrupo": "01020524",
+        "Grupo": "24 PALANCA "
+    },
+    {
+        "IdGrupo": "01020525",
+        "Grupo": "25 CONMUTADOR"
+    },
+    {
+        "IdGrupo": "01020526",
+        "Grupo": "26 BOTON "
+    },
+    {
+        "IdGrupo": "01020527",
+        "Grupo": "27 EMPUNADURA"
+    },
+    {
+        "IdGrupo": "01020528",
+        "Grupo": "28 DEFLECTOR "
+    },
+    {
+        "IdGrupo": "01020529",
+        "Grupo": "29 CORREA DENTADA "
+    },
+    {
+        "IdGrupo": "01020530",
+        "Grupo": "30 CORREDERA "
+    },
+    {
+        "IdGrupo": "01020531",
+        "Grupo": "31 PISTON"
+    },
+    {
+        "IdGrupo": "01020532",
+        "Grupo": "32 TUERCA"
+    },
+    {
+        "IdGrupo": "01020533",
+        "Grupo": "33 VENTILADOR"
+    },
+    {
+        "IdGrupo": "01020534",
+        "Grupo": "34 RODILLO "
+    },
+    {
+        "IdGrupo": "01020535",
+        "Grupo": "35 RETEN "
+    },
+    {
+        "IdGrupo": "01020536",
+        "Grupo": "36 LLAVE "
+    },
+    {
+        "IdGrupo": "01020537",
+        "Grupo": "37 CARGADOR"
+    },
+    {
+        "IdGrupo": "01020538",
+        "Grupo": "38 BATERIA "
+    },
+    {
+        "IdGrupo": "01020539",
+        "Grupo": "39 GRASA "
+    },
+    {
+        "IdGrupo": "01020540",
+        "Grupo": "40 OTROS REPUESTOS"
+    },
+    {
+        "IdGrupo": "01020601",
+        "Grupo": "01 INDUCIDO"
+    },
+    {
+        "IdGrupo": "01020602",
+        "Grupo": "02 RODAMIENTO"
+    },
+    {
+        "IdGrupo": "01020603",
+        "Grupo": "03 INTERRUPTOR"
+    },
+    {
+        "IdGrupo": "01020604",
+        "Grupo": "04 CARBON"
+    },
+    {
+        "IdGrupo": "01020605",
+        "Grupo": "05 ENGRANAJE "
+    },
+    {
+        "IdGrupo": "01020606",
+        "Grupo": "06 ANILLO"
+    },
+    {
+        "IdGrupo": "01020607",
+        "Grupo": "07 ESTATOR "
+    },
+    {
+        "IdGrupo": "01020608",
+        "Grupo": "08 CARCASA "
+    },
+    {
+        "IdGrupo": "01020609",
+        "Grupo": "09 PORTA CARBON "
+    },
+    {
+        "IdGrupo": "01020610",
+        "Grupo": "10 ARANDELA"
+    },
+    {
+        "IdGrupo": "01020611",
+        "Grupo": "11 TAPA"
+    },
+    {
+        "IdGrupo": "01020612",
+        "Grupo": "12 PAQUETE SERVICIO"
+    },
+    {
+        "IdGrupo": "01020613",
+        "Grupo": "13 EJE"
+    },
+    {
+        "IdGrupo": "01020614",
+        "Grupo": "14 RESORTE "
+    },
+    {
+        "IdGrupo": "01020615",
+        "Grupo": "15 BRIDA "
+    },
+    {
+        "IdGrupo": "01020616",
+        "Grupo": "16 BUJE"
+    },
+    {
+        "IdGrupo": "01020617",
+        "Grupo": "17 PORTA HERRAMIENTA "
+    },
+    {
+        "IdGrupo": "01020618",
+        "Grupo": "18 PLACA "
+    },
+    {
+        "IdGrupo": "01020619",
+        "Grupo": "19 TORNILLO"
+    },
+    {
+        "IdGrupo": "01020620",
+        "Grupo": "20 CAJA"
+    },
+    {
+        "IdGrupo": "01020621",
+        "Grupo": "21 REGULADOR "
+    },
+    {
+        "IdGrupo": "01020622",
+        "Grupo": "22 MOTOR "
+    },
+    {
+        "IdGrupo": "01020623",
+        "Grupo": "23 CABLE "
+    },
+    {
+        "IdGrupo": "01020624",
+        "Grupo": "24 PALANCA "
+    },
+    {
+        "IdGrupo": "01020625",
+        "Grupo": "25 CONMUTADOR"
+    },
+    {
+        "IdGrupo": "01020626",
+        "Grupo": "26 BOTON "
+    },
+    {
+        "IdGrupo": "01020627",
+        "Grupo": "27 EMPUNADURA"
+    },
+    {
+        "IdGrupo": "01020628",
+        "Grupo": "28 DEFLECTOR "
+    },
+    {
+        "IdGrupo": "01020629",
+        "Grupo": "29 CORREA DENTADA "
+    },
+    {
+        "IdGrupo": "01020630",
+        "Grupo": "30 CORREDERA "
+    },
+    {
+        "IdGrupo": "01020631",
+        "Grupo": "31 PISTON"
+    },
+    {
+        "IdGrupo": "01020632",
+        "Grupo": "32 TUERCA"
+    },
+    {
+        "IdGrupo": "01020633",
+        "Grupo": "33 VENTILADOR"
+    },
+    {
+        "IdGrupo": "01020634",
+        "Grupo": "34 RODILLO "
+    },
+    {
+        "IdGrupo": "01020635",
+        "Grupo": "35 RETEN "
+    },
+    {
+        "IdGrupo": "01020636",
+        "Grupo": "36 LLAVE "
+    },
+    {
+        "IdGrupo": "01020637",
+        "Grupo": "37 CARGADOR"
+    },
+    {
+        "IdGrupo": "01020638",
+        "Grupo": "38 BATERIA "
+    },
+    {
+        "IdGrupo": "01020639",
+        "Grupo": "39 GRASA "
+    },
+    {
+        "IdGrupo": "01020640",
+        "Grupo": "40 OTROS REPUESTOS"
+    },
+    {
+        "IdGrupo": "01020701",
+        "Grupo": "01 FILTRO"
+    },
+    {
+        "IdGrupo": "01020702",
+        "Grupo": "02 PISTON"
+    },
+    {
+        "IdGrupo": "01020703",
+        "Grupo": "03 ANILLA"
+    },
+    {
+        "IdGrupo": "01020704",
+        "Grupo": "04 CILINDRO"
+    },
+    {
+        "IdGrupo": "01020705",
+        "Grupo": "05 CARBURADOR"
+    },
+    {
+        "IdGrupo": "01020706",
+        "Grupo": "06 JUNTA "
+    },
+    {
+        "IdGrupo": "01020707",
+        "Grupo": "07 RESORTE "
+    },
+    {
+        "IdGrupo": "01020708",
+        "Grupo": "08 REPARO CARBURADOR "
+    },
+    {
+        "IdGrupo": "01020709",
+        "Grupo": "09 MODULO ENCENDIDO"
+    },
+    {
+        "IdGrupo": "01020710",
+        "Grupo": "10 BUJIA "
+    },
+    {
+        "IdGrupo": "01020711",
+        "Grupo": "11 AMORTIGUADOR "
+    },
+    {
+        "IdGrupo": "01020712",
+        "Grupo": "12 EMBRAGUE"
+    },
+    {
+        "IdGrupo": "01020713",
+        "Grupo": "13 POLEA "
+    },
+    {
+        "IdGrupo": "01020714",
+        "Grupo": "14 ARANDELA"
+    },
+    {
+        "IdGrupo": "01020715",
+        "Grupo": "15 MANGUERA"
+    },
+    {
+        "IdGrupo": "01020716",
+        "Grupo": "16 RODAMIENTO"
+    },
+    {
+        "IdGrupo": "01020717",
+        "Grupo": "17 AGUJA "
+    },
+    {
+        "IdGrupo": "01020718",
+        "Grupo": "18 CIGUENAL"
+    },
+    {
+        "IdGrupo": "01020719",
+        "Grupo": "19 EMPUNADURA"
+    },
+    {
+        "IdGrupo": "01020720",
+        "Grupo": "20 TAMBOR"
+    },
+    {
+        "IdGrupo": "01020721",
+        "Grupo": "21 VALVULA "
+    },
+    {
+        "IdGrupo": "01020722",
+        "Grupo": "22 ARRANCADOR"
+    },
+    {
+        "IdGrupo": "01020723",
+        "Grupo": "23 BRIDA "
+    },
+    {
+        "IdGrupo": "01020724",
+        "Grupo": "24 CABLE "
+    },
+    {
+        "IdGrupo": "01020725",
+        "Grupo": "25 CUERDA"
+    },
+    {
+        "IdGrupo": "01020726",
+        "Grupo": "26 ENGRANAJE "
+    },
+    {
+        "IdGrupo": "01020727",
+        "Grupo": "27 TORNILLOS Y SIN FIN"
+    },
+    {
+        "IdGrupo": "01020728",
+        "Grupo": "28 GRASA "
+    },
+    {
+        "IdGrupo": "01020729",
+        "Grupo": "29 INTERRUPTOR"
+    },
+    {
+        "IdGrupo": "01020730",
+        "Grupo": "30 PINON "
+    },
+    {
+        "IdGrupo": "01020731",
+        "Grupo": "31 HERRAMIENTA REPARACION "
+    },
+    {
+        "IdGrupo": "01020732",
+        "Grupo": "32 CAZOLETA"
+    },
+    {
+        "IdGrupo": "01020733",
+        "Grupo": "33 FRENO CADENA "
+    },
+    {
+        "IdGrupo": "01020734",
+        "Grupo": "34 SELLO "
+    },
+    {
+        "IdGrupo": "01020735",
+        "Grupo": "35 SOPORTE "
+    },
+    {
+        "IdGrupo": "01020736",
+        "Grupo": "36 TESADOR DE CADENA "
+    },
+    {
+        "IdGrupo": "01020737",
+        "Grupo": "37 KIT Y ACCESORIOS"
+    },
+    {
+        "IdGrupo": "01020738",
+        "Grupo": "38 BOMBA "
+    },
+    {
+        "IdGrupo": "01020739",
+        "Grupo": "39 CUCHILLA"
+    },
+    {
+        "IdGrupo": "01020740",
+        "Grupo": "40 OTROS REPUESTOS"
+    },
+    {
+        "IdGrupo": "01020741",
+        "Grupo": "41 ESCAPE"
+    },
+    {
+        "IdGrupo": "01020742",
+        "Grupo": "42 TANQUE/CARTER"
+    },
+    {
+        "IdGrupo": "01020743",
+        "Grupo": "43 VOLANTE "
+    },
+    {
+        "IdGrupo": "01020744",
+        "Grupo": "44 TRANSMISIÓN"
+    },
+    {
+        "IdGrupo": "01020801",
+        "Grupo": "01 MOTOR "
+    },
+    {
+        "IdGrupo": "01020802",
+        "Grupo": "02 CABLE "
+    },
+    {
+        "IdGrupo": "01020803",
+        "Grupo": "03 CORREA"
+    },
+    {
+        "IdGrupo": "01020804",
+        "Grupo": "04 CUBIERTA"
+    },
+    {
+        "IdGrupo": "01020805",
+        "Grupo": "05 ESQUEMA "
+    },
+    {
+        "IdGrupo": "01020806",
+        "Grupo": "06 ESTABILIZADOR"
+    },
+    {
+        "IdGrupo": "01020807",
+        "Grupo": "07 INTERRUPTOR"
+    },
+    {
+        "IdGrupo": "01020808",
+        "Grupo": "08 KIT MONTAJE"
+    },
+    {
+        "IdGrupo": "01020809",
+        "Grupo": "09 BOTON "
+    },
+    {
+        "IdGrupo": "01020810",
+        "Grupo": "10 PANEL "
+    },
+    {
+        "IdGrupo": "01020811",
+        "Grupo": "11 TARJETA "
+    },
+    {
+        "IdGrupo": "01020812",
+        "Grupo": "12 PINZA "
+    },
+    {
+        "IdGrupo": "01020813",
+        "Grupo": "13 PLACA "
+    },
+    {
+        "IdGrupo": "01020814",
+        "Grupo": "14 PORTAELECTRODOS"
+    },
+    {
+        "IdGrupo": "01020815",
+        "Grupo": "15 PUENTE"
+    },
+    {
+        "IdGrupo": "01020816",
+        "Grupo": "16 RESORTE "
+    },
+    {
+        "IdGrupo": "01020817",
+        "Grupo": "17 ROTULO"
+    },
+    {
+        "IdGrupo": "01020818",
+        "Grupo": "18 SELECTOR"
+    },
+    {
+        "IdGrupo": "01020819",
+        "Grupo": "19 SOPORTE "
+    },
+    {
+        "IdGrupo": "01020820",
+        "Grupo": "20 TABLERO "
+    },
+    {
+        "IdGrupo": "01020821",
+        "Grupo": "21 TAPA"
+    },
+    {
+        "IdGrupo": "01020822",
+        "Grupo": "22 PERILLA "
+    },
+    {
+        "IdGrupo": "01020823",
+        "Grupo": "23 TERMINAL"
+    },
+    {
+        "IdGrupo": "01020824",
+        "Grupo": "24 TOMACORRIENTE"
+    },
+    {
+        "IdGrupo": "01020825",
+        "Grupo": "25 TRANSFORMADOR"
+    },
+    {
+        "IdGrupo": "01020826",
+        "Grupo": "26 VENTILADOR"
+    },
+    {
+        "IdGrupo": "01020827",
+        "Grupo": "27 ASPA"
+    },
+    {
+        "IdGrupo": "01020828",
+        "Grupo": "28 OTROS REPUESTOS"
+    },
+    {
+        "IdGrupo": "01020901",
+        "Grupo": "01 LUBRICANTES"
+    },
+    {
+        "IdGrupo": "01020902",
+        "Grupo": "02 COMBUSTIBLES "
+    },
+    {
+        "IdGrupo": "01020903",
+        "Grupo": "03 RODAMIENTOS"
+    },
+    {
+        "IdGrupo": "01020904",
+        "Grupo": "04 FILTROS "
+    },
+    {
+        "IdGrupo": "01020905",
+        "Grupo": "05 VARIOS"
+    },
+    {
+        "IdGrupo": "01021001",
+        "Grupo": "01 SISTEMA ELECTRICO "
+    },
+    {
+        "IdGrupo": "01021002",
+        "Grupo": "02 MOTOR DE COMBUSTION"
+    },
+    {
+        "IdGrupo": "01021003",
+        "Grupo": "03 ESTRUCTURA"
+    },
+    {
+        "IdGrupo": "01021101",
+        "Grupo": "01 SISTEMA ELECTRICO "
+    },
+    {
+        "IdGrupo": "01021102",
+        "Grupo": "02 SISTEMA HIDRAULICO"
+    },
+    {
+        "IdGrupo": "01021103",
+        "Grupo": "03 MOTOR DE COMBUSTION"
+    },
+    {
+        "IdGrupo": "01021104",
+        "Grupo": "04 ESTRUCTURA"
+    },
+    {
+        "IdGrupo": "01021301",
+        "Grupo": "01 SISTEMA ELÉCTRICO "
+    },
+    {
+        "IdGrupo": "01021302",
+        "Grupo": "02 SISTEMA HIDRAULICO Y DIRECCION "
+    },
+    {
+        "IdGrupo": "01021303",
+        "Grupo": "03 MOTOR DE COMBUSTIÓN"
+    },
+    {
+        "IdGrupo": "01021304",
+        "Grupo": "04 ESTRUCTURA"
+    },
+    {
+        "IdGrupo": "01021305",
+        "Grupo": "05 TRANSMISIÓN Y FRENOS "
+    },
+    {
+        "IdGrupo": "01030101",
+        "Grupo": "01 COMPACTACION SUELOS"
+    },
+    {
+        "IdGrupo": "01030102",
+        "Grupo": "02 VIBRACION HORMIGON WACKER "
+    },
+    {
+        "IdGrupo": "01030103",
+        "Grupo": "03 CORTADORAS HORMIGON WACKER"
+    },
+    {
+        "IdGrupo": "01030104",
+        "Grupo": "04 BOMBAS WACKER"
+    },
+    {
+        "IdGrupo": "01030105",
+        "Grupo": "05 TORRES ILUMINACION WACKER "
+    },
+    {
+        "IdGrupo": "01030106",
+        "Grupo": "06 MARTILLOS WACKER"
+    },
+    {
+        "IdGrupo": "01030107",
+        "Grupo": "07 ACCESORIOS WACKER "
+    },
+    {
+        "IdGrupo": "01030108",
+        "Grupo": "08 OTROS EQUIPOS WACKER "
+    },
+    {
+        "IdGrupo": "01030109",
+        "Grupo": "09 GRUPOS Y GENERADORES WACKER NEUSON"
+    },
+    {
+        "IdGrupo": "01030110",
+        "Grupo": "10 OTROS EQ. CONSTRUCCION "
+    },
+    {
+        "IdGrupo": "01030111",
+        "Grupo": "11 DEMOSTRACION "
+    },
+    {
+        "IdGrupo": "01030112",
+        "Grupo": "12 LIQUIDACION"
+    },
+    {
+        "IdGrupo": "01030113",
+        "Grupo": "13 NK - CONSTRUCCION "
+    },
+    {
+        "IdGrupo": "01030201",
+        "Grupo": "01 EXCAVADORAS WACKER"
+    },
+    {
+        "IdGrupo": "01030202",
+        "Grupo": "02 CARGADORAS WACKER "
+    },
+    {
+        "IdGrupo": "01030203",
+        "Grupo": "03 DUMPERS WACKER "
+    },
+    {
+        "IdGrupo": "01030204",
+        "Grupo": "04 MINICARGADORES "
+    },
+    {
+        "IdGrupo": "01030205",
+        "Grupo": "05 RETROEXCAVADORAS"
+    },
+    {
+        "IdGrupo": "01030301",
+        "Grupo": "01 CORTADORAS HUSQVARNA "
+    },
+    {
+        "IdGrupo": "01030302",
+        "Grupo": "02 PULIDORAS HUSQVARNA"
+    },
+    {
+        "IdGrupo": "01030303",
+        "Grupo": "03 ALISADORAS DE HORMIGÒN "
+    },
+    {
+        "IdGrupo": "01030401",
+        "Grupo": "01 ELEVADORES PERSONAS (ELECTRICOS)"
+    },
+    {
+        "IdGrupo": "01030402",
+        "Grupo": "02 MASTILES VERTICALES (ELECTRICOS)"
+    },
+    {
+        "IdGrupo": "01030403",
+        "Grupo": "03 PLATAFORMAS DE TIJERAS "
+    },
+    {
+        "IdGrupo": "01030404",
+        "Grupo": "04 PLATAFORMAS ARTICULADAS"
+    },
+    {
+        "IdGrupo": "01030405",
+        "Grupo": "05 PLATAFORMAS TELESCOPICAS"
+    },
+    {
+        "IdGrupo": "01030406",
+        "Grupo": "06 ELEVADORES DE CARGA"
+    },
+    {
+        "IdGrupo": "01030501",
+        "Grupo": "01 RETROEXCAVADORAS"
+    },
+    {
+        "IdGrupo": "01030502",
+        "Grupo": "02 ACCESORIOS RETROEXCAVADORAS"
+    },
+    {
+        "IdGrupo": "01040101",
+        "Grupo": "01 INTERRUPTORES Y TOMAS"
+    },
+    {
+        "IdGrupo": "01040102",
+        "Grupo": "02 DISYUNTORES BAJA TENSION CHINT "
+    },
+    {
+        "IdGrupo": "01040103",
+        "Grupo": "03 INTERRUPTORES DIFERENCIALES CHINT "
+    },
+    {
+        "IdGrupo": "01040104",
+        "Grupo": "04 RELES Y DESCARGADORES CHINT"
+    },
+    {
+        "IdGrupo": "01040105",
+        "Grupo": "05 CUADROS Y CAJAS CHINT"
+    },
+    {
+        "IdGrupo": "01040106",
+        "Grupo": "06 OTROS MAT. CIVIL"
+    },
+    {
+        "IdGrupo": "01040107",
+        "Grupo": "07 LIQUIDACION CHINT "
+    },
+    {
+        "IdGrupo": "01040108",
+        "Grupo": "08 NK - MAT. EL. CIVIL"
+    },
+    {
+        "IdGrupo": "01040201",
+        "Grupo": "01 CONTACTORES CHINT "
+    },
+    {
+        "IdGrupo": "01040202",
+        "Grupo": "02 RELES SOBRECARGA CHINT "
+    },
+    {
+        "IdGrupo": "01040203",
+        "Grupo": "03 RELES DE TIEMPO Y SUPERVISION CHINT"
+    },
+    {
+        "IdGrupo": "01040204",
+        "Grupo": "04 LLAVES PARTIDA DIRECTA CHINT "
+    },
+    {
+        "IdGrupo": "01040205",
+        "Grupo": "05 GUARDAMOTORES CHINT"
+    },
+    {
+        "IdGrupo": "01040206",
+        "Grupo": "06 INTERRUPTORES DE POTENCIA CHINT"
+    },
+    {
+        "IdGrupo": "01040207",
+        "Grupo": "07 ARRANCADORES SUAVES"
+    },
+    {
+        "IdGrupo": "01040208",
+        "Grupo": "08 FINES DE CARRERA CHINT "
+    },
+    {
+        "IdGrupo": "01040209",
+        "Grupo": "09 TRANSFORMADORES DE CORRIENTE "
+    },
+    {
+        "IdGrupo": "01040210",
+        "Grupo": "10 INSTRUMENTOS CHINT"
+    },
+    {
+        "IdGrupo": "01040211",
+        "Grupo": "11 PULSADORES Y BOTONERAS CHINT "
+    },
+    {
+        "IdGrupo": "01040212",
+        "Grupo": "12 BORNERAS - MAT. TABLEROS"
+    },
+    {
+        "IdGrupo": "01040213",
+        "Grupo": "13 TABLEROS"
+    },
+    {
+        "IdGrupo": "01040214",
+        "Grupo": "14 CAPACITORES CHINT "
+    },
+    {
+        "IdGrupo": "01040215",
+        "Grupo": "15 FUSIBLES Y SECCIONADORES CHINT "
+    },
+    {
+        "IdGrupo": "01040216",
+        "Grupo": "16 LIQUIDACION MATERIAL ELECTRICO "
+    },
+    {
+        "IdGrupo": "01040217",
+        "Grupo": "17 NK - MAT. EL. INDUSTRIAL"
+    },
+    {
+        "IdGrupo": "01040301",
+        "Grupo": "01 MOTORES ELECTRICOS"
+    },
+    {
+        "IdGrupo": "01040302",
+        "Grupo": "02 VARIADORES FRECUENCIA"
+    },
+    {
+        "IdGrupo": "01040303",
+        "Grupo": "03 LIQUIDACION ACCIONAMIENTOS"
+    },
+    {
+        "IdGrupo": "01040401",
+        "Grupo": "01 MONOFASICOS"
+    },
+    {
+        "IdGrupo": "01040402",
+        "Grupo": "02 TRIFASICOS"
+    },
+    {
+        "IdGrupo": "01050101",
+        "Grupo": "01 LAMPARAS INCANDESCENTES"
+    },
+    {
+        "IdGrupo": "01050102",
+        "Grupo": "02 LAMPARAS HALOGENAS"
+    },
+    {
+        "IdGrupo": "01050103",
+        "Grupo": "03 TUBOS FLUORESCENTES"
+    },
+    {
+        "IdGrupo": "01050104",
+        "Grupo": "04 FLUORESCENTES COMPACTAS"
+    },
+    {
+        "IdGrupo": "01050105",
+        "Grupo": "05 DESCARGA DE ALTA INTENSIDAD"
+    },
+    {
+        "IdGrupo": "01050106",
+        "Grupo": "06 LUMINARIAS"
+    },
+    {
+        "IdGrupo": "01050107",
+        "Grupo": "07 LAMPARAS LED "
+    },
+    {
+        "IdGrupo": "01050108",
+        "Grupo": "08 OTRAS LAMPARAS "
+    },
+    {
+        "IdGrupo": "01060101",
+        "Grupo": "01 NORMALIZADA"
+    },
+    {
+        "IdGrupo": "01060102",
+        "Grupo": "02 MONOBLOC"
+    },
+    {
+        "IdGrupo": "01060103",
+        "Grupo": "03 QUIMICA NORMALIZADA"
+    },
+    {
+        "IdGrupo": "01060104",
+        "Grupo": "04 DE PROCESO"
+    },
+    {
+        "IdGrupo": "01060105",
+        "Grupo": "05 MULTIETAPA"
+    },
+    {
+        "IdGrupo": "01060106",
+        "Grupo": "06 SUMERGIBLES DE AGUAS SERVIDAS"
+    },
+    {
+        "IdGrupo": "01060107",
+        "Grupo": "07 ESPECIALES"
+    },
+    {
+        "IdGrupo": "01060108",
+        "Grupo": "08 ACCESORIOS"
+    },
+    {
+        "IdGrupo": "01060109",
+        "Grupo": "09 VÁLVULAS"
+    },
+    {
+        "IdGrupo": "01060110",
+        "Grupo": "10 SUMERGIBLES DE POZO"
+    },
+    {
+        "IdGrupo": "01060201",
+        "Grupo": "01 GRAN ALTURA TSURUMI"
+    },
+    {
+        "IdGrupo": "01060202",
+        "Grupo": "02 DRENAJE MONOFASICA TSURUMI"
+    },
+    {
+        "IdGrupo": "01060203",
+        "Grupo": "03 DRENAJE TSURUMI"
+    },
+    {
+        "IdGrupo": "01060204",
+        "Grupo": "04 ESPECIALES TSURUMI"
+    },
+    {
+        "IdGrupo": "01060301",
+        "Grupo": "01 POZO PROFUNDO SHIMGE "
+    },
+    {
+        "IdGrupo": "01060302",
+        "Grupo": "02 SANITARIA SHIMGE"
+    },
+    {
+        "IdGrupo": "01060303",
+        "Grupo": "03 CIRCULACION Y SUPERFICIAL SHIMGE"
+    },
+    {
+        "IdGrupo": "01060304",
+        "Grupo": "04 ACCESORIOS SHIMGE "
+    },
+    {
+        "IdGrupo": "01060401",
+        "Grupo": "01 OTRAS BOMBAS "
+    },
+    {
+        "IdGrupo": "01060501",
+        "Grupo": "01 NK - BOMBAS DE AGUA"
+    },
+    {
+        "IdGrupo": "01060601",
+        "Grupo": "01 RODETES "
+    },
+    {
+        "IdGrupo": "01060602",
+        "Grupo": "02 SELLOS"
+    },
+    {
+        "IdGrupo": "01060603",
+        "Grupo": "03 EJES"
+    },
+    {
+        "IdGrupo": "01060604",
+        "Grupo": "04 OTROS REPS. BOMBAS"
+    },
+    {
+        "IdGrupo": "01060701",
+        "Grupo": "01 MANO DE OBRA BOMBAS"
+    },
+    {
+        "IdGrupo": "01060702",
+        "Grupo": "02 NK SERVICIO BOMBAS"
+    },
+    {
+        "IdGrupo": "01060801",
+        "Grupo": "01 ARMADO DE TABLERO "
+    },
+    {
+        "IdGrupo": "01060802",
+        "Grupo": "02 MATERIAL DE AUTOMATIZACION"
+    },
+    {
+        "IdGrupo": "01060803",
+        "Grupo": "03 SERVICIOS "
+    },
+    {
+        "IdGrupo": "01060901",
+        "Grupo": "01 HDPE"
+    },
+    {
+        "IdGrupo": "01060902",
+        "Grupo": "02 TERMOFUSIÓN"
+    },
+    {
+        "IdGrupo": "01070101",
+        "Grupo": "01 LOFT BEIGE"
+    },
+    {
+        "IdGrupo": "01070102",
+        "Grupo": "02 LOFT BLANCO"
+    },
+    {
+        "IdGrupo": "01070103",
+        "Grupo": "03 LOFT COLOR"
+    },
+    {
+        "IdGrupo": "01070104",
+        "Grupo": "04 VISIONE "
+    },
+    {
+        "IdGrupo": "01070105",
+        "Grupo": "05 VISIONE 2 "
+    },
+    {
+        "IdGrupo": "01070106",
+        "Grupo": "06 OTROS CONATEL"
+    },
+    {
+        "IdGrupo": "01070107",
+        "Grupo": "07 LIQUID. CONATEL"
+    },
+    {
+        "IdGrupo": "01070108",
+        "Grupo": "08 NK - CONATEL "
+    },
+    {
+        "IdGrupo": "01080101",
+        "Grupo": "01 GRUPOS MONOFASICOS"
+    },
+    {
+        "IdGrupo": "01080102",
+        "Grupo": "02 MOTOSOLDADORAS "
+    },
+    {
+        "IdGrupo": "01080103",
+        "Grupo": "03 TORRES DE ILUM. GESAN"
+    },
+    {
+        "IdGrupo": "01080104",
+        "Grupo": "04 TRIFASICOS GESAN <75KVA"
+    },
+    {
+        "IdGrupo": "01080105",
+        "Grupo": "05 TRIFASICOS >75KVA "
+    },
+    {
+        "IdGrupo": "01080106",
+        "Grupo": "06 LIQUID. GRUPOS "
+    },
+    {
+        "IdGrupo": "01080107",
+        "Grupo": "07 NK - GRUPOS"
+    },
+    {
+        "IdGrupo": "01080108",
+        "Grupo": "08 TRIFASICOS HYUNDAI"
+    },
+    {
+        "IdGrupo": "01080201",
+        "Grupo": "01 GRUPOS ELECTROGENOS TSURUMI"
+    },
+    {
+        "IdGrupo": "01080202",
+        "Grupo": "02 COMPRESORAS"
+    },
+    {
+        "IdGrupo": "01080203",
+        "Grupo": "03 HIDROLAVADORAS "
+    },
+    {
+        "IdGrupo": "01080204",
+        "Grupo": "04 ASPIRADORAS"
+    },
+    {
+        "IdGrupo": "01080205",
+        "Grupo": "05 MOTOFUMIGADORAS"
+    },
+    {
+        "IdGrupo": "01080206",
+        "Grupo": "06 BOMBAS DE AGUA "
+    },
+    {
+        "IdGrupo": "01080207",
+        "Grupo": "07 CORTADORAS CESPED HYUNDAI "
+    },
+    {
+        "IdGrupo": "01080301",
+        "Grupo": "01 GRUPOS DIESEL WILSON <75 KVA "
+    },
+    {
+        "IdGrupo": "01080302",
+        "Grupo": "02 GRUPOS DIESEL WILSON >75 KVA "
+    },
+    {
+        "IdGrupo": "01080303",
+        "Grupo": "03 GRUPOS A GAS "
+    },
+    {
+        "IdGrupo": "01080304",
+        "Grupo": "04 ACCESORIOS FG WILSON "
+    },
+    {
+        "IdGrupo": "01080401",
+        "Grupo": "01 REPUESTOS MOTOR"
+    },
+    {
+        "IdGrupo": "01080402",
+        "Grupo": "02 REPUESTOS ALTERNADOR "
+    },
+    {
+        "IdGrupo": "01080403",
+        "Grupo": "03 REPUESTOS ATS"
+    },
+    {
+        "IdGrupo": "01080501",
+        "Grupo": "01 GRUPOS DIESEL HIMOINSA <75 KVA "
+    },
+    {
+        "IdGrupo": "01080502",
+        "Grupo": "02 GRUPOS DIESEL HIMOINSA >75 KVA "
+    },
+    {
+        "IdGrupo": "01080503",
+        "Grupo": "03 GRUPOS A GAS "
+    },
+    {
+        "IdGrupo": "01080504",
+        "Grupo": "04 ACCESORIOS HIMOINSA"
+    },
+    {
+        "IdGrupo": "01080505",
+        "Grupo": "05 NK GRUPOS "
+    },
+    {
+        "IdGrupo": "01080506",
+        "Grupo": "06 GRUPOS A GN HIMOINSA <75 KVA "
+    },
+    {
+        "IdGrupo": "01080601",
+        "Grupo": "01 GENERACION DE AIRE"
+    },
+    {
+        "IdGrupo": "01080602",
+        "Grupo": "02 TRATAMIENTO DE AIRE"
+    },
+    {
+        "IdGrupo": "01080603",
+        "Grupo": "03 TRATAMIENTO DE CONDENSADO "
+    },
+    {
+        "IdGrupo": "01080604",
+        "Grupo": "04 "
+    },
+    {
+        "IdGrupo": "01080701",
+        "Grupo": "01 GENERACION DE AIRE"
+    },
+    {
+        "IdGrupo": "01080702",
+        "Grupo": "02 TRATAMIENTO DE AIRE"
+    },
+    {
+        "IdGrupo": "01080703",
+        "Grupo": "03 TRATAMIENTO DE CONDENSADO "
+    },
+    {
+        "IdGrupo": "01080801",
+        "Grupo": "01 TRANSPORT Y ALMACENAMIENTO DE AIRE CO"
+    },
+    {
+        "IdGrupo": "01080802",
+        "Grupo": "02 AUDITORIAS DEL AIRE COMPRIMIDO "
+    },
+    {
+        "IdGrupo": "01080803",
+        "Grupo": "03 CONTROL Y AUTOMATIZACION"
+    },
+    {
+        "IdGrupo": "01080901",
+        "Grupo": "01 MANO DE OBRA KAESER"
+    },
+    {
+        "IdGrupo": "01081001",
+        "Grupo": "01 FLUIDOS "
+    },
+    {
+        "IdGrupo": "01081101",
+        "Grupo": "01 Mano de Obra Grupos"
+    },
+    {
+        "IdGrupo": "01090101",
+        "Grupo": "01 MOTOSIERRAS HUSQVARNA"
+    },
+    {
+        "IdGrupo": "01090102",
+        "Grupo": "02 ACCESORIOS MOTOSIERRAS HUSQVARNA"
+    },
+    {
+        "IdGrupo": "01090103",
+        "Grupo": "03 DESBROZADORAS HUSQVARNA"
+    },
+    {
+        "IdGrupo": "01090104",
+        "Grupo": "04 ACCESORIOS DESBROZADORAS HUSQVARNA"
+    },
+    {
+        "IdGrupo": "01090105",
+        "Grupo": "05 CORTADORAS CESPED HUSQVARNA"
+    },
+    {
+        "IdGrupo": "01090106",
+        "Grupo": "06 ACCESORIOS CORTADORAS CESPED "
+    },
+    {
+        "IdGrupo": "01090107",
+        "Grupo": "07 TRACTORES / MOTOCULTORES HUSQVARNA"
+    },
+    {
+        "IdGrupo": "01090108",
+        "Grupo": "08 ACCESORIOS TRACT./MOTOCULT.HUSQ."
+    },
+    {
+        "IdGrupo": "01090109",
+        "Grupo": "09 SOPLADORAS / PODADORAS / OTRAS HUSQVA"
+    },
+    {
+        "IdGrupo": "01090110",
+        "Grupo": "10 ACCESORIOS SOPL/POD/OTRAS HUSQVARNA"
+    },
+    {
+        "IdGrupo": "01090111",
+        "Grupo": "11 CONSUMIBLES / EQUIPO SEGURIDAD "
+    },
+    {
+        "IdGrupo": "01090112",
+        "Grupo": "12 LIQUIDACION AGRO"
+    },
+    {
+        "IdGrupo": "01090113",
+        "Grupo": "13 NK - AGRO "
+    },
+    {
+        "IdGrupo": "01090114",
+        "Grupo": "14 LÍNEA BATERÍA HUSQVARNA"
+    },
+    {
+        "IdGrupo": "01090201",
+        "Grupo": "01 MOTOSIERRAS POULAN"
+    },
+    {
+        "IdGrupo": "01090202",
+        "Grupo": "02 ACCESORIOS MOTOSIERRAS POULAN"
+    },
+    {
+        "IdGrupo": "01090203",
+        "Grupo": "03 DESBROZADORAS POULAN "
+    },
+    {
+        "IdGrupo": "01090204",
+        "Grupo": "04 ACCESORIOS DESBR. POULAN"
+    },
+    {
+        "IdGrupo": "01090205",
+        "Grupo": "05 CORTADORAS CESPED POULAN"
+    },
+    {
+        "IdGrupo": "01090206",
+        "Grupo": "06 TRACTORES POULAN"
+    },
+    {
+        "IdGrupo": "01090207",
+        "Grupo": "07 ACCESORIOS POULAN-PRO"
+    },
+    {
+        "IdGrupo": "01090208",
+        "Grupo": "08 OTROS EQ. POULAN"
+    },
+    {
+        "IdGrupo": "01090301",
+        "Grupo": "01 LINEA MADERA "
+    },
+    {
+        "IdGrupo": "01090302",
+        "Grupo": "02 LINEA AGUA"
+    },
+    {
+        "IdGrupo": "01090303",
+        "Grupo": "03 HIDROLAVADORAS "
+    },
+    {
+        "IdGrupo": "01090304",
+        "Grupo": "04 ASPIRADORAS"
+    },
+    {
+        "IdGrupo": "01090305",
+        "Grupo": "05 MOTOFUMIGADORAS"
+    },
+    {
+        "IdGrupo": "01090306",
+        "Grupo": "06 BOMBAS DE AGUA "
+    },
+    {
+        "IdGrupo": "01090307",
+        "Grupo": "07 CORTADORAS CESPED HYUNDAI "
+    },
+    {
+        "IdGrupo": "01090401",
+        "Grupo": "01 GRUPOS ELECTROGENOS"
+    },
+    {
+        "IdGrupo": "01090402",
+        "Grupo": "02 COMPRESORAS"
+    },
+    {
+        "IdGrupo": "01090403",
+        "Grupo": "03 HIDROLAVADORAS "
+    },
+    {
+        "IdGrupo": "01090404",
+        "Grupo": "04 ASPIRADORAS"
+    },
+    {
+        "IdGrupo": "01090405",
+        "Grupo": "05 MOTOFUMIGADORAS"
+    },
+    {
+        "IdGrupo": "01090406",
+        "Grupo": "06 BOMBAS DE AGUA HYUNDAI "
+    },
+    {
+        "IdGrupo": "01090407",
+        "Grupo": "07 CORTADORAS CESPED HYUNDAI "
+    },
+    {
+        "IdGrupo": "01100101",
+        "Grupo": "01 ELECTRODOS COMUNES LINCOLN"
+    },
+    {
+        "IdGrupo": "01100102",
+        "Grupo": "02 ELECTRODOS ESPECIALES LINCOLN"
+    },
+    {
+        "IdGrupo": "01100103",
+        "Grupo": "03 NK - METAL MECANICA"
+    },
+    {
+        "IdGrupo": "01100201",
+        "Grupo": "01 SOLDADORAS ARCO LINCOLN"
+    },
+    {
+        "IdGrupo": "01100202",
+        "Grupo": "02 INVERSORAS LINCOLN"
+    },
+    {
+        "IdGrupo": "01100203",
+        "Grupo": "03 ACCESORIOS MAQUINAS SOLDAR"
+    },
+    {
+        "IdGrupo": "01100204",
+        "Grupo": "04 MAQUINAS OTROS PROCESOS"
+    },
+    {
+        "IdGrupo": "01100301",
+        "Grupo": "01 ALAMBRE SOLIDO "
+    },
+    {
+        "IdGrupo": "01100401",
+        "Grupo": "01 MAQUINAS DE ARCO BAMBOZZI "
+    },
+    {
+        "IdGrupo": "01100402",
+        "Grupo": "02 MAQUINAS INVERSORES BAMBOZZI "
+    },
+    {
+        "IdGrupo": "01100403",
+        "Grupo": "03 REPUESTOS BAMBOZZI"
+    },
+    {
+        "IdGrupo": "01110101",
+        "Grupo": "01 EQUIPOS MECANICOS "
+    },
+    {
+        "IdGrupo": "01110102",
+        "Grupo": "02 EQUIPOS ELECTRICOS"
+    },
+    {
+        "IdGrupo": "01110103",
+        "Grupo": "03 OTROS EQUIPOS"
+    },
+    {
+        "IdGrupo": "01110201",
+        "Grupo": "01 ESTANTERIAS"
+    },
+    {
+        "IdGrupo": "01110202",
+        "Grupo": "02 OTROS ESTANTES "
+    },
+    {
+        "IdGrupo": "01120101",
+        "Grupo": "01 MARTILLOS PERFORADORES 2-4 KG SKIL"
+    },
+    {
+        "IdGrupo": "01120102",
+        "Grupo": "02 TALADROS IMPACTO SKIL"
+    },
+    {
+        "IdGrupo": "01120103",
+        "Grupo": "03 SIERRAS DIAMANTE SKIL"
+    },
+    {
+        "IdGrupo": "01120104",
+        "Grupo": "04 HERRAMIENTAS INALAMBRICAS < 9.6 V SKI"
+    },
+    {
+        "IdGrupo": "01120105",
+        "Grupo": "05 HERRAMIENTAS INALAMBRICAS >= 9.6 V SK"
+    },
+    {
+        "IdGrupo": "01120106",
+        "Grupo": "06 SIERRAS CALADORAS SKIL "
+    },
+    {
+        "IdGrupo": "01120107",
+        "Grupo": "07 SIERRAS CIRCULARES SKIL"
+    },
+    {
+        "IdGrupo": "01120108",
+        "Grupo": "08 LIJADORAS ORBITALES SKIL"
+    },
+    {
+        "IdGrupo": "01120109",
+        "Grupo": "09 LIJADORAS BANDA SKIL "
+    },
+    {
+        "IdGrupo": "01120110",
+        "Grupo": "10 CEPILLOS SKIL"
+    },
+    {
+        "IdGrupo": "01120111",
+        "Grupo": "11 FRESADORAS SKIL"
+    },
+    {
+        "IdGrupo": "01120112",
+        "Grupo": "12 AMOLADORAS ANGULARES SKIL "
+    },
+    {
+        "IdGrupo": "01120113",
+        "Grupo": "13 MINIAMOLADORAS SKIL"
+    },
+    {
+        "IdGrupo": "01120114",
+        "Grupo": "14 PULIDORAS SKIL "
+    },
+    {
+        "IdGrupo": "01120115",
+        "Grupo": "15 BENCHTOP SKIL"
+    },
+    {
+        "IdGrupo": "01120116",
+        "Grupo": "16 PISTOLA CALOR SKIL"
+    },
+    {
+        "IdGrupo": "01120117",
+        "Grupo": "17 OTRAS HERRAMIENTAS SKIL"
+    },
+    {
+        "IdGrupo": "01130101",
+        "Grupo": "01 SIERRA CALADORAS (ACCES)"
+    },
+    {
+        "IdGrupo": "01130102",
+        "Grupo": "02 SIERRAS SABLE (ACCES)"
+    },
+    {
+        "IdGrupo": "01130103",
+        "Grupo": "03 SIERRAS CIRCULARES (ACCES)"
+    },
+    {
+        "IdGrupo": "01130104",
+        "Grupo": "04 CINCELES SDS-PLUS (ACCES) "
+    },
+    {
+        "IdGrupo": "01130105",
+        "Grupo": "05 CINCELES SDS-MAX (ACCES)"
+    },
+    {
+        "IdGrupo": "01130106",
+        "Grupo": "06 CINCELES HEXAGONALES (ACCES) "
+    },
+    {
+        "IdGrupo": "01130107",
+        "Grupo": "07 BROCAS SDS-PLUS (ACCES)"
+    },
+    {
+        "IdGrupo": "01130108",
+        "Grupo": "08 BROCAS SDS-MAX (ACCES) "
+    },
+    {
+        "IdGrupo": "01130109",
+        "Grupo": "09 BROCAS CONCRETO (ACCES)"
+    },
+    {
+        "IdGrupo": "01130110",
+        "Grupo": "10 BROCAS MADERA (ACCES)"
+    },
+    {
+        "IdGrupo": "01130111",
+        "Grupo": "11 BROCAS METAL (ACCES) "
+    },
+    {
+        "IdGrupo": "01130112",
+        "Grupo": "12 SIERRAS COPA (ACCES) "
+    },
+    {
+        "IdGrupo": "01130113",
+        "Grupo": "13 PUNTAS DE ATORNILLAR SIMPLES (ACCES) "
+    },
+    {
+        "IdGrupo": "01130114",
+        "Grupo": "14 PUNTAS DE ATORNILLAR DOBLES (ACCES)"
+    },
+    {
+        "IdGrupo": "01130115",
+        "Grupo": "15 LIJAS ABRASIVAS (ACCES)"
+    },
+    {
+        "IdGrupo": "01130116",
+        "Grupo": "16 DISCOS CORTE/DESBASTE (ACCES)"
+    },
+    {
+        "IdGrupo": "01130117",
+        "Grupo": "17 DISCOS CORTE POR DIAMANTE (ACCES) "
+    },
+    {
+        "IdGrupo": "01130118",
+        "Grupo": "18 BATERIAS (ACCES)"
+    },
+    {
+        "IdGrupo": "01130119",
+        "Grupo": "19 LINEA PROMOCIONAL (ACCES) "
+    },
+    {
+        "IdGrupo": "01130120",
+        "Grupo": "20 MANDRILES (ACCES) "
+    },
+    {
+        "IdGrupo": "01130121",
+        "Grupo": "21 FRESAS (ACCES) "
+    },
+    {
+        "IdGrupo": "01130122",
+        "Grupo": "22 ACCESORIOS SKIL (ACCES)"
+    },
+    {
+        "IdGrupo": "01130123",
+        "Grupo": "23 OTROS ACCESORIOS (ACCES)"
+    },
+    {
+        "IdGrupo": "01130124",
+        "Grupo": "24 LIQUIDACION ACCES. HERR."
+    },
+    {
+        "IdGrupo": "01140101",
+        "Grupo": "01 BOSCH MT"
+    },
+    {
+        "IdGrupo": "01140102",
+        "Grupo": "02 SKIL MT "
+    },
+    {
+        "IdGrupo": "01140103",
+        "Grupo": "03 CST- BERGER"
+    },
+    {
+        "IdGrupo": "01150101",
+        "Grupo": "01 COMPACT. MONOCILINDRICOS LISOS "
+    },
+    {
+        "IdGrupo": "01150102",
+        "Grupo": "02 COMPACT. DOBLE TANDEM"
+    },
+    {
+        "IdGrupo": "01150103",
+        "Grupo": "03 COMPACT. DE NEUMATICOS "
+    },
+    {
+        "IdGrupo": "01150201",
+        "Grupo": "01 PAVIMENTADORAS AFW"
+    },
+    {
+        "IdGrupo": "01150202",
+        "Grupo": "02 PAVIMENTADORAS AFT"
+    },
+    {
+        "IdGrupo": "01150301",
+        "Grupo": "01 PLANTAS PRODUCCION DE ASFALTO"
+    },
+    {
+        "IdGrupo": "01150401",
+        "Grupo": "01 SERVICIOS "
+    },
+    {
+        "IdGrupo": "01150402",
+        "Grupo": "02 NK "
+    },
+    {
+        "IdGrupo": "01160101",
+        "Grupo": "01 ALICATES"
+    },
+    {
+        "IdGrupo": "01160102",
+        "Grupo": "02 HERR AJUSTE"
+    },
+    {
+        "IdGrupo": "01160103",
+        "Grupo": "03 LLAVES"
+    },
+    {
+        "IdGrupo": "01160104",
+        "Grupo": "04 MEDICION Y TRAZADO"
+    },
+    {
+        "IdGrupo": "01160105",
+        "Grupo": "05 DADOS Y ACCESORIOS"
+    },
+    {
+        "IdGrupo": "01160106",
+        "Grupo": "06 HERRAMIENTAS GOLPE"
+    },
+    {
+        "IdGrupo": "01160107",
+        "Grupo": "07 HERRAMIENTAS CORTE/TERMINACION "
+    },
+    {
+        "IdGrupo": "01160108",
+        "Grupo": "08 HERRAMIENTAS FIJACION"
+    },
+    {
+        "IdGrupo": "01160109",
+        "Grupo": "09 ALMACENAJE"
+    },
+    {
+        "IdGrupo": "01160110",
+        "Grupo": "10 PRENSAS "
+    },
+    {
+        "IdGrupo": "01160111",
+        "Grupo": "11 KITS HERRAMIENTAS "
+    },
+    {
+        "IdGrupo": "01160112",
+        "Grupo": "12 HERRAMIENTAS P/MECANICA"
+    },
+    {
+        "IdGrupo": "01160113",
+        "Grupo": "13 NK ESTANLEY/OTROS "
+    },
+    {
+        "IdGrupo": "01160114",
+        "Grupo": "14 HERRAMIENTAS NEUMATICAS"
+    },
+    {
+        "IdGrupo": "01170101",
+        "Grupo": "01 GENERACION DE AIRE"
+    },
+    {
+        "IdGrupo": "01170102",
+        "Grupo": "02 TRATAMIENTO DE CONDENSADO "
+    },
+    {
+        "IdGrupo": "01170103",
+        "Grupo": "03 TRATAMIENTO DE AIRE"
+    },
+    {
+        "IdGrupo": "01170201",
+        "Grupo": "01 GENERACION DE AIRE"
+    },
+    {
+        "IdGrupo": "01170202",
+        "Grupo": "02 TRATAMIENTO DE AIRE"
+    },
+    {
+        "IdGrupo": "01170203",
+        "Grupo": "03 TRATAMIENTO DE CONDENSADO "
+    },
+    {
+        "IdGrupo": "01170204",
+        "Grupo": "04 GENERACION DE AIRE"
+    },
+    {
+        "IdGrupo": "01170301",
+        "Grupo": "01 TRANSPORTE Y ALMACENAMIENTO DE AIRE C"
+    },
+    {
+        "IdGrupo": "01170302",
+        "Grupo": "02 AUDITORIA DEL AIRE COMPRIMIDO"
+    },
+    {
+        "IdGrupo": "01170303",
+        "Grupo": "03 CONTROL Y AUTOMATIZACION"
+    },
+    {
+        "IdGrupo": "01170304",
+        "Grupo": "04 HERRAMIENTAS NEUMATICAS"
+    },
+    {
+        "IdGrupo": "01170401",
+        "Grupo": "01 MANO DE OBRA KAESER"
+    },
+    {
+        "IdGrupo": "01180101",
+        "Grupo": "01 PLATAFORMAS ARTICULADAS"
+    },
+    {
+        "IdGrupo": "01180102",
+        "Grupo": "02 PLATAFORMAS DE TIJERAS "
+    },
+    {
+        "IdGrupo": "01180103",
+        "Grupo": "03 ELEVADORES DE CARGA"
+    },
+    {
+        "IdGrupo": "01190101",
+        "Grupo": "01 COMPACTACION DE SUELOS "
+    },
+    {
+        "IdGrupo": "01190102",
+        "Grupo": "02 TECNOLOGÍA DE HORMIGÓN "
+    },
+    {
+        "IdGrupo": "01190103",
+        "Grupo": "03 CORTE Y DEMOLICION"
+    },
+    {
+        "IdGrupo": "01190104",
+        "Grupo": "04 TRANSPORTE DE FLUIDO "
+    },
+    {
+        "IdGrupo": "01190105",
+        "Grupo": "05 ILUMINACION Y ENERGÍA"
+    },
+    {
+        "IdGrupo": "01190201",
+        "Grupo": "01 EXCAVADORAS"
+    },
+    {
+        "IdGrupo": "01190202",
+        "Grupo": "02 CARGADORAS"
+    },
+    {
+        "IdGrupo": "01190203",
+        "Grupo": "03 VOLQUETAS ARTICULADAS"
+    },
+    {
+        "IdGrupo": "01190204",
+        "Grupo": "04 MINICARGADORES "
+    },
+    {
+        "IdGrupo": "01190205",
+        "Grupo": "05 RETROEXCAVADORAS"
+    },
+    {
+        "IdGrupo": "01190301",
+        "Grupo": "01 TERMOFUSIÓN"
+    },
+    {
+        "IdGrupo": "01190401",
+        "Grupo": "01 GRUPOS DIESEL HIMOINSA <75 KVA "
+    },
+    {
+        "IdGrupo": "01910101",
+        "Grupo": "01 OTROS "
+    },
+    {
+        "IdGrupo": "02010101",
+        "Grupo": "01 ULTRADELGADAS"
+    },
+    {
+        "IdGrupo": "02010102",
+        "Grupo": "02 SIN ALAS"
+    },
+    {
+        "IdGrupo": "02010103",
+        "Grupo": "03 NORMALES"
+    },
+    {
+        "IdGrupo": "02010104",
+        "Grupo": "04 NOCTURNAS "
+    },
+    {
+        "IdGrupo": "02010105",
+        "Grupo": "05 MATERNIDAD"
+    },
+    {
+        "IdGrupo": "02010106",
+        "Grupo": "06 PROTECTORES"
+    },
+    {
+        "IdGrupo": "02010107",
+        "Grupo": "07 LACTINOSOTRAS"
+    },
+    {
+        "IdGrupo": "02010108",
+        "Grupo": "08 PAÑOS INTIMOS FEMENINOS"
+    },
+    {
+        "IdGrupo": "02010109",
+        "Grupo": "09 OTROS SCA "
+    },
+    {
+        "IdGrupo": "02010110",
+        "Grupo": "10 TAMPON NOSOTRAS"
+    },
+    {
+        "IdGrupo": "02010201",
+        "Grupo": "01 PAPELES HIGIENICOS"
+    },
+    {
+        "IdGrupo": "02010202",
+        "Grupo": "02 PAÑUELOS FACIALES "
+    },
+    {
+        "IdGrupo": "02010203",
+        "Grupo": "03 SERVILLETAS"
+    },
+    {
+        "IdGrupo": "02010204",
+        "Grupo": "04 TOALLAS DE COCINA "
+    },
+    {
+        "IdGrupo": "02010205",
+        "Grupo": "05 CUIDADO AIRE "
+    },
+    {
+        "IdGrupo": "02010206",
+        "Grupo": "06 LIQUIDOS"
+    },
+    {
+        "IdGrupo": "02010207",
+        "Grupo": "07 HUMEDOS "
+    },
+    {
+        "IdGrupo": "02010301",
+        "Grupo": "01 PEQUEÑIN"
+    },
+    {
+        "IdGrupo": "02010401",
+        "Grupo": "01 MATERIAL POP "
+    },
+    {
+        "IdGrupo": "02010501",
+        "Grupo": "01 NATURAL "
+    },
+    {
+        "IdGrupo": "02010502",
+        "Grupo": "02 RECIEN NACIDO"
+    },
+    {
+        "IdGrupo": "02010503",
+        "Grupo": "03 EXTRA PROTECCION PLUS"
+    },
+    {
+        "IdGrupo": "02010504",
+        "Grupo": "04 PREMIUM TOUCH"
+    },
+    {
+        "IdGrupo": "02010601",
+        "Grupo": "01 TENA"
+    },
+    {
+        "IdGrupo": "02010602",
+        "Grupo": "02 PANTS "
+    },
+    {
+        "IdGrupo": "02010603",
+        "Grupo": "03 APOSITOS"
+    },
+    {
+        "IdGrupo": "02010604",
+        "Grupo": "04 TOALLITAS HUMEDAS "
+    },
+    {
+        "IdGrupo": "02010701",
+        "Grupo": "01 MATERIAL BANDEO"
+    },
+    {
+        "IdGrupo": "02010801",
+        "Grupo": "01 TOALLA DE MANO "
+    },
+    {
+        "IdGrupo": "02010802",
+        "Grupo": "02 HIGIENICO JUMBO"
+    },
+    {
+        "IdGrupo": "02010803",
+        "Grupo": "03 LIQUIDOS"
+    },
+    {
+        "IdGrupo": "02010804",
+        "Grupo": "04 DISPENSADORES"
+    },
+    {
+        "IdGrupo": "02010805",
+        "Grupo": "05 PAÑOS SEMIDESECHABLES MULTIUSOS"
+    },
+    {
+        "IdGrupo": "02010806",
+        "Grupo": "06 LIMPIONES "
+    },
+    {
+        "IdGrupo": "02010901",
+        "Grupo": "01 LIQUIDOS FACIAL NE"
+    },
+    {
+        "IdGrupo": "02010902",
+        "Grupo": "02 HUMEDOS FACIAL NE "
+    },
+    {
+        "IdGrupo": "02010903",
+        "Grupo": "03 RUEDITAS FACIALES NE "
+    },
+    {
+        "IdGrupo": "02020101",
+        "Grupo": "01 CREME "
+    },
+    {
+        "IdGrupo": "02020102",
+        "Grupo": "02 SOFT"
+    },
+    {
+        "IdGrupo": "02020103",
+        "Grupo": "03 BODY"
+    },
+    {
+        "IdGrupo": "02020104",
+        "Grupo": "04 ATRIX "
+    },
+    {
+        "IdGrupo": "02020105",
+        "Grupo": "05 HAND"
+    },
+    {
+        "IdGrupo": "02020106",
+        "Grupo": "06 SUN"
+    },
+    {
+        "IdGrupo": "02020107",
+        "Grupo": "07 VISAGE"
+    },
+    {
+        "IdGrupo": "02020108",
+        "Grupo": "08 FOR MEN "
+    },
+    {
+        "IdGrupo": "02020109",
+        "Grupo": "09 LABELLO "
+    },
+    {
+        "IdGrupo": "02020110",
+        "Grupo": "10 DEO"
+    },
+    {
+        "IdGrupo": "02020111",
+        "Grupo": "11 BATH CARE "
+    },
+    {
+        "IdGrupo": "02020112",
+        "Grupo": "12 LIPCARE "
+    },
+    {
+        "IdGrupo": "02020113",
+        "Grupo": "13 GEL"
+    },
+    {
+        "IdGrupo": "02020114",
+        "Grupo": "14 CUIDADO INTIMO "
+    },
+    {
+        "IdGrupo": "02020115",
+        "Grupo": "15 CUIDADO "
+    },
+    {
+        "IdGrupo": "02020201",
+        "Grupo": "01 HANSAPLAST"
+    },
+    {
+        "IdGrupo": "02020301",
+        "Grupo": "01 EUCERIN "
+    },
+    {
+        "IdGrupo": "02020302",
+        "Grupo": "02 MATERIAL POP EUCERIN "
+    },
+    {
+        "IdGrupo": "02020401",
+        "Grupo": "01 MATERIAL POP BDF"
+    },
+    {
+        "IdGrupo": "02020501",
+        "Grupo": "01 BDF MATERIAL BANDEO"
+    },
+    {
+        "IdGrupo": "02020601",
+        "Grupo": "01 CREME "
+    },
+    {
+        "IdGrupo": "02020602",
+        "Grupo": "02 SOFT"
+    },
+    {
+        "IdGrupo": "02020603",
+        "Grupo": "03 BODY"
+    },
+    {
+        "IdGrupo": "02020604",
+        "Grupo": "04 ATRIX "
+    },
+    {
+        "IdGrupo": "02020605",
+        "Grupo": "05 HAND"
+    },
+    {
+        "IdGrupo": "02020606",
+        "Grupo": "06 SUN"
+    },
+    {
+        "IdGrupo": "02020607",
+        "Grupo": "07 VISAGE"
+    },
+    {
+        "IdGrupo": "02020608",
+        "Grupo": "08 FOR MEN "
+    },
+    {
+        "IdGrupo": "02020609",
+        "Grupo": "09 LABELLO "
+    },
+    {
+        "IdGrupo": "02020610",
+        "Grupo": "10 DEO"
+    },
+    {
+        "IdGrupo": "02020611",
+        "Grupo": "11 BATH CARE "
+    },
+    {
+        "IdGrupo": "02020612",
+        "Grupo": "12 LIPCARE "
+    },
+    {
+        "IdGrupo": "02020613",
+        "Grupo": "13 GEL"
+    },
+    {
+        "IdGrupo": "02020614",
+        "Grupo": "14 CUIDADO INTIMO "
+    },
+    {
+        "IdGrupo": "02020615",
+        "Grupo": "15 CUIDADO "
+    },
+    {
+        "IdGrupo": "02020701",
+        "Grupo": "01 HANSAPLAST"
+    },
+    {
+        "IdGrupo": "02020801",
+        "Grupo": "01 EUCERIN "
+    },
+    {
+        "IdGrupo": "02030101",
+        "Grupo": "01 SCOTHBRITE"
+    },
+    {
+        "IdGrupo": "02030201",
+        "Grupo": "01 PONJITA "
+    },
+    {
+        "IdGrupo": "02030401",
+        "Grupo": "01 COMMAND "
+    },
+    {
+        "IdGrupo": "02030501",
+        "Grupo": "01 OTROS 3M"
+    },
+    {
+        "IdGrupo": "02030901",
+        "Grupo": "01 BDF"
+    },
+    {
+        "IdGrupo": "02031001",
+        "Grupo": "01 PHARMA"
+    },
+    {
+        "IdGrupo": "02031101",
+        "Grupo": "01 SANCELA "
+    },
+    {
+        "IdGrupo": "02031201",
+        "Grupo": "01 ALIMENTOS "
+    },
+    {
+        "IdGrupo": "02031301",
+        "Grupo": "01 TABLETAS"
+    },
+    {
+        "IdGrupo": "02031302",
+        "Grupo": "02 LIQUIDOS"
+    },
+    {
+        "IdGrupo": "02031303",
+        "Grupo": "03 SACHETS "
+    },
+    {
+        "IdGrupo": "02031401",
+        "Grupo": "01 ESTERIL CATGUT "
+    },
+    {
+        "IdGrupo": "02031402",
+        "Grupo": "02 ESTERIL ACIDO"
+    },
+    {
+        "IdGrupo": "02031501",
+        "Grupo": "01 ESTERIL NYLON"
+    },
+    {
+        "IdGrupo": "02031502",
+        "Grupo": "02 ESTERIL SEDA "
+    },
+    {
+        "IdGrupo": "02031601",
+        "Grupo": "01 ESTERIL CATGUT "
+    },
+    {
+        "IdGrupo": "02031602",
+        "Grupo": "02 ESTERIL ACIDO"
+    },
+    {
+        "IdGrupo": "02031701",
+        "Grupo": "01 ESTERIL NYLON"
+    },
+    {
+        "IdGrupo": "02031702",
+        "Grupo": "02 ESTERIL SEDA "
+    },
+    {
+        "IdGrupo": "02031703",
+        "Grupo": "03 ESTERIL POLIESTER "
+    },
+    {
+        "IdGrupo": "02031801",
+        "Grupo": "01 MATERIAL PUBLICITARIO"
+    },
+    {
+        "IdGrupo": "02031901",
+        "Grupo": "01 Snacks para microondas "
+    },
+    {
+        "IdGrupo": "02031902",
+        "Grupo": "02 Avenas"
+    },
+    {
+        "IdGrupo": "02031903",
+        "Grupo": "03 Leches de Soya "
+    },
+    {
+        "IdGrupo": "02031904",
+        "Grupo": "04 Pancakes"
+    },
+    {
+        "IdGrupo": "02031905",
+        "Grupo": "05 Bebidas Chocolatadas "
+    },
+    {
+        "IdGrupo": "02031906",
+        "Grupo": "06 MATERIAL POP "
+    },
+    {
+        "IdGrupo": "02031907",
+        "Grupo": "07 MUESTRAS"
+    },
+    {
+        "IdGrupo": "02032001",
+        "Grupo": "01 SALADOS "
+    },
+    {
+        "IdGrupo": "02032002",
+        "Grupo": "02 LIGHT "
+    },
+    {
+        "IdGrupo": "02032003",
+        "Grupo": "03 RECUBIERTOS"
+    },
+    {
+        "IdGrupo": "02032004",
+        "Grupo": "04 MEZCLAS "
+    },
+    {
+        "IdGrupo": "02032005",
+        "Grupo": "05 PREMIUM "
+    },
+    {
+        "IdGrupo": "02032006",
+        "Grupo": "06 MUESTRAS MKTG"
+    },
+    {
+        "IdGrupo": "02032007",
+        "Grupo": "07 MATERIAL PUBLICITARIO"
+    },
+    {
+        "IdGrupo": "02032008",
+        "Grupo": "08 CRUNCHYBITS"
+    },
+    {
+        "IdGrupo": "02032101",
+        "Grupo": "01 TOSTI "
+    },
+    {
+        "IdGrupo": "02032102",
+        "Grupo": "02 RIZADAS "
+    },
+    {
+        "IdGrupo": "02032103",
+        "Grupo": "03 PAPA CHIPS"
+    },
+    {
+        "IdGrupo": "02032104",
+        "Grupo": "04 EL GOLPE"
+    },
+    {
+        "IdGrupo": "02032105",
+        "Grupo": "05 PALOMITAS "
+    },
+    {
+        "IdGrupo": "02032106",
+        "Grupo": "06 MUESTRAS MKTG"
+    },
+    {
+        "IdGrupo": "02032107",
+        "Grupo": "07 MATERIAL POP "
+    },
+    {
+        "IdGrupo": "02032201",
+        "Grupo": "01 TÉ VERDE"
+    },
+    {
+        "IdGrupo": "02032202",
+        "Grupo": "02 ICE TEA LIGHT"
+    },
+    {
+        "IdGrupo": "02032203",
+        "Grupo": "03 ESVELTTA"
+    },
+    {
+        "IdGrupo": "02032204",
+        "Grupo": "04 ENTRE DIA "
+    },
+    {
+        "IdGrupo": "02032205",
+        "Grupo": "05 INFUSIONES SALUDABLES"
+    },
+    {
+        "IdGrupo": "02032206",
+        "Grupo": "06 PASSIÓN FRUTAL "
+    },
+    {
+        "IdGrupo": "02032207",
+        "Grupo": "07 HINDU MUESTRAS MKTG"
+    },
+    {
+        "IdGrupo": "02032208",
+        "Grupo": "08 HINDU MATERIAL POP"
+    },
+    {
+        "IdGrupo": "02032209",
+        "Grupo": "09 INFUSIONES AROMATICAS"
+    },
+    {
+        "IdGrupo": "02032210",
+        "Grupo": "10 TE NEGRO PREMIUM"
+    },
+    {
+        "IdGrupo": "02032301",
+        "Grupo": "01 CAFE PREMIUM "
+    },
+    {
+        "IdGrupo": "02032401",
+        "Grupo": "01 TE NEGRO PREMIUM"
+    },
+    {
+        "IdGrupo": "02032501",
+        "Grupo": "01 MATERIAL POP "
+    },
+    {
+        "IdGrupo": "02032601",
+        "Grupo": "01 RTD TÉ"
+    },
+    {
+        "IdGrupo": "02032602",
+        "Grupo": "02 RTD PREMIUM"
+    },
+    {
+        "IdGrupo": "02032603",
+        "Grupo": "03RTD"
+    },
+    {
+        "IdGrupo": "02032604",
+        "Grupo": "04 POSTOBON MATERIAL POP"
+    },
+    {
+        "IdGrupo": "02032701",
+        "Grupo": "01 CHUPETES RELLENOS "
+    },
+    {
+        "IdGrupo": "02032702",
+        "Grupo": "02 CARAMELOS DUROS"
+    },
+    {
+        "IdGrupo": "02032703",
+        "Grupo": "03 CARAMELOS BLANDOS "
+    },
+    {
+        "IdGrupo": "02032801",
+        "Grupo": "01 MUESTRAS MKTG"
+    },
+    {
+        "IdGrupo": "02032901",
+        "Grupo": "01 MATERIAL POP "
+    },
+    {
+        "IdGrupo": "02033001",
+        "Grupo": "01 GELATINA"
+    },
+    {
+        "IdGrupo": "02033002",
+        "Grupo": "02 REGALIZ "
+    },
+    {
+        "IdGrupo": "02033003",
+        "Grupo": "03 MARSHMALLOW"
+    },
+    {
+        "IdGrupo": "02033004",
+        "Grupo": "04 CHICLES "
+    },
+    {
+        "IdGrupo": "02033005",
+        "Grupo": "05 BIENESTAR "
+    },
+    {
+        "IdGrupo": "02033101",
+        "Grupo": "01 ISABELA "
+    },
+    {
+        "IdGrupo": "02033102",
+        "Grupo": "02 ESTRELA "
+    },
+    {
+        "IdGrupo": "02033103",
+        "Grupo": "03 FINNA "
+    },
+    {
+        "IdGrupo": "02033104",
+        "Grupo": "04 ISABELA SOPAS"
+    },
+    {
+        "IdGrupo": "02040101",
+        "Grupo": "01 PEDIGREE CACHORRO "
+    },
+    {
+        "IdGrupo": "02040102",
+        "Grupo": "02 PEDIGREE ADULTO"
+    },
+    {
+        "IdGrupo": "02040201",
+        "Grupo": "01 WHISKAS GATITOS"
+    },
+    {
+        "IdGrupo": "02040202",
+        "Grupo": "02 WHISKAS ADULTO "
+    },
+    {
+        "IdGrupo": "02040203",
+        "Grupo": "03 WHISKAS ADULTO CAMARON Y CORVINA"
+    },
+    {
+        "IdGrupo": "02040301",
+        "Grupo": "01 Pedigree Latas "
+    },
+    {
+        "IdGrupo": "02040401",
+        "Grupo": "01 Whiskas Latas"
+    },
+    {
+        "IdGrupo": "02040501",
+        "Grupo": "01 Pedigree Pouches"
+    },
+    {
+        "IdGrupo": "02040601",
+        "Grupo": "01 Whiskas Pouches"
+    },
+    {
+        "IdGrupo": "02040701",
+        "Grupo": "01 Arena para Gatos"
+    },
+    {
+        "IdGrupo": "02040801",
+        "Grupo": "01 ANALGESICO ANTIFLAMATORIOS"
+    },
+    {
+        "IdGrupo": "02040802",
+        "Grupo": "02 ANTIAGREGANTE PLAQUETARIO "
+    },
+    {
+        "IdGrupo": "02040803",
+        "Grupo": "03 ANTIARRITMICO"
+    },
+    {
+        "IdGrupo": "02040804",
+        "Grupo": "04 ANTIBIOTICO"
+    },
+    {
+        "IdGrupo": "02040805",
+        "Grupo": "05 ANTIISTAMINICO ALERGORESPIRATORIOS"
+    },
+    {
+        "IdGrupo": "02040806",
+        "Grupo": "06 ANTIPARACITARIO ANTIVIRAL FUNGISIDA"
+    },
+    {
+        "IdGrupo": "02040807",
+        "Grupo": "07 ANTIPERTENSIVO "
+    },
+    {
+        "IdGrupo": "02040808",
+        "Grupo": "08 ANTIULCEROSO "
+    },
+    {
+        "IdGrupo": "02040809",
+        "Grupo": "09 HIPOLIPEMIANTE "
+    },
+    {
+        "IdGrupo": "02040810",
+        "Grupo": "10 MUCOLITICO"
+    },
+    {
+        "IdGrupo": "02040811",
+        "Grupo": "11 NEUROLOGIA"
+    },
+    {
+        "IdGrupo": "02040812",
+        "Grupo": "12 OFTALMOLOGIA "
+    },
+    {
+        "IdGrupo": "02040813",
+        "Grupo": "13 OSTEOPOROSIS "
+    },
+    {
+        "IdGrupo": "02040814",
+        "Grupo": "14 UROLOGIA"
+    },
+    {
+        "IdGrupo": "02040815",
+        "Grupo": "15 VITAMINAS "
+    },
+    {
+        "IdGrupo": "02050101",
+        "Grupo": "01 ANDROMACO "
+    },
+    {
+        "IdGrupo": "02050201",
+        "Grupo": "01 VIFOR "
+    },
+    {
+        "IdGrupo": "02050301",
+        "Grupo": "01 SILESIA "
+    },
+    {
+        "IdGrupo": "02050401",
+        "Grupo": "01 GENERICOS "
+    },
+    {
+        "IdGrupo": "02050501",
+        "Grupo": "01 ULTRADELGADAS"
+    },
+    {
+        "IdGrupo": "02050502",
+        "Grupo": "02 NORMALES"
+    },
+    {
+        "IdGrupo": "02050503",
+        "Grupo": "03 PROTECTORES"
+    },
+    {
+        "IdGrupo": "02050504",
+        "Grupo": "04 EXTRA CONFORT PLUS"
+    },
+    {
+        "IdGrupo": "02050505",
+        "Grupo": "05 NOCTURNAS "
+    },
+    {
+        "IdGrupo": "02050506",
+        "Grupo": "06 MATERNIDAD"
+    },
+    {
+        "IdGrupo": "02050507",
+        "Grupo": "07 PEQUEÑIN"
+    },
+    {
+        "IdGrupo": "02050508",
+        "Grupo": "08 PAÑOS INTIMOS FEMENINOS"
+    },
+    {
+        "IdGrupo": "02050601",
+        "Grupo": "01 BATH CARE "
+    },
+    {
+        "IdGrupo": "02050602",
+        "Grupo": "02 DEO"
+    },
+    {
+        "IdGrupo": "02050603",
+        "Grupo": "03 BODY"
+    },
+    {
+        "IdGrupo": "02050604",
+        "Grupo": "04 CREME "
+    },
+    {
+        "IdGrupo": "02050605",
+        "Grupo": "05 SOFT"
+    },
+    {
+        "IdGrupo": "02050606",
+        "Grupo": "06 ATRIX "
+    },
+    {
+        "IdGrupo": "02050607",
+        "Grupo": "07 HAND"
+    },
+    {
+        "IdGrupo": "02050608",
+        "Grupo": "08 SUN"
+    },
+    {
+        "IdGrupo": "02050609",
+        "Grupo": "09 VISAGE"
+    },
+    {
+        "IdGrupo": "02050610",
+        "Grupo": "10 FOR MEN "
+    },
+    {
+        "IdGrupo": "02050611",
+        "Grupo": "11 LABELLO "
+    },
+    {
+        "IdGrupo": "02050612",
+        "Grupo": "12 LIPCARE "
+    },
+    {
+        "IdGrupo": "02050613",
+        "Grupo": "13 GEL"
+    },
+    {
+        "IdGrupo": "02050614",
+        "Grupo": "14 CUIDADO INTIMO "
+    },
+    {
+        "IdGrupo": "02050615",
+        "Grupo": "15 CUIDADO "
+    },
+    {
+        "IdGrupo": "02050701",
+        "Grupo": "01 ALIKAL"
+    },
+    {
+        "IdGrupo": "02050702",
+        "Grupo": "02 ENO"
+    },
+    {
+        "IdGrupo": "02050801",
+        "Grupo": "01 PEDIGREE CACHORRO "
+    },
+    {
+        "IdGrupo": "02050802",
+        "Grupo": "02 PEDIGREE ADULTO"
+    },
+    {
+        "IdGrupo": "02050901",
+        "Grupo": "01 PEDIGREE POUCHES"
+    },
+    {
+        "IdGrupo": "02051001",
+        "Grupo": "01 SNACKS PARA MICROONDAS "
+    },
+    {
+        "IdGrupo": "02051101",
+        "Grupo": "01 TE "
+    },
+    {
+        "IdGrupo": "02051102",
+        "Grupo": "02 MATE"
+    },
+    {
+        "IdGrupo": "02051103",
+        "Grupo": "03 FRUTA "
+    },
+    {
+        "IdGrupo": "02051104",
+        "Grupo": "04 GOURMET "
+    },
+    {
+        "IdGrupo": "02051105",
+        "Grupo": "05 PRODUCTO BOLSA "
+    },
+    {
+        "IdGrupo": "02051106",
+        "Grupo": "06 CEYLÁN"
+    },
+    {
+        "IdGrupo": "02051107",
+        "Grupo": "07 GENERICO"
+    },
+    {
+        "IdGrupo": "02051201",
+        "Grupo": "01 HERSIL NUTRICIONAL"
+    },
+    {
+        "IdGrupo": "02051202",
+        "Grupo": "02 HERSIL FARMACEUTICO"
+    },
+    {
+        "IdGrupo": "02051301",
+        "Grupo": "01 NATURAL "
+    },
+    {
+        "IdGrupo": "02051302",
+        "Grupo": "02 RECIEN NACIDO"
+    },
+    {
+        "IdGrupo": "02051303",
+        "Grupo": "03 EXTRA CONFORT PLUS"
+    },
+    {
+        "IdGrupo": "02051401",
+        "Grupo": "01 CHUPETES RELLENOS "
+    },
+    {
+        "IdGrupo": "02051402",
+        "Grupo": "02 CARAMELOS DUROS"
+    },
+    {
+        "IdGrupo": "02051403",
+        "Grupo": "03 CARAMELOS BLANDOS "
+    },
+    {
+        "IdGrupo": "02051501",
+        "Grupo": "01 PEQUEÑIN"
+    },
+    {
+        "IdGrupo": "02051601",
+        "Grupo": "01 ANALGESICO ANTIFLAMATORIOS"
+    },
+    {
+        "IdGrupo": "02051602",
+        "Grupo": "02 ANTIAGREGANTE PLAQUETARIO "
+    },
+    {
+        "IdGrupo": "02051603",
+        "Grupo": "03 ANTIARRITMICO"
+    },
+    {
+        "IdGrupo": "02051604",
+        "Grupo": "04 ANTIBIOTICO"
+    },
+    {
+        "IdGrupo": "02051605",
+        "Grupo": "05 ANTIISTAMINICO ALERGORESPIRATORIOS"
+    },
+    {
+        "IdGrupo": "02051606",
+        "Grupo": "06 ANTIPARACITARIO ANTIVIRAL FUNGISIDA"
+    },
+    {
+        "IdGrupo": "02051607",
+        "Grupo": "07 ANTIPERTENSIVO "
+    },
+    {
+        "IdGrupo": "02051608",
+        "Grupo": "08 ANTIULCEROSO "
+    },
+    {
+        "IdGrupo": "02051609",
+        "Grupo": "09 HIPOLIPEMIANTE "
+    },
+    {
+        "IdGrupo": "02051610",
+        "Grupo": "10 MUCOLITICO"
+    },
+    {
+        "IdGrupo": "02051611",
+        "Grupo": "11 NEUROLOGIA"
+    },
+    {
+        "IdGrupo": "02051612",
+        "Grupo": "12 OFTALMOLOGIA "
+    },
+    {
+        "IdGrupo": "02051613",
+        "Grupo": "13 OSTEOPOROSIS "
+    },
+    {
+        "IdGrupo": "02051614",
+        "Grupo": "14 UROLOGIA"
+    },
+    {
+        "IdGrupo": "02051615",
+        "Grupo": "15 VITAMINAS "
+    },
+    {
+        "IdGrupo": "02051701",
+        "Grupo": "01 VITANE MUJER "
+    },
+    {
+        "IdGrupo": "02051801",
+        "Grupo": "01 SAVANT OTC"
+    },
+    {
+        "IdGrupo": "02051802",
+        "Grupo": "02 SAVANT RECOMENDACION "
+    },
+    {
+        "IdGrupo": "02051901",
+        "Grupo": "01 HINODE"
+    },
+    {
+        "IdGrupo": "02051991",
+        "Grupo": "91 HINODE"
+    },
+    {
+        "IdGrupo": "02052001",
+        "Grupo": "01 ARCHER"
+    },
+    {
+        "IdGrupo": "02052002",
+        "Grupo": "02 BIOSILK "
+    },
+    {
+        "IdGrupo": "02052003",
+        "Grupo": "03 CLASSIC "
+    },
+    {
+        "IdGrupo": "02052101",
+        "Grupo": "01 PRESERVATIVO MASCULINO "
+    },
+    {
+        "IdGrupo": "02052102",
+        "Grupo": "02 PRESERVATIVO FEMENINO"
+    },
+    {
+        "IdGrupo": "02052103",
+        "Grupo": "03 GELES LUBRICANTES "
+    },
+    {
+        "IdGrupo": "02052104",
+        "Grupo": "04 TOYS"
+    },
+    {
+        "IdGrupo": "02052105",
+        "Grupo": "05 COPAS MESTRUALES"
+    },
+    {
+        "IdGrupo": "02060101",
+        "Grupo": "01 PVM ADULTO"
+    },
+    {
+        "IdGrupo": "02060102",
+        "Grupo": "02 PVM JUNIOR"
+    },
+    {
+        "IdGrupo": "02060103",
+        "Grupo": "03 MADDRE POLVO "
+    },
+    {
+        "IdGrupo": "02060104",
+        "Grupo": "04 MADDRE TABLETA "
+    },
+    {
+        "IdGrupo": "02060105",
+        "Grupo": "05 VERTE SHAKE"
+    },
+    {
+        "IdGrupo": "02060106",
+        "Grupo": "06 VIBE"
+    },
+    {
+        "IdGrupo": "02060107",
+        "Grupo": "07 OSTEOVIT"
+    },
+    {
+        "IdGrupo": "02060201",
+        "Grupo": "01 GEROMUCOVIT"
+    },
+    {
+        "IdGrupo": "02060202",
+        "Grupo": "02 INFECTRIM "
+    },
+    {
+        "IdGrupo": "02060203",
+        "Grupo": "03 TOPICREM"
+    },
+    {
+        "IdGrupo": "02060204",
+        "Grupo": "04 DOLORAL "
+    },
+    {
+        "IdGrupo": "02060205",
+        "Grupo": "05 CLOTRIMAZOL"
+    },
+    {
+        "IdGrupo": "02060206",
+        "Grupo": "06 MAGAL D "
+    },
+    {
+        "IdGrupo": "02060207",
+        "Grupo": "07 LIBBERA "
+    },
+    {
+        "IdGrupo": "02060208",
+        "Grupo": "08 MERTHIOLATE"
+    },
+    {
+        "IdGrupo": "02060209",
+        "Grupo": "09 OSTEOVIT"
+    },
+    {
+        "IdGrupo": "02060210",
+        "Grupo": "10 PALDOLOR"
+    },
+    {
+        "IdGrupo": "02060211",
+        "Grupo": "11 ESCALDEX"
+    },
+    {
+        "IdGrupo": "02060212",
+        "Grupo": "12 CEFASABAL "
+    },
+    {
+        "IdGrupo": "02060213",
+        "Grupo": "13 AZOFLOX "
+    },
+    {
+        "IdGrupo": "02060214",
+        "Grupo": "14 MADDRE"
+    },
+    {
+        "IdGrupo": "02060215",
+        "Grupo": "15 VERTE "
+    },
+    {
+        "IdGrupo": "02060216",
+        "Grupo": "16 CIPROLIN"
+    },
+    {
+        "IdGrupo": "02060217",
+        "Grupo": "17 BETACREM"
+    },
+    {
+        "IdGrupo": "02060301",
+        "Grupo": "01 PVM ADULTO"
+    },
+    {
+        "IdGrupo": "02060302",
+        "Grupo": "02 PVM JUNIOR"
+    },
+    {
+        "IdGrupo": "02060303",
+        "Grupo": "03 MADDRE POLVO "
+    },
+    {
+        "IdGrupo": "02060304",
+        "Grupo": "04 VIBE"
+    },
+    {
+        "IdGrupo": "02060305",
+        "Grupo": "05 VERTE SHAKE"
+    },
+    {
+        "IdGrupo": "02060401",
+        "Grupo": "01 GEROMUCOVIT"
+    },
+    {
+        "IdGrupo": "02060402",
+        "Grupo": "02 INFECTRIM "
+    },
+    {
+        "IdGrupo": "02060403",
+        "Grupo": "03 TOPICREM"
+    },
+    {
+        "IdGrupo": "02060404",
+        "Grupo": "04 DOLORAL "
+    },
+    {
+        "IdGrupo": "02060405",
+        "Grupo": "05 CLOTRIMAZOL"
+    },
+    {
+        "IdGrupo": "02060406",
+        "Grupo": "06 MAGAL D "
+    },
+    {
+        "IdGrupo": "02060407",
+        "Grupo": "07 LIBBERA "
+    },
+    {
+        "IdGrupo": "02060408",
+        "Grupo": "08 ESCALDEX"
+    },
+    {
+        "IdGrupo": "02060409",
+        "Grupo": "09 OSTEOVIT"
+    },
+    {
+        "IdGrupo": "02060410",
+        "Grupo": "10 AZOFLOX "
+    },
+    {
+        "IdGrupo": "02060411",
+        "Grupo": "11 BETACREM"
+    },
+    {
+        "IdGrupo": "02060501",
+        "Grupo": "01 PVM ADULTO"
+    },
+    {
+        "IdGrupo": "02060502",
+        "Grupo": "02 PVM JUNIOR"
+    },
+    {
+        "IdGrupo": "02060503",
+        "Grupo": "03 MADDRE POLVO "
+    },
+    {
+        "IdGrupo": "02060504",
+        "Grupo": "04 VERTE SHAKE"
+    },
+    {
+        "IdGrupo": "02060601",
+        "Grupo": "01 GEROMUCOVIT"
+    },
+    {
+        "IdGrupo": "02060602",
+        "Grupo": "02 INFECTRIM "
+    },
+    {
+        "IdGrupo": "02060603",
+        "Grupo": "03 TOPICREM"
+    },
+    {
+        "IdGrupo": "02060604",
+        "Grupo": "04 DOLORAL "
+    },
+    {
+        "IdGrupo": "02060605",
+        "Grupo": "05 CLOTRIMAZOL"
+    },
+    {
+        "IdGrupo": "02060606",
+        "Grupo": "06 MAGAL D "
+    },
+    {
+        "IdGrupo": "02060607",
+        "Grupo": "07 LIBBERA "
+    },
+    {
+        "IdGrupo": "02060608",
+        "Grupo": "08 MERTHIOLATE"
+    },
+    {
+        "IdGrupo": "02060609",
+        "Grupo": "09 OSTEOVIT"
+    },
+    {
+        "IdGrupo": "02070101",
+        "Grupo": "01 COVERPLAST STANDARD"
+    },
+    {
+        "IdGrupo": "02070102",
+        "Grupo": "02 COVERPLAST ELÁSTICAS "
+    },
+    {
+        "IdGrupo": "02070201",
+        "Grupo": "01 LEUKOFIX CARRETO"
+    },
+    {
+        "IdGrupo": "02070202",
+        "Grupo": "02 LEUKOFIX HOSPITALARIA"
+    },
+    {
+        "IdGrupo": "02070301",
+        "Grupo": "01 LEUKOPLAST CARRETO"
+    },
+    {
+        "IdGrupo": "02070401",
+        "Grupo": "01 BSN LEUKOPOR CARRETO BLANCO"
+    },
+    {
+        "IdGrupo": "02070402",
+        "Grupo": "02 LEUKOPOR HOSPITALARIA BLANCO "
+    },
+    {
+        "IdGrupo": "02070501",
+        "Grupo": "01 LEUKOPOR CARRETO PIEL"
+    },
+    {
+        "IdGrupo": "02070502",
+        "Grupo": "02 LEUKOPOR HOSPITALARIA PIEL"
+    },
+    {
+        "IdGrupo": "02070601",
+        "Grupo": "01 VENDAS DE YESO "
+    },
+    {
+        "IdGrupo": "02070701",
+        "Grupo": "01 CUTIMED SORBACT"
+    },
+    {
+        "IdGrupo": "02070801",
+        "Grupo": "01 FIXOMULL STRETCH"
+    },
+    {
+        "IdGrupo": "02070901",
+        "Grupo": "01 COVERLET PARCHE"
+    },
+    {
+        "IdGrupo": "02071001",
+        "Grupo": "01 ESTERIL CATGUT "
+    },
+    {
+        "IdGrupo": "02071002",
+        "Grupo": "02 ESTERIL ACIDO"
+    },
+    {
+        "IdGrupo": "02071101",
+        "Grupo": "01 ESTERIL NYLON"
+    },
+    {
+        "IdGrupo": "02071102",
+        "Grupo": "02 ESTERIL SEDA "
+    },
+    {
+        "IdGrupo": "02071201",
+        "Grupo": "01 ESTERIL CATGUT "
+    },
+    {
+        "IdGrupo": "02071202",
+        "Grupo": "02 ESTERIL ACIDO"
+    },
+    {
+        "IdGrupo": "02071301",
+        "Grupo": "01 ESTERIL NYLON"
+    },
+    {
+        "IdGrupo": "02071302",
+        "Grupo": "02 ESTERIL SEDA "
+    },
+    {
+        "IdGrupo": "02071303",
+        "Grupo": "03 ESTERIL POLIESTER "
+    },
+    {
+        "IdGrupo": "02071401",
+        "Grupo": "01 ALOE VERA DRINK"
+    },
+    {
+        "IdGrupo": "02071501",
+        "Grupo": "01 TÉ VERDE"
+    },
+    {
+        "IdGrupo": "02071502",
+        "Grupo": "02 ICE TEA LIGHT"
+    },
+    {
+        "IdGrupo": "02071503",
+        "Grupo": "03 ESVELTTA"
+    },
+    {
+        "IdGrupo": "02071504",
+        "Grupo": "04 ENTRE DIA "
+    },
+    {
+        "IdGrupo": "02071505",
+        "Grupo": "05 INFUSIONES"
+    },
+    {
+        "IdGrupo": "02071506",
+        "Grupo": "06 PASSIÓN FRUTAL "
+    },
+    {
+        "IdGrupo": "02071507",
+        "Grupo": "07 HINDU MUESTRAS MKTG"
+    },
+    {
+        "IdGrupo": "02071508",
+        "Grupo": "08 HINDU MATERIAL POP"
+    },
+    {
+        "IdGrupo": "02071601",
+        "Grupo": "01 BEBIDA ENERGÉTICA "
+    },
+    {
+        "IdGrupo": "02071602",
+        "Grupo": "02 MEDIFARMA MUESTRAS MKTG"
+    },
+    {
+        "IdGrupo": "02071701",
+        "Grupo": "01 PERFUMERIA BEAUTIK"
+    },
+    {
+        "IdGrupo": "02071801",
+        "Grupo": "01 HOME CARE "
+    },
+    {
+        "IdGrupo": "02071901",
+        "Grupo": "01 PERFUMERIA LOBBS & C LONDON"
+    },
+    {
+        "IdGrupo": "02071902",
+        "Grupo": "02 HOME CARE "
+    },
+    {
+        "IdGrupo": "02071903",
+        "Grupo": "03 TESTER"
+    },
+    {
+        "IdGrupo": "02072001",
+        "Grupo": "01 FLUOCARDENT"
+    },
+    {
+        "IdGrupo": "02072002",
+        "Grupo": "02 HILO DENTAL"
+    },
+    {
+        "IdGrupo": "02072003",
+        "Grupo": "03 ENJUAGUES "
+    },
+    {
+        "IdGrupo": "02072004",
+        "Grupo": "04 CEPILLOS"
+    },
+    {
+        "IdGrupo": "02072005",
+        "Grupo": "05 MUESTRAS"
+    },
+    {
+        "IdGrupo": "02072006",
+        "Grupo": "06 MATERIAL POP "
+    },
+    {
+        "IdGrupo": "02072101",
+        "Grupo": "01 JABON DE MANO"
+    },
+    {
+        "IdGrupo": "02072102",
+        "Grupo": "02 ALCOHOL EN GEL "
+    },
+    {
+        "IdGrupo": "02072103",
+        "Grupo": "03 ANTIBACTERIAL LIQUIDO"
+    },
+    {
+        "IdGrupo": "02072104",
+        "Grupo": "04 MAQUILLAJE DE OJOS"
+    },
+    {
+        "IdGrupo": "02072105",
+        "Grupo": "05 MAQUILLAJE PARA ROSTRO "
+    },
+    {
+        "IdGrupo": "02072106",
+        "Grupo": "06 MAQUILLAJE PARA LABIOS "
+    },
+    {
+        "IdGrupo": "02072107",
+        "Grupo": "07 CUIDADO DE LA PIEL"
+    },
+    {
+        "IdGrupo": "02072108",
+        "Grupo": "08 ESMALTES PARA UÑAS"
+    },
+    {
+        "IdGrupo": "02072109",
+        "Grupo": "09 MUESTRAS"
+    },
+    {
+        "IdGrupo": "02072110",
+        "Grupo": "10 MATERIAL POP "
+    },
+    {
+        "IdGrupo": "02072201",
+        "Grupo": "01 BABY"
+    },
+    {
+        "IdGrupo": "02072202",
+        "Grupo": "02 MAMA"
+    },
+    {
+        "IdGrupo": "02072203",
+        "Grupo": "03 PURE & SENSITIVE"
+    },
+    {
+        "IdGrupo": "02072204",
+        "Grupo": "04 KIDS"
+    },
+    {
+        "IdGrupo": "02072205",
+        "Grupo": "05 MUESTRAS"
+    },
+    {
+        "IdGrupo": "02072206",
+        "Grupo": "06 MATERIAL POP "
+    },
+    {
+        "IdGrupo": "02072301",
+        "Grupo": "01 CUIDADO PERSONAL"
+    },
+    {
+        "IdGrupo": "02072302",
+        "Grupo": "02 CUIDADO DEL HOGAR "
+    },
+    {
+        "IdGrupo": "02072401",
+        "Grupo": "01 AFEITADORAS"
+    },
+    {
+        "IdGrupo": "02072501",
+        "Grupo": "01 VITANE MUJER "
+    },
+    {
+        "IdGrupo": "02072502",
+        "Grupo": "02 VITANE HOMBRES "
+    },
+    {
+        "IdGrupo": "02072503",
+        "Grupo": "03 REPELENTES"
+    },
+    {
+        "IdGrupo": "02072504",
+        "Grupo": "04 INTIMO"
+    },
+    {
+        "IdGrupo": "02072505",
+        "Grupo": "05 JABONES ANTIBACTERIALES"
+    },
+    {
+        "IdGrupo": "02072506",
+        "Grupo": "06 DEO PIES"
+    },
+    {
+        "IdGrupo": "02072507",
+        "Grupo": "07 LUMINANCE "
+    },
+    {
+        "IdGrupo": "02072508",
+        "Grupo": "08 MUESTRAS RECAMIER "
+    },
+    {
+        "IdGrupo": "02072509",
+        "Grupo": "09 MATERIAL POP "
+    },
+    {
+        "IdGrupo": "02072510",
+        "Grupo": "10 SOL ECLAIR"
+    },
+    {
+        "IdGrupo": "02072511",
+        "Grupo": "11 MUSS"
+    },
+    {
+        "IdGrupo": "02072512",
+        "Grupo": "12 GEL ANTIBACTERIAL "
+    },
+    {
+        "IdGrupo": "02072513",
+        "Grupo": "13 SPRAY ANTIBACTERIAL"
+    },
+    {
+        "IdGrupo": "02072601",
+        "Grupo": "01 BATH CARE "
+    },
+    {
+        "IdGrupo": "02072602",
+        "Grupo": "02 DEO"
+    },
+    {
+        "IdGrupo": "02072603",
+        "Grupo": "03 BODY"
+    },
+    {
+        "IdGrupo": "02072604",
+        "Grupo": "04 CREME "
+    },
+    {
+        "IdGrupo": "02072605",
+        "Grupo": "05 SOFT"
+    },
+    {
+        "IdGrupo": "02072606",
+        "Grupo": "06 ATRIX "
+    },
+    {
+        "IdGrupo": "02072607",
+        "Grupo": "07 HAND"
+    },
+    {
+        "IdGrupo": "02072608",
+        "Grupo": "08 SUN"
+    },
+    {
+        "IdGrupo": "02072609",
+        "Grupo": "09 VISAGE"
+    },
+    {
+        "IdGrupo": "02072610",
+        "Grupo": "10 FOR MEN "
+    },
+    {
+        "IdGrupo": "02072611",
+        "Grupo": "11 LABELLO "
+    },
+    {
+        "IdGrupo": "02072612",
+        "Grupo": "12 LIPCARE "
+    },
+    {
+        "IdGrupo": "02072613",
+        "Grupo": "13 GEL"
+    },
+    {
+        "IdGrupo": "02072614",
+        "Grupo": "14 CUIDADO INTIMO "
+    },
+    {
+        "IdGrupo": "02072615",
+        "Grupo": "15 CUIDADO "
+    },
+    {
+        "IdGrupo": "02080101",
+        "Grupo": "01 ALIKAL"
+    },
+    {
+        "IdGrupo": "02080102",
+        "Grupo": "02 ENO"
+    },
+    {
+        "IdGrupo": "02080103",
+        "Grupo": "03 IBUEVANOL "
+    },
+    {
+        "IdGrupo": "02080104",
+        "Grupo": "04 SAL ANDREWS"
+    },
+    {
+        "IdGrupo": "02080201",
+        "Grupo": "01 EMULSIÓNES"
+    },
+    {
+        "IdGrupo": "02080301",
+        "Grupo": "01 ADHESIVOS "
+    },
+    {
+        "IdGrupo": "02080302",
+        "Grupo": "02 PASTA DENTAL "
+    },
+    {
+        "IdGrupo": "02080401",
+        "Grupo": "01 MAT. POP-VISITA"
+    },
+    {
+        "IdGrupo": "02080402",
+        "Grupo": "02 MUESTRAS GSK "
+    },
+    {
+        "IdGrupo": "02080501",
+        "Grupo": "01 SAVANT OTC"
+    },
+    {
+        "IdGrupo": "02080502",
+        "Grupo": "02 SAVANT RECOMENDACION "
+    },
+    {
+        "IdGrupo": "02080601",
+        "Grupo": "01 PRESERVATIVO MASCULINO "
+    },
+    {
+        "IdGrupo": "02080602",
+        "Grupo": "02 PRESERVATIVO FEMENINO"
+    },
+    {
+        "IdGrupo": "02080603",
+        "Grupo": "03 GELES LUBRICANTES "
+    },
+    {
+        "IdGrupo": "02080604",
+        "Grupo": "04 TOYS"
+    },
+    {
+        "IdGrupo": "02080605",
+        "Grupo": "05 COPAS MESTRUALES"
+    },
+    {
+        "IdGrupo": "02080606",
+        "Grupo": "06 MEDICAMENTOS "
+    },
+    {
+        "IdGrupo": "02080607",
+        "Grupo": "07 MUESTRAS PRUDENCE "
+    },
+    {
+        "IdGrupo": "02080701",
+        "Grupo": "01 FARMA "
+    },
+    {
+        "IdGrupo": "02080702",
+        "Grupo": "02 GMO"
+    },
+    {
+        "IdGrupo": "02090101",
+        "Grupo": "01 MAGGI "
+    },
+    {
+        "IdGrupo": "02090102",
+        "Grupo": "02 PAPAS DESHIDRATADAS"
+    },
+    {
+        "IdGrupo": "02090103",
+        "Grupo": "03 SOPAS Y CREMAS "
+    },
+    {
+        "IdGrupo": "02090104",
+        "Grupo": "04 PASTAS"
+    },
+    {
+        "IdGrupo": "02090105",
+        "Grupo": "05 CALDOS Y CUBITOS"
+    },
+    {
+        "IdGrupo": "02090106",
+        "Grupo": "06 SAZONADORES"
+    },
+    {
+        "IdGrupo": "02090107",
+        "Grupo": "07 BASES "
+    },
+    {
+        "IdGrupo": "02090108",
+        "Grupo": "08 SALSAS DESHIDRATADAS "
+    },
+    {
+        "IdGrupo": "02090201",
+        "Grupo": "01 CAT CHOW"
+    },
+    {
+        "IdGrupo": "02090202",
+        "Grupo": "02 GATI"
+    },
+    {
+        "IdGrupo": "02090203",
+        "Grupo": "03 DOG CHOW"
+    },
+    {
+        "IdGrupo": "02090204",
+        "Grupo": "04 DOGUI "
+    },
+    {
+        "IdGrupo": "02090205",
+        "Grupo": "05 PRO PLAN CAT "
+    },
+    {
+        "IdGrupo": "02090206",
+        "Grupo": "06 PRO PLAN DOG "
+    },
+    {
+        "IdGrupo": "02090301",
+        "Grupo": "01 VITANE MUJER "
+    },
+    {
+        "IdGrupo": "02090302",
+        "Grupo": "02 VITANE HOMBRES "
+    },
+    {
+        "IdGrupo": "02090303",
+        "Grupo": "03 REPELENTES"
+    },
+    {
+        "IdGrupo": "02090304",
+        "Grupo": "04 INTIMO"
+    },
+    {
+        "IdGrupo": "02090305",
+        "Grupo": "05 JABONES ANTIBACTERIALES"
+    },
+    {
+        "IdGrupo": "02090306",
+        "Grupo": "06 DEO PIES"
+    },
+    {
+        "IdGrupo": "02090307",
+        "Grupo": "07 LUMINANCE "
+    },
+    {
+        "IdGrupo": "02090308",
+        "Grupo": "08 MUESTRAS RECAMIER "
+    },
+    {
+        "IdGrupo": "02090309",
+        "Grupo": "09 MATERIAL POP "
+    },
+    {
+        "IdGrupo": "02090310",
+        "Grupo": "10 SOL ECLAIR"
+    },
+    {
+        "IdGrupo": "02090311",
+        "Grupo": "11 MUSS"
+    },
+    {
+        "IdGrupo": "02090312",
+        "Grupo": "12 GEL ANTIBACTERIAL "
+    },
+    {
+        "IdGrupo": "02090313",
+        "Grupo": "13 SPRAY ANTIBACTERIAL"
+    },
+    {
+        "IdGrupo": "02100101",
+        "Grupo": "01 CHUPETES RELLENOS "
+    },
+    {
+        "IdGrupo": "02100102",
+        "Grupo": "02 CARAMELOS DUROS"
+    },
+    {
+        "IdGrupo": "02100103",
+        "Grupo": "03 CARAMELOS BLANDOS "
+    },
+    {
+        "IdGrupo": "02100204",
+        "Grupo": "04 MUESTRAS MKTG"
+    },
+    {
+        "IdGrupo": "02100305",
+        "Grupo": "05 MATERIAL POP "
+    },
+    {
+        "IdGrupo": "02100401",
+        "Grupo": "01 GELATINA"
+    },
+    {
+        "IdGrupo": "02100402",
+        "Grupo": "02 REGALIZ "
+    },
+    {
+        "IdGrupo": "02100403",
+        "Grupo": "03 MARSHMALLOW"
+    },
+    {
+        "IdGrupo": "02100404",
+        "Grupo": "04 CHICLES "
+    },
+    {
+        "IdGrupo": "02100405",
+        "Grupo": "05 BIENESTAR "
+    },
+    {
+        "IdGrupo": "02100501",
+        "Grupo": "01 ISABELA "
+    },
+    {
+        "IdGrupo": "02100502",
+        "Grupo": "02 ESTRELA "
+    },
+    {
+        "IdGrupo": "02100503",
+        "Grupo": "03 FINNA "
+    },
+    {
+        "IdGrupo": "02100504",
+        "Grupo": "04 ISABELA SOPAS"
+    },
+    {
+        "IdGrupo": "02100601",
+        "Grupo": "01 GALLETAS"
+    },
+    {
+        "IdGrupo": "02100701",
+        "Grupo": "01 MEZCLA DE TORTA"
+    },
+    {
+        "IdGrupo": "02100801",
+        "Grupo": "01 NUCREM"
+    },
+    {
+        "IdGrupo": "02100802",
+        "Grupo": "02 NAMUR "
+    },
+    {
+        "IdGrupo": "02100803",
+        "Grupo": "03 TORRONI "
+    },
+    {
+        "IdGrupo": "02100804",
+        "Grupo": "04 FULL MANI "
+    },
+    {
+        "IdGrupo": "02100805",
+        "Grupo": "05 SIN AZUCARES "
+    },
+    {
+        "IdGrupo": "02100806",
+        "Grupo": "06 FLOW CEREAL"
+    },
+    {
+        "IdGrupo": "02100807",
+        "Grupo": "07 CEREALES"
+    },
+    {
+        "IdGrupo": "02100808",
+        "Grupo": "08 MATERIAL POP "
+    },
+    {
+        "IdGrupo": "02900101",
+        "Grupo": "01 CONSUMO "
+    },
+    {
+        "IdGrupo": "02900102",
+        "Grupo": "02 FARMACEUTICA "
+    },
+    {
+        "IdGrupo": "02900103",
+        "Grupo": "03 HOSPITALARIA "
+    },
+    {
+        "IdGrupo": "02900104",
+        "Grupo": "04 NUTRICIONAL"
+    },
+    {
+        "IdGrupo": "02900201",
+        "Grupo": "01 BIO SIDUS "
+    },
+    {
+        "IdGrupo": "02900301",
+        "Grupo": "01 JUTESA DIAGNÓSTICOS"
+    },
+    {
+        "IdGrupo": "02900401",
+        "Grupo": "01 SCHERING"
+    },
+    {
+        "IdGrupo": "02900402",
+        "Grupo": "02 SCHERING DIAGNÓSTICOS"
+    },
+    {
+        "IdGrupo": "02900403",
+        "Grupo": "03 SCHERING ESPECIALES"
+    },
+    {
+        "IdGrupo": "02900501",
+        "Grupo": "01 OTROS "
+    },
+    {
+        "IdGrupo": "02910101",
+        "Grupo": "01 VENTAS NO COMERCIALES"
+    },
+    {
+        "IdGrupo": "02920101",
+        "Grupo": "01 PURINA"
+    },
+    {
+        "IdGrupo": "03010101",
+        "Grupo": "01 VOLKSWAGEN"
+    },
+    {
+        "IdGrupo": "03010201",
+        "Grupo": "01 VOLKSWAGEN"
+    },
+    {
+        "IdGrupo": "03010202",
+        "Grupo": "02 AUDI"
+    },
+    {
+        "IdGrupo": "03010301",
+        "Grupo": "01 VOLKSWAGEN"
+    },
+    {
+        "IdGrupo": "03010401",
+        "Grupo": "01 VOLKSWAGEN"
+    },
+    {
+        "IdGrupo": "03010501",
+        "Grupo": "01 SERVICIOS "
+    },
+    {
+        "IdGrupo": "03010601",
+        "Grupo": "01 NK AUTOMOVILES "
+    },
+    {
+        "IdGrupo": "03020101",
+        "Grupo": "01 VW/AUDI ALEMANIA"
+    },
+    {
+        "IdGrupo": "03020102",
+        "Grupo": "02 VW BRASIL "
+    },
+    {
+        "IdGrupo": "03020103",
+        "Grupo": "03 VW MEXICO "
+    },
+    {
+        "IdGrupo": "03020104",
+        "Grupo": "04 VW ARGENTINA "
+    },
+    {
+        "IdGrupo": "03020201",
+        "Grupo": "01 REPUESTOS "
+    },
+    {
+        "IdGrupo": "03020202",
+        "Grupo": "02 PIEZAS NORMADAS"
+    },
+    {
+        "IdGrupo": "03020203",
+        "Grupo": "03 LUBRICANTES+QUIMICOS "
+    },
+    {
+        "IdGrupo": "03020204",
+        "Grupo": "04 MATERIAL DE PINTURA"
+    },
+    {
+        "IdGrupo": "03020205",
+        "Grupo": "05 LLANTAS "
+    },
+    {
+        "IdGrupo": "03020301",
+        "Grupo": "01 VOLKSWAGEN/AUDI AG"
+    },
+    {
+        "IdGrupo": "03020302",
+        "Grupo": "02 VOLKSWAGEN BRASIL "
+    },
+    {
+        "IdGrupo": "03020303",
+        "Grupo": "03 VOLKSWAGEN MEXICO "
+    },
+    {
+        "IdGrupo": "03020304",
+        "Grupo": "04 VW ZUBEHOER GMBH"
+    },
+    {
+        "IdGrupo": "03020305",
+        "Grupo": "05 AUDI QUATTRO GMBH "
+    },
+    {
+        "IdGrupo": "03020306",
+        "Grupo": "06 TERCEROS INTERNACIONAL "
+    },
+    {
+        "IdGrupo": "03020307",
+        "Grupo": "07 TERCEROS NACIONAL "
+    },
+    {
+        "IdGrupo": "03020308",
+        "Grupo": "08 VOLKSWAGEN ARGENTINA "
+    },
+    {
+        "IdGrupo": "03020401",
+        "Grupo": "01 NK AUTOMOVILES "
+    },
+    {
+        "IdGrupo": "03020501",
+        "Grupo": "01 ARTICULOS AJENOS"
+    },
+    {
+        "IdGrupo": "03020601",
+        "Grupo": "01 SERVICIOS "
+    },
+    {
+        "IdGrupo": "03030101",
+        "Grupo": "01 MANO DE OBRA - SERVICIOS"
+    },
+    {
+        "IdGrupo": "03030102",
+        "Grupo": "02 MANO DE OBRA -MECANICA/ELECTRICIDAD"
+    },
+    {
+        "IdGrupo": "03030103",
+        "Grupo": "03 MANO DE OBRA - CHAPERIO/PINTURA"
+    },
+    {
+        "IdGrupo": "03030104",
+        "Grupo": "04 MANO DE OBRA - LAVADO"
+    },
+    {
+        "IdGrupo": "03030201",
+        "Grupo": "01 MANO DE OBRA- SERVICIOS TERCEROS"
+    },
+    {
+        "IdGrupo": "03030301",
+        "Grupo": "01 MATERIALES NK"
+    },
+    {
+        "IdGrupo": "03030410",
+        "Grupo": "10 ACCESORIOS"
+    },
+    {
+        "IdGrupo": "03040101",
+        "Grupo": "01 LIVIANOS"
+    },
+    {
+        "IdGrupo": "03040102",
+        "Grupo": "02 SEMIPESADOS"
+    },
+    {
+        "IdGrupo": "03040103",
+        "Grupo": "03 PESADOS "
+    },
+    {
+        "IdGrupo": "03040199",
+        "Grupo": "99 GENERICO"
+    },
+    {
+        "IdGrupo": "03040201",
+        "Grupo": "01 LIVIANOS"
+    },
+    {
+        "IdGrupo": "03040202",
+        "Grupo": "02 SEMIPESADOS"
+    },
+    {
+        "IdGrupo": "03040203",
+        "Grupo": "03 PESADOS "
+    },
+    {
+        "IdGrupo": "03040299",
+        "Grupo": "99 GENERICO"
+    },
+    {
+        "IdGrupo": "03040301",
+        "Grupo": "01 LIEBHERR"
+    },
+    {
+        "IdGrupo": "03040302",
+        "Grupo": "02 FACCHINI"
+    },
+    {
+        "IdGrupo": "03040303",
+        "Grupo": "03 GASCOM"
+    },
+    {
+        "IdGrupo": "03040304",
+        "Grupo": "04 USIMECA "
+    },
+    {
+        "IdGrupo": "03040305",
+        "Grupo": "05 TANKAR"
+    },
+    {
+        "IdGrupo": "03040306",
+        "Grupo": "06 ROMANELLI "
+    },
+    {
+        "IdGrupo": "03040307",
+        "Grupo": "07 SKYTRUCK"
+    },
+    {
+        "IdGrupo": "03040308",
+        "Grupo": "08 DRILLMINE "
+    },
+    {
+        "IdGrupo": "03040309",
+        "Grupo": "09 TEKNO GOL "
+    },
+    {
+        "IdGrupo": "03040310",
+        "Grupo": "10 ARGO"
+    },
+    {
+        "IdGrupo": "03040311",
+        "Grupo": "11 MASCARELLO"
+    },
+    {
+        "IdGrupo": "03040312",
+        "Grupo": "12 DIGICOUNTER"
+    },
+    {
+        "IdGrupo": "03040399",
+        "Grupo": "99 GENERICO"
+    },
+    {
+        "IdGrupo": "03040401",
+        "Grupo": "01 SERVICIOS "
+    },
+    {
+        "IdGrupo": "03040501",
+        "Grupo": "01 LIVIANOS"
+    },
+    {
+        "IdGrupo": "03040502",
+        "Grupo": "02 SEMIPESADOS"
+    },
+    {
+        "IdGrupo": "03040503",
+        "Grupo": "03 PESADOS "
+    },
+    {
+        "IdGrupo": "03040601",
+        "Grupo": "01 LIVIANOS"
+    },
+    {
+        "IdGrupo": "03040602",
+        "Grupo": "02 SEMIPESADOS"
+    },
+    {
+        "IdGrupo": "03040603",
+        "Grupo": "03 PESADOS "
+    },
+    {
+        "IdGrupo": "03050101",
+        "Grupo": "01 MO PREVENTIVO"
+    },
+    {
+        "IdGrupo": "03050102",
+        "Grupo": "02 MO CHAPA + PINTURA"
+    },
+    {
+        "IdGrupo": "03050103",
+        "Grupo": "03 MO CORRECTIVO"
+    },
+    {
+        "IdGrupo": "03050201",
+        "Grupo": "01 SERVICIOS TERCEROS"
+    },
+    {
+        "IdGrupo": "03050301",
+        "Grupo": "01 MATERIALES E INSUMOS "
+    },
+    {
+        "IdGrupo": "03050410",
+        "Grupo": "10 ACCESORIOS"
+    },
+    {
+        "IdGrupo": "03060101",
+        "Grupo": "01 AUDI"
+    },
+    {
+        "IdGrupo": "03060201",
+        "Grupo": "01 SERVICIOS "
+    },
+    {
+        "IdGrupo": "03069801",
+        "Grupo": "01 USADOS"
+    },
+    {
+        "IdGrupo": "03070101",
+        "Grupo": "01 VOLKSWAGEN"
+    },
+    {
+        "IdGrupo": "03070201",
+        "Grupo": "01 VOLKSWAGEN"
+    },
+    {
+        "IdGrupo": "03070301",
+        "Grupo": "01 VOLKSWAGEN"
+    },
+    {
+        "IdGrupo": "03070401",
+        "Grupo": "01 SERVICIOS "
+    },
+    {
+        "IdGrupo": "03080101",
+        "Grupo": "01 REPUESTOS "
+    },
+    {
+        "IdGrupo": "03080102",
+        "Grupo": "02 ACCESORIOS"
+    },
+    {
+        "IdGrupo": "03080201",
+        "Grupo": "01 FACCHINI"
+    },
+    {
+        "IdGrupo": "03080202",
+        "Grupo": "02 DRILLMINE "
+    },
+    {
+        "IdGrupo": "03080203",
+        "Grupo": "03 TANKAR"
+    },
+    {
+        "IdGrupo": "03080204",
+        "Grupo": "04 TECAR "
+    },
+    {
+        "IdGrupo": "03080205",
+        "Grupo": "05 USIMECA "
+    },
+    {
+        "IdGrupo": "03080206",
+        "Grupo": "06 MASCARELLO"
+    },
+    {
+        "IdGrupo": "03080207",
+        "Grupo": "07 PALFINGER "
+    },
+    {
+        "IdGrupo": "03080208",
+        "Grupo": "08 OMFB"
+    },
+    {
+        "IdGrupo": "03080209",
+        "Grupo": "09 MARRUCCI"
+    },
+    {
+        "IdGrupo": "03080210",
+        "Grupo": "10 LIEBHERR"
+    },
+    {
+        "IdGrupo": "03080211",
+        "Grupo": "11 ROMANELLI "
+    },
+    {
+        "IdGrupo": "03080212",
+        "Grupo": "12 HYVA"
+    },
+    {
+        "IdGrupo": "03080213",
+        "Grupo": "13 ARGOS "
+    },
+    {
+        "IdGrupo": "03080214",
+        "Grupo": "14 ERSATZIO"
+    },
+    {
+        "IdGrupo": "03080215",
+        "Grupo": "15 VDL TRANSLIFT"
+    },
+    {
+        "IdGrupo": "03080216",
+        "Grupo": "16 ECONOVO "
+    },
+    {
+        "IdGrupo": "03080217",
+        "Grupo": "17 FS DEPOT (ELGIN)"
+    },
+    {
+        "IdGrupo": "03080218",
+        "Grupo": "18 MITREN"
+    },
+    {
+        "IdGrupo": "03080219",
+        "Grupo": "19 F.X. MEILLER GmbH & Co. KG"
+    },
+    {
+        "IdGrupo": "03080220",
+        "Grupo": "20 VANNUCCI"
+    },
+    {
+        "IdGrupo": "03080301",
+        "Grupo": "01 REPUESTOS "
+    },
+    {
+        "IdGrupo": "03080302",
+        "Grupo": "02 ACCESORIOS"
+    },
+    {
+        "IdGrupo": "03080303",
+        "Grupo": "03 PIEZAS NORMADAS"
+    },
+    {
+        "IdGrupo": "03080304",
+        "Grupo": "04 LUBRICANTES+QUIMICOS "
+    },
+    {
+        "IdGrupo": "03080305",
+        "Grupo": "05 MATERIAL DE PINTURA"
+    },
+    {
+        "IdGrupo": "03080306",
+        "Grupo": "06 LLANTAS "
+    },
+    {
+        "IdGrupo": "03080401",
+        "Grupo": "01 NK CAMIONES"
+    },
+    {
+        "IdGrupo": "03080500",
+        "Grupo": "00 MOTOR "
+    },
+    {
+        "IdGrupo": "03080501",
+        "Grupo": "01 COMBUSTIBLE Y ESCAPE "
+    },
+    {
+        "IdGrupo": "03080502",
+        "Grupo": "02 SISTEMA ELÉCTRICO "
+    },
+    {
+        "IdGrupo": "03080503",
+        "Grupo": "03 TRANSMISIÓN"
+    },
+    {
+        "IdGrupo": "03080504",
+        "Grupo": "04 CHASIS"
+    },
+    {
+        "IdGrupo": "03080505",
+        "Grupo": "05 FRENOS"
+    },
+    {
+        "IdGrupo": "03080506",
+        "Grupo": "06 CARROCERÍA"
+    },
+    {
+        "IdGrupo": "03080507",
+        "Grupo": "07 BUS"
+    },
+    {
+        "IdGrupo": "03080508",
+        "Grupo": "08 NO UTILIZADO "
+    },
+    {
+        "IdGrupo": "03080509",
+        "Grupo": "09 PIEZAS ESTANDARIZADAS Y NORMALIZADAS "
+    },
+    {
+        "IdGrupo": "03090101",
+        "Grupo": "01 MO MECANICA"
+    },
+    {
+        "IdGrupo": "03090102",
+        "Grupo": "02 MO CHAPA + PINTURA"
+    },
+    {
+        "IdGrupo": "03090201",
+        "Grupo": "01 SERVICIO TERCEROS "
+    },
+    {
+        "IdGrupo": "03100101",
+        "Grupo": "01 MO ARMADO DE FURGONES"
+    },
+    {
+        "IdGrupo": "03110101",
+        "Grupo": "01 SEMINUEVOS"
+    },
+    {
+        "IdGrupo": "03120101",
+        "Grupo": "01 SUPERVISION TALLERES "
+    },
+    {
+        "IdGrupo": "03900101",
+        "Grupo": "01 SERVICIOS UNIDADES NUEVAS "
+    },
+    {
+        "IdGrupo": "04010101",
+        "Grupo": "01 DIAGNOSTICO GRAL. "
+    },
+    {
+        "IdGrupo": "04010102",
+        "Grupo": "02 RADIOLOGIA"
+    },
+    {
+        "IdGrupo": "04010201",
+        "Grupo": "01 DIAGNOSTICO GRAL. "
+    },
+    {
+        "IdGrupo": "04010202",
+        "Grupo": "02 RADIOLOGIA"
+    },
+    {
+        "IdGrupo": "04010301",
+        "Grupo": "01 DIAGNOSTICO ESPECIAL "
+    },
+    {
+        "IdGrupo": "04010401",
+        "Grupo": "01 DIAGNOSTICO ESPECIAL "
+    },
+    {
+        "IdGrupo": "04010501",
+        "Grupo": "01 RADIOLOGIA"
+    },
+    {
+        "IdGrupo": "04010502",
+        "Grupo": "02 SILLONES"
+    },
+    {
+        "IdGrupo": "04010503",
+        "Grupo": "03 INSTRUMENTOS "
+    },
+    {
+        "IdGrupo": "04010504",
+        "Grupo": "04 APARATOS"
+    },
+    {
+        "IdGrupo": "04010505",
+        "Grupo": "05 CEREC "
+    },
+    {
+        "IdGrupo": "04010506",
+        "Grupo": "06 OTROS "
+    },
+    {
+        "IdGrupo": "04010601",
+        "Grupo": "01 RADIOLOGIA"
+    },
+    {
+        "IdGrupo": "04010602",
+        "Grupo": "02 SILLONES"
+    },
+    {
+        "IdGrupo": "04010603",
+        "Grupo": "03 INSTRUMENTOS "
+    },
+    {
+        "IdGrupo": "04010604",
+        "Grupo": "04 APARATOS"
+    },
+    {
+        "IdGrupo": "04010605",
+        "Grupo": "05 CEREC "
+    },
+    {
+        "IdGrupo": "04010606",
+        "Grupo": "06 OTROS "
+    },
+    {
+        "IdGrupo": "04020101",
+        "Grupo": "01 CÁNULAS PARA V-SYSTEM DESECHABLES "
+    },
+    {
+        "IdGrupo": "04020102",
+        "Grupo": "02 ALAMBRES GUÍA"
+    },
+    {
+        "IdGrupo": "04020103",
+        "Grupo": "03 ESFINTERÓTOMOS DE TRIPLE LÚMEN V-SYST"
+    },
+    {
+        "IdGrupo": "04020104",
+        "Grupo": "04 ESFINTEROTÓMOS DE AGUJA TRIPLE LÚMEN "
+    },
+    {
+        "IdGrupo": "04020105",
+        "Grupo": "05 BALONES DE EXTRACCIÓN DE TRIPLE LÚMEN"
+    },
+    {
+        "IdGrupo": "04020106",
+        "Grupo": "06 CESTAS EXTRACCIÓN V-SYSTEM DESECHABLE"
+    },
+    {
+        "IdGrupo": "04020107",
+        "Grupo": "07 CEPILLOS"
+    },
+    {
+        "IdGrupo": "04020108",
+        "Grupo": "08 LITROTIPTOR MECÁNICO DESECHABLE"
+    },
+    {
+        "IdGrupo": "04020109",
+        "Grupo": "09 PRÓTESIS DE POLIETILENO P.DRENAJE BIL"
+    },
+    {
+        "IdGrupo": "04020110",
+        "Grupo": "10 PRÓTESIS BILIARES DE PLÁSTICO"
+    },
+    {
+        "IdGrupo": "04020111",
+        "Grupo": "11 SISTEMA BILIAR Y PANCREÁTICO "
+    },
+    {
+        "IdGrupo": "04020112",
+        "Grupo": "12 PINZAS DE BIOPSIA "
+    },
+    {
+        "IdGrupo": "04020113",
+        "Grupo": "13 ASAS DE POLIPECTOMÍA "
+    },
+    {
+        "IdGrupo": "04020114",
+        "Grupo": "14 PINZAS P. CUERPOS EXTRAÑOS"
+    },
+    {
+        "IdGrupo": "04020115",
+        "Grupo": "15 EMR"
+    },
+    {
+        "IdGrupo": "04020116",
+        "Grupo": "16 ESD"
+    },
+    {
+        "IdGrupo": "04020117",
+        "Grupo": "17 HEMOSTASIS"
+    },
+    {
+        "IdGrupo": "04020118",
+        "Grupo": "18 AGUJAS PARA EUS Y EBUS "
+    },
+    {
+        "IdGrupo": "04020119",
+        "Grupo": "19 PULMONAR"
+    },
+    {
+        "IdGrupo": "04020120",
+        "Grupo": "20 PROTECTOR BUCAL"
+    },
+    {
+        "IdGrupo": "04020121",
+        "Grupo": "21 CABLES"
+    },
+    {
+        "IdGrupo": "04020122",
+        "Grupo": "22 TUBO DE EMPUJE "
+    },
+    {
+        "IdGrupo": "04020123",
+        "Grupo": "23 ELECTRODOS"
+    },
+    {
+        "IdGrupo": "04020124",
+        "Grupo": "24 CESTAS DE EXTRACCION DESECHABLES"
+    },
+    {
+        "IdGrupo": "04020125",
+        "Grupo": "25 VALVULAS"
+    },
+    {
+        "IdGrupo": "04020201",
+        "Grupo": "01 VENTILACIÓN"
+    },
+    {
+        "IdGrupo": "04020202",
+        "Grupo": "02 ANESTESIA "
+    },
+    {
+        "IdGrupo": "04020203",
+        "Grupo": "03 MONITOREO "
+    },
+    {
+        "IdGrupo": "04020204",
+        "Grupo": "04 NEONATAL"
+    },
+    {
+        "IdGrupo": "04020301",
+        "Grupo": "01 PELÍCULAS "
+    },
+    {
+        "IdGrupo": "04020302",
+        "Grupo": "02 PAPEL "
+    },
+    {
+        "IdGrupo": "04020303",
+        "Grupo": "03 IMPRESORAS"
+    },
+    {
+        "IdGrupo": "04020401",
+        "Grupo": "01 PELÍCULAS "
+    },
+    {
+        "IdGrupo": "04020501",
+        "Grupo": "01 PROTECCIÓN EMPLOMADA "
+    },
+    {
+        "IdGrupo": "04020601",
+        "Grupo": "01 KITS"
+    },
+    {
+        "IdGrupo": "04020602",
+        "Grupo": "02 MEDIOS DE CONTRASTE"
+    },
+    {
+        "IdGrupo": "04020603",
+        "Grupo": "03 INYECTORES"
+    },
+    {
+        "IdGrupo": "04020701",
+        "Grupo": "01 STENTS"
+    },
+    {
+        "IdGrupo": "04020702",
+        "Grupo": "02 BALONES "
+    },
+    {
+        "IdGrupo": "04020703",
+        "Grupo": "03 IMPLANTES "
+    },
+    {
+        "IdGrupo": "04020704",
+        "Grupo": "04 HERRAMIENTAS "
+    },
+    {
+        "IdGrupo": "04020801",
+        "Grupo": "01 FORMALDEIDO"
+    },
+    {
+        "IdGrupo": "04020802",
+        "Grupo": "02 VAPOR "
+    },
+    {
+        "IdGrupo": "04020803",
+        "Grupo": "03 PLASMA"
+    },
+    {
+        "IdGrupo": "04020804",
+        "Grupo": "04 LIMPIEZA"
+    },
+    {
+        "IdGrupo": "04020805",
+        "Grupo": "05 CEPILLOS"
+    },
+    {
+        "IdGrupo": "04020806",
+        "Grupo": "06 EMBALAJE"
+    },
+    {
+        "IdGrupo": "04020807",
+        "Grupo": "07 CINTAS PARA IMPRESORA"
+    },
+    {
+        "IdGrupo": "04020808",
+        "Grupo": "08 CONTENEDORES "
+    },
+    {
+        "IdGrupo": "04020809",
+        "Grupo": "09 MANGAS MIXTAS"
+    },
+    {
+        "IdGrupo": "04020810",
+        "Grupo": "10 ETIQUETADORES"
+    },
+    {
+        "IdGrupo": "04020811",
+        "Grupo": "11 MATERIAL PARA IMPRESORAS DE AUTOCLAVE"
+    },
+    {
+        "IdGrupo": "04020812",
+        "Grupo": "12 INCUBADORAS PARA ESTERILIZACION"
+    },
+    {
+        "IdGrupo": "04020901",
+        "Grupo": "01 ELECTRODOS"
+    },
+    {
+        "IdGrupo": "04020902",
+        "Grupo": "02 AURICULARES"
+    },
+    {
+        "IdGrupo": "04020903",
+        "Grupo": "03 ESTIMULADORES"
+    },
+    {
+        "IdGrupo": "04021001",
+        "Grupo": "01 ACCESORIOS AMPER"
+    },
+    {
+        "IdGrupo": "04021101",
+        "Grupo": "01 EQUIPOS "
+    },
+    {
+        "IdGrupo": "04021102",
+        "Grupo": "02 ACCESORIOS"
+    },
+    {
+        "IdGrupo": "04021201",
+        "Grupo": "01 LIMPIEZA"
+    },
+    {
+        "IdGrupo": "04021301",
+        "Grupo": "01 LIMPIEZA"
+    },
+    {
+        "IdGrupo": "04030101",
+        "Grupo": "01 ENDOSCOPIA"
+    },
+    {
+        "IdGrupo": "04030102",
+        "Grupo": "02 LAPAROSCOPIA "
+    },
+    {
+        "IdGrupo": "04030201",
+        "Grupo": "01 MICROSCOPIA BIOLOGICA"
+    },
+    {
+        "IdGrupo": "04030202",
+        "Grupo": "02 MICROSCOPIA INDUSTRIAL "
+    },
+    {
+        "IdGrupo": "04030301",
+        "Grupo": "01 ENDOSCOPIA"
+    },
+    {
+        "IdGrupo": "04030302",
+        "Grupo": "02 LAPAROSCOPIA "
+    },
+    {
+        "IdGrupo": "04030303",
+        "Grupo": "03 MICROSCOPIA BIOLOGICA"
+    },
+    {
+        "IdGrupo": "04030304",
+        "Grupo": "04 MICROSCOPIA INDUSTRIAL "
+    },
+    {
+        "IdGrupo": "04040101",
+        "Grupo": "01 CODIFICADORES"
+    },
+    {
+        "IdGrupo": "04040102",
+        "Grupo": "02 OTROS "
+    },
+    {
+        "IdGrupo": "04040201",
+        "Grupo": "01 RAYOS X "
+    },
+    {
+        "IdGrupo": "04040202",
+        "Grupo": "02 MAMOGRAFIA"
+    },
+    {
+        "IdGrupo": "04040203",
+        "Grupo": "03 AX "
+    },
+    {
+        "IdGrupo": "04040204",
+        "Grupo": "04 IMPRESORAS SECAS"
+    },
+    {
+        "IdGrupo": "04040205",
+        "Grupo": "05 REVELACION"
+    },
+    {
+        "IdGrupo": "04040206",
+        "Grupo": "06 OTROS "
+    },
+    {
+        "IdGrupo": "04040301",
+        "Grupo": "01 CT "
+    },
+    {
+        "IdGrupo": "04040302",
+        "Grupo": "02 MRI"
+    },
+    {
+        "IdGrupo": "04040303",
+        "Grupo": "03 ECO"
+    },
+    {
+        "IdGrupo": "04040304",
+        "Grupo": "04 NM "
+    },
+    {
+        "IdGrupo": "04040305",
+        "Grupo": "05 OTROS "
+    },
+    {
+        "IdGrupo": "04040401",
+        "Grupo": "01 ENDOSCOPIA"
+    },
+    {
+        "IdGrupo": "04040402",
+        "Grupo": "02 OTROS "
+    },
+    {
+        "IdGrupo": "04040501",
+        "Grupo": "01 LAPAROSCOPIA "
+    },
+    {
+        "IdGrupo": "04040502",
+        "Grupo": "02 OTROS "
+    },
+    {
+        "IdGrupo": "04040601",
+        "Grupo": "01 MICROSCOPIA CLINICA"
+    },
+    {
+        "IdGrupo": "04040602",
+        "Grupo": "02 MICROSCOPIA INDUSTRIAL "
+    },
+    {
+        "IdGrupo": "04040603",
+        "Grupo": "03 OTROS "
+    },
+    {
+        "IdGrupo": "04040701",
+        "Grupo": "01 CALDERAS"
+    },
+    {
+        "IdGrupo": "04040702",
+        "Grupo": "02 COCINAS "
+    },
+    {
+        "IdGrupo": "04040703",
+        "Grupo": "03 LAVANDERIAS"
+    },
+    {
+        "IdGrupo": "04040704",
+        "Grupo": "04 CAMAS "
+    },
+    {
+        "IdGrupo": "04040705",
+        "Grupo": "05 MOBILIARIO"
+    },
+    {
+        "IdGrupo": "04040706",
+        "Grupo": "06 ESTERILIZACION "
+    },
+    {
+        "IdGrupo": "04040707",
+        "Grupo": "07 OTROS "
+    },
+    {
+        "IdGrupo": "04040801",
+        "Grupo": "01 ANESTESIA "
+    },
+    {
+        "IdGrupo": "04040802",
+        "Grupo": "02 ASPIRACION"
+    },
+    {
+        "IdGrupo": "04040803",
+        "Grupo": "03 LAMPARAS OPERATORIAS "
+    },
+    {
+        "IdGrupo": "04040804",
+        "Grupo": "04 MESAS OPERATORIAS "
+    },
+    {
+        "IdGrupo": "04040805",
+        "Grupo": "05 RAYOS X - ARCO EN C"
+    },
+    {
+        "IdGrupo": "04040806",
+        "Grupo": "06 VENTILACION"
+    },
+    {
+        "IdGrupo": "04040807",
+        "Grupo": "07 ELECTROBISTURIS"
+    },
+    {
+        "IdGrupo": "04040808",
+        "Grupo": "08 DESFIBRILADOR"
+    },
+    {
+        "IdGrupo": "04040809",
+        "Grupo": "09 SISTEMAS DE TECHO "
+    },
+    {
+        "IdGrupo": "04040810",
+        "Grupo": "10 OTROS "
+    },
+    {
+        "IdGrupo": "04040901",
+        "Grupo": "01 CARDIOLOGIA"
+    },
+    {
+        "IdGrupo": "04040902",
+        "Grupo": "02 ELECTROENCEFALOGRAFIA"
+    },
+    {
+        "IdGrupo": "04040903",
+        "Grupo": "03 TERAPIA INTENSIVA "
+    },
+    {
+        "IdGrupo": "04040904",
+        "Grupo": "04 OTROS "
+    },
+    {
+        "IdGrupo": "04041001",
+        "Grupo": "01 RADIOLOGIA"
+    },
+    {
+        "IdGrupo": "04041002",
+        "Grupo": "02 SILLONES"
+    },
+    {
+        "IdGrupo": "04041003",
+        "Grupo": "03 INSTRUMENTOS "
+    },
+    {
+        "IdGrupo": "04041004",
+        "Grupo": "04 APARATOS"
+    },
+    {
+        "IdGrupo": "04041005",
+        "Grupo": "05 CEREC "
+    },
+    {
+        "IdGrupo": "04041006",
+        "Grupo": "06 OTROS "
+    },
+    {
+        "IdGrupo": "04041101",
+        "Grupo": "01 GENERICO"
+    },
+    {
+        "IdGrupo": "04041201",
+        "Grupo": "01 CODIFICADORES"
+    },
+    {
+        "IdGrupo": "04041202",
+        "Grupo": "02 DIAGNOSTICO GRAL. "
+    },
+    {
+        "IdGrupo": "04041203",
+        "Grupo": "03 DIAGNOSTICO ESPECIAL "
+    },
+    {
+        "IdGrupo": "04041204",
+        "Grupo": "04 ENDOSCOPIA"
+    },
+    {
+        "IdGrupo": "04041205",
+        "Grupo": "05 LAPAROSCOPIA "
+    },
+    {
+        "IdGrupo": "04041206",
+        "Grupo": "06 LABORATORIO"
+    },
+    {
+        "IdGrupo": "04041207",
+        "Grupo": "07 SERV. GENERALES"
+    },
+    {
+        "IdGrupo": "04041208",
+        "Grupo": "08 CIRUGIA "
+    },
+    {
+        "IdGrupo": "04041209",
+        "Grupo": "09 ELECTROMEDICINA"
+    },
+    {
+        "IdGrupo": "04041210",
+        "Grupo": "10 DENTAL"
+    },
+    {
+        "IdGrupo": "04041211",
+        "Grupo": "11 GENERICO"
+    },
+    {
+        "IdGrupo": "04041301",
+        "Grupo": "01 OLYMPUS "
+    },
+    {
+        "IdGrupo": "04041401",
+        "Grupo": "01 ACELERADOR LINEAL "
+    },
+    {
+        "IdGrupo": "04041402",
+        "Grupo": "02 BRAQUITERAPIA"
+    },
+    {
+        "IdGrupo": "04050101",
+        "Grupo": "01 SERV.GENERALES "
+    },
+    {
+        "IdGrupo": "04050102",
+        "Grupo": "02 ESTETICA"
+    },
+    {
+        "IdGrupo": "04050201",
+        "Grupo": "01 CIRUGIA "
+    },
+    {
+        "IdGrupo": "04050202",
+        "Grupo": "02 ELECTROMEDICINA"
+    },
+    {
+        "IdGrupo": "04050203",
+        "Grupo": "03 ELECTROENCEFALOGRAFIA"
+    },
+    {
+        "IdGrupo": "04050301",
+        "Grupo": "01 SERV.GENERALES "
+    },
+    {
+        "IdGrupo": "04050302",
+        "Grupo": "02 ESTETICA"
+    },
+    {
+        "IdGrupo": "04050303",
+        "Grupo": "03 CIRUGIA "
+    },
+    {
+        "IdGrupo": "04050304",
+        "Grupo": "04 ELECTROMEDICINA"
+    },
+    {
+        "IdGrupo": "04050305",
+        "Grupo": "05 ELECTROENCEFALOGRAFIA"
+    },
+    {
+        "IdGrupo": "04060101",
+        "Grupo": "01 RADIOLOGIA DENTRAL INTRAORAL "
+    },
+    {
+        "IdGrupo": "04060102",
+        "Grupo": "02 RADIOLOGIA DENTRAL EXTRAORAL "
+    },
+    {
+        "IdGrupo": "04060103",
+        "Grupo": "03 SISTEMAS CAD/CAM EN SITIO "
+    },
+    {
+        "IdGrupo": "04060104",
+        "Grupo": "04 SISTEMAS CAD/CAM EN LABORATORIO"
+    },
+    {
+        "IdGrupo": "04060105",
+        "Grupo": "05 UNIDADES DE TRATAMIENTO"
+    },
+    {
+        "IdGrupo": "04060106",
+        "Grupo": "06 CONTRA-ANGULOS Y PIEZAS DE MANO"
+    },
+    {
+        "IdGrupo": "04060107",
+        "Grupo": "07 TURBINAS"
+    },
+    {
+        "IdGrupo": "04060108",
+        "Grupo": "08 KITS DE INSTRUMENTAL "
+    },
+    {
+        "IdGrupo": "04060109",
+        "Grupo": "09 MOTORES "
+    },
+    {
+        "IdGrupo": "04060110",
+        "Grupo": "10 INSTRUMENTS"
+    },
+    {
+        "IdGrupo": "04060111",
+        "Grupo": "11 ENDODONCIA"
+    },
+    {
+        "IdGrupo": "04060112",
+        "Grupo": "12 CAD CAM "
+    },
+    {
+        "IdGrupo": "04060113",
+        "Grupo": "13 SOFTWARE"
+    },
+    {
+        "IdGrupo": "04060114",
+        "Grupo": "14 LIQUIDACION"
+    },
+    {
+        "IdGrupo": "04060115",
+        "Grupo": "15 LASER DENTAL "
+    },
+    {
+        "IdGrupo": "04060201",
+        "Grupo": "01 IMPRESORAS 3D"
+    },
+    {
+        "IdGrupo": "04060301",
+        "Grupo": "01 RADIOLOGIA DENTAL INTRAORAL"
+    },
+    {
+        "IdGrupo": "04060302",
+        "Grupo": "02 INSUMOS "
+    },
+    {
+        "IdGrupo": "04060401",
+        "Grupo": "01 RADIOLOGIA DENTAL INTRAORAL"
+    },
+    {
+        "IdGrupo": "04060501",
+        "Grupo": "01 COMPRAS LOCALES"
+    },
+    {
+        "IdGrupo": "04060601",
+        "Grupo": "01 SILLONES"
+    },
+    {
+        "IdGrupo": "04900101",
+        "Grupo": "01 Proyectos "
+    },
+    {
+        "IdGrupo": "04910101",
+        "Grupo": "01 OTROS "
+    },
+    {
+        "IdGrupo": "05010101",
+        "Grupo": "01 TERMOELÉCTRICAS"
+    },
+    {
+        "IdGrupo": "05010102",
+        "Grupo": "02 HIDROELÉCTRICAS"
+    },
+    {
+        "IdGrupo": "05010103",
+        "Grupo": "03 ENERGÍAS ALTERNATIVAS"
+    },
+    {
+        "IdGrupo": "05010201",
+        "Grupo": "01 SUBESTACIONES"
+    },
+    {
+        "IdGrupo": "05010202",
+        "Grupo": "02 EQUIPOS DE ALTA TENSIÓN"
+    },
+    {
+        "IdGrupo": "05010203",
+        "Grupo": "03 TRANSFORMADORES"
+    },
+    {
+        "IdGrupo": "05010204",
+        "Grupo": "04 EQUIPOS DE MEDIA TENSIÓN"
+    },
+    {
+        "IdGrupo": "05010205",
+        "Grupo": "05 CONTROL PROTECCIÓN"
+    },
+    {
+        "IdGrupo": "05010206",
+        "Grupo": "06 SERVICIOS AUXILIARES "
+    },
+    {
+        "IdGrupo": "05010301",
+        "Grupo": "01 LÍNEAS DE TRANSMISIÓN"
+    },
+    {
+        "IdGrupo": "05010302",
+        "Grupo": "02 CABLES"
+    },
+    {
+        "IdGrupo": "05010303",
+        "Grupo": "03 ESTRUCTURAS METÁLICAS"
+    },
+    {
+        "IdGrupo": "05010304",
+        "Grupo": "04 FERRETERÍA DE LÍNEA"
+    },
+    {
+        "IdGrupo": "05010401",
+        "Grupo": "01 ELECTROMECÁNICOS"
+    },
+    {
+        "IdGrupo": "05010402",
+        "Grupo": "02 ELECTRÓNICOS "
+    },
+    {
+        "IdGrupo": "05010501",
+        "Grupo": "01 OTROS "
+    },
+    {
+        "IdGrupo": "05010601",
+        "Grupo": "01 S-'05 "
+    },
+    {
+        "IdGrupo": "05010602",
+        "Grupo": "02 S'07-'0200"
+    },
+    {
+        "IdGrupo": "05010603",
+        "Grupo": "03 S'07-'0300"
+    },
+    {
+        "IdGrupo": "05010604",
+        "Grupo": "04 S'07-'0400"
+    },
+    {
+        "IdGrupo": "05010605",
+        "Grupo": "05 LOGO"
+    },
+    {
+        "IdGrupo": "05010606",
+        "Grupo": "06 HMI"
+    },
+    {
+        "IdGrupo": "05010607",
+        "Grupo": "07 ASI"
+    },
+    {
+        "IdGrupo": "05010608",
+        "Grupo": "08 PROFIBUS"
+    },
+    {
+        "IdGrupo": "05010609",
+        "Grupo": "09 EHTERNET"
+    },
+    {
+        "IdGrupo": "05010610",
+        "Grupo": "10 ACCESORIOS"
+    },
+    {
+        "IdGrupo": "05010611",
+        "Grupo": "11 SOFTWARE"
+    },
+    {
+        "IdGrupo": "05010701",
+        "Grupo": "01 NIVEL "
+    },
+    {
+        "IdGrupo": "05010702",
+        "Grupo": "02 PRESIÓN "
+    },
+    {
+        "IdGrupo": "05010703",
+        "Grupo": "03 TEMPERATURA"
+    },
+    {
+        "IdGrupo": "05010704",
+        "Grupo": "04 FLUJO "
+    },
+    {
+        "IdGrupo": "05010801",
+        "Grupo": "01 INDUCTIVOS"
+    },
+    {
+        "IdGrupo": "05010802",
+        "Grupo": "02 CAPACITIVOS"
+    },
+    {
+        "IdGrupo": "05010803",
+        "Grupo": "03 ULTRASONIDOS "
+    },
+    {
+        "IdGrupo": "05010804",
+        "Grupo": "04 ÓPTICOS "
+    },
+    {
+        "IdGrupo": "05010901",
+        "Grupo": "01 SEMÁFOROS "
+    },
+    {
+        "IdGrupo": "05010902",
+        "Grupo": "02 CONTROLADORES"
+    },
+    {
+        "IdGrupo": "05010903",
+        "Grupo": "03 ACCESORIOS"
+    },
+    {
+        "IdGrupo": "05010904",
+        "Grupo": "04 VARIOS"
+    },
+    {
+        "IdGrupo": "05011001",
+        "Grupo": "01 SEMAFORIZACIÓN "
+    },
+    {
+        "IdGrupo": "05011002",
+        "Grupo": "02 AEROPUERTOS"
+    },
+    {
+        "IdGrupo": "05011003",
+        "Grupo": "03 MINERÍA "
+    },
+    {
+        "IdGrupo": "05011004",
+        "Grupo": "04 TRAT-AGUAS"
+    },
+    {
+        "IdGrupo": "05011101",
+        "Grupo": "01 BUILDING AUTOMA"
+    },
+    {
+        "IdGrupo": "05011102",
+        "Grupo": "02 FIRE SYSTEMS "
+    },
+    {
+        "IdGrupo": "05011103",
+        "Grupo": "03 SECURITY"
+    },
+    {
+        "IdGrupo": "05011104",
+        "Grupo": "04 CONTROL A/C"
+    },
+    {
+        "IdGrupo": "05011201",
+        "Grupo": "01 09'08'01"
+    },
+    {
+        "IdGrupo": "05011202",
+        "Grupo": "02 09'08'06"
+    },
+    {
+        "IdGrupo": "05011203",
+        "Grupo": "03 09'08'09"
+    },
+    {
+        "IdGrupo": "05011301",
+        "Grupo": "01 GAS & OIL "
+    },
+    {
+        "IdGrupo": "05011401",
+        "Grupo": "01 PROYECTOS ESPECIALES "
+    },
+    {
+        "IdGrupo": "05020101",
+        "Grupo": "01 OTROS "
+    },
+    {
+        "IdGrupo": "06010101",
+        "Grupo": "01 PLANTA INTERNA "
+    },
+    {
+        "IdGrupo": "06010102",
+        "Grupo": "02 PLANTA EXTERNA "
+    },
+    {
+        "IdGrupo": "06010201",
+        "Grupo": "01 PLANTA INTERNA "
+    },
+    {
+        "IdGrupo": "06010202",
+        "Grupo": "02 ACCESO"
+    },
+    {
+        "IdGrupo": "06010301",
+        "Grupo": "01 CABECERA"
+    },
+    {
+        "IdGrupo": "06010302",
+        "Grupo": "02 RED COAXIAL"
+    },
+    {
+        "IdGrupo": "06010303",
+        "Grupo": "03 RED FIBRA OPTICA"
+    },
+    {
+        "IdGrupo": "06010401",
+        "Grupo": "01 PLANTA INTERNA "
+    },
+    {
+        "IdGrupo": "06010501",
+        "Grupo": "01 TEC. INFORMACION"
+    },
+    {
+        "IdGrupo": "06010502",
+        "Grupo": "02 EQ. DE MEDICION"
+    },
+    {
+        "IdGrupo": "06010601",
+        "Grupo": "01 MANO DE OBRA "
+    },
+    {
+        "IdGrupo": "06020101",
+        "Grupo": "01 TELEFONOS "
+    },
+    {
+        "IdGrupo": "06020102",
+        "Grupo": "02 HIPATH HP3550"
+    },
+    {
+        "IdGrupo": "06020103",
+        "Grupo": "03 HIPATH HP3800"
+    },
+    {
+        "IdGrupo": "06020104",
+        "Grupo": "04 HIPATH HP1120"
+    },
+    {
+        "IdGrupo": "06020105",
+        "Grupo": "05 HIPATH HP1150"
+    },
+    {
+        "IdGrupo": "06020106",
+        "Grupo": "06 AQCT"
+    },
+    {
+        "IdGrupo": "06020107",
+        "Grupo": "07 ITS"
+    },
+    {
+        "IdGrupo": "06020108",
+        "Grupo": "08 OTROS "
+    },
+    {
+        "IdGrupo": "06020109",
+        "Grupo": "09 PROYECTOS "
+    },
+    {
+        "IdGrupo": "06020201",
+        "Grupo": "01 NORSTAR "
+    },
+    {
+        "IdGrupo": "06020202",
+        "Grupo": "02 MERIDIAN"
+    },
+    {
+        "IdGrupo": "06020203",
+        "Grupo": "03 ESNATECH"
+    },
+    {
+        "IdGrupo": "06020204",
+        "Grupo": "04 DATOS "
+    },
+    {
+        "IdGrupo": "06020205",
+        "Grupo": "05 OTROS "
+    },
+    {
+        "IdGrupo": "06020206",
+        "Grupo": "06 PROYECTOS "
+    },
+    {
+        "IdGrupo": "06020301",
+        "Grupo": "01 SEGURIDAD "
+    },
+    {
+        "IdGrupo": "06020302",
+        "Grupo": "02 DEFENSA "
+    },
+    {
+        "IdGrupo": "06020303",
+        "Grupo": "03 RADIOCOMUNICACIÓN "
+    },
+    {
+        "IdGrupo": "06020304",
+        "Grupo": "04 SATELITAL "
+    },
+    {
+        "IdGrupo": "06020305",
+        "Grupo": "05 OTROS "
+    },
+    {
+        "IdGrupo": "06020306",
+        "Grupo": "06 PROYECTOS "
+    },
+    {
+        "IdGrupo": "06020401",
+        "Grupo": "01 MONITORES "
+    },
+    {
+        "IdGrupo": "06020402",
+        "Grupo": "02 PC'S"
+    },
+    {
+        "IdGrupo": "06020403",
+        "Grupo": "03 OTROS "
+    },
+    {
+        "IdGrupo": "06020404",
+        "Grupo": "04 NOTEBOOK"
+    },
+    {
+        "IdGrupo": "06020405",
+        "Grupo": "05 LICENCIAS "
+    },
+    {
+        "IdGrupo": "06020406",
+        "Grupo": "06 PROYECTOS "
+    },
+    {
+        "IdGrupo": "06020501",
+        "Grupo": "01 VIDEOCONFERENCIA"
+    },
+    {
+        "IdGrupo": "06020502",
+        "Grupo": "02 TELECONFERENCIA"
+    },
+    {
+        "IdGrupo": "06020503",
+        "Grupo": "03 PROYECTOS "
+    },
+    {
+        "IdGrupo": "06020504",
+        "Grupo": "04 OTROS "
+    },
+    {
+        "IdGrupo": "06020601",
+        "Grupo": "01 BATERIAS"
+    },
+    {
+        "IdGrupo": "06020602",
+        "Grupo": "02 CABLEADO"
+    },
+    {
+        "IdGrupo": "06020603",
+        "Grupo": "03 ACCESORIOS"
+    },
+    {
+        "IdGrupo": "06020604",
+        "Grupo": "04 UPS"
+    },
+    {
+        "IdGrupo": "06020605",
+        "Grupo": "05 PROYECTOS "
+    },
+    {
+        "IdGrupo": "06020606",
+        "Grupo": "06 OTROS "
+    },
+    {
+        "IdGrupo": "06020701",
+        "Grupo": "01 TELEFONIA "
+    },
+    {
+        "IdGrupo": "06020702",
+        "Grupo": "02 SEGURIDAD Y DEFENSA"
+    },
+    {
+        "IdGrupo": "06020703",
+        "Grupo": "03 EQUIPOS DE COMPUTACION "
+    },
+    {
+        "IdGrupo": "06020704",
+        "Grupo": "04 VIDEO CONFERENCIA "
+    },
+    {
+        "IdGrupo": "06020705",
+        "Grupo": "05 OTROS "
+    },
+    {
+        "IdGrupo": "06020706",
+        "Grupo": "06 RADIOCOMUNICACIONES"
+    },
+    {
+        "IdGrupo": "06020707",
+        "Grupo": "07 DATOS "
+    },
+    {
+        "IdGrupo": "06020801",
+        "Grupo": "01 WINLINK 1000 "
+    },
+    {
+        "IdGrupo": "06020802",
+        "Grupo": "02 RADWIN 2000"
+    },
+    {
+        "IdGrupo": "06020803",
+        "Grupo": "03 IDUS & ACCESORIOS "
+    },
+    {
+        "IdGrupo": "06020804",
+        "Grupo": "04 CABLES"
+    },
+    {
+        "IdGrupo": "06020901",
+        "Grupo": "01 ECPD"
+    },
+    {
+        "IdGrupo": "06020902",
+        "Grupo": "02 EC "
+    },
+    {
+        "IdGrupo": "06020903",
+        "Grupo": "03 ECM"
+    },
+    {
+        "IdGrupo": "06020904",
+        "Grupo": "04 TVD"
+    },
+    {
+        "IdGrupo": "06021001",
+        "Grupo": "01 ANALOGICO "
+    },
+    {
+        "IdGrupo": "06021002",
+        "Grupo": "02 DIGITAL "
+    },
+    {
+        "IdGrupo": "06021003",
+        "Grupo": "03 IP "
+    },
+    {
+        "IdGrupo": "06021101",
+        "Grupo": "01 TELEFONIA IP "
+    },
+    {
+        "IdGrupo": "06021201",
+        "Grupo": "01 WIRELESS CONNECTIVITY"
+    },
+    {
+        "IdGrupo": "06021202",
+        "Grupo": "02 SWITCHES"
+    },
+    {
+        "IdGrupo": "06021203",
+        "Grupo": "03 ETHERNET ADAPTERS "
+    },
+    {
+        "IdGrupo": "06021204",
+        "Grupo": "04 PRINT SERVERS"
+    },
+    {
+        "IdGrupo": "06021205",
+        "Grupo": "05 WIRED ROUTERS"
+    },
+    {
+        "IdGrupo": "06021206",
+        "Grupo": "06 FIBER "
+    },
+    {
+        "IdGrupo": "06021207",
+        "Grupo": "07 INTERNET SECURITY CAMERAS "
+    },
+    {
+        "IdGrupo": "06021208",
+        "Grupo": "08 POWERLINE "
+    },
+    {
+        "IdGrupo": "06021209",
+        "Grupo": "09 POWER OVER ETHERNET"
+    },
+    {
+        "IdGrupo": "06021210",
+        "Grupo": "10 STORAGE "
+    },
+    {
+        "IdGrupo": "06021211",
+        "Grupo": "11 KVM SWITCHES "
+    },
+    {
+        "IdGrupo": "06021212",
+        "Grupo": "12 USB, FIREWIRE & ACCESSORIES"
+    },
+    {
+        "IdGrupo": "06021213",
+        "Grupo": "13 NETWORK ACCESSORIES"
+    },
+    {
+        "IdGrupo": "06021214",
+        "Grupo": "14 56K MODEMS"
+    },
+    {
+        "IdGrupo": "06030101",
+        "Grupo": "01 ORACLE"
+    },
+    {
+        "IdGrupo": "06030201",
+        "Grupo": "01 TERMINALES"
+    },
+    {
+        "IdGrupo": "06030202",
+        "Grupo": "02 CENTRALES TELEFONICAS TDM-IP "
+    },
+    {
+        "IdGrupo": "06030301",
+        "Grupo": "01 AUDIO CONFERENCIA "
+    },
+    {
+        "IdGrupo": "06030302",
+        "Grupo": "02 VIDEOCONFERENCIA"
+    },
+    {
+        "IdGrupo": "06030303",
+        "Grupo": "03 TELE PRESENCIA "
+    },
+    {
+        "IdGrupo": "06030304",
+        "Grupo": "04 TELEFONOS IP Y PARA OCS"
+    },
+    {
+        "IdGrupo": "06030401",
+        "Grupo": "01 VIDEO IP Y ANALOGICO "
+    },
+    {
+        "IdGrupo": "06030402",
+        "Grupo": "02 CONTROL DE ACCESO "
+    },
+    {
+        "IdGrupo": "06030403",
+        "Grupo": "03 INCENDIO"
+    },
+    {
+        "IdGrupo": "06030404",
+        "Grupo": "04 DETECCION, ALARMAS"
+    },
+    {
+        "IdGrupo": "06030501",
+        "Grupo": "01 ANTENAS "
+    },
+    {
+        "IdGrupo": "06030502",
+        "Grupo": "02 IDU / ODU "
+    },
+    {
+        "IdGrupo": "06030503",
+        "Grupo": "03 HUB"
+    },
+    {
+        "IdGrupo": "06030601",
+        "Grupo": "01 PLANTA INTERNA "
+    },
+    {
+        "IdGrupo": "06030602",
+        "Grupo": "02 PLANTA EXTERNA "
+    },
+    {
+        "IdGrupo": "06030603",
+        "Grupo": "03 MEDICIÓN"
+    },
+    {
+        "IdGrupo": "06040101",
+        "Grupo": "01 CARRIER SERVICE"
+    },
+    {
+        "IdGrupo": "06040102",
+        "Grupo": "02 CABECERA"
+    },
+    {
+        "IdGrupo": "06040103",
+        "Grupo": "03 RED COAXIAL"
+    },
+    {
+        "IdGrupo": "06040104",
+        "Grupo": "04 RED FIBRA OPTICA"
+    },
+    {
+        "IdGrupo": "06040105",
+        "Grupo": "05 OTROS "
+    },
+    {
+        "IdGrupo": "07010101",
+        "Grupo": "01 TE NEGRO NACIONAL "
+    },
+    {
+        "IdGrupo": "07010102",
+        "Grupo": "02 TE VERDE NACIONAL "
+    },
+    {
+        "IdGrupo": "07010103",
+        "Grupo": "03 TE NEGRO EXTRANJERO"
+    },
+    {
+        "IdGrupo": "07010104",
+        "Grupo": "04 MATE"
+    },
+    {
+        "IdGrupo": "07010105",
+        "Grupo": "05 FRUTA DESHIDRATADA"
+    },
+    {
+        "IdGrupo": "07010106",
+        "Grupo": "06 GENERICO"
+    },
+    {
+        "IdGrupo": "07010107",
+        "Grupo": "07 EXPORTACION"
+    },
+    {
+        "IdGrupo": "07010108",
+        "Grupo": "08 YERBA MATE"
+    },
+    {
+        "IdGrupo": "07010201",
+        "Grupo": "01 COLORANTE "
+    },
+    {
+        "IdGrupo": "07010202",
+        "Grupo": "02 ESENCIA "
+    },
+    {
+        "IdGrupo": "07010203",
+        "Grupo": "03 SABORIZANTE Y ESENCIA"
+    },
+    {
+        "IdGrupo": "07010204",
+        "Grupo": "04 GENERICO"
+    },
+    {
+        "IdGrupo": "07010301",
+        "Grupo": "01 MATE"
+    },
+    {
+        "IdGrupo": "07010302",
+        "Grupo": "02 FRUTA "
+    },
+    {
+        "IdGrupo": "07010303",
+        "Grupo": "03 GENERICO"
+    },
+    {
+        "IdGrupo": "07010401",
+        "Grupo": "01 TE "
+    },
+    {
+        "IdGrupo": "07010402",
+        "Grupo": "02 MATE"
+    },
+    {
+        "IdGrupo": "07010403",
+        "Grupo": "03FRUTA"
+    },
+    {
+        "IdGrupo": "07010404",
+        "Grupo": "04 CEYLAN"
+    },
+    {
+        "IdGrupo": "07010405",
+        "Grupo": "05 GOURMET "
+    },
+    {
+        "IdGrupo": "07010501",
+        "Grupo": "01 MATE"
+    },
+    {
+        "IdGrupo": "07010502",
+        "Grupo": "02 FRUTA DESHIDRATADA"
+    },
+    {
+        "IdGrupo": "07010503",
+        "Grupo": "03 FRUTA MOLIDA "
+    },
+    {
+        "IdGrupo": "07010504",
+        "Grupo": "04 GOURMET "
+    },
+    {
+        "IdGrupo": "07010505",
+        "Grupo": "05 TINSIÓN "
+    },
+    {
+        "IdGrupo": "07010506",
+        "Grupo": "06 GENERICO"
+    },
+    {
+        "IdGrupo": "07010601",
+        "Grupo": "01 SOBRES"
+    },
+    {
+        "IdGrupo": "07010602",
+        "Grupo": "02 ETIQUETAS "
+    },
+    {
+        "IdGrupo": "07010603",
+        "Grupo": "03 CAJAS TE"
+    },
+    {
+        "IdGrupo": "07010604",
+        "Grupo": "04 CAJAS MATE"
+    },
+    {
+        "IdGrupo": "07010605",
+        "Grupo": "05 CAJAS FRUTA"
+    },
+    {
+        "IdGrupo": "07010606",
+        "Grupo": "06 CAJAS GOURMET"
+    },
+    {
+        "IdGrupo": "07010607",
+        "Grupo": "07 CAJAS CEYLAN "
+    },
+    {
+        "IdGrupo": "07010608",
+        "Grupo": "08 CAJAS GENERICO "
+    },
+    {
+        "IdGrupo": "07010609",
+        "Grupo": "09 BOPP"
+    },
+    {
+        "IdGrupo": "07010610",
+        "Grupo": "10 POLIETILENO BAJA DENSIDAD "
+    },
+    {
+        "IdGrupo": "07010611",
+        "Grupo": "11 PEBD-PP "
+    },
+    {
+        "IdGrupo": "07010612",
+        "Grupo": "12 BOLSAS"
+    },
+    {
+        "IdGrupo": "07010613",
+        "Grupo": "13 GENERICO"
+    },
+    {
+        "IdGrupo": "07010614",
+        "Grupo": "14 CAJAS MYTH"
+    },
+    {
+        "IdGrupo": "07010615",
+        "Grupo": "15 LATAS "
+    },
+    {
+        "IdGrupo": "07010616",
+        "Grupo": "16 CAJAS YERBA MATE"
+    },
+    {
+        "IdGrupo": "07010701",
+        "Grupo": "01 CON CANELA"
+    },
+    {
+        "IdGrupo": "07010702",
+        "Grupo": "02 SIN CANELA"
+    },
+    {
+        "IdGrupo": "07010703",
+        "Grupo": "03 CANELA Y CLAVO "
+    },
+    {
+        "IdGrupo": "07010704",
+        "Grupo": "04 TÉ VERDE"
+    },
+    {
+        "IdGrupo": "07010705",
+        "Grupo": "05 TU MIX"
+    },
+    {
+        "IdGrupo": "07010706",
+        "Grupo": "06 TE NEGRO"
+    },
+    {
+        "IdGrupo": "07010707",
+        "Grupo": "07 CANELA Y LIMON "
+    },
+    {
+        "IdGrupo": "07010801",
+        "Grupo": "01 MANZANILLA"
+    },
+    {
+        "IdGrupo": "07010802",
+        "Grupo": "02 TRIMATE "
+    },
+    {
+        "IdGrupo": "07010803",
+        "Grupo": "03 COCA"
+    },
+    {
+        "IdGrupo": "07010804",
+        "Grupo": "04 ANIS"
+    },
+    {
+        "IdGrupo": "07010805",
+        "Grupo": "05 TU MIX"
+    },
+    {
+        "IdGrupo": "07010806",
+        "Grupo": "06 BOLDO "
+    },
+    {
+        "IdGrupo": "07010807",
+        "Grupo": "07 CEDRON"
+    },
+    {
+        "IdGrupo": "07010901",
+        "Grupo": "01 PIÑA"
+    },
+    {
+        "IdGrupo": "07010902",
+        "Grupo": "02 MANZANA "
+    },
+    {
+        "IdGrupo": "07010903",
+        "Grupo": "03 DURAZNO "
+    },
+    {
+        "IdGrupo": "07010904",
+        "Grupo": "04 NARANJA "
+    },
+    {
+        "IdGrupo": "07010905",
+        "Grupo": "05 TU MIX"
+    },
+    {
+        "IdGrupo": "07011001",
+        "Grupo": "01 GOURMET "
+    },
+    {
+        "IdGrupo": "07011101",
+        "Grupo": "01 PRODUCTO BOLSA "
+    },
+    {
+        "IdGrupo": "07011201",
+        "Grupo": "01 CEYLAN"
+    },
+    {
+        "IdGrupo": "07011301",
+        "Grupo": "01 COFRES"
+    },
+    {
+        "IdGrupo": "07011302",
+        "Grupo": "02 PAPEL FILTRO "
+    },
+    {
+        "IdGrupo": "07011303",
+        "Grupo": "03MATERIA PRIMA "
+    },
+    {
+        "IdGrupo": "07011401",
+        "Grupo": "01 LOTES "
+    },
+    {
+        "IdGrupo": "07011402",
+        "Grupo": "02 VARIOS"
+    },
+    {
+        "IdGrupo": "07011403",
+        "Grupo": "03 MERMAS"
+    },
+    {
+        "IdGrupo": "07011404",
+        "Grupo": "04 ROPA DE TRABAJO"
+    },
+    {
+        "IdGrupo": "07011501",
+        "Grupo": "01 TE "
+    },
+    {
+        "IdGrupo": "07011502",
+        "Grupo": "02 MATE"
+    },
+    {
+        "IdGrupo": "07011503",
+        "Grupo": "03 FRUTA "
+    },
+    {
+        "IdGrupo": "07011504",
+        "Grupo": "04 COFRES"
+    },
+    {
+        "IdGrupo": "07011601",
+        "Grupo": "01 TÉ "
+    },
+    {
+        "IdGrupo": "07011602",
+        "Grupo": "02 MATE"
+    },
+    {
+        "IdGrupo": "07011603",
+        "Grupo": "03 FRUTA "
+    },
+    {
+        "IdGrupo": "07011604",
+        "Grupo": "04 TÉ VERDE"
+    },
+    {
+        "IdGrupo": "07011701",
+        "Grupo": "01 PACK PROMOCIONAL"
+    },
+    {
+        "IdGrupo": "07011801",
+        "Grupo": "01 YERBA MATE"
+    },
+    {
+        "IdGrupo": "07011901",
+        "Grupo": "01 TE "
+    },
+    {
+        "IdGrupo": "07011902",
+        "Grupo": "02 MATE"
+    },
+    {
+        "IdGrupo": "07011903",
+        "Grupo": "03 FRUTA "
+    },
+    {
+        "IdGrupo": "07012001",
+        "Grupo": "01 MUJER "
+    },
+    {
+        "IdGrupo": "07020101",
+        "Grupo": "01 LATA 350 ML"
+    },
+    {
+        "IdGrupo": "07020102",
+        "Grupo": "02 PET 500 ML"
+    },
+    {
+        "IdGrupo": "07020201",
+        "Grupo": "01 SABORIZANTE"
+    },
+    {
+        "IdGrupo": "07020301",
+        "Grupo": "01 ETIQUETAS "
+    },
+    {
+        "IdGrupo": "07030101",
+        "Grupo": "01 LIOFILIZADO"
+    },
+    {
+        "IdGrupo": "98010101",
+        "Grupo": "01 OFICINAS"
+    },
+    {
+        "IdGrupo": "98010102",
+        "Grupo": "02 GALPONES"
+    },
+    {
+        "IdGrupo": "98010103",
+        "Grupo": "03 PARQUEOS"
+    },
+    {
+        "IdGrupo": "98010104",
+        "Grupo": "04 DEPÓSITOS "
+    },
+    {
+        "IdGrupo": "98010105",
+        "Grupo": "05 ESPACIOS PUBLICITARIOS "
+    },
+    {
+        "IdGrupo": "98010106",
+        "Grupo": "06 ESPACIOS PARA ANTENAS"
+    },
+    {
+        "IdGrupo": "98010107",
+        "Grupo": "07 SERVICIOS "
+    },
+    {
+        "IdGrupo": "98019898",
+        "Grupo": "98 SERVICIOS "
+    },
+    {
+        "IdGrupo": "98020101",
+        "Grupo": "01 ADMINISTRACIÓN "
+    },
+    {
+        "IdGrupo": "98030101",
+        "Grupo": "01 SERVICIO EXTERNO"
+    },
+    {
+        "IdGrupo": "98030201",
+        "Grupo": "01 SERVICIO EXTERNO"
+    },
+    {
+        "IdGrupo": "98030301",
+        "Grupo": "01 SERVICIO EXTERNO"
+    },
+    {
+        "IdGrupo": "98050101",
+        "Grupo": "01 CONSULTORIA"
+    },
+    {
+        "IdGrupo": "98050201",
+        "Grupo": "01 PROVEEDOR 1"
+    },
+    {
+        "IdGrupo": "A1010101",
+        "Grupo": "01 Producto terminado"
+    },
+    {
+        "IdGrupo": "A1010102",
+        "Grupo": "02 Pilsener"
+    },
+    {
+        "IdGrupo": "A1010201",
+        "Grupo": "01 Materia prima"
+    },
+    {
+        "IdGrupo": "A1010202",
+        "Grupo": "02 Insumos "
+    },
+    {
+        "IdGrupo": "A1010301",
+        "Grupo": "01 Botellas"
+    },
+    {
+        "IdGrupo": "A1010302",
+        "Grupo": "02 Latas "
+    },
+    {
+        "IdGrupo": "A1010401",
+        "Grupo": "01 Cocimiento"
+    },
+    {
+        "IdGrupo": "A1010501",
+        "Grupo": "01 Fermentación "
+    },
+    {
+        "IdGrupo": "A1010601",
+        "Grupo": "01 Filtración"
+    },
+    {
+        "IdGrupo": "A1010701",
+        "Grupo": "01 Materiales varios "
+    },
+    {
+        "IdGrupo": "A1010801",
+        "Grupo": "01 Material de limpieza "
+    }
+]

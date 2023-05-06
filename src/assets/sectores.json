@@ -1,0 +1,332 @@
+[
+    {
+        "IdSecProducto": "01",
+        "IdDivision": "01",
+        "Sector": "01 Herramientas"
+    },
+    {
+        "IdSecProducto": "01",
+        "IdDivision": "02",
+        "Sector": "01 Sancela"
+    },
+    {
+        "IdSecProducto": "01",
+        "IdDivision": "03",
+        "Sector": "01 Unidades Nuevas"
+    },
+    {
+        "IdSecProducto": "01",
+        "IdDivision": "04",
+        "Sector": "01 Imagenología"
+    },
+    {
+        "IdSecProducto": "01",
+        "IdDivision": "05",
+        "Sector": "01 Electricidad"
+    },
+    {
+        "IdSecProducto": "01",
+        "IdDivision": "06",
+        "Sector": "01 Pública"
+    },
+    {
+        "IdSecProducto": "01",
+        "IdDivision": "07",
+        "Sector": "01 Infusiones  "
+    },
+    {
+        "IdSecProducto": "01",
+        "IdDivision": "98",
+        "Sector": "01 Back Office "
+    },
+    {
+        "IdSecProducto": "02",
+        "IdDivision": "01",
+        "Sector": "02 Servicio y Repuestos"
+    },
+    {
+        "IdSecProducto": "02",
+        "IdDivision": "02",
+        "Sector": "02 BDF "
+    },
+    {
+        "IdSecProducto": "02",
+        "IdDivision": "03",
+        "Sector": "02 Repuestos"
+    },
+    {
+        "IdSecProducto": "02",
+        "IdDivision": "04",
+        "Sector": "02 Diagnóstico Espec"
+    },
+    {
+        "IdSecProducto": "02",
+        "IdDivision": "05",
+        "Sector": "02 Proyectos Especia"
+    },
+    {
+        "IdSecProducto": "02",
+        "IdDivision": "06",
+        "Sector": "02 Privada"
+    },
+    {
+        "IdSecProducto": "02",
+        "IdDivision": "07",
+        "Sector": "02 Líquidos "
+    },
+    {
+        "IdSecProducto": "02",
+        "IdDivision": "98",
+        "Sector": "02 Administración Ho"
+    },
+    {
+        "IdSecProducto": "03",
+        "IdDivision": "01",
+        "Sector": "03 Construcción"
+    },
+    {
+        "IdSecProducto": "03",
+        "IdDivision": "02",
+        "Sector": "03 3M  "
+    },
+    {
+        "IdSecProducto": "03",
+        "IdDivision": "03",
+        "Sector": "03 Servicios"
+    },
+    {
+        "IdSecProducto": "03",
+        "IdDivision": "04",
+        "Sector": "03 Endoscopía  "
+    },
+    {
+        "IdSecProducto": "03",
+        "IdDivision": "06",
+        "Sector": "03 GAS & OIL "
+    },
+    {
+        "IdSecProducto": "03",
+        "IdDivision": "07",
+        "Sector": "03 INSTANTÁNEOS"
+    },
+    {
+        "IdSecProducto": "03",
+        "IdDivision": "98",
+        "Sector": "03 TRANSPORTE"
+    },
+    {
+        "IdSecProducto": "04",
+        "IdDivision": "01",
+        "Sector": "04 Material Eléctrico  "
+    },
+    {
+        "IdSecProducto": "04",
+        "IdDivision": "02",
+        "Sector": "04 Mars "
+    },
+    {
+        "IdSecProducto": "04",
+        "IdDivision": "03",
+        "Sector": "04 Camiones y Buses "
+    },
+    {
+        "IdSecProducto": "04",
+        "IdDivision": "04",
+        "Sector": "04 Servicio Técnico "
+    },
+    {
+        "IdSecProducto": "04",
+        "IdDivision": "06",
+        "Sector": "04 Telecom Carrier S"
+    },
+    {
+        "IdSecProducto": "04",
+        "IdDivision": "98",
+        "Sector": "04 SERV.ADMINISTRATIVOS"
+    },
+    {
+        "IdSecProducto": "05",
+        "IdDivision": "01",
+        "Sector": "05 Iluminación"
+    },
+    {
+        "IdSecProducto": "05",
+        "IdDivision": "02",
+        "Sector": "05 ABL "
+    },
+    {
+        "IdSecProducto": "05",
+        "IdDivision": "03",
+        "Sector": "05 Servicios vehiculos VW - Audi"
+    },
+    {
+        "IdSecProducto": "05",
+        "IdDivision": "04",
+        "Sector": "05 Cirugía"
+    },
+    {
+        "IdSecProducto": "05",
+        "IdDivision": "98",
+        "Sector": "05 SOLUC.TECNOLOGICAS"
+    },
+    {
+        "IdSecProducto": "06",
+        "IdDivision": "01",
+        "Sector": "06 Bombas"
+    },
+    {
+        "IdSecProducto": "06",
+        "IdDivision": "02",
+        "Sector": "06 Hersil "
+    },
+    {
+        "IdSecProducto": "06",
+        "IdDivision": "03",
+        "Sector": "06 Audi"
+    },
+    {
+        "IdSecProducto": "06",
+        "IdDivision": "04",
+        "Sector": "06 DENTAL"
+    },
+    {
+        "IdSecProducto": "07",
+        "IdDivision": "01",
+        "Sector": "07 Interruptores y Tomas de Corriente"
+    },
+    {
+        "IdSecProducto": "07",
+        "IdDivision": "02",
+        "Sector": "07 BSN "
+    },
+    {
+        "IdSecProducto": "07",
+        "IdDivision": "03",
+        "Sector": "07 Vehiculos Comerciales"
+    },
+    {
+        "IdSecProducto": "08",
+        "IdDivision": "01",
+        "Sector": "08 Grupos y Equipos"
+    },
+    {
+        "IdSecProducto": "08",
+        "IdDivision": "02",
+        "Sector": "08 GSK "
+    },
+    {
+        "IdSecProducto": "08",
+        "IdDivision": "03",
+        "Sector": "08 Repuestos Camiones"
+    },
+    {
+        "IdSecProducto": "09",
+        "IdDivision": "01",
+        "Sector": "09 Agro"
+    },
+    {
+        "IdSecProducto": "09",
+        "IdDivision": "02",
+        "Sector": "09 Nestle "
+    },
+    {
+        "IdSecProducto": "10",
+        "IdDivision": "01",
+        "Sector": "10 Metal Mecánica"
+    },
+    {
+        "IdSecProducto": "10",
+        "IdDivision": "02",
+        "Sector": "10 Golosinas"
+    },
+    {
+        "IdSecProducto": "10",
+        "IdDivision": "03",
+        "Sector": "10 Mod Center"
+    },
+    {
+        "IdSecProducto": "11",
+        "IdDivision": "01",
+        "Sector": "11 Equipos Almacenaje"
+    },
+    {
+        "IdSecProducto": "11",
+        "IdDivision": "03",
+        "Sector": "11 SEMINUEVOS"
+    },
+    {
+        "IdSecProducto": "12",
+        "IdDivision": "01",
+        "Sector": "12 Herramientas Skil"
+    },
+    {
+        "IdSecProducto": "12",
+        "IdDivision": "03",
+        "Sector": "12 SUPERV. TÉCNICA C&B"
+    },
+    {
+        "IdSecProducto": "13",
+        "IdDivision": "01",
+        "Sector": "13 Acces. Herramient"
+    },
+    {
+        "IdSecProducto": "14",
+        "IdDivision": "01",
+        "Sector": "14 Medición"
+    },
+    {
+        "IdSecProducto": "15",
+        "IdDivision": "01",
+        "Sector": "15 Equipos de Asfalto"
+    },
+    {
+        "IdSecProducto": "16",
+        "IdDivision": "01",
+        "Sector": "16 Herram. Manuales"
+    },
+    {
+        "IdSecProducto": "17",
+        "IdDivision": "01",
+        "Sector": "17 Compresores de Aire"
+    },
+    {
+        "IdSecProducto": "18",
+        "IdDivision": "01",
+        "Sector": "18 PLATAFORMA ELEVADORAS"
+    },
+    {
+        "IdSecProducto": "19",
+        "IdDivision": "01",
+        "Sector": "19 RENTAL"
+    },
+    {
+        "IdSecProducto": "90",
+        "IdDivision": "02",
+        "Sector": "90 Schering"
+    },
+    {
+        "IdSecProducto": "90",
+        "IdDivision": "03",
+        "Sector": "90 Servicios Taller"
+    },
+    {
+        "IdSecProducto": "90",
+        "IdDivision": "04",
+        "Sector": "90 Dental"
+    },
+    {
+        "IdSecProducto": "91",
+        "IdDivision": "02",
+        "Sector": "91 Ventas no Comerciales"
+    },
+    {
+        "IdSecProducto": "91",
+        "IdDivision": "04",
+        "Sector": "91 Otros"
+    },
+    {
+        "IdSecProducto": "92",
+        "IdDivision": "02",
+        "Sector": "92 Purina"
+    }
+]

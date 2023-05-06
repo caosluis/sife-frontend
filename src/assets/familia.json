@@ -1,0 +1,1510 @@
+[
+    {
+        "IdFamilia": "010101",
+        "Familia": "01 HERRAMIENTAS BOSCH "
+    },
+    {
+        "IdFamilia": "010102",
+        "Familia": "02 HERRAMIENTAS DREMEL"
+    },
+    {
+        "IdFamilia": "010103",
+        "Familia": "03 MEDICION"
+    },
+    {
+        "IdFamilia": "010104",
+        "Familia": "04 HERRAMIENTAS SKIL  "
+    },
+    {
+        "IdFamilia": "010105",
+        "Familia": "05 HE-BOSCH PROF  "
+    },
+    {
+        "IdFamilia": "010201",
+        "Familia": "01 MANO DE OBRA"
+    },
+    {
+        "IdFamilia": "010202",
+        "Familia": "02 NO KARDEX  "
+    },
+    {
+        "IdFamilia": "010203",
+        "Familia": "03 REPUESTOS VARIOS"
+    },
+    {
+        "IdFamilia": "010204",
+        "Familia": "04 REPUESTOS  WACKER  "
+    },
+    {
+        "IdFamilia": "010205",
+        "Familia": "05 REPUESTOS HERRAMIENTAS BOSCH"
+    },
+    {
+        "IdFamilia": "010206",
+        "Familia": "06 REPUESTOS HERRAMIENTAS SKIL"
+    },
+    {
+        "IdFamilia": "010207",
+        "Familia": "07 REPUESTOS HUSQVARNA"
+    },
+    {
+        "IdFamilia": "010208",
+        "Familia": "08 REPUESTOS LINCOLN  "
+    },
+    {
+        "IdFamilia": "010209",
+        "Familia": "09 MATERIALES NO KARDEX"
+    },
+    {
+        "IdFamilia": "010210",
+        "Familia": "10 REPUESTOS HUSQVARNA CP "
+    },
+    {
+        "IdFamilia": "010211",
+        "Familia": "11 REPUESTOS HAULOTTE "
+    },
+    {
+        "IdFamilia": "010213",
+        "Familia": "13 REP WACKER COMPACTOS"
+    },
+    {
+        "IdFamilia": "010301",
+        "Familia": "01 EQUIPOS LIVIANOS WACKER"
+    },
+    {
+        "IdFamilia": "010302",
+        "Familia": "02 EQUIPOS COMPACTOS WACKER"
+    },
+    {
+        "IdFamilia": "010303",
+        "Familia": "03 EQUIPOS HUSQVARNA CONSTRUCCION "
+    },
+    {
+        "IdFamilia": "010304",
+        "Familia": "04 EQUIPOS HAULOTTE"
+    },
+    {
+        "IdFamilia": "010305",
+        "Familia": "05 RETROEXCAVADORAS"
+    },
+    {
+        "IdFamilia": "010401",
+        "Familia": "01 MATERIAL ELECTRICO CIVIL"
+    },
+    {
+        "IdFamilia": "010402",
+        "Familia": "02 MATERIAL ELECTRICO INDUSTRIAL  "
+    },
+    {
+        "IdFamilia": "010403",
+        "Familia": "03 ACCIONAMIENTOS Y MOTORES"
+    },
+    {
+        "IdFamilia": "010404",
+        "Familia": "04 GRUPOS ELECTROGENOS"
+    },
+    {
+        "IdFamilia": "010501",
+        "Familia": "01 ILUMINACION"
+    },
+    {
+        "IdFamilia": "010601",
+        "Familia": "01 KSB"
+    },
+    {
+        "IdFamilia": "010602",
+        "Familia": "02 TSURUMI"
+    },
+    {
+        "IdFamilia": "010603",
+        "Familia": "03 SHIMGE "
+    },
+    {
+        "IdFamilia": "010604",
+        "Familia": "04 OTRAS BOMBAS"
+    },
+    {
+        "IdFamilia": "010605",
+        "Familia": "05 NK - BOMBAS DE AGUA"
+    },
+    {
+        "IdFamilia": "010606",
+        "Familia": "06 REPUESTOS BOMBAS"
+    },
+    {
+        "IdFamilia": "010607",
+        "Familia": "07 SERVICIOS BOMBAS"
+    },
+    {
+        "IdFamilia": "010608",
+        "Familia": "08 AUTOMATIZACION Y TABLEROS  "
+    },
+    {
+        "IdFamilia": "010609",
+        "Familia": "09 REDES DE BOMBEO"
+    },
+    {
+        "IdFamilia": "010701",
+        "Familia": "01 CONATEL"
+    },
+    {
+        "IdFamilia": "010801",
+        "Familia": "01 GRUPOS GESAN"
+    },
+    {
+        "IdFamilia": "010802",
+        "Familia": "02 GRUPOS TSURUMI "
+    },
+    {
+        "IdFamilia": "010803",
+        "Familia": "03 GRUPOS F.G. WILSON "
+    },
+    {
+        "IdFamilia": "010804",
+        "Familia": "04 REPUESTOS GRUPOS ELECTROGENOS  "
+    },
+    {
+        "IdFamilia": "010805",
+        "Familia": "05 GRUPOS HIMOINSA"
+    },
+    {
+        "IdFamilia": "010806",
+        "Familia": "06 KAESER "
+    },
+    {
+        "IdFamilia": "010807",
+        "Familia": "07 REPUESTOS KAESER"
+    },
+    {
+        "IdFamilia": "010808",
+        "Familia": "08 ACCESORIOS PARA AIRE COMPRIMIDO"
+    },
+    {
+        "IdFamilia": "010809",
+        "Familia": "09 MANO DE OBRA KAESER"
+    },
+    {
+        "IdFamilia": "010810",
+        "Familia": "10 INSU MANTE GR ELECTR"
+    },
+    {
+        "IdFamilia": "010811",
+        "Familia": "11 Mano de Obra Grupos"
+    },
+    {
+        "IdFamilia": "010901",
+        "Familia": "01 HERRAMIENTAS HUSQVARNA "
+    },
+    {
+        "IdFamilia": "010902",
+        "Familia": "02 HERRAMIENTAS POULAN - PRO  "
+    },
+    {
+        "IdFamilia": "010903",
+        "Familia": "03 BRISTOL"
+    },
+    {
+        "IdFamilia": "010904",
+        "Familia": "04 GRUPOS HYUNDAI "
+    },
+    {
+        "IdFamilia": "011001",
+        "Familia": "01 ELECTRODOS LINCOLN "
+    },
+    {
+        "IdFamilia": "011002",
+        "Familia": "02 MAQUINAS SOLDAR LINCOLN"
+    },
+    {
+        "IdFamilia": "011003",
+        "Familia": "03 ALAMBRE MIG LINCOLN"
+    },
+    {
+        "IdFamilia": "011004",
+        "Familia": "04 BAMBOZZI"
+    },
+    {
+        "IdFamilia": "011101",
+        "Familia": "01 EQUIPOS ALMACENAJE "
+    },
+    {
+        "IdFamilia": "011102",
+        "Familia": "02 ESTRUCTURAS"
+    },
+    {
+        "IdFamilia": "011201",
+        "Familia": "01 HERRAMIENTAS SKIL  "
+    },
+    {
+        "IdFamilia": "011301",
+        "Familia": "01 ACCESORIOS HERRAMIENTAS"
+    },
+    {
+        "IdFamilia": "011401",
+        "Familia": "01 MEDICION"
+    },
+    {
+        "IdFamilia": "011501",
+        "Familia": "01 RODILLOS COMPACTADORES "
+    },
+    {
+        "IdFamilia": "011502",
+        "Familia": "02 PAVIMENTADORAS "
+    },
+    {
+        "IdFamilia": "011503",
+        "Familia": "03 PLANTAS DE ASFALTO "
+    },
+    {
+        "IdFamilia": "011504",
+        "Familia": "04 SERVICIOS Y NK ASFALTO "
+    },
+    {
+        "IdFamilia": "011601",
+        "Familia": "01 STANLEY"
+    },
+    {
+        "IdFamilia": "011701",
+        "Familia": "01 KAESER "
+    },
+    {
+        "IdFamilia": "011702",
+        "Familia": "02 REPUESTOS KAESER"
+    },
+    {
+        "IdFamilia": "011703",
+        "Familia": "03 ACCESORIOS PARA AIRE COMPRIMIDO"
+    },
+    {
+        "IdFamilia": "011704",
+        "Familia": "04 MANO DE OBRA KAESER"
+    },
+    {
+        "IdFamilia": "011801",
+        "Familia": "01 EQUIPOS HAULOTTE"
+    },
+    {
+        "IdFamilia": "011901",
+        "Familia": "01 EQUIPOS LIVIANOS"
+    },
+    {
+        "IdFamilia": "011902",
+        "Familia": "02 EQUIPO COMPACTO Y PESADO"
+    },
+    {
+        "IdFamilia": "011903",
+        "Familia": "03 REDES DE BOMBEO"
+    },
+    {
+        "IdFamilia": "011904",
+        "Familia": "04 GRUPOS HIMOINSA"
+    },
+    {
+        "IdFamilia": "019101",
+        "Familia": "01 Otros  "
+    },
+    {
+        "IdFamilia": "020101",
+        "Familia": "01 SCA FEMPRO "
+    },
+    {
+        "IdFamilia": "020102",
+        "Familia": "02 SCA TISSUE "
+    },
+    {
+        "IdFamilia": "020103",
+        "Familia": "03 SCL PAÑITOS PEQUEÑIN"
+    },
+    {
+        "IdFamilia": "020104",
+        "Familia": "04 SCA MATERIAL POP"
+    },
+    {
+        "IdFamilia": "020105",
+        "Familia": "05 SCA PAÑALES PEQUEÑIN"
+    },
+    {
+        "IdFamilia": "020106",
+        "Familia": "06 SCZ TENA"
+    },
+    {
+        "IdFamilia": "020107",
+        "Familia": "07 SCL MATERIAL BANDEOS"
+    },
+    {
+        "IdFamilia": "020108",
+        "Familia": "08 INSTITUCIONAL  "
+    },
+    {
+        "IdFamilia": "020109",
+        "Familia": "09 POMYS  "
+    },
+    {
+        "IdFamilia": "020201",
+        "Familia": "01 BDF NIVEA  "
+    },
+    {
+        "IdFamilia": "020202",
+        "Familia": "02 BDF HANSAPLAST "
+    },
+    {
+        "IdFamilia": "020203",
+        "Familia": "03 BDF EUCERIN"
+    },
+    {
+        "IdFamilia": "020204",
+        "Familia": "04 BDF MATERIAL POP"
+    },
+    {
+        "IdFamilia": "020205",
+        "Familia": "05 BDF MATERIAL BANDEO"
+    },
+    {
+        "IdFamilia": "020206",
+        "Familia": "06 NIVEA  "
+    },
+    {
+        "IdFamilia": "020207",
+        "Familia": "07 HANSAPLAST "
+    },
+    {
+        "IdFamilia": "020208",
+        "Familia": "08 EUCERIN"
+    },
+    {
+        "IdFamilia": "020301",
+        "Familia": "01 3M SCOTHBRITE  "
+    },
+    {
+        "IdFamilia": "020302",
+        "Familia": "02 3M PONJITA "
+    },
+    {
+        "IdFamilia": "020304",
+        "Familia": "04 3M COMMAND "
+    },
+    {
+        "IdFamilia": "020305",
+        "Familia": "05 3M OTROS"
+    },
+    {
+        "IdFamilia": "020309",
+        "Familia": "09 3M COMPRAS BDF "
+    },
+    {
+        "IdFamilia": "020310",
+        "Familia": "10 3M COMPRAS PHARMA  "
+    },
+    {
+        "IdFamilia": "020311",
+        "Familia": "11 3M COMPRA SANCELA  "
+    },
+    {
+        "IdFamilia": "020312",
+        "Familia": "12 3M COMPRAS ALIMENTOS"
+    },
+    {
+        "IdFamilia": "020313",
+        "Familia": "13 SUGAFOR"
+    },
+    {
+        "IdFamilia": "020314",
+        "Familia": "14 TAGUM ABSORBIBLE"
+    },
+    {
+        "IdFamilia": "020315",
+        "Familia": "15 TAGUM NO ABSORBIBLE"
+    },
+    {
+        "IdFamilia": "020316",
+        "Familia": "16 TAGUM ABSORBIBLE MM"
+    },
+    {
+        "IdFamilia": "020317",
+        "Familia": "17 TAGUM NO ABSORBIBLE MM "
+    },
+    {
+        "IdFamilia": "020318",
+        "Familia": "18 TAGUM MATERIAL POP "
+    },
+    {
+        "IdFamilia": "020319",
+        "Familia": "19 SIGNA GRAIN"
+    },
+    {
+        "IdFamilia": "020320",
+        "Familia": "20 MANITOBA"
+    },
+    {
+        "IdFamilia": "020321",
+        "Familia": "21 YUPI"
+    },
+    {
+        "IdFamilia": "020322",
+        "Familia": "22 TE HINDU"
+    },
+    {
+        "IdFamilia": "020323",
+        "Familia": "23 CAFE WINDSOR"
+    },
+    {
+        "IdFamilia": "020324",
+        "Familia": "24 TE NEGRO PREMIUM"
+    },
+    {
+        "IdFamilia": "020325",
+        "Familia": "25 MATERIAL POP"
+    },
+    {
+        "IdFamilia": "020326",
+        "Familia": "26 POSTOBÓN"
+    },
+    {
+        "IdFamilia": "020327",
+        "Familia": "27 ALDOR  "
+    },
+    {
+        "IdFamilia": "020328",
+        "Familia": "28 MUESTRAS MKTG  "
+    },
+    {
+        "IdFamilia": "020329",
+        "Familia": "29 MATERIAL POP"
+    },
+    {
+        "IdFamilia": "020330",
+        "Familia": "30 FINI"
+    },
+    {
+        "IdFamilia": "020331",
+        "Familia": "31 BRANCO "
+    },
+    {
+        "IdFamilia": "020401",
+        "Familia": "01 MARS PEDIGREE  "
+    },
+    {
+        "IdFamilia": "020402",
+        "Familia": "02 MARS WHISKAS"
+    },
+    {
+        "IdFamilia": "020403",
+        "Familia": "03 MARS Pedigree Latas"
+    },
+    {
+        "IdFamilia": "020404",
+        "Familia": "04 MARS Whiskas Latas "
+    },
+    {
+        "IdFamilia": "020405",
+        "Familia": "05 MARS Pedigree Pouches  "
+    },
+    {
+        "IdFamilia": "020406",
+        "Familia": "06 MARS Whiskas Pouches"
+    },
+    {
+        "IdFamilia": "020407",
+        "Familia": "07 TOM Cat"
+    },
+    {
+        "IdFamilia": "020408",
+        "Familia": "08 LA SANTE"
+    },
+    {
+        "IdFamilia": "020501",
+        "Familia": "01 ABL ANDROMACO  "
+    },
+    {
+        "IdFamilia": "020502",
+        "Familia": "02 ABL VIFOR  "
+    },
+    {
+        "IdFamilia": "020503",
+        "Familia": "03 ABL SILESIA"
+    },
+    {
+        "IdFamilia": "020504",
+        "Familia": "04 ABL GENERICOS  "
+    },
+    {
+        "IdFamilia": "020505",
+        "Familia": "05 SCA FEMPRO "
+    },
+    {
+        "IdFamilia": "020506",
+        "Familia": "06 BDF NIVEA  "
+    },
+    {
+        "IdFamilia": "020507",
+        "Familia": "07 GSK CONSUMO"
+    },
+    {
+        "IdFamilia": "020508",
+        "Familia": "08 MARS PEDIGREE  "
+    },
+    {
+        "IdFamilia": "020509",
+        "Familia": "09 MARS PEDIGREE POUCHES  "
+    },
+    {
+        "IdFamilia": "020510",
+        "Familia": "10 SIGNA GRAIN"
+    },
+    {
+        "IdFamilia": "020511",
+        "Familia": "11 WINDSOR"
+    },
+    {
+        "IdFamilia": "020512",
+        "Familia": "12 HERSIL "
+    },
+    {
+        "IdFamilia": "020513",
+        "Familia": "13 PAÑALES"
+    },
+    {
+        "IdFamilia": "020514",
+        "Familia": "14 ALDOR  "
+    },
+    {
+        "IdFamilia": "020515",
+        "Familia": "15 PEQUEÑIN"
+    },
+    {
+        "IdFamilia": "020516",
+        "Familia": "16 LA SANTE"
+    },
+    {
+        "IdFamilia": "020517",
+        "Familia": "17 RECAMIER"
+    },
+    {
+        "IdFamilia": "020518",
+        "Familia": "18 SAVANT "
+    },
+    {
+        "IdFamilia": "020519",
+        "Familia": "19 HINODE "
+    },
+    {
+        "IdFamilia": "020520",
+        "Familia": "20 ARCHER "
+    },
+    {
+        "IdFamilia": "020521",
+        "Familia": "21 DKT"
+    },
+    {
+        "IdFamilia": "020601",
+        "Familia": "01 HERSIL NUTRICIONAL "
+    },
+    {
+        "IdFamilia": "020602",
+        "Familia": "02 HERSIL FARMACÉUTICO"
+    },
+    {
+        "IdFamilia": "020603",
+        "Familia": "03 HERSIL NUTRICIONAL-MM  "
+    },
+    {
+        "IdFamilia": "020604",
+        "Familia": "04 HERSIL FARMACEUTICO-MM "
+    },
+    {
+        "IdFamilia": "020605",
+        "Familia": "05 HERSIL NUTRICIONAL-POP "
+    },
+    {
+        "IdFamilia": "020606",
+        "Familia": "06 HERSIL FARMACEUTICO-POP"
+    },
+    {
+        "IdFamilia": "020701",
+        "Familia": "01 COVERPLAST "
+    },
+    {
+        "IdFamilia": "020702",
+        "Familia": "02 LEUKOFIX"
+    },
+    {
+        "IdFamilia": "020703",
+        "Familia": "03 LEUKOPLAST "
+    },
+    {
+        "IdFamilia": "020704",
+        "Familia": "04 LEUKOPOR BLANCO"
+    },
+    {
+        "IdFamilia": "020705",
+        "Familia": "05 LEUKOPOR PIEL  "
+    },
+    {
+        "IdFamilia": "020706",
+        "Familia": "06 GYPSONA"
+    },
+    {
+        "IdFamilia": "020707",
+        "Familia": "07 CUTIMED"
+    },
+    {
+        "IdFamilia": "020708",
+        "Familia": "08 FIXOMULL"
+    },
+    {
+        "IdFamilia": "020709",
+        "Familia": "09 COVERLET"
+    },
+    {
+        "IdFamilia": "020710",
+        "Familia": "10 TAGUM ABSORBIBLE"
+    },
+    {
+        "IdFamilia": "020711",
+        "Familia": "11 TAGUM NO ABSORBIBLE"
+    },
+    {
+        "IdFamilia": "020712",
+        "Familia": "12 TAGUM ABSORBIBLE MM"
+    },
+    {
+        "IdFamilia": "020713",
+        "Familia": "13 TAGUM NOABSORBIBL MM"
+    },
+    {
+        "IdFamilia": "020714",
+        "Familia": "14 ALOE VERA  "
+    },
+    {
+        "IdFamilia": "020715",
+        "Familia": "15 TE HINDU"
+    },
+    {
+        "IdFamilia": "020716",
+        "Familia": "16 MEDIFARMA  "
+    },
+    {
+        "IdFamilia": "020717",
+        "Familia": "17 BEAUTIK LONDON "
+    },
+    {
+        "IdFamilia": "020718",
+        "Familia": "18 BEAUTIK REPUBLIK"
+    },
+    {
+        "IdFamilia": "020719",
+        "Familia": "19 LOBBS & C LONDON"
+    },
+    {
+        "IdFamilia": "020720",
+        "Familia": "20 FLUOCARDENT"
+    },
+    {
+        "IdFamilia": "020721",
+        "Familia": "21 COSMETICOS SAMY S.A."
+    },
+    {
+        "IdFamilia": "020722",
+        "Familia": "22 SANOSAN"
+    },
+    {
+        "IdFamilia": "020723",
+        "Familia": "23 PORMUA CLINICAL"
+    },
+    {
+        "IdFamilia": "020724",
+        "Familia": "24 SUPERMAX"
+    },
+    {
+        "IdFamilia": "020725",
+        "Familia": "25 RECAMIER"
+    },
+    {
+        "IdFamilia": "020726",
+        "Familia": "26 BDF NIVEA  "
+    },
+    {
+        "IdFamilia": "020801",
+        "Familia": "01 GSK CONSUMO"
+    },
+    {
+        "IdFamilia": "020802",
+        "Familia": "02 GSK EMULSIÓNES "
+    },
+    {
+        "IdFamilia": "020803",
+        "Familia": "03 GSK ODONTOLOGÍA"
+    },
+    {
+        "IdFamilia": "020804",
+        "Familia": "04 GSK POP"
+    },
+    {
+        "IdFamilia": "020805",
+        "Familia": "05 SAVANT "
+    },
+    {
+        "IdFamilia": "020806",
+        "Familia": "06 DKT"
+    },
+    {
+        "IdFamilia": "020807",
+        "Familia": "07 EUROFARMA  "
+    },
+    {
+        "IdFamilia": "020901",
+        "Familia": "01 NESTLE MAGGI"
+    },
+    {
+        "IdFamilia": "020902",
+        "Familia": "02 NESTLE PURINA  "
+    },
+    {
+        "IdFamilia": "020903",
+        "Familia": "03 RECAMIER"
+    },
+    {
+        "IdFamilia": "021001",
+        "Familia": "01 ALDOR  "
+    },
+    {
+        "IdFamilia": "021002",
+        "Familia": "02 MUESTRAS MKTG  "
+    },
+    {
+        "IdFamilia": "021003",
+        "Familia": "03 MATERIAL POP"
+    },
+    {
+        "IdFamilia": "021004",
+        "Familia": "04 FINI"
+    },
+    {
+        "IdFamilia": "021005",
+        "Familia": "05 BRANCO "
+    },
+    {
+        "IdFamilia": "021006",
+        "Familia": "06 ESTRELA"
+    },
+    {
+        "IdFamilia": "021007",
+        "Familia": "07 FINNA  "
+    },
+    {
+        "IdFamilia": "021008",
+        "Familia": "08 GEORGALOS  "
+    },
+    {
+        "IdFamilia": "029001",
+        "Familia": "01 ABOTT  "
+    },
+    {
+        "IdFamilia": "029002",
+        "Familia": "02 BIO SIDUS  "
+    },
+    {
+        "IdFamilia": "029003",
+        "Familia": "03 JUTESA "
+    },
+    {
+        "IdFamilia": "029004",
+        "Familia": "04 SCHERING"
+    },
+    {
+        "IdFamilia": "029005",
+        "Familia": "05 OTROS  "
+    },
+    {
+        "IdFamilia": "029101",
+        "Familia": "01 VENTAS NO COMERCIALES  "
+    },
+    {
+        "IdFamilia": "029201",
+        "Familia": "92 PURINA "
+    },
+    {
+        "IdFamilia": "030101",
+        "Familia": "01 BRASIL "
+    },
+    {
+        "IdFamilia": "030102",
+        "Familia": "02 ALEMANIA"
+    },
+    {
+        "IdFamilia": "030103",
+        "Familia": "03 MEXICO "
+    },
+    {
+        "IdFamilia": "030104",
+        "Familia": "04 ARGENTINA  "
+    },
+    {
+        "IdFamilia": "030105",
+        "Familia": "05 SERVICIOS  "
+    },
+    {
+        "IdFamilia": "030106",
+        "Familia": "06 NK "
+    },
+    {
+        "IdFamilia": "030201",
+        "Familia": "01 VOLKSWAGEN/AUDI"
+    },
+    {
+        "IdFamilia": "030202",
+        "Familia": "02 AUTOMOVILES TERCEROS"
+    },
+    {
+        "IdFamilia": "030203",
+        "Familia": "03 ACCESORIOS "
+    },
+    {
+        "IdFamilia": "030204",
+        "Familia": "04 NK "
+    },
+    {
+        "IdFamilia": "030205",
+        "Familia": "05 OTROS  "
+    },
+    {
+        "IdFamilia": "030206",
+        "Familia": "06 SERVICIOS  "
+    },
+    {
+        "IdFamilia": "030301",
+        "Familia": "01 SERVICIOS MO"
+    },
+    {
+        "IdFamilia": "030302",
+        "Familia": "02 SERVICIOS TERCEROS "
+    },
+    {
+        "IdFamilia": "030303",
+        "Familia": "03 SERV / MATERIALES TERCEROS "
+    },
+    {
+        "IdFamilia": "030304",
+        "Familia": "04 VARIOS "
+    },
+    {
+        "IdFamilia": "030401",
+        "Familia": "01 CAMIONES VW"
+    },
+    {
+        "IdFamilia": "030402",
+        "Familia": "02 BUSES VW"
+    },
+    {
+        "IdFamilia": "030403",
+        "Familia": "03 IMPLEMENTOS"
+    },
+    {
+        "IdFamilia": "030404",
+        "Familia": "04 SERVICIOS  "
+    },
+    {
+        "IdFamilia": "030405",
+        "Familia": "05 CAMIONES MAN"
+    },
+    {
+        "IdFamilia": "030406",
+        "Familia": "06 BUSES MAN  "
+    },
+    {
+        "IdFamilia": "030501",
+        "Familia": "01 MANO DE OBRA"
+    },
+    {
+        "IdFamilia": "030502",
+        "Familia": "02 SERVICIOS TERCEROS "
+    },
+    {
+        "IdFamilia": "030503",
+        "Familia": "03 MATERIALES E INSUMOS"
+    },
+    {
+        "IdFamilia": "030504",
+        "Familia": "04 VARIOS "
+    },
+    {
+        "IdFamilia": "030601",
+        "Familia": "01 ALEMANIA"
+    },
+    {
+        "IdFamilia": "030602",
+        "Familia": "02 SERVICIOS  "
+    },
+    {
+        "IdFamilia": "030698",
+        "Familia": "98 USADOS "
+    },
+    {
+        "IdFamilia": "030701",
+        "Familia": "01 BRASIL "
+    },
+    {
+        "IdFamilia": "030702",
+        "Familia": "02 ARGENTINA  "
+    },
+    {
+        "IdFamilia": "030703",
+        "Familia": "03 ALEMANIA"
+    },
+    {
+        "IdFamilia": "030704",
+        "Familia": "04 SERVICIOS  "
+    },
+    {
+        "IdFamilia": "030801",
+        "Familia": "01 VOLKSWAGEN C&B "
+    },
+    {
+        "IdFamilia": "030802",
+        "Familia": "02 IMPLEMENTOS REPUESTOS  "
+    },
+    {
+        "IdFamilia": "030803",
+        "Familia": "03 CAMIONES TERCEROS  "
+    },
+    {
+        "IdFamilia": "030804",
+        "Familia": "04 NK "
+    },
+    {
+        "IdFamilia": "030805",
+        "Familia": "05 MAN T&B"
+    },
+    {
+        "IdFamilia": "030901",
+        "Familia": "01 MANO DE OBRA"
+    },
+    {
+        "IdFamilia": "030902",
+        "Familia": "02 SERVICIOS TERCEROS "
+    },
+    {
+        "IdFamilia": "031001",
+        "Familia": "01 MANO DE OBRA"
+    },
+    {
+        "IdFamilia": "031101",
+        "Familia": "01 SEMINUEVOS "
+    },
+    {
+        "IdFamilia": "031201",
+        "Familia": "01 SUPERVISION TALLERES"
+    },
+    {
+        "IdFamilia": "039001",
+        "Familia": "01 SERVICIOS UNIDADES NUEVAS  "
+    },
+    {
+        "IdFamilia": "040101",
+        "Familia": "01 HOSPITALARIA"
+    },
+    {
+        "IdFamilia": "040102",
+        "Familia": "02 LIQUID. DIAG. GENERAL  "
+    },
+    {
+        "IdFamilia": "040103",
+        "Familia": "03 HOSPITALARIA II"
+    },
+    {
+        "IdFamilia": "040104",
+        "Familia": "04 LIQUID. HOSPITALARIA II"
+    },
+    {
+        "IdFamilia": "040105",
+        "Familia": "05 DENTAL "
+    },
+    {
+        "IdFamilia": "040106",
+        "Familia": "06 LIQUID. DENTAL "
+    },
+    {
+        "IdFamilia": "040201",
+        "Familia": "01 ACCESORIOS OLYMPUS "
+    },
+    {
+        "IdFamilia": "040202",
+        "Familia": "02 ACCESORIOS DRÄGER  "
+    },
+    {
+        "IdFamilia": "040203",
+        "Familia": "03 ACCESORIOS CODONICS"
+    },
+    {
+        "IdFamilia": "040204",
+        "Familia": "04 ACCESORIOS SONY"
+    },
+    {
+        "IdFamilia": "040205",
+        "Familia": "05 ACCESORIOS KONEX"
+    },
+    {
+        "IdFamilia": "040206",
+        "Familia": "06 ACCESORIOS BAYER"
+    },
+    {
+        "IdFamilia": "040207",
+        "Familia": "07 ACCESORIOS MERIL"
+    },
+    {
+        "IdFamilia": "040208",
+        "Familia": "08 ACCESORIOS CISA"
+    },
+    {
+        "IdFamilia": "040209",
+        "Familia": "09 AKONIC "
+    },
+    {
+        "IdFamilia": "040210",
+        "Familia": "10 AMPER  "
+    },
+    {
+        "IdFamilia": "040211",
+        "Familia": "11 EQ. Y ACC. VTA MIPRO"
+    },
+    {
+        "IdFamilia": "040212",
+        "Familia": "12 ACTO"
+    },
+    {
+        "IdFamilia": "040213",
+        "Familia": "13 LAYERTEX"
+    },
+    {
+        "IdFamilia": "040301",
+        "Familia": "01 ENDOCOPIA  "
+    },
+    {
+        "IdFamilia": "040302",
+        "Familia": "02 LABORARORIO"
+    },
+    {
+        "IdFamilia": "040303",
+        "Familia": "03 LIQUID.ENDOS/LABORAT"
+    },
+    {
+        "IdFamilia": "040401",
+        "Familia": "01 CODIFICADORES  "
+    },
+    {
+        "IdFamilia": "040402",
+        "Familia": "02 DIAGNOSTICO GRAL.  "
+    },
+    {
+        "IdFamilia": "040403",
+        "Familia": "03 DIAGNOSTICO ESPECIAL"
+    },
+    {
+        "IdFamilia": "040404",
+        "Familia": "04 ENDOSCOPIA "
+    },
+    {
+        "IdFamilia": "040405",
+        "Familia": "05 LAPAROSCOPIA"
+    },
+    {
+        "IdFamilia": "040406",
+        "Familia": "06 LABORATORIO"
+    },
+    {
+        "IdFamilia": "040407",
+        "Familia": "07 SERV.GENERALES "
+    },
+    {
+        "IdFamilia": "040408",
+        "Familia": "08 CIRUGIA"
+    },
+    {
+        "IdFamilia": "040409",
+        "Familia": "09 ELECTROMEDICINA"
+    },
+    {
+        "IdFamilia": "040410",
+        "Familia": "10 DENTAL "
+    },
+    {
+        "IdFamilia": "040411",
+        "Familia": "11 GENERICO"
+    },
+    {
+        "IdFamilia": "040412",
+        "Familia": "12 LIQUIDACION"
+    },
+    {
+        "IdFamilia": "040413",
+        "Familia": "13 HERRAMIENTAS"
+    },
+    {
+        "IdFamilia": "040414",
+        "Familia": "14 MEDICINA NUCLEAR"
+    },
+    {
+        "IdFamilia": "040501",
+        "Familia": "01 AUXILIARES "
+    },
+    {
+        "IdFamilia": "040502",
+        "Familia": "02 CIRUGIA"
+    },
+    {
+        "IdFamilia": "040503",
+        "Familia": "03 LIQUID. CIRUG/AUXIL."
+    },
+    {
+        "IdFamilia": "040601",
+        "Familia": "01 SIRONA "
+    },
+    {
+        "IdFamilia": "040602",
+        "Familia": "02 FORMLABS"
+    },
+    {
+        "IdFamilia": "040603",
+        "Familia": "03 DURRDENTAL "
+    },
+    {
+        "IdFamilia": "040604",
+        "Familia": "04 VILLA  "
+    },
+    {
+        "IdFamilia": "040605",
+        "Familia": "05 COMPRAS LOCALES"
+    },
+    {
+        "IdFamilia": "040606",
+        "Familia": "06 RITTER "
+    },
+    {
+        "IdFamilia": "049001",
+        "Familia": "01 Proyectos  "
+    },
+    {
+        "IdFamilia": "049101",
+        "Familia": "01 OTROS  "
+    },
+    {
+        "IdFamilia": "050101",
+        "Familia": "01 GENERACIÓN "
+    },
+    {
+        "IdFamilia": "050102",
+        "Familia": "02 SUBESTACIONES  "
+    },
+    {
+        "IdFamilia": "050103",
+        "Familia": "03 LÍNEAS DE TRANSMISIÓN  "
+    },
+    {
+        "IdFamilia": "050104",
+        "Familia": "04 MEDICIÓN"
+    },
+    {
+        "IdFamilia": "050105",
+        "Familia": "05 OTROS  "
+    },
+    {
+        "IdFamilia": "050106",
+        "Familia": "06 AUTOMATIZACIÓN "
+    },
+    {
+        "IdFamilia": "050107",
+        "Familia": "07 INSTRUMENTACIÓN"
+    },
+    {
+        "IdFamilia": "050108",
+        "Familia": "08 SENSORES"
+    },
+    {
+        "IdFamilia": "050109",
+        "Familia": "09 SEMAFORIZACIÓN "
+    },
+    {
+        "IdFamilia": "050110",
+        "Familia": "10 PROYECTOS  "
+    },
+    {
+        "IdFamilia": "050111",
+        "Familia": "11 SISTEM BUILDING TECH"
+    },
+    {
+        "IdFamilia": "050112",
+        "Familia": "12 CASTIGOS"
+    },
+    {
+        "IdFamilia": "050113",
+        "Familia": "13 GAS & OIL  "
+    },
+    {
+        "IdFamilia": "050114",
+        "Familia": "14 PROYECTOS ESPECIALES"
+    },
+    {
+        "IdFamilia": "050201",
+        "Familia": "01 OTROS  "
+    },
+    {
+        "IdFamilia": "060101",
+        "Familia": "01 CX VOZ TRADICIONAL "
+    },
+    {
+        "IdFamilia": "060102",
+        "Familia": "02 CX VOLP DATOS VIDEO"
+    },
+    {
+        "IdFamilia": "060103",
+        "Familia": "03 CATV"
+    },
+    {
+        "IdFamilia": "060104",
+        "Familia": "04 MICROONDAS "
+    },
+    {
+        "IdFamilia": "060105",
+        "Familia": "05 PRODUCTOS VARIOS"
+    },
+    {
+        "IdFamilia": "060106",
+        "Familia": "06 SERVICIOS  "
+    },
+    {
+        "IdFamilia": "060201",
+        "Familia": "01 SIEMENS"
+    },
+    {
+        "IdFamilia": "060202",
+        "Familia": "02 NORTEL "
+    },
+    {
+        "IdFamilia": "060203",
+        "Familia": "03 SEGURIDAD Y DEFENSA"
+    },
+    {
+        "IdFamilia": "060204",
+        "Familia": "04 EQUIPOS DE COMPUTACIÓN "
+    },
+    {
+        "IdFamilia": "060205",
+        "Familia": "05 VIDEO CONFERENCIA  "
+    },
+    {
+        "IdFamilia": "060206",
+        "Familia": "06 OTROS  "
+    },
+    {
+        "IdFamilia": "060207",
+        "Familia": "07 EQUIPO DEMO"
+    },
+    {
+        "IdFamilia": "060208",
+        "Familia": "08 RADWIN "
+    },
+    {
+        "IdFamilia": "060209",
+        "Familia": "09 ENERGY CONTROL "
+    },
+    {
+        "IdFamilia": "060210",
+        "Familia": "10 GIGASET"
+    },
+    {
+        "IdFamilia": "060211",
+        "Familia": "11 YEALINK"
+    },
+    {
+        "IdFamilia": "060212",
+        "Familia": "12 TRENDNET"
+    },
+    {
+        "IdFamilia": "060301",
+        "Familia": "01 ORACLE "
+    },
+    {
+        "IdFamilia": "060302",
+        "Familia": "02 TELEFONIA  "
+    },
+    {
+        "IdFamilia": "060303",
+        "Familia": "03 SALAS DE CONFERENCIA"
+    },
+    {
+        "IdFamilia": "060304",
+        "Familia": "04 SEGURIDAD  "
+    },
+    {
+        "IdFamilia": "060305",
+        "Familia": "05 SATELITAL  "
+    },
+    {
+        "IdFamilia": "060306",
+        "Familia": "06 FIBRA OPTICA"
+    },
+    {
+        "IdFamilia": "060401",
+        "Familia": "01 PMO SERVICE"
+    },
+    {
+        "IdFamilia": "070101",
+        "Familia": "01 MATERIA PRIMA  "
+    },
+    {
+        "IdFamilia": "070102",
+        "Familia": "02 ADITIVOS"
+    },
+    {
+        "IdFamilia": "070103",
+        "Familia": "03 MOLIENDA"
+    },
+    {
+        "IdFamilia": "070104",
+        "Familia": "04 FORMULACION"
+    },
+    {
+        "IdFamilia": "070105",
+        "Familia": "05 SECADO "
+    },
+    {
+        "IdFamilia": "070106",
+        "Familia": "06 ENVASES"
+    },
+    {
+        "IdFamilia": "070107",
+        "Familia": "07 TÉ "
+    },
+    {
+        "IdFamilia": "070108",
+        "Familia": "08 MATE"
+    },
+    {
+        "IdFamilia": "070109",
+        "Familia": "09 FRUTA  "
+    },
+    {
+        "IdFamilia": "070110",
+        "Familia": "10 GOURMET"
+    },
+    {
+        "IdFamilia": "070111",
+        "Familia": "11 PRODUCTO BOLSA "
+    },
+    {
+        "IdFamilia": "070112",
+        "Familia": "12 CEYLÁN "
+    },
+    {
+        "IdFamilia": "070113",
+        "Familia": "13 GENERICO"
+    },
+    {
+        "IdFamilia": "070114",
+        "Familia": "14 VARIOS "
+    },
+    {
+        "IdFamilia": "070115",
+        "Familia": "15 MYTH"
+    },
+    {
+        "IdFamilia": "070116",
+        "Familia": "16 SOBRES PT  "
+    },
+    {
+        "IdFamilia": "070117",
+        "Familia": "17 PROMOCIONES"
+    },
+    {
+        "IdFamilia": "070118",
+        "Familia": "18 YERBA MATE "
+    },
+    {
+        "IdFamilia": "070119",
+        "Familia": "19 EXPORTACIONES  "
+    },
+    {
+        "IdFamilia": "070120",
+        "Familia": "20 FUNCIONALES"
+    },
+    {
+        "IdFamilia": "070201",
+        "Familia": "01 LIQUIDOS"
+    },
+    {
+        "IdFamilia": "070202",
+        "Familia": "02 ADITIVO"
+    },
+    {
+        "IdFamilia": "070203",
+        "Familia": "03 ENVACES"
+    },
+    {
+        "IdFamilia": "070301",
+        "Familia": "01 CAFÉ"
+    },
+    {
+        "IdFamilia": "980101",
+        "Familia": "01 ALQUILERES "
+    },
+    {
+        "IdFamilia": "980198",
+        "Familia": "98 ANULADO"
+    },
+    {
+        "IdFamilia": "980201",
+        "Familia": "01 BACK OFFICE"
+    },
+    {
+        "IdFamilia": "980301",
+        "Familia": "01 TRANSPORTE LOCAL"
+    },
+    {
+        "IdFamilia": "980302",
+        "Familia": "02 TRANSPORTE INTERDEPARTAMENTAL  "
+    },
+    {
+        "IdFamilia": "980303",
+        "Familia": "03 TRANSPORTE INTERNACIONAL"
+    },
+    {
+        "IdFamilia": "980501",
+        "Familia": "01 SERVICIOS TENOLOG. "
+    },
+    {
+        "IdFamilia": "980502",
+        "Familia": "02 PRODUCTOS TECNOLOG."
+    },
+    {
+        "IdFamilia": "A10101",
+        "Familia": "01 Producto terminado "
+    },
+    {
+        "IdFamilia": "A10102",
+        "Familia": "02 Mat.Prima - Insumos"
+    },
+    {
+        "IdFamilia": "A10103",
+        "Familia": "03 Envases"
+    },
+    {
+        "IdFamilia": "A10104",
+        "Familia": "04 Cocimiento "
+    },
+    {
+        "IdFamilia": "A10105",
+        "Familia": "05 Fermentación"
+    },
+    {
+        "IdFamilia": "A10106",
+        "Familia": "06 Filtración "
+    },
+    {
+        "IdFamilia": "A10107",
+        "Familia": "07 Materiales varios  "
+    },
+    {
+        "IdFamilia": "A10108",
+        "Familia": "08 Material de limpieza"
+    }
+]
