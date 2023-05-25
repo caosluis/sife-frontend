@@ -1,27 +1,22 @@
-# TestApp
+# App Facturacion Electronica
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.4.
+This Project is build in Angular 12, to work with it without problems we need Nodejs version 16.17.0.
 
-## Development server
+All the requirements can be seen in the oficila webpage of Impuestos Nacionales de Bolivia Sistema Integral de Administración Tributaria (SIAT).
+https://siatinfo.impuestos.gob.bo/index.php/facturacion-en-linea/factura-electronica
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+I built this project to meet a necessity, in Bolivia the year 2020 all the companies were required to have a system of electronic billing, where the customers can can see all thier billings and see if all its alright.
 
-## Code scaffolding
+This system has many modules:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+-Inicio: where we can see all the progress with the billings incoming to our company and the state of ours and theirs services, with different indicators:
+  1.Billings that were registered Online (realtime register in the Siat System)
+  2.Billings that were registered Offline (registers after an error or issue with services in the Siat System)
+  3.Register of CUFD (Unique Daily Billing Code by its acronym in Spanish)
+  4.State of Services like Internet
+  5.If the Catalogue are syncronized with siat
+  6.State of Services of SIAT
+  7.Datetime of the SIAT servers
+  8.State of the local server services
+  9.Track by point of sale (Punto de venta) the number of registered billings of the current day
+  10.Valid CUFD used to register the billings
