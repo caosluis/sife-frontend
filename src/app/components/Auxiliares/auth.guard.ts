@@ -15,7 +15,7 @@ export class AuthGuard implements CanActivate {
     private router: Router,
     private userS: UserService,
     private moduleService: ModulesService
-  ) {}
+  ) { }
 
   async canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     const user = this.userS.sesion;
@@ -24,6 +24,8 @@ export class AuthGuard implements CanActivate {
       await this.cargarRoles(route);
       //Verificamos si los roles del usuario estan con permisos en la tabla sife_modulo
       //buscamos el rol en el array this.roles si esta en el array devuelve 0 y si no -1
+      console.log(user.role);
+
       if (route.data.roles && this.roles.indexOf(user.role) === -1) {
         alert(
           "No tiene permiso para ver este módulo, comuníquese con su administrador para obtener más información."
@@ -45,9 +47,14 @@ export class AuthGuard implements CanActivate {
   async cargarRoles(route) {
     await this.moduleService
       .buscarModule(route)
-      .then((data) => (
-        this.roles = data[0].roles_asignados               
-        )
+      .then((data) => {
+
+        /* this.roles = data[0].roles_asignados */
+        this.roles = [
+          "Sistemas", "Administrador", "Corporativo"
+        ]
+      }
+
       );
   }
 }

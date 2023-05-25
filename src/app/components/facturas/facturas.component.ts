@@ -299,7 +299,7 @@ export class FacturasComponent implements OnInit {
     } else {
       this.estadoActual = "*";
     }
-    this.LsitasDesp.getLista("estadosFactura").then((dt) => {
+    /* this.LsitasDesp.getLista("estadosFactura").then((dt) => {
       this.estadosF = dt[0]["valores"];
       var dat = new Array();
       dt[0]["valores"].forEach((element) => {
@@ -309,7 +309,7 @@ export class FacturasComponent implements OnInit {
 
       this.buscarFacturas(this.estadoActual);
       this.spinner.hide();
-    });
+    }); */
     this.cargarOrigenFactura();
   }
   /*  getAllFacturas() {

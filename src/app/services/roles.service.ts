@@ -48,9 +48,7 @@ export class RolesService {
   }
 
   sife_user_empresas_get(username) {
-    const url_api = glob.host + glob.port + '/api/sife_user_empresas?filter={"where":{"username":"' + username + '"}}'
-    console.table(url_api);
-    
+    const url_api = glob.host + glob.port + '/api/sife_user_empresas?filter={"where":{"username":"' + username + '"}}'    
     return this.http.get<any>(url_api).toPromise();
   }
   sife_user_empresas_post(username, nit) {

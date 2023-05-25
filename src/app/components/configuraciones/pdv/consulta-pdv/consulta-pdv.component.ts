@@ -60,6 +60,8 @@ export class ConsultaPdvComponent implements OnInit {
 
   SeleccionarSucursal(sucursal, nit) {
     this.cuisService.sife_cuis_get_filter(sucursal, nit).then((data) => {
+      console.log(data);
+      
       if (data.length > 0) {
         this.cuis = data[0].cuis;
       }

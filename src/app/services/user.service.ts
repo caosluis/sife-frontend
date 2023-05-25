@@ -94,6 +94,8 @@ export class UserService {
   }
   // Funciones inicio de sesion
   login(user, pass) {
+    console.log(this.baseurl + "login");
+    
     var data = { username: user, password: pass };
 
     return this.http

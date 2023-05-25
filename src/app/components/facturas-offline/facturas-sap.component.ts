@@ -321,7 +321,7 @@ export class FacturasSapComponent implements OnInit {
 
   // Metodass get, add. delete y oninit
   async ngOnInit() {
-    await this.LsitasDesp.getLista("estadosFactura").then((dt) => {
+    /* await this.LsitasDesp.getLista("estadosFactura").then((dt) => {
       this.estadosF = dt[0]["valores"];
       var dat = new Array();
       dt[0]["valores"].forEach((element) => {
@@ -331,13 +331,13 @@ export class FacturasSapComponent implements OnInit {
 
       this.spinner.hide();
 
-      /* this.cargarContingencias_count();
+      this.cargarContingencias_count();
       this.cargarSifeOffline_count();
       this.cargarSifeOffline_sucursal_count();
       this.cargarSifeOffline_pdv_count();
       this.cargarSifeOffline_tipodocumento_count();
-      this.cargarsife_facturaElectronica_offline_exitosas_get_count(); */
-    });
+      this.cargarsife_facturaElectronica_offline_exitosas_get_count();
+    }); */
     if (this.LoteActual) {
       this.FechaActual = {
         start_time: JSON.parse(localStorage.getItem("fechaEmision")),

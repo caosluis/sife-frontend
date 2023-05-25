@@ -66,14 +66,14 @@ export var version = "V 1.1";
 export var colorNavegador = '#585292'; //QAS #A6A7DC color nav1 PRD #585292 otro #33344a
 export var colorNavegador2 = '#1b1654'; //QAS #6264A7 color nav2 PRD #1b1654 otro rgb(6, 119, 126)
 ////LOOPBACK PRINCIPAL
-export var host: string = "http://swarm.hansa.com.bo";
-export var port: string = ":35";
+export var host: string = "http://localhost";
+export var port: string = ":3000";
 ////SOCKET AIO DE LOOPBACK PRINCIPAL
-export var socket_host: string = "http://swarm.hansa.com.bo";
-export var socket_port: string = ":36";
+export var socket_host: string = "http://localhost";
+export var socket_port: string = ":4444";
 ////LOOPBACK DE LOGIN USUARIOS
-export var host_user: string = "http://swarm.hansa.com.bo";
-export var port_user: string = ":52"; 
+export var host_user: string = "http://localhost";
+export var port_user: string = ":3000"; 
 ////
-export var hostPass: string = "http://swarm.hansa.com.bo";
-export var portPass: string = ":44"; 
+export var hostPass: string = "http://localhost";
+export var portPass: string = ":4201"; 
