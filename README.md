@@ -1,6 +1,7 @@
 # App Facturacion Electronica
 
 This Project is build in Angular 12, to work with it without problems we need Nodejs version 16.17.0.
+The Backend is build With Loopback 3, Mysql MongoDB
 
 All the requirements can be seen in the oficila webpage of Impuestos Nacionales de Bolivia Sistema Integral de Administración Tributaria (SIAT).
 https://siatinfo.impuestos.gob.bo/index.php/facturacion-en-linea/factura-electronica
