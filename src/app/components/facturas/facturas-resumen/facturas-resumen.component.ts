@@ -38,7 +38,7 @@ export class FacturasResumenComponent implements OnInit {
   displayedColumns: string[] = [
     "Sucursal",
     "Punto de Venta",
-    "Recepcionado por SIFE",
+    "Recepcionado por FE",
     "Enviado a SIN",
     "Factura Exitosa",
     "Factura rechazada",
@@ -49,7 +49,7 @@ export class FacturasResumenComponent implements OnInit {
     "Empaquetado",
 
     //"Evento rechazado",
-    "Problema interno SIFE",
+    "Problema interno FE",
     "ErrorConexion con SIN",
   ];
   FechaActual: any = { start_time: new Date() };

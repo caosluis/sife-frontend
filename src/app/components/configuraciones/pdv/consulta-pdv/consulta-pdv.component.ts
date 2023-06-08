@@ -123,7 +123,7 @@ export class ConsultaPdvComponent implements OnInit {
         throw new Error('Oh no!');
       }
     },error => {
-      this.descripcion = "Error de conexión al servicio de consulta Punto de Venta SIFE, verifique su conexión de red o consule a su administrador";
+      this.descripcion = "Error de conexión al servicio de consulta Punto de Venta FE, verifique su conexión de red o consule a su administrador";
       console.error( 'Función de rechazo llamada: ', error );
       this.loading = false;
     });    

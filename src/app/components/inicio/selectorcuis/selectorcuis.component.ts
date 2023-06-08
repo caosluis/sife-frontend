@@ -160,19 +160,19 @@ export class SelectorcuisComponent implements OnInit {
             this.restaFechas(new Date(), new Date(data[0]["fechaVencimiento"])) == 1
           ) {
             this.fechacert =
-              "Certificado SIFE válido por " +
+              "Certificado FE válido por " +
               this.restaFechas(new Date(), new Date(data[0]["fechaVencimiento"])) +
               " día";
             this.candiacert = this.restaFechas(new Date(), new Date(data[0]["fechaVencimiento"]));
           } else {
             this.fechacert =
-              "Certificado SIFE válido por " +
+              "Certificado FE válido por " +
               this.restaFechas(new Date(), new Date(data[0]["fechaVencimiento"])) +
               " días";
             this.candiacert = this.restaFechas(new Date(), new Date(data[0]["fechaVencimiento"]));
           }
         } else {
-          this.fechacert = "Certificado SIFE";
+          this.fechacert = "Certificado FE";
         }
       });
   }

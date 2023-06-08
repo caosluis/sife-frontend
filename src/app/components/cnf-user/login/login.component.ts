@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem("usuario", JSON.stringify(this.userS.sesion));
           const returnUrl = this.route.snapshot.queryParams["returnUrl"] || "/";
           this.router.navigateByUrl(returnUrl);
-          this.notificacion.success("Bienvenido a SIFE");
+          this.notificacion.success("Bienvenido a FE");
           this.buttonClicked.emit();
         });
       },

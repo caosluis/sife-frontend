@@ -440,7 +440,7 @@
       <ng-template #exitosoSife >
         <mat-card class="example-card" >
           <mat-card-title-group>
-            <mat-card-title><a [routerLink]="['/serviciosSife']">Servicios SIFE </a>  </mat-card-title>
+            <mat-card-title><a [routerLink]="['/serviciosSife']">Servicios FE </a>  </mat-card-title>
             <mat-card-subtitle>Servicios de internos.
               <div class="indicador-facturas">
                 Conexiones exitosas.
@@ -454,7 +454,7 @@
           <mat-card-content >
             <mat-list>
               <mat-list-item>
-                <div mat-line class="mat-list-item-titulo">Servicios internos de SIFE.</div>
+                <div mat-line class="mat-list-item-titulo">Servicios internos de FE.</div>
                 <div mat-line class="mat-list-item-subttitulo">Todos los servicios se encuentran disponibles.</div>
               </mat-list-item>
             </mat-list>
@@ -464,7 +464,7 @@
       <ng-template #errorSife >
         <mat-card class="example-card" style="background-color: #fff5f8;">
           <mat-card-title-group>
-            <mat-card-title><a [routerLink]="['/serviciosSife']"class="bg-danger">Servicios SIFE </a>  </mat-card-title>
+            <mat-card-title><a [routerLink]="['/serviciosSife']"class="bg-danger">Servicios FE </a>  </mat-card-title>
             <mat-card-subtitle>Servicios de internos.
               <div class="indicador-facturas">
                 Errores encontrados en servicios {{ EstadoIndicador("ServiciosSIFE") }}                
@@ -478,7 +478,7 @@
           <mat-card-content >
             <mat-list>
               <mat-list-item>
-                <div mat-line class="mat-list-item-titulo">Servicios internos de SIFE.</div>
+                <div mat-line class="mat-list-item-titulo">Servicios internos de FE.</div>
                 <div mat-line class="mat-list-item-subttitulo">Existen servicios que no estan disponibles.</div>
               </mat-list-item>
             </mat-list>
@@ -910,7 +910,7 @@
                 <span class="contador-valor">{{ horasin | date: "HH:mm:ss" }}</span>
               </div>
               <div class="contador">
-                <span class="contador-label">Hansa</span>
+                <span class="contador-label">Local</span>
                 <span class="contador-valor">{{ horahansa | date: "HH:mm:ss" }}</span>
               </div>
               <div class="contador">
@@ -929,7 +929,7 @@
                   <span class="contador-valor">{{ horasin | date: "HH:mm:ss" }}</span>
                 </div>
                 <div class="contador">
-                  <span class="contador-label">Hansa</span>
+                  <span class="contador-label">Local</span>
                   <span class="contador-valor">{{ horahansa | date: "HH:mm:ss" }}</span>
                 </div>
                 <div class="contador">
@@ -957,18 +957,18 @@
     <mat-card class="example-card">
       <div class="fondo_mat">
         <mat-card-title style="background-color: rgb(3, 169, 244)">SI</mat-card-title>
-        <mat-card-subtitle>Servicios internos de SIFE</mat-card-subtitle>
+        <mat-card-subtitle>Servicios internos de FE</mat-card-subtitle>
       </div>
           <ng-container *ngIf="EstadoIndicador('ServiciosSIFE') == '0'; then exitosoSife; else errorSife" ></ng-container>
           <ng-template #exitosoSife >
             <mat-card-content>
-              Conexiones exitosas de servicios SIFE. <br>
+              Conexiones exitosas de servicios FE. <br>
                   <span class="badge bg-success ng-star-inserted">
                     {{ FechaIndicador("ServiciosSIFE") | date: "EEEE d MMMM y HH:mm:ss":"UTC"}}
                   </span>
               <mat-list>
                 <mat-list-item>
-                  <div mat-line class="mat-list-item-titulo">Servicios internos de SIFE.</div>
+                  <div mat-line class="mat-list-item-titulo">Servicios internos de FE.</div>
                   <div mat-line class="mat-list-item-subttitulo">Todos los servicios se encuentran disponibles.</div>
                 </mat-list-item>
               </mat-list>
@@ -982,7 +982,7 @@
                   </div>
               <mat-list>
                 <mat-list-item>
-                  <div mat-line class="mat-list-item-titulo">Servicios internos de SIFE.</div>
+                  <div mat-line class="mat-list-item-titulo">Servicios internos de FE.</div>
                   <div mat-line class="mat-list-item-subttitulo">Existen servicios que no estan disponibles.</div>
                 </mat-list-item>
               </mat-list>

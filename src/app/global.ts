@@ -59,7 +59,7 @@ export var portPass: string = ":44";
 */
 //############### PRD ###############//
 
-export var titulo: string = "SIFE";
+export var titulo: string = "FE";
 export var subtitulo: string = "Facturación Electrónica";
 export var subtitulo2: string = "Sistema de emisión de facturas electrónicas en linea y fuera de linea con Impuestos Nacionales";
 export var version = "V 1.1";

@@ -154,7 +154,7 @@ export class RegistroEventoSignificativoComponent implements OnInit {
       cuis: this.cuis,
       cufd: this.cufd
     };
-    console.log("LOS DATOS ENVIADOS A SIFE SON: " + JSON.stringify(evento_significativo))
+    console.log("LOS DATOS ENVIADOS A FE SON: " + JSON.stringify(evento_significativo))
     this.eventossignificativosService
       .sife_registro_evento_significativo_mule_post(evento_significativo)
       .then((data) => {

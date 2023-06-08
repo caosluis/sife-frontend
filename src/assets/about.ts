@@ -9,10 +9,10 @@ export var abouts: object = [
             { name: "Cuadro de facturas, mejora el cuadro de facturas de On lin y off line de todas las recepciones y envios a los servicios de SIAT.", modulo: "" },
             { name: "Homologación de productos, se agrego un nuevo estado a los productos \"Estado Activo e Inactivo\" para dar de baja a los productos no utilizados o que fueron bloqueados.", modulo: "" },               
             { name: "Homologación de productos, mejora en la velocidad de registro de homologacion de productos.", modulo: "" },
-            { name: "Homologación de productos, se agrego por de tras del SIFE la homologación masiva de productos.", modulo: "" },  
+            { name: "Homologación de productos, se agrego por de tras del FE la homologación masiva de productos.", modulo: "" },  
             { name: "Catalogo de productos, se mejoro el listado de catalogos para un mejor entendiemiento de la relacion de catalogo producto con actividad económica.", modulo: "" },  
             { name: "Envio de facturas a SIAT, se mejoro el tratamiento de facturas hacia Impuestos Nacionales con un promedio de una factura autorizada de mas menos 897 milisegundos por facturas.", modulo: "" },               
-            { name: "SIFE, mejora en el diseño de resumen de facturas y formularios de contingencia.", modulo: "" },     
+            { name: "FE, mejora en el diseño de resumen de facturas y formularios de contingencia.", modulo: "" },     
         ]
     },
     {
@@ -58,8 +58,8 @@ export var abouts: object = [
             { name: "Sincronización de catálogos, permite la actualización de los diferentes catálogos del Sistema de Facturación, códigos de productos y servicios, países, códigos de eventos significativos, códigos de mensajes de servicios y otros. La sincronización de catálogos se realizará de forma diaria", modulo: "Firmas" },
             { name: "Sincronización de fecha y hora, permite la sincronización de la fecha y hora de los Sistemas Informáticos de Facturación (Contribuyente) con la fecha y hora de la Administración Tributaria. Esta sincronización será utilizada para realizar los controles de plazos de envíos y registros en las diferentes casuísticas de emisión de Facturas Digitales.", modulo: "Firmas" },
             { name: "Tipos de documento sector definidos, - Compra y venta, - Recibo de Alquiler bienes inmuebles, - Factura de comercial exportación", modulo: "Firmas" },
-            { name: "Registro de eventos significativos o contingencias en el caso de ocurrir un problema en el sistema SIFE o con la Administración tributaria.", modulo: "Firmas" },
-            { name: "Registro de eventos significativos o contingencias en el caso de ocurrir un problema en el sistema SIFE o con la Administración tributaria.", modulo: "Firmas" },
+            { name: "Registro de eventos significativos o contingencias en el caso de ocurrir un problema en el sistema FE o con la Administración tributaria.", modulo: "Firmas" },
+            { name: "Registro de eventos significativos o contingencias en el caso de ocurrir un problema en el sistema FE o con la Administración tributaria.", modulo: "Firmas" },
         ]
     }
 ];
